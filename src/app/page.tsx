@@ -96,53 +96,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* THREE DISTINCT BRAND COLLECTIONS */}
-      <section className={`${styles.section} container`}>
-        <h2 className={styles.sectionTitle}>Shop by Brand Division</h2>
-        <div className={styles.collectionGrid}>
-          <Link href="/collections/supply" className={styles.collectionCard}>
-            <div className={styles.collectionImageWrap}>
-              <img 
-                src="/images/products/krown-supply-premium-hoodie-front.jpg" 
-                alt="KrowN Supply Co." 
-                className={styles.collectionImg} 
-              />
-            </div>
-            <div className={styles.collectionInfo}>
-              <h3>KrowN Supply Co.</h3>
-              <p>WEAR THE KROWN. • Luxury 480 GSM Streetwear Hoodies, Sweatpants &amp; Drops</p>
-            </div>
-          </Link>
-          
-          <Link href="/collections/gaming" className={styles.collectionCard}>
-            <div className={styles.collectionImageWrap}>
-              <img 
-                src="/images/products/axa-pro-jersey-home.jpg" 
-                alt="AXA Axiom Allegiance Esports" 
-                className={styles.collectionImg} 
-              />
-            </div>
-            <div className={styles.collectionInfo}>
-              <h3>AXA / Axiom Allegiance</h3>
-              <p>PLAY TO REIGN. • Official Pro League Esports Jerseys &amp; Shakers</p>
-            </div>
-          </Link>
-          
-          <Link href="/collections/construction" className={styles.collectionCard}>
-            <div className={styles.collectionImageWrap}>
-              <img 
-                src="/images/products/krown-r112-straight-front-hex-patch.jpg" 
-                alt="KrowN Construction LLC" 
-                className={styles.collectionImg} 
-              />
-            </div>
-            <div className={styles.collectionInfo}>
-              <h3>KrowN Construction LLC</h3>
-              <p>BUILT TO REIGN. • Richardson 112 Leather Patch Hats &amp; Jobsite Gear</p>
-            </div>
-          </Link>
-        </div>
-      </section>
+
 
       {/* AXIOM ALLEGIANCE GAMING SHOWCASE */}
       <section className={styles.gamingSection}>
