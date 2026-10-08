@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import ProductCard from '@/components/product/ProductCard';
 import { printifyService } from '@/services/printify';
 import './CollectionPage.css';
@@ -67,16 +68,16 @@ export default async function CollectionPage({
       badge: '⚡ AXA Esports • PLAY TO REIGN'
     },
     construction: { 
-      title: 'KrowN Construction LLC', 
+      title: 'KROWN CONSTRUCTION LLC', 
       subtitle: 'BUILT TO REIGN. Authentic jobsite gear: Richardson 112 leather patch snapbacks, 20oz and 32oz vacuum jobsite tumblers, heavy ribbed beanies, work shirts, and weatherproof hardhat decals.',
-      banner: '/images/branding/construction/KC deck.jpg',
-      badge: '🔨 KrowN Construction LLC • BUILT TO REIGN'
+      banner: '/images/branding/construction/KC.jpg',
+      badge: '🔨 KROWN CONSTRUCTION LLC • BUILT TO REIGN'
     },
     workwear: { 
-      title: 'KrowN Construction LLC Workwear', 
+      title: 'KROWN CONSTRUCTION LLC WORKWEAR', 
       subtitle: 'BUILT TO REIGN. Authentic jobsite workwear engineered for endurance, safety, and high mobility on the jobsite.',
-      banner: '/images/branding/construction/KC deck.jpg',
-      badge: '🔨 KrowN Construction LLC • BUILT TO REIGN'
+      banner: '/images/branding/construction/KC.jpg',
+      badge: '🔨 KROWN CONSTRUCTION LLC • BUILT TO REIGN'
     },
     accessories: { 
       title: 'Accessories & Weatherproof Decals', 
@@ -93,16 +94,25 @@ export default async function CollectionPage({
   return (
     <div className="collection-page container">
       {currentMeta.banner && (
-        <div className="collection-banner-wrap">
-          <img src={currentMeta.banner} alt={currentMeta.title} className="collection-banner-img" />
-          <div className="collection-banner-overlay" />
+        <div className="collection-banner-container">
+          <div className="collection-banner-wrap">
+            <Image 
+              src={currentMeta.banner} 
+              alt={currentMeta.title} 
+              width={1008} 
+              height={576}
+              priority
+              className="collection-banner-img"
+              sizes="(max-width: 640px) 100vw, (max-width: 1152px) 95vw, 1152px"
+            />
+          </div>
         </div>
       )}
 
       <header className="collection-header">
         {currentMeta.badge && <span className="collection-badge">{currentMeta.badge}</span>}
         <h1>{currentMeta.title}</h1>
-        <p className="text-muted">{currentMeta.subtitle}</p>
+        <p className="collection-subtitle">{currentMeta.subtitle}</p>
       </header>
 
       <div className="collection-filters">
