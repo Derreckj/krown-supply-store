@@ -419,7 +419,7 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     baseCost: 10.50,
     printCost: 5.00,
     images: [
-      '/images/products/krown-construction-jobsite-tumbler.png'
+      '/images/products/krown-construction-jobsite-tumbler-32oz.png'
     ],
     variants: [
       { id: 1401, color: 'Matte Obsidian Black / Laser Gold', size: '32 oz', price: 34.99, sku: 'KRN-TUMB-32-BLK', isAvailable: true }
