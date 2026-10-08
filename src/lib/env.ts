@@ -75,8 +75,13 @@ export function validateEnvironment(): EnvValidationReport {
       warnings.push('STRIPE_SECRET_KEY is missing or using placeholder; fallback to mock sandbox checkout active.');
       stripeStatus = 'mock_sandbox';
     }
-  } else if (!stripeSecret.startsWith('sk_test_') && !stripeSecret.startsWith('sk_live_')) {
-    errors.push('STRIPE_SECRET_KEY must begin with "sk_test_" or "sk_live_".');
+  } else if (
+    !stripeSecret.startsWith('sk_test_') &&
+    !stripeSecret.startsWith('sk_live_') &&
+    !stripeSecret.startsWith('rk_live_') &&
+    !stripeSecret.startsWith('rk_test_')
+  ) {
+    errors.push('STRIPE_SECRET_KEY must begin with "sk_test_", "sk_live_", or "rk_live_".');
   } else {
     stripeStatus = 'configured';
   }
