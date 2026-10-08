@@ -1,0 +1,82 @@
+.size-guide-page {
+  padding: var(--spacing-xl) var(--spacing-md);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.size-guide-header {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.size-guide-header h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.size-guide-header p {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+}
+
+.size-guide-section {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+.size-guide-section h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--accent-gold);
+  margin-bottom: 0.5rem;
+}
+
+.size-guide-desc {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.size-table-wrapper {
+  overflow-x: auto;
+}
+
+.size-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+.size-table th {
+  background-color: var(--background);
+  color: var(--foreground);
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  border-bottom: 2px solid var(--border);
+}
+
+.size-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-muted);
+}
+
+.size-table tr:hover td {
+  background-color: rgba(255, 255, 255, 0.02);
+  color: var(--foreground);
+}
+
+.size-tip-box {
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  background-color: rgba(212, 175, 55, 0.08);
+  border-left: 3px solid var(--accent-gold);
+  border-radius: 4px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}

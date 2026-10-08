@@ -1,0 +1,121 @@
+.product-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background);
+  transition: all 0.3s ease;
+  group: true;
+}
+
+.product-card:hover .product-image-placeholder {
+  background-color: var(--surface-hover);
+}
+
+.product-image-container {
+  position: relative;
+  aspect-ratio: 4/5;
+  overflow: hidden;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  margin-bottom: var(--spacing-md);
+}
+
+.product-image-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 1.5rem;
+  background-color: var(--surface);
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.product-image-img.primary-img {
+  position: relative;
+  z-index: 1;
+}
+
+.product-image-img.hover-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: 2;
+}
+
+.product-card:hover .product-image-img:not(.primary-img) {
+  transform: scale(1.08);
+}
+
+.product-card:hover .product-image-img.primary-img {
+  opacity: 0;
+}
+
+.product-card:hover .product-image-img.hover-img {
+  opacity: 1;
+  transform: scale(1.08);
+}
+
+.product-image-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--surface-light);
+  transition: background-color 0.3s ease;
+}
+
+.product-badges {
+  position: absolute;
+  top: var(--spacing-sm);
+  left: var(--spacing-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.badge {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.badge-new {
+  background-color: var(--foreground);
+  color: var(--background);
+}
+
+.badge-limited {
+  background-color: var(--accent-purple);
+  color: var(--foreground);
+}
+
+.badge-custom {
+  background-color: var(--accent-gold);
+  color: var(--background);
+}
+
+.product-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-collection {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--spacing-xs);
+}
+
+.product-name {
+  font-size: 1rem;
+  margin-bottom: var(--spacing-xs);
+  color: var(--foreground);
+}
+
+.product-price {
+  font-weight: 600;
+  color: var(--accent-gold);
+}

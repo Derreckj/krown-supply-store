@@ -1,0 +1,293 @@
+import React from "react";
+import Link from "next/link";
+import styles from "./page.module.css";
+
+export default function Home() {
+  return (
+    <div className={styles.page}>
+      {/* HERO SECTION */}
+      <section className={styles.hero}>
+        <div className={styles.heroContent}>
+          {/* Social Proof Pill */}
+          <div className={styles.heroRatingPill}>
+            <span className={styles.ratingStars}>★★★★★</span>
+            <span className={styles.ratingText}><strong>4.9 AVERAGE</strong> • 120+ TRADESMEN & GAMERS</span>
+          </div>
+
+          <div className={styles.heroLogoWrap}>
+            <img 
+              src="/images/branding/krown-supply-co-official-emblem.jpg" 
+              alt="KrowN Supply Co. Official Emblem" 
+              className={styles.heroEmblem}
+              style={{ borderRadius: '16px' }} 
+            />
+          </div>
+
+          <h1 className={styles.heroTitle}>
+            WEAR THE <span className={styles.titleHighlight}>KROWN.</span>
+          </h1>
+          <p className={styles.heroSubtitle}>STREETWEAR &times; WORKWEAR &times; ESPORTS</p>
+
+          <div className={styles.heroCtas}>
+            <Link href="/collections/all" className="btn-primary">
+              Shop Flagship Drop
+            </Link>
+            <Link href="/custom-crew" className={styles.btnCustomCrew}>
+              Custom Crew Hats ★
+            </Link>
+          </div>
+
+          {/* Floating New Drop Spotlight Card */}
+          <div className={styles.heroFloatingDrop}>
+            <Link href="/products/custom-krown-works-hat" className={styles.dropCardInner}>
+              <div className={styles.dropThumbWrap}>
+                <img 
+                  src="/images/products/krown-r112-custom-supply-sample.jpg" 
+                  alt="Richardson 112 Custom Leather Patch Hat" 
+                  className={styles.dropThumb}
+                />
+              </div>
+              <div className={styles.dropInfo}>
+                <span className={styles.dropTag}>CUSTOM B2B • AUTHENTIC 112</span>
+                <span className={styles.dropPrice}>From $24.00/hat <span>&rarr;</span></span>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* HEADWEAR & B2B CUSTOM CREW SPOTLIGHT */}
+      <section className={`${styles.headwearSection} container`}>
+        <div className={styles.headwearBanner}>
+          <div className={styles.headwearText}>
+            <div className={styles.headwearBadge}>★ FLAGSHIP HEADWEAR DIVISION</div>
+            <h2 className={styles.headwearTitle}>Authentic Richardson 112 Custom Leather-Patch Hats</h2>
+            <p className={styles.headwearDesc}>
+              Engineered with genuine saddle-stitched caramel leatherette patches on authentic Richardson 112 truckers.
+              Shown with our KrowN Supply Co. emblem as a finished demonstration sample. Order custom hats engraved with your own approved company or team logo with zero setup fees.
+            </p>
+            <div className={styles.headwearActions}>
+              <Link href="/products/custom-krown-works-hat" className="btn-primary">
+                View Sample Hat ($29.99)
+              </Link>
+              <Link href="/custom-crew" className={styles.btnHeadwearCustom}>
+                Order Custom Crew Hats (Save 20%) &rarr;
+              </Link>
+            </div>
+          </div>
+          <div className={styles.headwearImageGrid}>
+            <div className={styles.headwearCard}>
+              <img 
+                src="/images/products/krown-r112-custom-supply-sample.jpg" 
+                alt="Richardson 112 Saddle Leather Patch" 
+                className={styles.headwearImg}
+              />
+              <span className={styles.headwearTag}>KrowN Supply Co. Sample 112</span>
+            </div>
+            <div className={styles.headwearCard}>
+              <img 
+                src="/images/products/krown-r112-straight-front-hex-patch.jpg" 
+                alt="KrowN Construction Hex Patch Hat" 
+                className={styles.headwearImg}
+              />
+              <span className={styles.headwearTag}>KrowN Construction Hex 112</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* THREE DISTINCT BRAND COLLECTIONS */}
+      <section className={`${styles.section} container`}>
+        <h2 className={styles.sectionTitle}>Shop by Brand Division</h2>
+        <div className={styles.collectionGrid}>
+          <Link href="/collections/supply" className={styles.collectionCard}>
+            <div className={styles.collectionImageWrap}>
+              <img 
+                src="/images/products/krown-supply-premium-hoodie-front.jpg" 
+                alt="KrowN Supply Co." 
+                className={styles.collectionImg} 
+              />
+            </div>
+            <div className={styles.collectionInfo}>
+              <h3>KrowN Supply Co.</h3>
+              <p>WEAR THE KROWN. • Luxury 480 GSM Streetwear Hoodies, Sweatpants &amp; Drops</p>
+            </div>
+          </Link>
+          
+          <Link href="/collections/gaming" className={styles.collectionCard}>
+            <div className={styles.collectionImageWrap}>
+              <img 
+                src="/images/products/axa-pro-jersey-home.jpg" 
+                alt="AXA Axiom Allegiance Esports" 
+                className={styles.collectionImg} 
+              />
+            </div>
+            <div className={styles.collectionInfo}>
+              <h3>AXA / Axiom Allegiance</h3>
+              <p>PLAY TO REIGN. • Official Pro League Esports Jerseys &amp; Shakers</p>
+            </div>
+          </Link>
+          
+          <Link href="/collections/construction" className={styles.collectionCard}>
+            <div className={styles.collectionImageWrap}>
+              <img 
+                src="/images/products/krown-r112-straight-front-hex-patch.jpg" 
+                alt="KrowN Construction LLC" 
+                className={styles.collectionImg} 
+              />
+            </div>
+            <div className={styles.collectionInfo}>
+              <h3>KrowN Construction LLC</h3>
+              <p>BUILT TO REIGN. • Richardson 112 Leather Patch Hats &amp; Jobsite Gear</p>
+            </div>
+          </Link>
+        </div>
+      </section>
+
+      {/* AXIOM ALLEGIANCE GAMING SHOWCASE */}
+      <section className={styles.gamingSection}>
+        <div className={`container ${styles.gamingGrid}`}>
+          <div className={styles.gamingTextContent}>
+            <div className={styles.gamingBadge}>
+              <span>⚡</span> The Official Esports Division
+            </div>
+            <h2 className={styles.gamingTitle}>AXA — AXIOM ALLEGIANCE</h2>
+            <h3 className={styles.gamingSubtitle}>PLAY TO REIGN. Powered by KrowN.</h3>
+            <p className={styles.gamingDesc}>
+              Before the jobsites, KrowN started in the arena. Axiom Allegiance (AXA) represents
+              the competitive esports organization, featuring our signature razor-sharp 
+              <strong> AXA Owl</strong> mascot with intentional A-X-A letterforms embedded in the eyes and beak.
+            </p>
+            <blockquote className={styles.gamingQuote}>
+              &ldquo;YOU CANNOT BE TRULY HUMBLE, UNLESS YOU TRULY BELIEVE THAT LIFE CAN AND WILL GO ON WITHOUT YOU.&rdquo;
+            </blockquote>
+            <div className={styles.gamingCtas}>
+              <Link href="/collections/gaming" className={styles.btnGaming}>
+                Shop AXA Pro Jerseys →
+              </Link>
+            </div>
+          </div>
+
+          <div className={styles.gamingMediaCard}>
+            <div className={styles.gamingVideoWrap}>
+              <video 
+                src="/media/axiom-intro.mp4" 
+                controls 
+                poster="/images/branding/gaming/axiom-owl-display.png"
+                className={styles.gamingVideo}
+                preload="metadata"
+              >
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div className={styles.gamingMediaMeta}>
+              <div className={styles.gamingMetaTrack}>
+                <div className={styles.gamingMetaIcon}>♫</div>
+                <div className={styles.gamingMetaText}>
+                  <h4>Official Axiom Intro</h4>
+                  <p>Original DJ Track &amp; Intro Animation</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Pro Esports High-Voltage Gear Showcase */}
+        <div className={`container ${styles.gamingGearWrap}`}>
+          <div className={styles.gamingGearHeader}>
+            <h3>Axiom Allegiance Pro League Loadout</h3>
+            <p>Tournament-grade cut-and-sew apparel, custom gamertags &amp; high-voltage accessories.</p>
+          </div>
+          <div className={styles.gamingGearGrid}>
+            <Link href="/products/axiom-jersey-home" className={styles.gamingGearCard}>
+              <div className={styles.gamingGearThumb}>
+                <img 
+                  src="/images/products/axa-pro-jersey-home.jpg" 
+                  alt="AXA Pro League Home Jersey" 
+                />
+                <span className={styles.gearPill}>HOME EDITION</span>
+              </div>
+              <div className={styles.gamingGearBody}>
+                <h4>AXA Pro League Home Jersey</h4>
+                <p>Personalized Name &amp; Number • $54.99</p>
+              </div>
+            </Link>
+
+            <Link href="/products/axiom-jersey-away" className={styles.gamingGearCard}>
+              <div className={styles.gamingGearThumb}>
+                <img 
+                  src="/images/products/axa-pro-jersey-away.jpg" 
+                  alt="AXA Pro League Away Jersey" 
+                />
+                <span className={styles.gearPill}>AWAY EDITION</span>
+              </div>
+              <div className={styles.gamingGearBody}>
+                <h4>AXA Pro League Away Jersey</h4>
+                <p>Crisp Bone White &amp; Purple • $54.99</p>
+              </div>
+            </Link>
+
+            <Link href="/products/axiom-shaker-01" className={styles.gamingGearCard}>
+              <div className={styles.gamingGearThumb}>
+                <img 
+                  src="/images/products/axiom-vibrant-gaming-shaker-bottle.jpg" 
+                  alt="Axiom Allegiance Pro Loadout Shaker" 
+                />
+                <span className={styles.gearPill}>KrowN COLLAR</span>
+              </div>
+              <div className={styles.gamingGearBody}>
+                <h4>Pro Loadout Shaker (24oz)</h4>
+                <p>Toxic Lime &amp; Royal Purple • $24.99</p>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* BRAND STORY WITH REAL CRAFTSMANSHIP PHOTO */}
+      <section className={styles.storySection}>
+        <div className={`container ${styles.storyGrid}`}>
+          <div className={styles.storyImageContainer}>
+            <img 
+              src="/images/branding/construction/KC deck.jpg" 
+              alt="Authentic KrowN Craftsmanship" 
+              className={styles.storyImg} 
+            />
+            <span className={styles.storyImageCaption}>Crafted on jobsites. Built to reign.</span>
+          </div>
+          <div className={styles.storyContent}>
+            <span className={styles.storyBadge}>The Heritage</span>
+            <h2>The KrowN Story</h2>
+            <p>
+              The KrowN identity started in gaming before it ever became a company.
+              It evolved onto the jobsite with KrowN Construction LLC, earning respect through
+              relentless standards and precision building.
+            </p>
+            <p>
+              Now, <strong>KrowN Supply Co.</strong> expands that DNA into a dedicated lifestyle brand.
+              Whether you are on a high-stakes jobsite, competing in the lobby, or commanding the street:
+            </p>
+            <p className={styles.storyQuote}>
+              &ldquo;Workwear meets gaming. Built on jobsites. Now you can wear it.&rdquo;
+            </p>
+            <Link href="/collections/all" className="btn-primary" style={{ marginTop: '1rem' }}>
+              Explore The Gear
+            </Link>
+          </div>
+        </div>
+      </section>
+      
+      {/* EMAIL SIGNUP */}
+      <section className={`${styles.section} container`}>
+        <div className={styles.newsletterCard}>
+          <h2>Join the Reign</h2>
+          <p>Get new-drop announcements, limited releases and KrowN updates.</p>
+          <form className={styles.newsletterForm} action="#">
+            <input type="email" placeholder="Enter your email" required aria-label="Email address" />
+            <button type="submit" className="btn-primary">Subscribe</button>
+          </form>
+        </div>
+      </section>
+    </div>
+  );
+}

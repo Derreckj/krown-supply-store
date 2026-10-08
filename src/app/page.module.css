@@ -1,0 +1,801 @@
+.page {
+  display: flex;
+  flex-direction: column;
+}
+
+.section {
+  padding: var(--spacing-xl) 0;
+}
+
+.sectionTitle {
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
+  color: var(--accent-gold);
+}
+
+/* Hero Section */
+.hero {
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: var(--background);
+  background: radial-gradient(circle at center, rgba(30, 30, 30, 0.8) 0%, rgba(17, 17, 17, 0.98) 100%);
+  position: relative;
+  padding: var(--spacing-xl) var(--spacing-lg);
+  border-bottom: 1px solid var(--border);
+}
+
+.heroContent {
+  max-width: 850px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.heroLogoWrap {
+  margin-bottom: var(--spacing-lg);
+  width: 140px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heroEmblem {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 25px rgba(197, 160, 89, 0.25));
+}
+
+.heroRatingPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  backdrop-filter: blur(8px);
+  padding: 0.4rem 1rem;
+  border-radius: 9999px;
+  margin-bottom: 1.25rem;
+}
+
+.ratingStars {
+  color: var(--accent-gold);
+  letter-spacing: 0.1em;
+  font-size: 0.85rem;
+}
+
+.ratingText {
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.ratingText strong {
+  color: #fff;
+}
+
+.heroTitle {
+  font-size: 3.5rem;
+  margin-bottom: var(--spacing-md);
+  letter-spacing: -0.02em;
+  font-weight: 900;
+  line-height: 1.05;
+}
+
+.titleHighlight {
+  background: linear-gradient(135deg, #FFD700 0%, #D4AF37 50%, #B8860B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  filter: drop-shadow(0 0 30px rgba(212, 175, 55, 0.4));
+}
+
+@media (min-width: 768px) {
+  .heroTitle {
+    font-size: 5.5rem;
+  }
+}
+
+.heroSubtitle {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  margin-bottom: var(--spacing-xl);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-weight: 600;
+}
+
+.heroCtas {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: var(--spacing-xl);
+}
+
+.btnCustomCrew {
+  background: rgba(212, 175, 55, 0.12);
+  color: var(--accent-gold);
+  border: 1px solid var(--accent-gold);
+  padding: 0.75rem 1.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.25s ease;
+}
+
+.btnCustomCrew:hover {
+  background: var(--accent-gold);
+  color: #000;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Floating New Drop Spotlight Card (Urbanth Style) */
+.heroFloatingDrop {
+  margin-top: 1rem;
+}
+
+.dropCardInner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(20, 20, 26, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 0.6rem 1.25rem 0.6rem 0.75rem;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.dropCardInner:hover {
+  border-color: var(--accent-gold);
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(212, 175, 55, 0.2);
+}
+
+.dropThumbWrap {
+  width: 48px;
+  height: 48px;
+  background: #000;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.dropThumb {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.dropInfo {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.dropTag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--accent-gold);
+  text-transform: uppercase;
+}
+
+.dropPrice {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.dropPrice span {
+  color: var(--accent-gold);
+  transition: transform 0.2s ease;
+}
+
+.dropCardInner:hover .dropPrice span {
+  transform: translateX(4px);
+}
+
+/* Headwear & Custom Crew Section */
+.headwearSection {
+  padding: var(--spacing-xl) 0 var(--spacing-lg) 0;
+}
+
+.headwearBanner {
+  background: linear-gradient(135deg, rgba(26, 26, 32, 0.95) 0%, rgba(15, 15, 18, 0.98) 100%);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: 16px;
+  padding: var(--spacing-xl);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-xl);
+  align-items: center;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+@media (min-width: 900px) {
+  .headwearBanner {
+    grid-template-columns: 1.2fr 1fr;
+  }
+}
+
+.headwearBadge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: var(--accent-gold);
+  background: rgba(212, 175, 55, 0.12);
+  border: 1px solid var(--accent-gold);
+  padding: 0.3rem 0.75rem;
+  border-radius: 9999px;
+  margin-bottom: 0.75rem;
+}
+
+.headwearTitle {
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 900;
+  line-height: 1.15;
+  margin-bottom: 0.75rem;
+}
+
+.headwearDesc {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: var(--spacing-lg);
+}
+
+.headwearActions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btnHeadwearCustom {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.25s ease;
+}
+
+.btnHeadwearCustom:hover {
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+  transform: translateY(-2px);
+}
+
+.headwearImageGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.headwearCard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.headwearCard:hover {
+  border-color: var(--accent-gold);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.headwearImg {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: contain;
+  margin-bottom: 0.75rem;
+}
+
+.headwearTag {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+
+/* Collections Grid */
+.collectionGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-lg);
+}
+
+@media (min-width: 768px) {
+  .collectionGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.collectionCard {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.collectionCard:hover {
+  border-color: var(--accent-gold);
+  transform: translateY(-4px);
+}
+
+.collectionImageWrap {
+  height: 280px;
+  background-color: var(--surface-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-lg);
+  overflow: hidden;
+}
+
+.collectionImg {
+  max-width: 80%;
+  max-height: 80%;
+  object-fit: contain;
+  transition: transform 0.4s ease;
+}
+
+.collectionImgWide {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.collectionCard:hover .collectionImg,
+.collectionCard:hover .collectionImgWide {
+  transform: scale(1.06);
+}
+
+.collectionInfo {
+  padding: var(--spacing-lg);
+  border-top: 1px solid var(--border);
+}
+
+.collectionInfo h3 {
+  margin-bottom: var(--spacing-xs);
+  color: var(--foreground);
+}
+
+.collectionInfo p {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+/* Brand Story Section with Grid */
+.storySection {
+  background-color: var(--surface);
+  padding: var(--spacing-xl) 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.storyGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-xl);
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  .storyGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.storyImageContainer {
+  position: relative;
+  border: 1px solid var(--border);
+  overflow: hidden;
+  background-color: var(--background);
+}
+
+.storyImg {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.storyImageCaption {
+  display: block;
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent-gold);
+  background-color: var(--background);
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.storyContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.storyBadge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--accent-purple);
+  margin-bottom: var(--spacing-xs);
+}
+
+.storyContent h2 {
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing-md);
+  color: var(--foreground);
+}
+
+.storyContent p {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: var(--spacing-md);
+}
+
+.storyQuote {
+  font-style: italic;
+  font-weight: 600;
+  color: var(--accent-gold) !important;
+  border-left: 3px solid var(--accent-gold);
+  padding-left: var(--spacing-md);
+  margin: var(--spacing-md) 0;
+}
+
+/* Newsletter Section */
+.newsletterCard {
+  background-color: var(--surface-light);
+  padding: var(--spacing-xl) var(--spacing-lg);
+  text-align: center;
+  border: 1px solid var(--border);
+}
+
+.newsletterCard h2 {
+  color: var(--accent-gold);
+  margin-bottom: var(--spacing-sm);
+}
+
+.newsletterCard p {
+  color: var(--text-muted);
+  margin-bottom: var(--spacing-lg);
+}
+
+.newsletterForm {
+  display: flex;
+  gap: var(--spacing-sm);
+  justify-content: center;
+  max-width: 500px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.newsletterForm input {
+  flex: 1;
+  min-width: 250px;
+  padding: var(--spacing-md);
+  background-color: var(--background);
+  border: 1px solid var(--border);
+  color: var(--foreground);
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.newsletterForm input:focus {
+  outline: none;
+  border-color: var(--accent-gold);
+}
+
+/* Axiom Allegiance Gaming Division Showcase */
+.gamingSection {
+  background: radial-gradient(circle at 75% 30%, rgba(98, 0, 238, 0.18) 0%, rgba(13, 13, 13, 1) 75%);
+  border-top: 1px solid rgba(57, 255, 20, 0.25);
+  border-bottom: 1px solid rgba(98, 0, 238, 0.35);
+  padding: var(--spacing-xl) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.gamingGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-xl);
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  .gamingGrid {
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+}
+
+.gamingBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #39FF14;
+  background: rgba(57, 255, 20, 0.08);
+  border: 1px solid rgba(57, 255, 20, 0.3);
+  padding: 0.35rem 0.85rem;
+  border-radius: 4px;
+  margin-bottom: var(--spacing-sm);
+  width: fit-content;
+}
+
+.gamingTitle {
+  font-size: 2.75rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #FFFFFF;
+  margin-bottom: var(--spacing-xs);
+}
+
+.gamingSubtitle {
+  font-size: 1.15rem;
+  color: #B388FF;
+  margin-bottom: var(--spacing-md);
+  font-weight: 600;
+}
+
+.gamingDesc {
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: var(--spacing-md);
+  font-size: 1.05rem;
+}
+
+.gamingQuote {
+  margin: 0 0 var(--spacing-lg) 0;
+  padding: 0.85rem 1.25rem;
+  background: rgba(98, 0, 238, 0.15);
+  border-left: 3px solid #39FF14;
+  color: #FFFFFF;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1.55;
+  border-radius: 0 6px 6px 0;
+  box-shadow: 0 0 20px rgba(57, 255, 20, 0.1);
+}
+
+.gamingCtas {
+  display: flex;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.btnGaming {
+  background: #6200EE;
+  color: #FFFFFF;
+  border: 1px solid #39FF14;
+  padding: 0.75rem 1.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(98, 0, 238, 0.4);
+}
+
+.btnGaming:hover {
+  background: #39FF14;
+  color: #000000;
+  border-color: #39FF14;
+  box-shadow: 0 0 20px rgba(57, 255, 20, 0.6);
+  transform: translateY(-2px);
+}
+
+.gamingMediaCard {
+  background: rgba(20, 20, 20, 0.85);
+  border: 1px solid rgba(98, 0, 238, 0.4);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 25px rgba(98, 0, 238, 0.2);
+  display: flex;
+  flex-direction: column;
+}
+
+.gamingVideoWrap {
+  width: 100%;
+  position: relative;
+  background: #000;
+  aspect-ratio: 16 / 9;
+}
+
+.gamingVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.gamingMediaMeta {
+  padding: var(--spacing-md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(15, 15, 15, 0.95);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.gamingMetaTrack {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.gamingMetaIcon {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(98, 0, 238, 0.25);
+  border: 1px solid #39FF14;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #39FF14;
+  font-size: 1.1rem;
+}
+
+.gamingMetaText h4 {
+  font-size: 0.9rem;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.gamingMetaText p {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* Pro Esports Gaming Gear Showcase */
+.gamingGearWrap {
+  margin-top: var(--spacing-xl);
+  padding-top: var(--spacing-xl);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.gamingGearHeader {
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+.gamingGearHeader h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.gamingGearHeader p {
+  font-size: 0.9rem;
+  color: #B388FF;
+}
+
+.gamingGearGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-md);
+}
+
+@media (min-width: 768px) {
+  .gamingGearGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.gamingGearCard {
+  background: rgba(20, 20, 26, 0.85);
+  border: 1px solid rgba(98, 0, 238, 0.35);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.gamingGearCard:hover {
+  border-color: #39FF14;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(57, 255, 20, 0.15);
+}
+
+.gamingGearThumb {
+  aspect-ratio: 1/1;
+  background: #0d0d12;
+  position: relative;
+  overflow: hidden;
+}
+
+.gamingGearThumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gamingGearCard:hover .gamingGearThumb img {
+  transform: scale(1.05);
+}
+
+.gearPill {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid #39FF14;
+  color: #39FF14;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+}
+
+.gamingGearBody {
+  padding: var(--spacing-md);
+  text-align: center;
+}
+
+.gamingGearBody h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.25rem;
+}
+
+.gamingGearBody p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+
