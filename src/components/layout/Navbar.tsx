@@ -13,10 +13,10 @@ export default function Navbar() {
       <div className="navbar-container container">
         <Link href="/" className="navbar-brand">
           <img 
-            src="/images/branding/krown-supply-co-icon-mark.jpg" 
+            src="/images/branding/krown-definitive-logo.png" 
             alt="KrowN Supply Co." 
             className="navbar-logo-icon" 
-            style={{ borderRadius: '6px' }}
+            style={{ borderRadius: '8px', objectFit: 'contain' }}
           />
           <span>KrowN <span className="text-gold">Supply Co.</span></span>
         </Link>

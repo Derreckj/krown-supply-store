@@ -6,7 +6,13 @@ export default function CheckoutCancelPage() {
   return (
     <div className="checkout-status-page container">
       <div className="status-card" style={{ borderTopColor: 'var(--text-muted)' }}>
-        <div className="status-icon">🛡️</div>
+        <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '16px' }}>
+          <img 
+            src="/images/branding/krown-definitive-logo.png" 
+            alt="KrowN Supply Co." 
+            style={{ width: '80px', height: '80px', borderRadius: '16px', objectFit: 'contain' }}
+          />
+        </div>
         <span className="brand-badge">KrowN Supply Co.</span>
         <h1>Checkout Incomplete</h1>
         <p className="status-tagline" style={{ color: 'var(--text-muted)' }}>YOUR CART IS PRESERVED</p>

@@ -20,7 +20,13 @@ function SuccessContent() {
   return (
     <div className="checkout-status-page container">
       <div className="status-card">
-        <div className="status-icon success-icon">👑</div>
+        <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '16px' }}>
+          <img 
+            src="/images/branding/krown-definitive-logo.png" 
+            alt="KrowN Supply Co." 
+            style={{ width: '80px', height: '80px', borderRadius: '16px', objectFit: 'contain' }}
+          />
+        </div>
         <span className="brand-badge">KrowN Supply Co.</span>
         <h1>Order Confirmed</h1>
         <p className="status-tagline">WEAR THE KROWN.</p>

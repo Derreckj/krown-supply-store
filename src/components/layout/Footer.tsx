@@ -7,7 +7,14 @@ export default function Footer() {
     <footer className="footer">
       <div className="container footer-grid">
         <div className="footer-brand">
-          <h2>KrowN Supply Co.</h2>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
+            <img 
+              src="/images/branding/krown-definitive-logo.png" 
+              alt="KrowN Supply Co." 
+              style={{ width: '42px', height: '42px', borderRadius: '8px', objectFit: 'contain' }}
+            />
+            <h2 style={{ margin: 0 }}>KrowN Supply Co.</h2>
+          </div>
           <p className="text-muted mt-2">WEAR THE KROWN.</p>
         </div>
         <div className="footer-links">

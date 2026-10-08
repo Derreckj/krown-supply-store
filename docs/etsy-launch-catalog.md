@@ -1,5 +1,9 @@
 # KrowN Supply Co. — Etsy Launch Catalog & Margin Audit Report
 
+![KrowN Supply Co. Definitive Brand Logo](/images/branding/krown-definitive-logo.png)
+
+**Brand Identity**: KrowN Supply Co. ("WEAR THE KROWN.")
+**Primary Logo Asset**: `src/assets/branding/krown-definitive-logo.png`
 **Generated At**: 2026-10-08T11:24:08.514Z
 **Storefront Divisions**: KrowN Supply Co. | KrowN Construction LLC | AXA / Axiom Allegiance
 

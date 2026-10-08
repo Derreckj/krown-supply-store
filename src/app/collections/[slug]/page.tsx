@@ -45,13 +45,13 @@ export default async function CollectionPage({
     supply: { 
       title: 'KrowN Supply Co. — Luxury Streetwear', 
       subtitle: 'WEAR THE KROWN. The signature streetwear line: 480 GSM French terry hoodies, tailored sweatpants, kintsugi gold tracksuits, Comfort Colors 1717 tees, and custom Richardson 112 sample headwear.',
-      banner: '/images/branding/krown-supply-co-official-emblem.jpg',
+      banner: '/images/branding/krown-definitive-logo.png',
       badge: '👑 KrowN Supply Co. • WEAR THE KROWN'
     },
     core: { 
       title: 'KrowN Supply Co. — Luxury Streetwear', 
       subtitle: 'WEAR THE KROWN. The signature streetwear line: 480 GSM French terry hoodies, tailored sweatpants, kintsugi gold tracksuits, Comfort Colors 1717 tees, and custom Richardson 112 sample headwear.',
-      banner: '/images/branding/krown-supply-co-official-emblem.jpg',
+      banner: '/images/branding/krown-definitive-logo.png',
       badge: '👑 KrowN Supply Co. • WEAR THE KROWN'
     },
     gaming: { 

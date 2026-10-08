@@ -16,10 +16,10 @@ export default function Home() {
 
           <div className={styles.heroLogoWrap}>
             <img 
-              src="/images/branding/krown-supply-co-official-emblem.jpg" 
-              alt="KrowN Supply Co. Official Emblem" 
+              src="/images/branding/krown-definitive-logo.png" 
+              alt="KrowN Supply Co. Definitive Brand" 
               className={styles.heroEmblem}
-              style={{ borderRadius: '16px' }} 
+              style={{ borderRadius: '16px', objectFit: 'contain' }} 
             />
           </div>
 

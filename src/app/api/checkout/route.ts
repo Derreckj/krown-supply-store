@@ -43,6 +43,11 @@ export async function POST(req: NextRequest) {
           product_data: {
             name: item.name,
             description: descParts.join(' | '),
+            images: [
+              item.image
+                ? (item.image.startsWith('http') ? item.image : `${origin}${item.image}`)
+                : `${origin}/images/branding/krown-definitive-logo.png`
+            ],
             metadata: {
               productId: item.productId,
               color: item.variant.color,
