@@ -111,7 +111,7 @@ def generate_tan_leather_patch_r112():
     # Laser-Engraved "BUILT TO REIGN" Text on Patch
     draw = ImageDraw.Draw(canvas)
     draw.text((cx, py + 116), "BUILT TO REIGN", fill=(55, 28, 12), anchor="mm")
-    draw.text((cx, py + 132), "EST. 2026 // KROW'N SUPPLY", fill=(95, 52, 25), anchor="mm")
+    draw.text((cx, py + 132), "EST. 2026 // KROWN SUPPLY", fill=(95, 52, 25), anchor="mm")
 
     # Authentic Richardson 112 Visor Foil Sticker on left visor edge
     sticker_poly = [
@@ -192,9 +192,9 @@ def generate_purple_puff_trucker():
         canvas.paste(puff_sh, (cx - purple_kc.width // 2 + 3, cy - 90 + 5), puff_sh)
         canvas.paste(purple_kc, (cx - purple_kc.width // 2, cy - 90), purple_kc)
 
-    # Metallic Silver / White Outline Stitching & "KROW'N" Typography
+    # Metallic Silver / White Outline Stitching & "KROWN" Typography
     draw = ImageDraw.Draw(canvas)
-    draw.text((cx, cy + 18), "KROW'N", fill=(240, 240, 250), anchor="mm")
+    draw.text((cx, cy + 18), "KROWN", fill=(240, 240, 250), anchor="mm")
     draw.text((cx, cy + 38), "ORIGINALS // DROP 001", fill=(168, 85, 247), anchor="mm")
 
     out_p = os.path.join(PUBLIC_PRODUCTS, "krown-original-3d-puff-purple-trucker.png")

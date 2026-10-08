@@ -93,7 +93,7 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     id: 'krown-hoodie-premium',
     name: 'KrowN Supply Co. 480 GSM Heavyweight Streetwear Hoodie',
     slug: 'krown-supply-co-480gsm-heavyweight-streetwear-hoodie',
-    description: 'The pinnacle of luxury streetwear. Cut from ultra-heavyweight 480 GSM French terry cotton in vintage washed charcoal black with drop shoulders and an exaggerated crossover double-layered hood. Adorned on the left chest with an exquisite minimal metallic antique gold embroidered KrowN crown crest. Heavy split-stitch construction, thick ribbed cuffs and hem, and relaxed modern drape.',
+    description: 'The pinnacle of luxury streetwear. Cut from ultra-heavyweight 480 GSM French terry cotton in vintage washed charcoal black with drop shoulders and an exaggerated crossover double-layered hood. Features our minimal metallic antique gold and brushed steel 3D geometric faceted K-crown brand emblem on the left chest, and a bold statement back print with clean arched "KROWN SUPPLY CO." typography and the official faceted 3D geometric K-crown brand emblem. Heavy split-stitch construction, thick ribbed cuffs and hem, and relaxed modern drape.',
     collection: 'KrowN Supply Co.',
     price: 88.00,
     baseCost: 28.00,
@@ -257,13 +257,13 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     id: 'krown-tee-cc1717',
     name: 'KrowN "Wear The KrowN" Comfort Colors 1717 Vintage Heavy Tee',
     slug: 'krown-wear-the-krown-comfort-colors-1717-vintage-heavy-tee',
-    description: 'The benchmark of luxury streetwear basics. Crafted on genuine Comfort Colors 1717 garment-dyed blanks in vintage Pepper Black. Made with 100% US ring-spun cotton for an ultra-soft broken-in feel and boxy drape. Features our distressed metallic gold "WEAR THE KROWN" chest lettering and heraldic KrowN crest.',
+    description: 'The benchmark of luxury streetwear basics. Crafted on genuine Comfort Colors 1717 garment-dyed blanks in vintage Pepper Black. Made with 100% US ring-spun cotton for an ultra-soft broken-in feel and boxy drape. Features our official metallic antique gold and brushed steel 3D geometric faceted K-crown emblem with clean "WEAR THE KROWN" typography.',
     collection: 'KrowN Supply Co.',
     price: 34.00,
     baseCost: 11.00,
     printCost: 5.50,
     images: [
-      '/images/products/krown-supply-premium-hoodie-front.jpg',
+      '/images/products/krown-supply-comfort-colors-1717-tee.png',
     ],
     variants: [
       { id: 801, color: 'Pepper Washed Black / Faded Gold', size: 'S', price: 34.00, sku: 'KRN-CC1717-PEP-S', isAvailable: true },
@@ -280,13 +280,13 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     id: 'krown-crewneck-01',
     name: 'KrowN Heritage Heavyweight Crewneck Sweatshirt',
     slug: 'krown-heritage-heavyweight-crewneck-sweatshirt',
-    description: 'Ultra-heavy 10oz 3-end cotton fleece in vintage washed onyx. Features ribbed collar, cuffs, and waistband with split-stitch double-needle construction. Adorned with metallic gold embroidered KrowN chest typography and insignia.',
+    description: 'Ultra-heavy 10oz 3-end cotton fleece in vintage washed onyx. Features ribbed collar, cuffs, and waistband with split-stitch double-needle construction. Adorned with our official 3D geometric faceted K-crown emblem embroidered in metallic gold and brushed steel.',
     collection: 'KrowN Supply Co.',
     price: 68.00,
     baseCost: 22.00,
     printCost: 6.50,
     images: [
-      '/images/products/krown-supply-premium-hoodie-front.jpg',
+      '/images/products/krown-supply-crewneck-sweatshirt.png',
     ],
     variants: [
       { id: 901, color: 'Washed Onyx / Gold Insignia', size: 'S', price: 68.00, sku: 'KRN-CRW-ONX-S', isAvailable: true },
@@ -308,7 +308,7 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     id: 'krown-hat-btr-leather',
     name: 'KrowN Built to Reign® Richardson 112 Leather Patch Trucker Hat',
     slug: 'krown-built-to-reign-richardson-112-leather-patch-trucker-hat',
-    description: 'The signature KrowN Construction jobsite flagship. Built on the iconic Richardson 112 structured mid-profile silhouette and finished with our laser-engraved rustic leather patch with perimeter saddle stitching. Features breathable mesh back, pre-curved visor with contrast stitching, and adjustable snapback. Engineered to endure the harshest jobsite conditions.',
+    description: 'The signature KrowN Construction jobsite flagship matching our physical production sample. Built on the iconic Richardson 112 structured mid-profile silhouette with Cardinal / Crimson Red front panels, Dark Charcoal / Black curved visor with prominent white contrast stitching, breathable white mesh back, and the authentic silver/red Richardson 112 visor foil certification sticker. Finished with our custom wide horizontal clipped-corner hexagon genuine leatherette patch laser-burned with the authentic KrowN Construction insignia (interlocking KC with crown-trowel mark, arched K R O W N, and nested C O N S T R U C T I O N). Engineered to endure the harshest jobsite conditions.',
     collection: 'KrowN Construction',
     price: 29.99,
     baseCost: 11.50,
@@ -316,10 +316,9 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     images: [
       '/images/products/krown-r112-straight-front-hex-patch.jpg',
       '/images/products/krown-r112-isometric-hex-patch.jpg',
-      '/images/branding/construction/KC deck.jpg'
     ],
     variants: [
-      { id: 1001, color: 'BUILT Edition (Khaki / Espresso Mesh / Rustic Caramel Patch)', size: 'OSFA', price: 29.99, sku: 'KSC-HAT-112-BTR-BLKTAN-RST', isAvailable: true },
+      { id: 1001, color: 'Jobsite Flagship (Crimson Red / Black Visor / White Mesh)', size: 'OSFA', price: 29.99, sku: 'KSC-HAT-112-BTR-CRIMBLK-WHT', isAvailable: true },
       { id: 1002, color: 'OBSIDIAN Edition (Black / Black Mesh / Black Leather Patch)', size: 'OSFA', price: 29.99, sku: 'KSC-HAT-112-BTR-BLKBLK-BLK', isAvailable: true },
       { id: 1003, color: 'ROYAL Edition (Black / Charcoal Mesh / Purple Accent Patch)', size: 'OSFA', price: 29.99, sku: 'KSC-HAT-112-BTR-BLKCHR-PRP', isAvailable: true },
       { id: 1004, color: 'KROWN Edition (Bone White / Black Mesh / Gold Metallic Patch)', size: 'OSFA', price: 29.99, sku: 'KSC-HAT-112-BTR-WHTBLK-GLD', isAvailable: true },
@@ -327,14 +326,14 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     ],
     isNew: true,
     customBadge: 'Jobsite Flagship',
-    material: 'Authentic Richardson 112: 60% Cotton / 40% Polyester Front, 100% Polyester Mesh Back',
+    material: 'Authentic Richardson 112: Cardinal Red Front / Black Visor with White Contrast Stitching / White Mesh Back',
     fit: 'Structured Mid-Profile 6-Panel with Adjustable Snapback (OSFA 7 - 7 3/4)',
   },
   {
-    id: 'krown-hat-01',
-    name: 'Richardson 112 Trucker Hat (Crimson / Gold Crest Edition)',
-    slug: 'richardson-112-trucker-hat-crimson-gold',
-    description: 'The signature jobsite hat. Authentic Richardson 112 Original Trucker featuring a custom laser-engraved metallic antique gold hexagonal patch with the KrowN Construction emblem. Crimson front panels, black stitched visor, and heavy breathable mesh back.',
+    id: 'krown-hat-crimson',
+    name: 'Richardson 112 Trucker Hat - Crimson / Black Edition',
+    slug: 'richardson-112-trucker-hat-crimson-black',
+    description: 'The authentic production jobsite hat matching our physical sample. Built on the iconic Richardson 112 trucker silhouette featuring Cardinal / Crimson Red front crown panels, Dark Charcoal / Black curved bill with prominent white contrast double-stitching, breathable white mesh back, and the authentic silver/red Richardson 112 visor foil sticker. Centered with our genuine laser-burned wide horizontal clipped-corner hexagon leatherette patch displaying the authentic KrowN Construction mark.',
     collection: 'KrowN Construction',
     price: 34.99,
     baseCost: 9.80,
@@ -344,11 +343,11 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
       '/images/products/krown-r112-isometric-hex-patch.jpg',
     ],
     variants: [
-      { id: 101, color: 'Crimson / Black Mesh / Gold Patch', size: 'OSFA', price: 34.99, sku: 'KRN-HAT-R112-CRIM-BLK', isAvailable: true },
-      { id: 102, color: 'Crimson / White Mesh / Gold Patch', size: 'OSFA', price: 34.99, sku: 'KRN-HAT-R112-CRIM-WHT', isAvailable: true },
+      { id: 101, color: 'Crimson / Black Visor / White Mesh', size: 'OSFA', price: 34.99, sku: 'KRN-HAT-R112-CRIM-BLK', isAvailable: true },
+      { id: 102, color: 'Crimson / Black Visor / Black Mesh', size: 'OSFA', price: 34.99, sku: 'KRN-HAT-R112-CRIM-WHT', isAvailable: true },
     ],
     isNew: true,
-    material: 'Cotton-Poly Front / Nylon Mesh Back',
+    material: 'Authentic Richardson 112: Cardinal Red Front / Black Visor with White Contrast Stitching / White Mesh Back',
     fit: 'Richardson 112 Classic Structured Mid-Profile Snapback',
   },
   {
@@ -843,7 +842,12 @@ class PrintifyService {
    */
   async getProductById(idOrSlug: string): Promise<CatalogProduct | null> {
     const products = await this.getProducts();
-    const product = products.find(p => p.id === idOrSlug || p.slug === idOrSlug);
+    const product = products.find(p => 
+      p.id === idOrSlug || 
+      p.slug === idOrSlug ||
+      (idOrSlug === 'krown-hat-01' && p.id === 'krown-hat-crimson') ||
+      (idOrSlug === 'richardson-112-trucker-hat-crimson-gold' && (p.id === 'krown-hat-crimson' || p.slug === 'richardson-112-trucker-hat-crimson-black'))
+    );
     return product || null;
   }
 
@@ -1118,6 +1122,12 @@ export const PRINTIFY_SKU_CATALOG_MAPPINGS: Record<string, PrintifySkuMapping> =
     blueprintId: 112,
     printProviderId: 42,
     variantMap: { 'OSFA': 11201 },
+    category: 'Headwear',
+  },
+  'krown-hat-crimson': {
+    blueprintId: 112,
+    printProviderId: 42,
+    variantMap: { 'OSFA': 11202 },
     category: 'Headwear',
   },
   'krown-hat-01': {

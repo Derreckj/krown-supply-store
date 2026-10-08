@@ -103,7 +103,7 @@ Dominate the lobby in authentic competitive tournament gear. Designed by KrowN S
   11. `krown supply co` (15 chars)
   12. `minimalist hoodie` (17 chars)
   13. `premium streetwear` (18 chars)
-- **Materials**: 480 GSM Ultra-Heavyweight 100% French Terry Combed Cotton. Mineral washed charcoal black with metallic antique gold precision embroidered KrowN crown.
+- **Materials**: 480 GSM Ultra-Heavyweight 100% French Terry Combed Cotton. Mineral washed charcoal black with metallic antique gold and brushed steel 3D geometric faceted K-crown brand emblem on left chest, and statement back print with clean arched "KROWN SUPPLY CO." typography and official 3D geometric faceted K-crown emblem.
 - **Sizing Summary**: S: 44" Chest (27" L) | M: 46" Chest (28" L) | L: 48" Chest (29" L) | XL: 52" Chest (30" L) | 2XL: 56" Chest (31" L). Exaggerated boxy drop-shoulder cut.
 - **Care Instructions**: Machine wash cold inside-out with mild detergent. Hang dry or tumble dry ultra-low. Avoid fabric softeners to maintain heavyweight French terry handfeel.
 - **Custom Ordering Instructions**: Standard luxury blank item. Select your size (S through 2XL). Fits true to modern oversized streetwear styling.
@@ -117,7 +117,8 @@ Slogan: "WEAR THE KROWN."
 Engineered for purists who demand genuine luxury substance over fast fashion. Crafted from 480 GSM ultra-heavyweight combed French terry cotton in vintage washed charcoal black.
 
 ⭐ DESIGN HIGHLIGHTS:
-- Signature Antique Gold Embroidered KrowN Crown on left chest.
+- Left Chest: Minimalist metallic antique gold & brushed steel 3D geometric faceted K-crown crest.
+- Back Statement Print: Bold arched "KROWN SUPPLY CO." typography (strictly no apostrophe) with centered official 3D geometric faceted K-crown emblem.
 - Double-layered crossover hood with no drawstrings for a modern architectural neckline.
 - Exaggerated drop-shoulder silhouette with structured boxy torso drape.
 - Heavyweight 2x2 ribbed cuffs and waistband built to hold structure.
@@ -158,7 +159,7 @@ Engineered for purists who demand genuine luxury substance over fast fashion. Cr
   11. `built to reign cap` (18 chars)
   12. `krown construction` (18 chars)
   13. `custom company hats` (19 chars)
-- **Materials**: Authentic Richardson 112 Original Trucker (60% Cotton / 40% Poly Front, 100% Poly Mesh Back). Premium laser-engraved caramel leatherette patch with perimeter saddle stitching.
+- **Materials**: Authentic Richardson 112 Original Trucker: Cardinal / Crimson Red front crown, Dark Charcoal / Black curved bill with prominent white contrast stitching, White mesh back, and authentic silver/red Richardson 112 visor foil sticker. Finished with a custom wide horizontal clipped-corner hexagon genuine cognac leatherette patch with recessed perimeter saddle stitching.
 - **Sizing Summary**: OSFA (One Size Fits All). Richardson 112 classic adjustable 7-snap closure fitting hat sizes 7 to 7 3/4 (22" - 24.5" circumference).
 - **Care Instructions**: Spot clean front panels with damp cloth and mild soap. Air dry away from direct high heat. Do not submerge leather patch in water.
 - **Custom Ordering Instructions**: Available with the KrowN "Built to Reign" hallmark crest, or request custom logo bulk program (minimum 6 units for custom business proofs).
@@ -169,18 +170,21 @@ Engineered for purists who demand genuine luxury substance over fast fashion. Cr
 🔨 KrowN BUILT TO REIGN® RICHARDSON 112 LEATHER PATCH TRUCKER HAT 🔨
 Slogan: "BUILT TO REIGN."
 
-The definitive jobsite tradesman cap. Built exclusively on authentic Richardson 112 structured mid-profile blanks, crowned with our precision laser-engraved rustic leatherette patch with perimeter saddle stitching.
+The definitive jobsite tradesman cap matching our authentic physical production sample. Built exclusively on authentic Richardson 112 structured mid-profile blanks, crowned with our precision laser-engraved rustic leatherette patch with perimeter saddle stitching.
 
 ⭐ PRODUCT FEATURES:
 - Genuine Richardson 112 Original Trucker Cap silhouette.
-- Precision CO2 laser-etched rustic caramel leather patch.
-- Pre-curved contrast stitched visor that retains its shape.
-- Heavy-gauge breathable nylon mesh back for all-day comfort.
-- Heavy-duty adjustable plastic snapback.
+- Cardinal / Crimson Red structured front crown panels.
+- Dark Charcoal / Black pre-curved visor with prominent white contrast stitching.
+- Authentic silver and red Richardson 112 visor foil certification sticker.
+- Breathable white trucker mesh back.
+- Wide horizontal clipped-corner hexagon genuine cognac leatherette patch.
+- Precision laser-burned official KrowN Construction insignia: interlocking KC with crown-trowel mark, arched K R O W N, and nested C O N S T R U C T I O N.
+- Heavy-duty adjustable plastic snapback (OSFA 7 - 7 3/4).
 
 🧢 SPECIFICATIONS:
 - Profile: Structured Mid-Profile 6-Panel
-- Visor: Pre-curved with contrast stitching
+- Visor: Pre-curved with white contrast stitching & Richardson 112 foil sticker
 - Sweatband: Standard cotton
 - Size: Adjustable Snapback OSFA (7 – 7 3/4)
 

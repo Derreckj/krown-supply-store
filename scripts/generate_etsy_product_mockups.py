@@ -164,7 +164,7 @@ def generate_hard_hat_sticker_pack():
     draw = ImageDraw.Draw(canvas)
 
     # Header / Pack Label
-    draw.text((500, 80), "KROW'N TRADESMAN DECAL PACK", fill=(212, 175, 55), anchor="mm")
+    draw.text((500, 80), "KROWN TRADESMAN DECAL PACK", fill=(212, 175, 55), anchor="mm")
     draw.text((500, 115), "HEAVYWEIGHT 6 MIL WEATHERPROOF & SOLVENT-PROOF VINYL", fill=(148, 163, 184), anchor="mm")
 
     # Display 5 dynamic overlapping die-cut stickers with drop shadows
@@ -259,7 +259,7 @@ def generate_axiom_mug_mockup():
         canvas.paste(owl_res, (cx - owl_res.width // 2 - 20, cy - 90), owl_res)
 
     draw.text((cx - 20, cy + 95), "AXIOM ALLEGIANCE", fill=(168, 85, 247), anchor="mm")
-    draw.text((cx - 20, cy + 120), "PLAY TO REIGN • POWERED BY KROW'N", fill=(57, 255, 20), anchor="mm")
+    draw.text((cx - 20, cy + 120), "PLAY TO REIGN • POWERED BY KROWN", fill=(57, 255, 20), anchor="mm")
 
     out_p = os.path.join(PUBLIC_PRODUCTS, "axiom-owl-gamer-mug-15oz.png")
     canvas.save(out_p, "PNG")
@@ -315,7 +315,7 @@ def generate_cc1717_tee_mockup():
         draw.line([(cx + 80, y + 10), (cx + 190, y + 35)], fill=(30, 29, 33), width=4)
 
     # Distressed Gold Chest Graphic: "WEAR THE KROWN" + Insignia
-    draw.text((cx, cy - 80), "WEAR THE KROW'N", fill=(212, 175, 55), anchor="mm")
+    draw.text((cx, cy - 80), "WEAR THE KROWN", fill=(212, 175, 55), anchor="mm")
     draw.text((cx, cy - 50), "SUPPLY CO. // EST. 2026", fill=(160, 140, 75), anchor="mm")
     
     # Crown logo

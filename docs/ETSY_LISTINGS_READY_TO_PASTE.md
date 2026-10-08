@@ -124,8 +124,8 @@
   Printed on authentic Comfort Colors 1717 garment-dyed blanks in vintage Pepper Black. Made with 100% US ring-spun cotton that gives it that heavy, broken-in vintage feel straight out of the package.
 
   DESIGN:
-  • Front Chest: Distressed metallic gold "WEAR THE KROW'N" statement
-  • Back Print: Oversized heraldic crown insignia and "SUPPLY CO. EST 2026"
+  • Front Chest: Distressed metallic gold "WEAR THE KROWN" statement
+  • Back Print: Official 3D geometric faceted K-crown brand emblem and clean "KROWN SUPPLY CO." statement
 
   GARMENT SPECS:
   • 6.1 oz/yd² Heavyweight 100% Ring-Spun Cotton

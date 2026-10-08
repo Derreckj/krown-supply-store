@@ -58,8 +58,8 @@ def generate_crewneck_mockup():
     draw.rectangle([cx + 330, cy + 10, cx + 380, cy + 45], fill=(32, 30, 35))
     draw.rectangle([cx - 380, cy + 10, cx - 330, cy + 45], fill=(32, 30, 35))
 
-    # Front Embroidered Gold Crown & "KROW'N"
-    draw.text((cx, cy - 70), "KROW'N", fill=(212, 175, 55), anchor="mm")
+    # Front Embroidered Gold Crown & "KROWN"
+    draw.text((cx, cy - 70), "KROWN", fill=(212, 175, 55), anchor="mm")
     draw.text((cx, cy - 40), "SUPPLY CO. // HEAVY FLEECE", fill=(160, 140, 75), anchor="mm")
 
     kc_path = os.path.join(PUBLIC_BRANDING_C, "KC logo black and white.png")
@@ -179,7 +179,7 @@ def generate_streetwear_shorts_mockup():
         gold_kc = Image.fromarray(arr)
         canvas.paste(gold_kc, (cx - 190, cy + 120), gold_kc)
 
-    draw.text((cx + 140, cy + 180), "WEAR THE KROW'N", fill=(212, 175, 55), anchor="mm")
+    draw.text((cx + 140, cy + 180), "WEAR THE KROWN", fill=(212, 175, 55), anchor="mm")
 
     out_p = os.path.join(PUBLIC_PRODUCTS, "krown-french-terry-streetwear-shorts.png")
     canvas.save(out_p, "PNG")
