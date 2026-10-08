@@ -93,14 +93,14 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     id: 'krown-hoodie-premium',
     name: 'KrowN Supply Co. 480 GSM Heavyweight Streetwear Hoodie',
     slug: 'krown-supply-co-480gsm-heavyweight-streetwear-hoodie',
-    description: 'The pinnacle of luxury streetwear. Cut from ultra-heavyweight 480 GSM French terry cotton in vintage washed charcoal black with drop shoulders and an exaggerated crossover double-layered hood. Features our minimal metallic antique gold and brushed steel 3D geometric faceted K-crown brand emblem on the left chest, and a bold statement back print with clean arched "KROWN SUPPLY CO." typography and the official faceted 3D geometric K-crown brand emblem. Heavy split-stitch construction, thick ribbed cuffs and hem, and relaxed modern drape.',
+    description: 'The pinnacle of luxury streetwear. Cut from ultra-heavyweight 480 GSM French terry cotton in vintage washed charcoal black with drop shoulders and an exaggerated crossover double-layered hood. Features our minimal metallic antique gold and brushed steel 3D geometric faceted K-crown brand emblem on the left chest, and a bold statement back print with clean arched "KrowN Supply Co." typography and the official faceted 3D geometric K-crown brand emblem. Heavy split-stitch construction, thick ribbed cuffs and hem, and relaxed modern drape.',
     collection: 'KrowN Supply Co.',
     price: 88.00,
     baseCost: 28.00,
     printCost: 8.00,
     images: [
       '/images/products/krown-supply-premium-hoodie-front.jpg',
-      '/images/products/krown-boxy-heavy-hoodie-mineral-wash.jpg',
+      '/images/products/krown-heavyweight-hoodie-back-krown.jpg',
     ],
     variants: [
       { id: 2011, color: 'Vintage Washed Charcoal / Gold Crest', size: 'S', price: 88.00, sku: 'KSC-HD-480-S', isAvailable: true },
