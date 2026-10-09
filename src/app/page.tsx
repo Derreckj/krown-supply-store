@@ -56,41 +56,38 @@ export default function Home() {
         </div>
       </section>
 
-      {/* HEADWEAR & B2B CUSTOM CREW SPOTLIGHT */}
+      {/* HEADWEAR SPOTLIGHT */}
       <section className={`${styles.headwearSection} container`}>
         <div className={styles.headwearBanner}>
           <div className={styles.headwearText}>
-            <div className={styles.headwearBadge}>★ FLAGSHIP HEADWEAR DIVISION</div>
-            <h2 className={styles.headwearTitle}>Authentic Richardson 112 Custom Leather-Patch Hats</h2>
+            <div className={styles.headwearBadge}>★ FLAGSHIP HEADWEAR</div>
+            <h2 className={styles.headwearTitle}>Authentic Richardson 112 Leather Patch Snapback</h2>
             <p className={styles.headwearDesc}>
-              Engineered with genuine saddle-stitched caramel leatherette patches on authentic Richardson 112 truckers.
-              Shown with our KrowN Supply Co. emblem as a finished demonstration sample. Order custom hats engraved with your own approved company or team logo with zero setup fees.
+              Engineered with genuine laser-etched saddle tan leatherette patches on authentic Richardson 112 truckers.
+              Cut on the classic structured mid-profile silhouette featuring breathable nylon mesh, pre-curved visor with contrast double-stitching, and adjustable snapback closure.
             </p>
             <div className={styles.headwearActions}>
               <Link href="/products/custom-krown-works-hat" className="btn-primary">
-                View Sample Hat ($29.99)
-              </Link>
-              <Link href="/custom-crew" className={styles.btnHeadwearCustom}>
-                Order Custom Crew Hats (Save 20%) &rarr;
+                Shop Richardson 112 Snapback ($29.99)
               </Link>
             </div>
           </div>
           <div className={styles.headwearImageGrid}>
             <div className={styles.headwearCard}>
               <img 
-                src="/images/products/krown-r112-custom-supply-sample.jpg" 
-                alt="Richardson 112 Saddle Leather Patch" 
+                src="/images/products/krown-r112-leather-patch-hat-front.jpg" 
+                alt="Richardson 112 Saddle Leather Patch Snapback" 
                 className={styles.headwearImg}
               />
-              <span className={styles.headwearTag}>KrowN Supply Co. Sample 112</span>
+              <span className={styles.headwearTag}>KrowN Supply Co. Snapback</span>
             </div>
             <div className={styles.headwearCard}>
               <img 
-                src="/images/products/krown-r112-straight-front-hex-patch.jpg" 
-                alt="KrowN Construction Hex Patch Hat" 
+                src="/images/products/krown-r112-leather-patch-hat-hero.jpg" 
+                alt="Richardson 112 Leather Patch Angle" 
                 className={styles.headwearImg}
               />
-              <span className={styles.headwearTag}>KrowN Construction Hex 112</span>
+              <span className={styles.headwearTag}>Structured 112 Profile</span>
             </div>
           </div>
         </div>

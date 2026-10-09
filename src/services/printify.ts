@@ -197,26 +197,24 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
   },
   {
     id: 'custom-krown-works-hat',
-    name: 'Custom Logo Richardson 112 Leather Patch Hat (KrowN Supply Co. Display Sample)',
-    slug: 'custom-logo-richardson-112-leather-patch-hat',
-    description: 'Bring your business, trade crew, or gaming organization under the KrowN standard. Authentic Richardson 112 structured mid-profile snapbacks customized with commercial-grade laser-engraved leatherette patches with recessed perimeter stitching. Displayed with the KrowN Supply Co. emblem as an official demonstration sample. Order single sample units or bulk crew tiers with your own approved company logo. Digital proof approval included within 1–2 days before production begins.',
+    name: 'KrowN Supply Co. Richardson 112 Leather Patch Trucker Snapback',
+    slug: 'krown-supply-co-richardson-112-leather-patch-trucker-snapback',
+    description: 'The signature flagship headwear of KrowN Supply Co. Cut on the authentic Richardson 112 structured mid-profile silhouette featuring breathable nylon mesh, pre-curved bill with contrast double-stitching, and our genuine laser-etched saddle tan leatherette crown patch. Standard adjustable snapback closure for a tailored streetwear fit.',
     collection: 'KrowN Supply Co.',
     price: 29.99,
     baseCost: 11.50,
     printCost: 4.50,
     images: [
-      '/images/products/krown-r112-custom-supply-sample.jpg',
-      '/images/products/krown-r112-isometric-hex-patch.jpg',
+      '/images/products/krown-r112-leather-patch-hat-front.jpg',
       '/images/products/krown-r112-leather-patch-hat-hero.jpg',
     ],
     variants: [
-      { id: 1021, color: 'Custom Logo (Single Hat / Sample)', size: '1 Hat', price: 29.99, sku: 'KSC-CUST-112-1', isAvailable: true },
-      { id: 1022, color: 'Custom Logo (Crew Pack • 10% Off)', size: '6-Pack ($27/hat)', price: 162.00, sku: 'KSC-CUST-112-6', isAvailable: true },
-      { id: 1023, color: 'Custom Logo (Business Pack • 15% Off)', size: '12-Pack ($25.50/hat)', price: 306.00, sku: 'KSC-CUST-112-12', isAvailable: true },
-      { id: 1024, color: 'Custom Logo (Company Pack • 20% Off)', size: '24-Pack ($24/hat)', price: 576.00, sku: 'KSC-CUST-112-24', isAvailable: true },
+      { id: 1021, color: 'Heather Grey & Black / Saddle Tan Leather Patch', size: 'OSFA', price: 29.99, sku: 'KSC-HAT-112-GRY', isAvailable: true },
+      { id: 1022, color: 'Obsidian Black / Raw Black Leather Patch', size: 'OSFA', price: 29.99, sku: 'KSC-HAT-112-BLK', isAvailable: true },
+      { id: 1023, color: 'Charcoal & Black / Honey Leather Patch', size: 'OSFA', price: 29.99, sku: 'KSC-HAT-112-CHR', isAvailable: true },
     ],
     isNew: true,
-    customBadge: 'B2B Custom Program',
+    customBadge: 'Signature Headwear',
     material: 'Authentic Richardson 112: Heather Grey/Black Mesh with Laser-Engraved Caramel Leatherette Patch',
     fit: 'Structured Mid-Profile Snapback (OSFA 7 - 7 3/4)',
   },
@@ -315,73 +313,7 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
   // 2. KrowN Construction LLC (Jobsite Workwear)
   // Slogan: "BUILT TO REIGN."
   // ==========================================
-  {
-    id: 'krown-hat-btr-leather',
-    name: 'KrowN Built to Reign® Richardson 112 Leather Patch Trucker Hat',
-    slug: 'krown-built-to-reign-richardson-112-leather-patch-trucker-hat',
-    description: 'The signature KrowN Construction jobsite flagship matching our physical production sample. Built on the iconic Richardson 112 structured mid-profile silhouette with Cardinal / Crimson Red front panels, Dark Charcoal / Black curved visor with prominent white contrast stitching, breathable white mesh back, and the authentic silver/red Richardson 112 visor foil certification sticker. Finished with our custom wide horizontal clipped-corner hexagon genuine leatherette patch laser-burned with the authentic KrowN Construction insignia (interlocking KC with crown-trowel mark, arched K R O W N, and nested C O N S T R U C T I O N). Engineered to endure the harshest jobsite conditions.',
-    collection: 'KrowN Construction',
-    price: 29.99,
-    baseCost: 11.50,
-    printCost: 4.50,
-    images: [
-      '/images/products/krown-r112-crimson-black-front.jpg',
-      '/images/products/krown-r112-crimson-black-angle.jpg',
-      '/images/products/krown-r112-custom-supply-sample.jpg',
-    ],
-    variants: [
-      { id: 1001, color: 'Jobsite Flagship (Crimson Red / Black Visor / White Mesh)', size: 'OSFA', price: 29.99, sku: 'KSC-HAT-112-BTR-CRIMBLK-WHT', isAvailable: true },
-      { id: 1002, color: 'OBSIDIAN Edition (Black / Black Mesh / Black Leather Patch)', size: 'OSFA', price: 29.99, sku: 'KSC-HAT-112-BTR-BLKBLK-BLK', isAvailable: true },
-      { id: 1003, color: 'ROYAL Edition (Black / Charcoal Mesh / Purple Accent Patch)', size: 'OSFA', price: 29.99, sku: 'KSC-HAT-112-BTR-BLKCHR-PRP', isAvailable: true },
-      { id: 1004, color: 'KROWN Edition (Bone White / Black Mesh / Gold Metallic Patch)', size: 'OSFA', price: 29.99, sku: 'KSC-HAT-112-BTR-WHTBLK-GLD', isAvailable: true },
-      { id: 1005, color: 'STEALTH Edition (Charcoal / Black Mesh / Tonal Dark Patch)', size: 'OSFA', price: 29.99, sku: 'KSC-HAT-112-BTR-CHRBLK-TNL', isAvailable: true },
-    ],
-    isNew: true,
-    customBadge: 'Jobsite Flagship',
-    material: 'Authentic Richardson 112: Cardinal Red Front / Black Visor with White Contrast Stitching / White Mesh Back',
-    fit: 'Structured Mid-Profile 6-Panel with Adjustable Snapback (OSFA 7 - 7 3/4)',
-  },
-  {
-    id: 'krown-hat-crimson',
-    name: 'Richardson 112 Trucker Hat - Crimson / Black Edition',
-    slug: 'richardson-112-trucker-hat-crimson-black',
-    description: 'The authentic production jobsite hat matching our physical sample. Built on the iconic Richardson 112 trucker silhouette featuring Cardinal / Crimson Red front crown panels, Dark Charcoal / Black curved bill with prominent white contrast double-stitching, breathable white mesh back, and the authentic silver/red Richardson 112 visor foil sticker. Centered with our genuine laser-burned wide horizontal clipped-corner hexagon leatherette patch displaying the authentic KrowN Construction mark.',
-    collection: 'KrowN Construction',
-    price: 34.99,
-    baseCost: 9.80,
-    printCost: 5.50,
-    images: [
-      '/images/products/krown-r112-straight-front-hex-patch.jpg',
-      '/images/products/krown-r112-isometric-hex-patch.jpg',
-    ],
-    variants: [
-      { id: 101, color: 'Crimson / Black Visor / White Mesh', size: 'OSFA', price: 34.99, sku: 'KRN-HAT-R112-CRIM-BLK', isAvailable: true },
-      { id: 102, color: 'Crimson / Black Visor / Black Mesh', size: 'OSFA', price: 34.99, sku: 'KRN-HAT-R112-CRIM-WHT', isAvailable: true },
-    ],
-    isNew: true,
-    material: 'Authentic Richardson 112: Cardinal Red Front / Black Visor with White Contrast Stitching / White Mesh Back',
-    fit: 'Richardson 112 Classic Structured Mid-Profile Snapback',
-  },
-  {
-    id: 'krown-hat-02',
-    name: 'Richardson 112 Trucker Hat (Bone White / Gold Patch)',
-    slug: 'richardson-112-trucker-hat-bone-white',
-    description: 'Crisp bone-white front panels paired with black stitched visor, breathable black mesh, and the custom laser-etched metallic gold KrowN Construction patch. Heavy jobsite tradesman construction.',
-    collection: 'KrowN Construction',
-    price: 34.99,
-    baseCost: 9.80,
-    printCost: 5.50,
-    images: [
-      '/images/products/krown-r112-white-black-gold-front.png',
-      '/images/products/krown-r112-white-black-top.png',
-    ],
-    variants: [
-      { id: 103, color: 'Bone White / Black Mesh / Gold Patch', size: 'OSFA', price: 34.99, sku: 'KRN-HAT-R112-WHT', isAvailable: true },
-    ],
-    isNew: true,
-    material: 'Cotton-Poly Front / Nylon Mesh Back',
-    fit: 'Richardson 112 Classic Structured Mid-Profile Snapback',
-  },
+
   {
     id: 'kc-beanie-01',
     name: 'KrowN Heavy Ribbed Cuffed Jobsite Beanie',
@@ -970,7 +902,6 @@ class PrintifyService {
         replacedMockIds.add('krown-hoodie-premium');
       } else if (nameLower.includes('richardson') || nameLower.includes('snapback') || nameLower.includes('112')) {
         replacedMockIds.add('custom-krown-works-hat');
-        replacedMockIds.add('krown-hat-btr-leather');
       } else if (nameLower.includes('comfort colors') || nameLower.includes('1717')) {
         replacedMockIds.add('krown-tee-cc1717');
       } else if (nameLower.includes('beanie')) {
@@ -999,7 +930,6 @@ class PrintifyService {
     // Alias mapping between legacy mock slugs and new live Printify products
     const aliasMap: Record<string, string[]> = {
       'custom-krown-works-hat': ['6ac80dc2f4d488e1be0b0902', 'richardson', 'snapback'],
-      'krown-hat-btr-leather': ['6ac80dc2f4d488e1be0b0902'],
       'krown-hoodie-premium': ['6ac80dff9f3e89dde70da38d', 'krown-heavyweight-streetwear-hoodie'],
       'kc-tumbler-01': ['6ac7ed40fea4d4e68e0a0f6a', '20oz-vacuum-insulated-jobsite-tumbler'],
       'krown-tee-cc1717': ['6ac7ed0b9bfbeab23800dcdf', 'krown-wear-the-krown-comfort-colors-1717'],
@@ -1015,9 +945,7 @@ class PrintifyService {
       p.id === idOrSlug || 
       p.slug === idOrSlug ||
       targetAliases.includes(p.id) ||
-      targetAliases.some(alias => p.slug.includes(alias)) ||
-      (idOrSlug === 'krown-hat-01' && p.id === 'krown-hat-crimson') ||
-      (idOrSlug === 'richardson-112-trucker-hat-crimson-gold' && (p.id === 'krown-hat-crimson' || p.slug === 'richardson-112-trucker-hat-crimson-black'))
+      targetAliases.some(alias => p.slug.includes(alias))
     );
     return product || null;
   }
@@ -1072,18 +1000,42 @@ class PrintifyService {
   }
 
   private transformPrintifyProducts(rawList: PrintifyProductRaw[]): CatalogProduct[] {
-    return rawList.map(raw => {
+    const validProducts: CatalogProduct[] = [];
+
+    for (const raw of rawList) {
+      const titleLower = raw.title.toLowerCase();
+
+      // Zero KrowN Construction hats in the store
+      const isConstructionHat = (titleLower.includes('construction') || titleLower.includes('kc') || titleLower.includes('btr')) && 
+        (titleLower.includes('hat') || titleLower.includes('snapback') || titleLower.includes('richardson') || titleLower.includes('cap'));
+      if (isConstructionHat) {
+        continue;
+      }
+
       const minPriceCents = Math.min(...raw.variants.map(v => v.price));
       const minCostCents = Math.min(...raw.variants.map(v => v.cost));
-      const retailPrice = minPriceCents / 100;
+      let retailPrice = minPriceCents / 100;
       const baseCost = minCostCents / 100;
 
       let collection: CatalogProduct['collection'] = 'KrowN Supply Co.';
-      const titleLower = raw.title.toLowerCase();
       if (titleLower.includes('construction') || titleLower.includes('tradesman') || titleLower.includes('jobsite')) {
         collection = 'KrowN Construction';
       } else if (titleLower.includes('axiom') || titleLower.includes('axa') || titleLower.includes('gaming') || titleLower.includes('desk mat') || titleLower.includes('sleeve') || titleLower.includes('shaker')) {
         collection = 'AXA / Axiom Allegiance';
+      }
+
+      let productName = raw.title;
+      let productSlug = raw.title.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+      let productDesc = raw.description.replace(/<[^>]*>?/gm, '');
+
+      // Check if Richardson 112 headwear - strip all "Custom Logo / Display Sample" artifacts
+      const isRichardsonHat = titleLower.includes('richardson') || titleLower.includes('snapback') || titleLower.includes('112') || titleLower.includes('leather patch');
+
+      if (isRichardsonHat) {
+        productName = 'KrowN Supply Co. Richardson 112 Leather Patch Trucker Snapback';
+        productSlug = 'krown-supply-co-richardson-112-leather-patch-trucker-snapback';
+        productDesc = 'The signature flagship headwear of KrowN Supply Co. Cut on the authentic Richardson 112 structured mid-profile silhouette featuring breathable nylon mesh, pre-curved bill with contrast double-stitching, and our genuine laser-etched saddle tan leatherette crown patch. Standard adjustable snapback closure for a tailored streetwear fit.';
+        retailPrice = 29.99;
       }
 
       // High-Conversion Commercial Studio & Model Photography Overrides
@@ -1100,11 +1052,10 @@ class PrintifyService {
           '/images/products/krown-hoodie-female-model.jpg',
           '/images/products/krown-heavyweight-hoodie-back-krown.jpg',
         ];
-      } else if (titleLower.includes('richardson') || titleLower.includes('snapback') || titleLower.includes('112') || titleLower.includes('leather patch')) {
+      } else if (isRichardsonHat) {
         productImages = [
           '/images/products/krown-r112-leather-patch-hat-front.jpg',
           '/images/products/krown-r112-leather-patch-hat-hero.jpg',
-          '/images/products/krown-r112-crimson-black-angle.jpg',
         ];
       } else if (titleLower.includes('beanie')) {
         productImages = [
@@ -1141,31 +1092,49 @@ class PrintifyService {
               : ['/images/products/krown-supply-premium-hoodie-front.jpg']);
       }
 
-      return {
+      const variants = raw.variants.map(v => {
+        let color = v.options.color || 'Standard';
+        let size = v.options.size || 'One Size';
+
+        if (isRichardsonHat) {
+          if (color.toLowerCase().includes('custom') || color.toLowerCase().includes('sample') || color.toLowerCase().includes('standard')) {
+            color = 'Heather Grey & Black / Saddle Tan Leather Patch';
+          }
+          if (size.toLowerCase().includes('hat') || size.toLowerCase().includes('sample') || size.toLowerCase().includes('one size')) {
+            size = 'OSFA';
+          }
+        }
+
+        return {
+          id: v.id,
+          color,
+          size,
+          price: isRichardsonHat ? 29.99 : v.price / 100,
+          sku: v.sku,
+          isAvailable: v.is_available && v.is_enabled,
+        };
+      });
+
+      validProducts.push({
         id: raw.id,
-        name: raw.title,
-        slug: raw.title.toLowerCase().replace(/[^a-z0-9]+/g, '-'),
-        description: raw.description.replace(/<[^>]*>?/gm, ''), // strip html tags
+        name: productName,
+        slug: productSlug,
+        description: productDesc,
         collection,
         price: retailPrice,
         baseCost,
         printCost: 5.00,
         images: productImages,
-        variants: raw.variants.map(v => ({
-          id: v.id,
-          color: v.options.color || 'Standard',
-          size: v.options.size || 'One Size',
-          price: v.price / 100,
-          sku: v.sku,
-          isAvailable: v.is_available && v.is_enabled,
-        })),
+        variants,
         economics: calculateProductEconomics({
           baseCost,
           printCost: 5.00,
           retailPrice,
         })
-      };
-    });
+      });
+    }
+
+    return validProducts;
   }
 
   /**
@@ -1342,31 +1311,19 @@ export const PRINTIFY_SKU_CATALOG_MAPPINGS: Record<string, PrintifySkuMapping> =
   'custom-krown-works-hat': {
     blueprintId: 112, // Richardson 112 Original Trucker Snapback
     printProviderId: 42, // Headwear & Laser Leatherette Specialist
-    variantMap: { '1 Hat': 11201, '6-Pack ($27/hat)': 11206, '12-Pack ($25.50/hat)': 11212, '24-Pack ($24/hat)': 11224 },
+    variantMap: {
+      'OSFA': 11201,
+      'Heather Grey & Black / Saddle Tan Leather Patch': 11201,
+      'Obsidian Black / Raw Black Leather Patch': 11202,
+      'Charcoal & Black / Honey Leather Patch': 11203,
+      '1 Hat': 11201,
+    },
     category: 'Headwear',
   },
-  'krown-hat-btr-leather': {
-    blueprintId: 112,
+  'krown-dadhat-01': {
+    blueprintId: 204, // Vintage Washed Chino Dad Hat
     printProviderId: 42,
-    variantMap: { 'OSFA': 11201 },
-    category: 'Headwear',
-  },
-  'krown-hat-crimson': {
-    blueprintId: 112,
-    printProviderId: 42,
-    variantMap: { 'OSFA': 11202 },
-    category: 'Headwear',
-  },
-  'krown-hat-01': {
-    blueprintId: 112,
-    printProviderId: 42,
-    variantMap: { 'OSFA': 11202 },
-    category: 'Headwear',
-  },
-  'krown-hat-02': {
-    blueprintId: 112,
-    printProviderId: 42,
-    variantMap: { 'OSFA': 11203 },
+    variantMap: { 'OSFA': 20401, 'Vintage Washed Black / Gold Embroidery': 20401 },
     category: 'Headwear',
   },
   'kc-beanie-01': {

@@ -112,16 +112,16 @@ async function runEndToEndSimulation() {
   };
 
   const hatItem: TestCartItem = {
-    id: 'krown-hat-btr-leather-11201',
-    productId: 'krown-hat-btr-leather',
-    name: 'KrowN Built to Reign® Richardson 112 Leather Patch Trucker Hat',
-    price: 36.99,
+    id: 'custom-krown-works-hat-11201',
+    productId: 'custom-krown-works-hat',
+    name: 'KrowN Supply Co. Richardson 112 Leather Patch Trucker Snapback',
+    price: 29.99,
     quantity: 1,
     variant: {
       id: 11201,
-      color: 'BUILT Edition (Khaki / Espresso Mesh)',
+      color: 'Heather Grey & Black / Saddle Tan Leather Patch',
       size: 'OSFA',
-      sku: 'KSC-HAT-112-BTR-BLKTAN-RST',
+      sku: 'KSC-HAT-112-GRY',
     },
   };
 
@@ -288,7 +288,7 @@ async function runEndToEndSimulation() {
         playerNumber: '07',
       },
       {
-        productId: 'krown-hat-btr-leather',
+        productId: 'custom-krown-works-hat',
         size: 'OSFA',
         quantity: 1,
       },

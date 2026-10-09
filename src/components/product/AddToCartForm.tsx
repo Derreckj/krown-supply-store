@@ -33,7 +33,7 @@ export default function AddToCartForm({ product }: { product: CatalogProduct }) 
 
   const isOutOfStock = currentVariant ? !currentVariant.isAvailable : false;
   const isJersey = product.id.startsWith('axiom-jersey');
-  const isPersonalizable = selectedColor.toLowerCase().includes('custom') || isJersey || product.id === 'custom-krown-works-hat';
+  const isPersonalizable = isJersey;
 
   // Calculate dynamic upcharges
   let addOnsPrice = 0;
