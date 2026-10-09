@@ -18,6 +18,7 @@ export default function AddToCartForm({ product }: { product: CatalogProduct }) 
   const [selectedSize, setSelectedSize] = useState<string>(sizes[0] || 'One Size');
   const [quantity, setQuantity] = useState<number>(1);
   const [gamertag, setGamertag] = useState<string>('');
+  const [casingOption, setCasingOption] = useState<'exact' | 'uppercase'>('exact');
   const [playerNumber, setPlayerNumber] = useState<string>('');
   const [addedMessage, setAddedMessage] = useState<boolean>(false);
   const [isSizeGuideOpen, setIsSizeGuideOpen] = useState<boolean>(false);
@@ -33,7 +34,8 @@ export default function AddToCartForm({ product }: { product: CatalogProduct }) 
   const handleAddToCart = () => {
     if (isOutOfStock) return;
 
-    const sanitizedTag = gamertag.trim().toUpperCase().slice(0, 16);
+    const trimmedTag = gamertag.trim().slice(0, 16);
+    const sanitizedTag = casingOption === 'uppercase' ? trimmedTag.toUpperCase() : trimmedTag;
     const sanitizedNum = playerNumber.trim().replace(/\D/g, '').slice(0, 2);
 
     const customSnippet = isPersonalizable && sanitizedTag 
@@ -117,23 +119,83 @@ export default function AddToCartForm({ product }: { product: CatalogProduct }) 
           padding: '1rem',
           marginBottom: '1.25rem'
         }}>
-          <div style={{ fontSize: '0.8rem', fontWeight: 800, color: '#39FF14', letterSpacing: '0.08em', marginBottom: '0.65rem', textTransform: 'uppercase' }}>
-            ⚡ Pro Player Gamertag Personalization
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.65rem' }}>
+            <span style={{ fontSize: '0.8rem', fontWeight: 800, color: '#39FF14', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+              ⚡ Pro Player Gamertag Personalization
+            </span>
           </div>
+
+          {/* Casing Style Option */}
+          <div style={{ marginBottom: '0.75rem' }}>
+            <label style={{ fontSize: '0.75rem', color: 'var(--text-muted)', display: 'block', marginBottom: '0.35rem' }}>
+              Gamertag Casing Style:
+            </label>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem' }}>
+              <button
+                type="button"
+                onClick={() => setCasingOption('exact')}
+                style={{
+                  padding: '0.45rem 0.5rem',
+                  fontSize: '0.75rem',
+                  fontWeight: casingOption === 'exact' ? 700 : 500,
+                  background: casingOption === 'exact' ? 'rgba(57, 255, 20, 0.15)' : 'rgba(255, 255, 255, 0.03)',
+                  border: casingOption === 'exact' ? '1px solid #39FF14' : '1px solid rgba(255, 255, 255, 0.15)',
+                  color: casingOption === 'exact' ? '#39FF14' : 'var(--text-muted)',
+                  borderRadius: '4px',
+                  cursor: 'pointer',
+                  transition: 'all 0.15s ease',
+                  textAlign: 'center',
+                }}
+              >
+                Exact Case (e.g. &ldquo;KrowN&rdquo;)
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  setCasingOption('uppercase');
+                  if (gamertag) setGamertag(gamertag.toUpperCase());
+                }}
+                style={{
+                  padding: '0.45rem 0.5rem',
+                  fontSize: '0.75rem',
+                  fontWeight: casingOption === 'uppercase' ? 700 : 500,
+                  background: casingOption === 'uppercase' ? 'rgba(57, 255, 20, 0.15)' : 'rgba(255, 255, 255, 0.03)',
+                  border: casingOption === 'uppercase' ? '1px solid #39FF14' : '1px solid rgba(255, 255, 255, 0.15)',
+                  color: casingOption === 'uppercase' ? '#39FF14' : 'var(--text-muted)',
+                  borderRadius: '4px',
+                  cursor: 'pointer',
+                  transition: 'all 0.15s ease',
+                  textAlign: 'center',
+                }}
+              >
+                ALL CAPS (e.g. &ldquo;KROWN&rdquo;)
+              </button>
+            </div>
+          </div>
+
           <div className="form-group" style={{ marginBottom: '0.75rem' }}>
             <label htmlFor="gamertag-input" style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
-              Gamertag / Player Name (Max 16 Chars, All Caps):
+              Gamertag / Player Name (Max 16 Chars):
             </label>
             <input
               type="text"
               id="gamertag-input"
               value={gamertag}
-              onChange={(e) => setGamertag(e.target.value.toUpperCase().slice(0, 16))}
-              placeholder="e.g. VIPER"
+              onChange={(e) => {
+                const val = e.target.value.slice(0, 16);
+                setGamertag(casingOption === 'uppercase' ? val.toUpperCase() : val);
+              }}
+              placeholder={casingOption === 'exact' ? 'e.g. KrowN' : 'e.g. KROWN'}
               className="form-input"
-              style={{ textTransform: 'uppercase', letterSpacing: '0.08em' }}
+              style={{
+                textTransform: casingOption === 'uppercase' ? 'uppercase' : 'none',
+                letterSpacing: casingOption === 'uppercase' ? '0.08em' : '0.04em'
+              }}
+              autoComplete="off"
+              spellCheck={false}
             />
           </div>
+
           <div className="form-group" style={{ marginBottom: 0 }}>
             <label htmlFor="number-input" style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
               Squad Number (00-99, Optional):
@@ -147,6 +209,26 @@ export default function AddToCartForm({ product }: { product: CatalogProduct }) 
               className="form-input"
             />
           </div>
+
+          {(gamertag.trim() || playerNumber.trim()) && (
+            <div style={{
+              marginTop: '0.85rem',
+              padding: '0.55rem 0.85rem',
+              background: 'rgba(0, 0, 0, 0.55)',
+              border: '1px solid rgba(57, 255, 20, 0.35)',
+              borderRadius: '6px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              fontSize: '0.8rem'
+            }}>
+              <span style={{ color: 'var(--text-muted)', fontSize: '0.75rem' }}>Back-Print Preview:</span>
+              <span style={{ fontWeight: 800, color: '#39FF14', letterSpacing: '0.06em', fontFamily: 'monospace' }}>
+                {casingOption === 'uppercase' ? gamertag.trim().toUpperCase() : gamertag.trim()}
+                {playerNumber.trim() ? ` #${playerNumber.trim()}` : ''}
+              </span>
+            </div>
+          )}
         </div>
       )}
 
