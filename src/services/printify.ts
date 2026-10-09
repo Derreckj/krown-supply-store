@@ -626,6 +626,31 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
   },
 
   {
+    id: 'axiom-shaker-01',
+    name: 'Axiom Allegiance Pro Loadout Shaker',
+    slug: 'axiom-allegiance-pro-loadout-shaker',
+    description: 'Fuel up for overtime clutches and all-night ranked marathons. Ultra-premium gaming supplement shaker bottle featuring semi-translucent frosted shatterproof BPA-free body with measurement lines up to 20oz, leak-proof snap cap, royal purple silicone collar with crisp KrowN embossing, ergonomic carrying loop, surgical stainless steel whisk ball, and the authentic Axiom Allegiance owl crest with distinctive A-X-A facial geometry and "POWERED BY KROWN" inscription. Available in Toxic Lime & Royal Purple, Stealth Blackout, and Vacuum Insulated Stainless Steel.',
+    collection: 'AXA / Axiom Allegiance',
+    price: 24.99,
+    baseCost: 7.20,
+    printCost: 3.80,
+    images: [
+      '/images/products/axiom-vibrant-gaming-shaker-bottle.jpg',
+      '/images/products/axiom-shaker-stealth-blackout.jpg',
+      '/images/products/axiom-shaker-insulated-steel.jpg',
+      '/images/products/axiom-shaker-bottles-3-editions.jpg',
+      '/images/branding/gaming/axiom-owl-mascot.png',
+    ],
+    variants: [
+      { id: 1201, color: 'Toxic Lime & Royal Purple / Smoke Body', size: '24 oz (700ml)', price: 24.99, sku: 'AXM-SHK-24-LIMEPRP', isAvailable: true },
+      { id: 1202, color: 'Stealth Blackout / Obsidian Body', size: '24 oz (700ml)', price: 24.99, sku: 'AXM-SHK-24-STEALTH', isAvailable: true },
+      { id: 1203, color: 'Pro Insulated Stainless Steel (Double-Wall)', size: '26 oz (770ml)', price: 34.99, sku: 'AXM-SHK-26-STEEL', isAvailable: true },
+    ],
+    isNew: true,
+    material: 'BPA-Free Eastar™ Tritan / Double-Wall Kitchen-Grade Steel • Stainless Steel Whisk Ball',
+    fit: '24–26 oz Capacity • Fits Standard Car & Desk Cupholders',
+  },
+  {
     id: 'axiom-mug-01',
     name: 'Axiom Owl Two-Tone Ceramic Gaming Mug (15oz)',
     slug: 'axiom-owl-two-tone-gaming-mug-15oz',
@@ -712,9 +737,9 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     variants: [
       { id: 3101, color: 'Battlestation Obsidian / Lime & Purple Stitching', size: 'Medium (M) 14"x12" (360x300mm)', price: 19.99, sku: 'AXM-MAT-360', isAvailable: true },
       { id: 3102, color: 'Battlestation Obsidian / Lime & Purple Stitching', size: 'Large (L) 18"x16" (450x400mm)', price: 26.99, sku: 'AXM-MAT-450', isAvailable: true },
-      { id: 3103, color: 'Battlestation Obsidian / Lime & Purple Stitching', size: 'Extended (XL) 31.5"x12" (800x300mm)', price: 32.99, sku: 'AXM-MAT-800', isAvailable: true },
-      { id: 3104, color: 'Battlestation Obsidian / Lime & Purple Stitching', size: 'Panoramic (2XL) 35.4"x16" (900x400mm)', price: 39.99, sku: 'AXM-MAT-900', isAvailable: true },
-      { id: 3105, color: 'Battlestation Obsidian / Lime & Purple Stitching', size: 'Colossal (3XL) 47"x24" (1200x600mm)', price: 49.99, sku: 'AXM-MAT-1200', isAvailable: true },
+      { id: 3103, color: 'Battlestation Obsidian / Lime & Purple Stitching', size: 'Extended (XL) 31.5"x12" (800x300mm)', price: 34.99, sku: 'AXM-MAT-800', isAvailable: true },
+      { id: 3104, color: 'Battlestation Obsidian / Lime & Purple Stitching', size: 'Panoramic (2XL) 35.4"x16" (900x400mm)', price: 42.99, sku: 'AXM-MAT-900', isAvailable: true },
+      { id: 3105, color: 'Battlestation Obsidian / Lime & Purple Stitching', size: 'Colossal (3XL) 47"x24" (1200x600mm)', price: 54.99, sku: 'AXM-MAT-1200', isAvailable: true },
     ],
     isNew: true,
     material: 'Micro-Weave High-Density Cloth + Textured Natural Rubber Base',
@@ -737,9 +762,9 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     variants: [
       { id: 3301, color: 'Official Axiom Banner / Volcanic Obsidian', size: 'Medium (M) 14"x12" (360x300mm)', price: 19.99, sku: 'AXM-PAD-360', isAvailable: true },
       { id: 3302, color: 'Official Axiom Banner / Volcanic Obsidian', size: 'Large (L) 18"x16" (450x400mm)', price: 26.99, sku: 'AXM-PAD-450', isAvailable: true },
-      { id: 3303, color: 'Official Axiom Banner / Volcanic Obsidian', size: 'Extended (XL) 31.5"x12" (800x300mm)', price: 32.99, sku: 'AXM-PAD-800', isAvailable: true },
-      { id: 3304, color: 'Official Axiom Banner / Volcanic Obsidian', size: 'Panoramic (2XL) 35.4"x16" (900x400mm)', price: 39.99, sku: 'AXM-PAD-900', isAvailable: true },
-      { id: 3305, color: 'Official Axiom Banner / Volcanic Obsidian', size: 'Colossal (3XL) 47"x24" (1200x600mm)', price: 49.99, sku: 'AXM-PAD-1200', isAvailable: true },
+      { id: 3303, color: 'Official Axiom Banner / Volcanic Obsidian', size: 'Extended (XL) 31.5"x12" (800x300mm)', price: 34.99, sku: 'AXM-PAD-800', isAvailable: true },
+      { id: 3304, color: 'Official Axiom Banner / Volcanic Obsidian', size: 'Panoramic (2XL) 35.4"x16" (900x400mm)', price: 42.99, sku: 'AXM-PAD-900', isAvailable: true },
+      { id: 3305, color: 'Official Axiom Banner / Volcanic Obsidian', size: 'Colossal (3XL) 47"x24" (1200x600mm)', price: 54.99, sku: 'AXM-PAD-1200', isAvailable: true },
     ],
     isNew: true,
     material: 'Speed-Weave Polyester Face + Anti-Slip Textured Rubber Base',
@@ -1374,7 +1399,17 @@ export const PRINTIFY_SKU_CATALOG_MAPPINGS: Record<string, PrintifySkuMapping> =
     variantMap: { 'S': 87231, 'M': 87232, 'L': 87233, 'XL': 87234, '2XL': 87235 },
     category: 'Esports Apparel',
   },
-
+  'axiom-shaker-01': {
+    blueprintId: 540, // Eastman Tritan 24oz / Stainless Shaker Bottle
+    printProviderId: 10,
+    variantMap: {
+      '24 oz (700ml)': 54001,
+      'Toxic Lime & Royal Purple / Smoke Body': 54001,
+      'Stealth Blackout / Obsidian Body': 54002,
+      'Pro Insulated Stainless Steel (Double-Wall)': 54003,
+    },
+    category: 'Drinkware',
+  },
   'krown-mat-01': {
     blueprintId: 488, // Extended Gaming Desk Mat
     printProviderId: 1, // Spoke Custom Products / Monster Digital

@@ -277,6 +277,65 @@ The definitive jobsite tradesman cap. Built exclusively on authentic Richardson 
 - Ships in 2–4 business days with tracking.`,
   },
 
+  // =========================================================================
+  // 4. Axiom Allegiance Pro Loadout Shaker Bottle (3 Realistic Editions)
+  // =========================================================================
+  {
+    id: 'axiom-shaker-01',
+    sku: 'AXM-SHK-24-LIMEPRP',
+    brandDivision: 'AXA / Axiom Allegiance',
+    seoTitle: 'Gaming Shaker Bottle 24oz Tritan Pre Workout Mixer Cup Axiom Allegiance Esports Owl Gym Cup Stainless Ball Toxic Lime Purple',
+    tags: [
+      'gaming shaker bottle',
+      'esports shaker cup',
+      'protein shaker cup',
+      'tritan bpa free cup',
+      'pre workout mixer',
+      'streamer accessories',
+      'gamer water bottle',
+      'whisk ball shaker',
+      'axiom allegiance axa',
+      'esports gift idea',
+      'purple green bottle',
+      'leak proof shaker',
+      'krown gaming gear',
+    ],
+    price: 29.99,
+    customerShipping: 0.00, // $29.99 with Free US Shipping
+    productionCost: 9.50, // Eastman Tritan 24oz body ($6.80) + UV direct wrap print ($2.70)
+    fulfillmentShippingCost: 4.00,
+    materialDetails: '100% BPA-Free Eastman Tritan™ shatterproof polymer / Double-Wall Vacuum Steel. Medical-grade 316 stainless steel whisk ball. Embossed silicone KrowN collar.',
+    sizingChartSummary: 'Capacity: 24–26 oz (700–770 ml). Embossed measurement markings up to 20 oz / 600 ml. Fits standard cup holders.',
+    careInstructions: 'Top-rack dishwasher safe (hand wash lid and stainless whisk ball recommended for longest seal life). Avoid boiling liquids.',
+    images: [
+      '/images/products/axiom-vibrant-gaming-shaker-bottle.jpg',
+      '/images/products/axiom-shaker-stealth-blackout.jpg',
+      '/images/products/axiom-shaker-insulated-steel.jpg',
+      '/images/products/axiom-shaker-bottles-3-editions.jpg',
+      '/images/branding/gaming/axiom-owl-mascot.png',
+    ],
+    economics: calculateEtsyEconomics(29.99, 0.00, 9.50, 4.00),
+    fullDescription: `⚡ AXIOM ALLEGIANCE "PRO LOADOUT" 24OZ GAMING SHAKER BOTTLE ⚡
+Division: AXA / Axiom Allegiance Esports
+
+Fuel up for overtime clutches and all-night ranked marathons. The Axiom Allegiance Pro Loadout Shaker is engineered from shatterproof, stain-resistant Eastman Tritan™ with high-impact color blocking. Available in Toxic Lime & Royal Purple, Stealth Blackout, and Pro Insulated Stainless Steel.
+
+⭐ KEY FEATURES:
+- 3 Real Editions: Toxic Lime & Royal Purple, Stealth Blackout, Pro Insulated Stainless Steel.
+- Authentic Axiom Owl Esports Crest with distinctive A-X-A facial geometry and "POWERED BY KrowN" inscription.
+- Medical-grade surgical stainless steel wire whisk ball for smooth, clump-free mix.
+- Crystal-clear measurement graduations in ounces and milliliters.
+- Ergonomic carry-loop designed for LAN gear bags.
+
+🧪 DETAILS:
+- 24–26 oz Max Volume
+- 100% BPA/BPS-Free Eastman Tritan™ & Kitchen-Grade Stainless Steel
+- Fits Standard Automobile & Desk Cupholders
+
+📦 PACKAGING & SHIPPING:
+- Packaged in individual protective boxed packaging.
+- Fast dispatch within 1–3 business days.`,
+  },
 ];
 
 export function generateEtsyCatalogReport(): {
