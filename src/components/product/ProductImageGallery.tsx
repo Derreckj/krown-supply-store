@@ -19,6 +19,11 @@ export default function ProductImageGallery({ images, productName }: ProductImag
             alt={productName} 
             className="product-detail-hero-img" 
             loading="eager"
+            onError={() => {
+              if (selectedImage !== images[0] && images[0]) {
+                setSelectedImage(images[0]);
+              }
+            }}
           />
         ) : (
           <span className="text-muted" style={{ textAlign: 'center', padding: '1rem' }}>
@@ -42,7 +47,11 @@ export default function ProductImageGallery({ images, productName }: ProductImag
                 src={img} 
                 alt={`${productName} thumbnail ${idx + 1}`} 
                 style={{ width: '100%', height: '100%', objectFit: 'contain' }}
-                loading="lazy"
+                loading="eager"
+                onError={(e) => {
+                  const parent = (e.target as HTMLElement).parentElement;
+                  if (parent) parent.style.display = 'none';
+                }}
               />
             </button>
           ))}
