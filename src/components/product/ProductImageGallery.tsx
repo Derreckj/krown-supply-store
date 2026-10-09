@@ -8,8 +8,7 @@ interface ProductImageGalleryProps {
 }
 
 export default function ProductImageGallery({ images, productName }: ProductImageGalleryProps) {
-  const fallback = '/images/branding/krown-definitive-logo.png';
-  const [selectedImage, setSelectedImage] = useState<string>(images[0] || fallback);
+  const [selectedImage, setSelectedImage] = useState<string>(images[0] || '');
 
   return (
     <div className="product-gallery">
@@ -19,9 +18,7 @@ export default function ProductImageGallery({ images, productName }: ProductImag
             src={selectedImage} 
             alt={productName} 
             className="product-detail-hero-img" 
-            onError={() => {
-              if (selectedImage !== fallback) setSelectedImage(fallback);
-            }}
+            loading="eager"
           />
         ) : (
           <span className="text-muted" style={{ textAlign: 'center', padding: '1rem' }}>
@@ -45,9 +42,7 @@ export default function ProductImageGallery({ images, productName }: ProductImag
                 src={img} 
                 alt={`${productName} thumbnail ${idx + 1}`} 
                 style={{ width: '100%', height: '100%', objectFit: 'contain' }}
-                onError={(e) => {
-                  (e.target as HTMLImageElement).src = fallback;
-                }}
+                loading="lazy"
               />
             </button>
           ))}

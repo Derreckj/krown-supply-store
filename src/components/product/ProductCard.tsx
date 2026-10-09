@@ -1,6 +1,5 @@
 'use client';
 
-import { useState } from 'react';
 import Link from 'next/link';
 import './ProductCard.css';
 
@@ -27,33 +26,23 @@ export default function ProductCard({
   isLimited,
   customBadge
 }: ProductCardProps) {
-  const fallback = '/images/branding/krown-definitive-logo.png';
-  const [imgSrc, setImgSrc] = useState<string>(image || fallback);
-  const [hoverSrc, setHoverSrc] = useState<string | undefined>(hoverImage);
-
   return (
     <Link href={`/products/${id}`} className="product-card group">
       <div className="product-image-container">
-        {imgSrc ? (
+        {image ? (
           <>
             <img 
-              src={imgSrc} 
+              src={image} 
               alt={name} 
-              className={`product-image-img ${hoverSrc ? 'primary-img' : ''}`}
-              onError={() => {
-                if (imgSrc !== fallback) {
-                  setImgSrc(fallback);
-                }
-              }}
+              className={`product-image-img ${hoverImage ? 'primary-img' : ''}`}
+              loading="eager"
             />
-            {hoverSrc && (
+            {hoverImage && (
               <img 
-                src={hoverSrc} 
+                src={hoverImage} 
                 alt={`${name} alternate`} 
                 className="product-image-img hover-img" 
-                onError={() => {
-                  setHoverSrc(undefined);
-                }}
+                loading="lazy"
               />
             )}
           </>

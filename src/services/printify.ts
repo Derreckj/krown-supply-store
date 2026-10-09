@@ -99,11 +99,11 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     baseCost: 28.00,
     printCost: 8.00,
     images: [
-      '/images/products/krown-hoodie-studio-front.jpg',
-      '/images/products/krown-hoodie-male-model.jpg',
-      '/images/products/krown-hoodie-female-model.jpg',
       '/images/products/krown-supply-premium-hoodie-front.jpg',
+      '/images/products/krown-hoodie-female-model.jpg',
       '/images/products/krown-heavyweight-hoodie-back-krown.jpg',
+      '/images/products/krown-hoodie-male-model.jpg',
+      '/images/products/krown-hoodie-studio-front.jpg',
     ],
     variants: [
       { id: 2011, color: 'Vintage Washed Charcoal / Gold Crest', size: 'S', price: 88.00, sku: 'KSC-HD-480-S', isAvailable: true },
@@ -205,7 +205,8 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     baseCost: 11.50,
     printCost: 4.50,
     images: [
-      '/images/products/krown-r112-leather-patch-hat-front.jpg',
+      '/images/products/krown-r112-custom-supply-sample.jpg',
+      '/images/products/krown-r112-isometric-hex-patch.jpg',
       '/images/products/krown-r112-leather-patch-hat-hero.jpg',
     ],
     variants: [
@@ -324,8 +325,9 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     baseCost: 11.50,
     printCost: 4.50,
     images: [
-      '/images/products/krown-r112-leather-patch-hat-front.jpg',
-      '/images/products/krown-r112-leather-patch-hat-hero.jpg',
+      '/images/products/krown-r112-crimson-black-front.jpg',
+      '/images/products/krown-r112-crimson-black-angle.jpg',
+      '/images/products/krown-r112-custom-supply-sample.jpg',
     ],
     variants: [
       { id: 1001, color: 'Jobsite Flagship (Crimson Red / Black Visor / White Mesh)', size: 'OSFA', price: 29.99, sku: 'KSC-HAT-112-BTR-CRIMBLK-WHT', isAvailable: true },
@@ -390,8 +392,9 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     baseCost: 6.20,
     printCost: 4.00,
     images: [
-      '/images/products/krown-beanie-studio-front.jpg',
+      '/images/products/krown-construction-cuffed-beanie.png',
       '/images/products/krown-beanie-model.jpg',
+      '/images/products/krown-beanie-studio-front.jpg',
     ],
     variants: [
       { id: 611, color: 'Charcoal Black / Gold Crest Patch', size: 'OSFA', price: 24.99, sku: 'KRN-BN-RIBBED-BLK', isAvailable: true },
@@ -411,7 +414,8 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     baseCost: 8.50,
     printCost: 4.50,
     images: [
-      '/images/products/krown-construction-jobsite-tumbler.png',
+      '/images/products/krown-construction-jobsite-tumbler.jpg',
+      '/images/products/krown-construction-jobsite-tumbler-32oz.jpg',
     ],
     variants: [
       { id: 601, color: 'Matte Black / Laser Gold Crest', size: '20oz', price: 29.99, sku: 'KRN-TUMB-20-BLK', isAvailable: true }
