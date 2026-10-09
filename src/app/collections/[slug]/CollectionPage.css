@@ -131,6 +131,38 @@
   border-color: var(--accent-gold);
 }
 
+@media (max-width: 640px) {
+  .collection-tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    width: 100%;
+    justify-content: flex-start;
+    padding-bottom: 0.5rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .collection-tabs::-webkit-scrollbar {
+    display: none;
+  }
+  .collection-tab {
+    white-space: nowrap;
+    font-size: 0.78rem;
+    padding: 0.4rem 0.85rem;
+    border-radius: 9999px;
+  }
+  .collection-header {
+    margin-top: 1rem;
+    margin-bottom: 1.25rem;
+  }
+  .collection-header h1 {
+    font-size: 1.75rem;
+  }
+  .collection-subtitle {
+    font-size: 0.875rem;
+    line-height: 1.45;
+  }
+}
+
 .filter-group select {
   background-color: var(--surface);
   color: var(--foreground);

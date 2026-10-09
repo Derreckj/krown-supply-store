@@ -39,17 +39,17 @@ export default function Home() {
 
           {/* Floating New Drop Spotlight Card */}
           <div className={styles.heroFloatingDrop}>
-            <Link href="/products/custom-krown-works-hat" className={styles.dropCardInner}>
+            <Link href="/products/krown-supply-co-480gsm-heavyweight-streetwear-hoodie" className={styles.dropCardInner}>
               <div className={styles.dropThumbWrap}>
                 <img 
-                  src="/images/products/krown-r112-custom-supply-sample.jpg" 
-                  alt="Richardson 112 Custom Leather Patch Hat" 
+                  src="/images/products/krown-supply-premium-hoodie-front.jpg" 
+                  alt="KrowN 480 GSM Heavyweight Streetwear Hoodie" 
                   className={styles.dropThumb}
                 />
               </div>
               <div className={styles.dropInfo}>
-                <span className={styles.dropTag}>CUSTOM B2B • AUTHENTIC 112</span>
-                <span className={styles.dropPrice}>From $24.00/hat <span>&rarr;</span></span>
+                <span className={styles.dropTag}>NEW DROP • 480 GSM FRENCH TERRY</span>
+                <span className={styles.dropPrice}>Heavyweight Hoodie $68.00 <span>&rarr;</span></span>
               </div>
             </Link>
           </div>
