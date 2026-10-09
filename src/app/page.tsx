@@ -167,6 +167,62 @@ export default function Home() {
               </div>
             </Link>
 
+            <Link href="/products/axiom-shaker-01" className={styles.gamingGearCard}>
+              <div className={styles.gamingGearThumb}>
+                <img 
+                  src="/images/products/axiom-vibrant-gaming-shaker-bottle.jpg" 
+                  alt="Axiom Allegiance Pro Loadout Shaker" 
+                />
+                <span className={styles.gearPill}>KrowN COLLAR</span>
+              </div>
+              <div className={styles.gamingGearBody}>
+                <h4>Pro Loadout Shaker (24oz)</h4>
+                <p>Lime, Stealth &amp; Steel Editions • $24.99</p>
+              </div>
+            </Link>
+
+            <Link href="/products/axiom-sweatpants-pro" className={styles.gamingGearCard}>
+              <div className={styles.gamingGearThumb}>
+                <img 
+                  src="/images/products/axiom-sweatpants-model-streetwear.jpg" 
+                  alt="Axiom Allegiance Pro Heavyweight Joggers" 
+                />
+                <span className={styles.gearPill}>450 GSM FLEECE</span>
+              </div>
+              <div className={styles.gamingGearBody}>
+                <h4>Axiom Pro Heavyweight Joggers</h4>
+                <p>Dual Purple/Green Cords • S to 3XL • $68.00</p>
+              </div>
+            </Link>
+
+            <Link href="/products/krown-mat-01" className={styles.gamingGearCard}>
+              <div className={styles.gamingGearThumb}>
+                <img 
+                  src="/images/products/axiom-owl-desk-mat-photorealistic.jpg" 
+                  alt="Axiom Owl Extended Gaming Desk Mat" 
+                />
+                <span className={styles.gearPill}>5 CUSTOM SIZES</span>
+              </div>
+              <div className={styles.gamingGearBody}>
+                <h4>Axiom Extended Gaming Desk Mat</h4>
+                <p>Micro-Weave Precision Cloth • From $19.99</p>
+              </div>
+            </Link>
+
+            <Link href="/products/axiom-wrist-rest-01" className={styles.gamingGearCard}>
+              <div className={styles.gamingGearThumb}>
+                <img 
+                  src="/images/products/axiom-keyboard-wrist-rest-tournament-edition.jpg" 
+                  alt="Axiom Pro Cooling Gel Keyboard Wrist Rest" 
+                />
+                <span className={styles.gearPill}>COOLING GEL</span>
+              </div>
+              <div className={styles.gamingGearBody}>
+                <h4>Pro Cooling Gel Keyboard Wrist Rest</h4>
+                <p>Ergonomic Slope • 60%, TKL &amp; Full • $19.99</p>
+              </div>
+            </Link>
+
             <Link href="/products/axiom-jersey-away" className={styles.gamingGearCard}>
               <div className={styles.gamingGearThumb}>
                 <img 
@@ -178,20 +234,6 @@ export default function Home() {
               <div className={styles.gamingGearBody}>
                 <h4>AXA Pro League Away Jersey</h4>
                 <p>Crisp Bone White &amp; Purple • $54.99</p>
-              </div>
-            </Link>
-
-            <Link href="/products/axiom-shaker-01" className={styles.gamingGearCard}>
-              <div className={styles.gamingGearThumb}>
-                <img 
-                  src="/images/products/axiom-vibrant-gaming-shaker-bottle.jpg" 
-                  alt="Axiom Allegiance Pro Loadout Shaker" 
-                />
-                <span className={styles.gearPill}>KrowN COLLAR</span>
-              </div>
-              <div className={styles.gamingGearBody}>
-                <h4>Pro Loadout Shaker (24oz)</h4>
-                <p>Toxic Lime &amp; Royal Purple • $24.99</p>
               </div>
             </Link>
           </div>

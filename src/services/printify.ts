@@ -628,21 +628,26 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     id: 'axiom-shaker-01',
     name: 'Axiom Allegiance Pro Loadout Shaker',
     slug: 'axiom-allegiance-pro-loadout-shaker',
-    description: 'Fuel up for overtime. Ultra-premium 24oz gaming supplement shaker bottle featuring semi-translucent frosted shatterproof BPA-free body with measurement lines up to 20oz, neon green leak-proof flip cap, royal purple silicone collar with crisp KrowN embossing, purple carrying loop, stainless steel whisk ball, and scratch-resistant Axiom owl crest with "POWERED BY KROWN" inscription.',
+    description: 'Fuel up for overtime clutches and all-night ranked marathons. Ultra-premium gaming supplement shaker bottle featuring semi-translucent frosted shatterproof BPA-free body with measurement lines up to 20oz, leak-proof snap cap, royal purple silicone collar with crisp KrowN embossing, ergonomic carrying loop, surgical stainless steel whisk ball, and the authentic Axiom Allegiance owl crest with distinctive A-X-A facial geometry and "POWERED BY KROWN" inscription. Available in Toxic Lime & Royal Purple, Stealth Blackout, and Vacuum Insulated Stainless Steel.',
     collection: 'AXA / Axiom Allegiance',
     price: 24.99,
     baseCost: 7.20,
     printCost: 3.80,
     images: [
       '/images/products/axiom-vibrant-gaming-shaker-bottle.jpg',
+      '/images/products/axiom-shaker-stealth-blackout.jpg',
+      '/images/products/axiom-shaker-insulated-steel.jpg',
+      '/images/products/axiom-shaker-bottles-3-editions.jpg',
       '/images/branding/gaming/axiom-owl-mascot.png'
     ],
     variants: [
-      { id: 1201, color: 'Toxic Lime & Royal Purple / Smoke Body', size: '24 oz (700ml)', price: 24.99, sku: 'AXM-SHK-24-LIMEPRP', isAvailable: true }
+      { id: 1201, color: 'Toxic Lime & Royal Purple / Smoke Body', size: '24 oz (700ml)', price: 24.99, sku: 'AXM-SHK-24-LIMEPRP', isAvailable: true },
+      { id: 1202, color: 'Stealth Blackout / Obsidian Body', size: '24 oz (700ml)', price: 24.99, sku: 'AXM-SHK-24-STEALTH', isAvailable: true },
+      { id: 1203, color: 'Pro Insulated Stainless Steel (Double-Wall)', size: '26 oz (770ml)', price: 34.99, sku: 'AXM-SHK-26-STEEL', isAvailable: true },
     ],
     isNew: true,
-    material: 'BPA-Free Eastar™ Tritan High-Impact Polymer • Stainless Steel Whisk Ball',
-    fit: '24 oz (700ml) Capacity • Fits Standard Car & Desk Cupholders',
+    material: 'BPA-Free Eastar™ Tritan / Double-Wall Kitchen-Grade Steel • Stainless Steel Whisk Ball',
+    fit: '24–26 oz Capacity • Fits Standard Car & Desk Cupholders',
   },
   {
     id: 'axiom-mug-01',
@@ -715,44 +720,129 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
   },
   {
     id: 'krown-mat-01',
-    name: 'Axiom Owl Extended Gaming Desk Mat (900x400mm)',
+    name: 'Axiom Owl Extended Gaming Desk Mat (5 Custom Esports Sizes)',
     slug: 'axiom-owl-extended-gaming-desk-mat',
-    description: 'Tournament-grade 900x400mm micro-weave fabric surface showcasing the signature Axiom Owl panoramic artwork. Features a non-slip natural rubber base, anti-fray precision stitched perimeter in electric lime, and the official motto inscribed along the border: "YOU CANNOT BE TRULY HUMBLE, UNLESS YOU TRULY BELIEVE THAT LIFE CAN AND WILL GO ON WITHOUT YOU".',
+    description: 'Tournament-grade micro-weave fabric surface showcasing the signature Axiom Owl battlestation panoramic artwork. Engineered for pixel-precise optical tracking and zero-drag wrist flicking. Features a textured non-slip natural rubber base, anti-fray precision dual-stitched perimeter in electric lime and royal purple, and the official motto inscribed along the border: "YOU CANNOT BE TRULY HUMBLE, UNLESS YOU TRULY BELIEVE THAT LIFE CAN AND WILL GO ON WITHOUT YOU". Available in 5 custom competition sizes from Medium (14"x12") to Colossal (47"x24").',
     collection: 'AXA / Axiom Allegiance',
-    price: 39.99,
-    baseCost: 14.50,
-    printCost: 6.00,
+    price: 19.99,
+    baseCost: 8.50,
+    printCost: 4.00,
     images: [
       '/images/products/axiom-owl-desk-mat-photorealistic.jpg',
+      '/images/products/axiom-owl-realistic-axa-face-desk-mat.jpg',
       '/images/branding/gaming/axiom-owl-quote-frame.jpg',
       '/images/branding/gaming/axiom-owl-mascot.png',
     ],
     variants: [
-      { id: 311, color: 'Axiom Panoramic / Purple & Lime', size: '900x400x4mm', price: 39.99, sku: 'AXM-MAT-900', isAvailable: true },
+      { id: 3101, color: 'Battlestation Obsidian / Lime & Purple Stitching', size: 'Medium (M) 14"x12" (360x300mm)', price: 19.99, sku: 'AXM-MAT-360', isAvailable: true },
+      { id: 3102, color: 'Battlestation Obsidian / Lime & Purple Stitching', size: 'Large (L) 18"x16" (450x400mm)', price: 26.99, sku: 'AXM-MAT-450', isAvailable: true },
+      { id: 3103, color: 'Battlestation Obsidian / Lime & Purple Stitching', size: 'Extended (XL) 31.5"x12" (800x300mm)', price: 32.99, sku: 'AXM-MAT-800', isAvailable: true },
+      { id: 3104, color: 'Battlestation Obsidian / Lime & Purple Stitching', size: 'Panoramic (2XL) 35.4"x16" (900x400mm)', price: 39.99, sku: 'AXM-MAT-900', isAvailable: true },
+      { id: 3105, color: 'Battlestation Obsidian / Lime & Purple Stitching', size: 'Colossal (3XL) 47"x24" (1200x600mm)', price: 49.99, sku: 'AXM-MAT-1200', isAvailable: true },
     ],
     isNew: true,
     material: 'Micro-Weave High-Density Cloth + Textured Natural Rubber Base',
-    fit: 'Desk Mat 35.4" x 15.7" (900mm x 400mm x 4mm)',
+    fit: '5 Custom Sizes: 14"x12" to 47"x24" (4mm Thickness)',
   },
   {
     id: 'krown-mousepad-01',
-    name: 'Axiom Owl Speed Gaming Mousepad (450x400mm)',
+    name: 'Axiom Allegiance Official Crest Gaming Mousepad (5 Custom Sizes)',
     slug: 'axiom-owl-speed-gaming-mousepad',
-    description: 'High-density micro-texture mousepad tuned for fast flick shots and pinpoint tracking. Showcases the iconic Axiom Owl crest with dark volcanic backdrop and the official motto.',
+    description: 'High-density micro-texture mousepad tuned for fast flick shots and pinpoint tracking. Showcases the iconic Axiom Owl crest banner with dark volcanic backdrop and the official team creed: "YOU CANNOT BE TRULY HUMBLE, UNLESS YOU TRULY BELIEVE THAT LIFE CAN AND WILL GO ON WITHOUT YOU". Available in 5 custom competition sizes from Medium (14"x12") to Colossal (47"x24").',
     collection: 'AXA / Axiom Allegiance',
-    price: 28.00,
-    baseCost: 9.50,
-    printCost: 5.00,
+    price: 19.99,
+    baseCost: 8.50,
+    printCost: 4.00,
     images: [
       '/images/branding/gaming/axiom-owl-quote-frame.jpg',
       '/images/branding/gaming/axiom-owl-display.png',
+      '/images/branding/gaming/axiom-owl-mascot.png',
     ],
     variants: [
-      { id: 331, color: 'Axiom Obsidian & Lime', size: '450x400x4mm', price: 28.00, sku: 'AXM-PAD-450', isAvailable: true },
+      { id: 3301, color: 'Official Axiom Banner / Volcanic Obsidian', size: 'Medium (M) 14"x12" (360x300mm)', price: 19.99, sku: 'AXM-PAD-360', isAvailable: true },
+      { id: 3302, color: 'Official Axiom Banner / Volcanic Obsidian', size: 'Large (L) 18"x16" (450x400mm)', price: 26.99, sku: 'AXM-PAD-450', isAvailable: true },
+      { id: 3303, color: 'Official Axiom Banner / Volcanic Obsidian', size: 'Extended (XL) 31.5"x12" (800x300mm)', price: 32.99, sku: 'AXM-PAD-800', isAvailable: true },
+      { id: 3304, color: 'Official Axiom Banner / Volcanic Obsidian', size: 'Panoramic (2XL) 35.4"x16" (900x400mm)', price: 39.99, sku: 'AXM-PAD-900', isAvailable: true },
+      { id: 3305, color: 'Official Axiom Banner / Volcanic Obsidian', size: 'Colossal (3XL) 47"x24" (1200x600mm)', price: 49.99, sku: 'AXM-PAD-1200', isAvailable: true },
     ],
     isNew: true,
     material: 'Speed-Weave Polyester Face + Anti-Slip Textured Rubber Base',
-    fit: 'Standard Esports Competition Size 17.7" x 15.7"',
+    fit: '5 Custom Sizes: 14"x12" to 47"x24" (4mm Thickness)',
+  },
+  {
+    id: 'axiom-sweatpants-pro',
+    name: 'Axiom Allegiance Pro Heavyweight 450 GSM Joggers',
+    slug: 'axiom-allegiance-pro-heavyweight-joggers',
+    description: 'Pro-tier tournament joggers engineered for unmatched warmth and esports performance. Cut from ultra-heavyweight 450 GSM French terry fleece in midnight obsidian black. Features dual-tone braided drawstrings (royal purple & neon toxic green with dipped aglets), vertical athletic "AXIOM ALLEGIANCE" typography running down the left leg, and the authentic high-density embroidered Axiom Owl mascot on the right thigh. Deep zippered stash pockets, ribbed gusset crotch, and tailored ankle cuffs.',
+    collection: 'AXA / Axiom Allegiance',
+    price: 68.00,
+    baseCost: 22.00,
+    printCost: 7.00,
+    images: [
+      '/images/products/axiom-sweatpants-model-streetwear.jpg',
+      '/images/products/axiom-sweatpants-pro-heavyweight-studio.jpg',
+      '/images/branding/gaming/axiom-owl-mascot.png',
+    ],
+    variants: [
+      { id: 4101, color: 'Obsidian Black / Purple & Green Cords', size: 'S', price: 68.00, sku: 'AXM-SWP-PRO-S', isAvailable: true },
+      { id: 4102, color: 'Obsidian Black / Purple & Green Cords', size: 'M', price: 68.00, sku: 'AXM-SWP-PRO-M', isAvailable: true },
+      { id: 4103, color: 'Obsidian Black / Purple & Green Cords', size: 'L', price: 68.00, sku: 'AXM-SWP-PRO-L', isAvailable: true },
+      { id: 4104, color: 'Obsidian Black / Purple & Green Cords', size: 'XL', price: 68.00, sku: 'AXM-SWP-PRO-XL', isAvailable: true },
+      { id: 4105, color: 'Obsidian Black / Purple & Green Cords', size: '2XL', price: 68.00, sku: 'AXM-SWP-PRO-2XL', isAvailable: true },
+      { id: 4106, color: 'Obsidian Black / Purple & Green Cords', size: '3XL', price: 74.00, sku: 'AXM-SWP-PRO-3XL', isAvailable: true },
+    ],
+    isNew: true,
+    material: '450 GSM Ultra-Heavyweight 100% French Terry Cotton • Dual-Tone Cords',
+    fit: 'Tailored Athletic Taper with Heavy Ribbed Cuffs',
+  },
+  {
+    id: 'axiom-sweatpants-core',
+    name: 'Axiom Allegiance Core Everyday Fleece Joggers',
+    slug: 'axiom-allegiance-core-everyday-fleece-joggers',
+    description: 'High-comfort, accessible everyday fleece joggers designed for all-day ranked sessions and streaming. Crafted from super-soft 300 GSM brushed fleece in midnight obsidian black with team purple & electric lime accents. Features vertical athletic "AXIOM ALLEGIANCE" typography down one leg, the official Axiom Owl crest on the opposite thigh, elastic waistband with contrast drawstrings, and flexible tapered fit.',
+    collection: 'AXA / Axiom Allegiance',
+    price: 39.99,
+    baseCost: 14.00,
+    printCost: 5.50,
+    images: [
+      '/images/products/axiom-sweatpants-core-everyday-studio.jpg',
+      '/images/products/axiom-sweatpants-model-streetwear.jpg',
+      '/images/branding/gaming/axiom-owl-mascot.png',
+    ],
+    variants: [
+      { id: 4201, color: 'Obsidian Black / Team Purple & Lime', size: 'S', price: 39.99, sku: 'AXM-SWP-CORE-S', isAvailable: true },
+      { id: 4202, color: 'Obsidian Black / Team Purple & Lime', size: 'M', price: 39.99, sku: 'AXM-SWP-CORE-M', isAvailable: true },
+      { id: 4203, color: 'Obsidian Black / Team Purple & Lime', size: 'L', price: 39.99, sku: 'AXM-SWP-CORE-L', isAvailable: true },
+      { id: 4204, color: 'Obsidian Black / Team Purple & Lime', size: 'XL', price: 39.99, sku: 'AXM-SWP-CORE-XL', isAvailable: true },
+      { id: 4205, color: 'Obsidian Black / Team Purple & Lime', size: '2XL', price: 39.99, sku: 'AXM-SWP-CORE-2XL', isAvailable: true },
+      { id: 4206, color: 'Obsidian Black / Team Purple & Lime', size: '3XL', price: 44.99, sku: 'AXM-SWP-CORE-3XL', isAvailable: true },
+    ],
+    isNew: true,
+    material: '300 GSM Midweight Brushed Cotton/Poly Fleece • Elastic Drawstring Waist',
+    fit: 'Relaxed Athletic Taper with Ribbed Cuffs',
+  },
+  {
+    id: 'axiom-wrist-rest-01',
+    name: 'Axiom Pro Cooling Gel Ergonomic Keyboard Wrist Rest',
+    slug: 'axiom-pro-cooling-gel-keyboard-wrist-rest',
+    description: 'HyperX-grade tournament ergonomic cooling gel wrist rest engineered for marathon gaming sessions. Features a dual-layer core of cooling infused memory foam and high-density ergonomic support foam that conforms to your wrists. Wrapped in silky smooth, anti-friction cooling lycra fabric with anti-fray royal purple precision perimeter stitching, textured non-slip silicone rubber base, clean athletic AXIOM ALLEGIANCE typography, and the official Axiom Owl crest. Available in Compact 60%, Tenkeyless (TKL 80%), and Full-Size (100%).',
+    collection: 'AXA / Axiom Allegiance',
+    price: 19.99,
+    baseCost: 6.50,
+    printCost: 3.50,
+    images: [
+      '/images/products/axiom-keyboard-wrist-rest-tournament-edition.jpg',
+      '/images/products/axiom-keyboard-wrist-rest-stealth-setup.jpg',
+      '/images/branding/gaming/axiom-owl-mascot.png',
+    ],
+    variants: [
+      { id: 4301, color: 'Tournament Edition / Purple & Lime', size: 'Compact 60% (11.4" x 2.9")', price: 19.99, sku: 'AXM-WRIST-60', isAvailable: true },
+      { id: 4302, color: 'Tournament Edition / Purple & Lime', size: 'Tenkeyless TKL 80% (14.2" x 2.9")', price: 22.99, sku: 'AXM-WRIST-TKL', isAvailable: true },
+      { id: 4303, color: 'Tournament Edition / Purple & Lime', size: 'Full-Size 100% (17.5" x 2.9")', price: 24.99, sku: 'AXM-WRIST-FULL', isAvailable: true },
+    ],
+    isNew: true,
+    material: 'Cooling-Infused Memory Gel + Ultra-Dense Support Core + Silky Lycra Face + Non-Slip Base',
+    fit: 'Ergonomic Contoured 15° Slope (0.9" / 23mm Height)',
   },
   {
     id: 'krown-tee-01',
@@ -887,14 +977,16 @@ class PrintifyService {
       } else if (nameLower.includes('jersey')) {
         replacedMockIds.add('axiom-jersey-home');
       } else if (nameLower.includes('desk mat')) {
-        replacedMockIds.add('krown-mat-01');
+        // Retain master 5-size krown-mat-01 with photorealistic imagery and full size ladder
       } else if (nameLower.includes('sticker') || nameLower.includes('decal')) {
         replacedMockIds.add('krown-stickers-01');
       }
     }
 
+    // Filter out raw uncurated desk mat from live list so krown-mat-01 with 5 sizes is the primary product
+    const filteredLive = liveProducts.filter(p => !p.name.toLowerCase().includes('desk mat'));
     const uniqueMocks = mockProducts.filter(m => !replacedMockIds.has(m.id));
-    return [...liveProducts, ...uniqueMocks];
+    return [...filteredLive, ...uniqueMocks];
   }
 
   /**
@@ -1307,10 +1399,61 @@ export const PRINTIFY_SKU_CATALOG_MAPPINGS: Record<string, PrintifySkuMapping> =
     category: 'Esports Apparel',
   },
   'axiom-shaker-01': {
-    blueprintId: 540, // Eastman Tritan 24oz Shaker Bottle
+    blueprintId: 540, // Eastman Tritan 24oz / Stainless Shaker Bottle
     printProviderId: 10,
-    variantMap: { '24 oz (700ml)': 54001 },
+    variantMap: {
+      '24 oz (700ml)': 54001,
+      'Toxic Lime & Royal Purple / Smoke Body': 54001,
+      'Stealth Blackout / Obsidian Body': 54002,
+      'Pro Insulated Stainless Steel (Double-Wall)': 54003,
+    },
     category: 'Drinkware',
+  },
+  'krown-mat-01': {
+    blueprintId: 488, // Extended Gaming Desk Mat
+    printProviderId: 1, // Spoke Custom Products / Monster Digital
+    variantMap: {
+      'Medium (M) 14"x12" (360x300mm)': 48801,
+      'Large (L) 18"x16" (450x400mm)': 48802,
+      'Extended (XL) 31.5"x12" (800x300mm)': 48803,
+      'Panoramic (2XL) 35.4"x16" (900x400mm)': 48804,
+      'Colossal (3XL) 47"x24" (1200x600mm)': 48805,
+    },
+    category: 'Desk Accessories',
+  },
+  'krown-mousepad-01': {
+    blueprintId: 488, // Gaming Mouse Pad
+    printProviderId: 1,
+    variantMap: {
+      'Medium (M) 14"x12" (360x300mm)': 48811,
+      'Large (L) 18"x16" (450x400mm)': 48812,
+      'Extended (XL) 31.5"x12" (800x300mm)': 48813,
+      'Panoramic (2XL) 35.4"x16" (900x400mm)': 48814,
+      'Colossal (3XL) 47"x24" (1200x600mm)': 48815,
+    },
+    category: 'Desk Accessories',
+  },
+  'axiom-sweatpants-pro': {
+    blueprintId: 1089, // Ultra-Heavy French Terry Joggers
+    printProviderId: 29,
+    variantMap: { 'S': 48101, 'M': 48102, 'L': 48103, 'XL': 48104, '2XL': 48105, '3XL': 48106 },
+    category: 'Esports Apparel',
+  },
+  'axiom-sweatpants-core': {
+    blueprintId: 350, // Midweight Fleece Joggers
+    printProviderId: 29,
+    variantMap: { 'S': 48201, 'M': 48202, 'L': 48203, 'XL': 48204, '2XL': 48205, '3XL': 48206 },
+    category: 'Esports Apparel',
+  },
+  'axiom-wrist-rest-01': {
+    blueprintId: 920, // Ergonomic Memory Gel Keyboard Wrist Rest
+    printProviderId: 42,
+    variantMap: {
+      'Compact 60% (11.4" x 2.9")': 92001,
+      'Tenkeyless TKL 80% (14.2" x 2.9")': 92002,
+      'Full-Size 100% (17.5" x 2.9")': 92003,
+    },
+    category: 'Desk Accessories',
   },
   'axiom-mug-01': {
     blueprintId: 78, // Two-Tone 15oz Ceramic Mug
