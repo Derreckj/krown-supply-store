@@ -499,7 +499,8 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     printCost: 6.00,
     images: [
       '/images/products/axa-pro-jersey-home.jpg',
-      '/images/products/axiom-pro-esports-jersey-back.jpg',
+      '/images/products/axa-pro-jersey-home-back.jpg',
+      '/images/branding/gaming/axiom-owl-quote-frame.jpg',
       '/images/branding/gaming/axiom-owl-mascot.png'
     ],
     variants: [
@@ -532,7 +533,8 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     printCost: 6.00,
     images: [
       '/images/products/axa-pro-jersey-away.jpg',
-      '/images/products/axiom-pro-esports-jersey-back.jpg',
+      '/images/products/axa-pro-jersey-away-back.jpg',
+      '/images/branding/gaming/axiom-owl-quote-frame.jpg',
       '/images/branding/gaming/axiom-owl-mascot.png'
     ],
     variants: [
@@ -565,7 +567,8 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     printCost: 6.00,
     images: [
       '/images/products/axiom-pro-esports-jersey-front.jpg',
-      '/images/products/axiom-pro-esports-jersey-back.jpg',
+      '/images/products/axa-pro-jersey-championship-back.jpg',
+      '/images/branding/gaming/axiom-owl-quote-frame.jpg',
       '/images/branding/gaming/axiom-owl-mascot.png'
     ],
     variants: [
@@ -598,7 +601,8 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     printCost: 6.00,
     images: [
       '/images/products/axa-pro-jersey-stealth.jpg',
-      '/images/products/axiom-pro-esports-jersey-back.jpg',
+      '/images/products/axa-pro-jersey-stealth-back.jpg',
+      '/images/branding/gaming/axiom-owl-quote-frame.jpg',
       '/images/branding/gaming/axiom-owl-mascot.png'
     ],
     variants: [

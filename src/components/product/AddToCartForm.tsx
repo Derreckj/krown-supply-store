@@ -20,6 +20,9 @@ export default function AddToCartForm({ product }: { product: CatalogProduct }) 
   const [gamertag, setGamertag] = useState<string>('');
   const [casingOption, setCasingOption] = useState<'exact' | 'uppercase'>('exact');
   const [playerNumber, setPlayerNumber] = useState<string>('');
+  const [underTagOption, setUnderTagOption] = useState<'number' | 'wordmark_stylized' | 'wordmark_standard' | 'both_wordmark_number' | 'creed_motto'>('number');
+  const [hasSleeveBadges, setHasSleeveBadges] = useState<boolean>(false);
+  const [hasHemCreed, setHasHemCreed] = useState<boolean>(false);
   const [addedMessage, setAddedMessage] = useState<boolean>(false);
   const [isSizeGuideOpen, setIsSizeGuideOpen] = useState<boolean>(false);
 
@@ -29,7 +32,27 @@ export default function AddToCartForm({ product }: { product: CatalogProduct }) 
   ) || product.variants[0];
 
   const isOutOfStock = currentVariant ? !currentVariant.isAvailable : false;
-  const isPersonalizable = selectedColor.toLowerCase().includes('custom') || product.id.startsWith('axiom-jersey') || product.id === 'custom-krown-works-hat';
+  const isJersey = product.id.startsWith('axiom-jersey');
+  const isPersonalizable = selectedColor.toLowerCase().includes('custom') || isJersey || product.id === 'custom-krown-works-hat';
+
+  // Calculate dynamic upcharges
+  let addOnsPrice = 0;
+  if (isJersey) {
+    if (underTagOption === 'wordmark_stylized' || underTagOption === 'wordmark_standard' || underTagOption === 'creed_motto') {
+      addOnsPrice += 4.99;
+    } else if (underTagOption === 'both_wordmark_number') {
+      addOnsPrice += 6.99;
+    }
+    if (hasSleeveBadges) {
+      addOnsPrice += 5.00;
+    }
+    if (hasHemCreed) {
+      addOnsPrice += 3.99;
+    }
+  }
+
+  const baseUnitPrice = currentVariant?.price || product.price;
+  const finalUnitPrice = baseUnitPrice + addOnsPrice;
 
   const handleAddToCart = () => {
     if (isOutOfStock) return;
@@ -38,24 +61,44 @@ export default function AddToCartForm({ product }: { product: CatalogProduct }) 
     const sanitizedTag = casingOption === 'uppercase' ? trimmedTag.toUpperCase() : trimmedTag;
     const sanitizedNum = playerNumber.trim().replace(/\D/g, '').slice(0, 2);
 
-    const customSnippet = isPersonalizable && sanitizedTag 
-      ? ` [Tag: ${sanitizedTag}${sanitizedNum ? ` #${sanitizedNum}` : ''}]` 
+    const addOnsSummary: string[] = [];
+    if (isJersey) {
+      if (underTagOption === 'wordmark_stylized') addOnsSummary.push('Wordmark: Aχισм Aℓℓєgιαηcє (+$4.99)');
+      if (underTagOption === 'wordmark_standard') addOnsSummary.push('Wordmark: AXIOM ALLEGIANCE (+$4.99)');
+      if (underTagOption === 'both_wordmark_number') addOnsSummary.push(`Aχισм Aℓℓєgιαηcє + #${sanitizedNum || '00'} (+$6.99)`);
+      if (underTagOption === 'creed_motto') addOnsSummary.push('Creed Motto Under Tag (+$4.99)');
+      if (hasSleeveBadges) addOnsSummary.push('Dual Sleeve Owl Badges (+$5.00)');
+      if (hasHemCreed) addOnsSummary.push('Hem Creed Print (+$3.99)');
+    }
+
+    const customSnippetParts: string[] = [];
+    if (sanitizedTag) customSnippetParts.push(`Tag: ${sanitizedTag}`);
+    if (sanitizedNum && (underTagOption === 'number' || underTagOption === 'both_wordmark_number')) {
+      customSnippetParts.push(`#${sanitizedNum}`);
+    }
+    if (addOnsSummary.length > 0) {
+      customSnippetParts.push(...addOnsSummary);
+    }
+
+    const customSnippet = (isPersonalizable && customSnippetParts.length > 0)
+      ? ` [${customSnippetParts.join(' | ')}]` 
       : '';
 
     addItem({
       productId: product.id,
       name: `${product.name}${customSnippet}`,
-      price: currentVariant?.price || product.price,
+      price: finalUnitPrice,
       image: product.images[0] || '',
       variant: {
         color: selectedColor,
         size: selectedSize,
       },
       quantity,
-      personalization: isPersonalizable && (sanitizedTag || sanitizedNum) ? {
+      personalization: isPersonalizable && (sanitizedTag || sanitizedNum || addOnsSummary.length > 0) ? {
         gamertag: sanitizedTag,
-        playerNumber: sanitizedNum,
+        playerNumber: (underTagOption === 'number' || underTagOption === 'both_wordmark_number') ? sanitizedNum : '',
         edition: selectedColor,
+        notes: addOnsSummary.join(' | '),
       } : undefined,
     });
 
@@ -116,13 +159,18 @@ export default function AddToCartForm({ product }: { product: CatalogProduct }) 
           background: 'rgba(98, 0, 238, 0.08)',
           border: '1px solid rgba(57, 255, 20, 0.35)',
           borderRadius: '8px',
-          padding: '1rem',
+          padding: '1.1rem',
           marginBottom: '1.25rem'
         }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.65rem' }}>
-            <span style={{ fontSize: '0.8rem', fontWeight: 800, color: '#39FF14', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
-              ⚡ Pro Player Gamertag Personalization
+            <span style={{ fontSize: '0.82rem', fontWeight: 800, color: '#39FF14', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+              ⚡ Pro Player Customization & Add-Ons
             </span>
+            {addOnsPrice > 0 && (
+              <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#39FF14', background: 'rgba(57, 255, 20, 0.15)', padding: '0.2rem 0.5rem', borderRadius: '4px' }}>
+                +${addOnsPrice.toFixed(2)} Add-Ons Selected
+              </span>
+            )}
           </div>
 
           {/* Casing Style Option */}
@@ -173,7 +221,8 @@ export default function AddToCartForm({ product }: { product: CatalogProduct }) 
             </div>
           </div>
 
-          <div className="form-group" style={{ marginBottom: '0.75rem' }}>
+          {/* Gamertag Input */}
+          <div className="form-group" style={{ marginBottom: '0.85rem' }}>
             <label htmlFor="gamertag-input" style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
               Gamertag / Player Name (Max 16 Chars):
             </label>
@@ -196,37 +245,254 @@ export default function AddToCartForm({ product }: { product: CatalogProduct }) 
             />
           </div>
 
-          <div className="form-group" style={{ marginBottom: 0 }}>
-            <label htmlFor="number-input" style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
-              Squad Number (00-99, Optional):
-            </label>
-            <input
-              type="text"
-              id="number-input"
-              value={playerNumber}
-              onChange={(e) => setPlayerNumber(e.target.value.replace(/\D/g, '').slice(0, 2))}
-              placeholder="e.g. 07"
-              className="form-input"
-            />
-          </div>
+          {/* Under Gamertag Placement Options (Only for Jerseys) */}
+          {isJersey && (
+            <div style={{ marginBottom: '0.9rem' }}>
+              <label style={{ fontSize: '0.75rem', color: 'var(--text-muted)', display: 'block', marginBottom: '0.4rem' }}>
+                Back Placement Under Gamertag:
+              </label>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '0.4rem' }}>
+                <button
+                  type="button"
+                  onClick={() => setUnderTagOption('number')}
+                  style={{
+                    padding: '0.45rem 0.65rem',
+                    fontSize: '0.78rem',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    fontWeight: underTagOption === 'number' ? 700 : 400,
+                    background: underTagOption === 'number' ? 'rgba(57, 255, 20, 0.12)' : 'rgba(255, 255, 255, 0.03)',
+                    border: underTagOption === 'number' ? '1px solid #39FF14' : '1px solid rgba(255, 255, 255, 0.12)',
+                    color: underTagOption === 'number' ? '#39FF14' : 'var(--text-main)',
+                    borderRadius: '4px',
+                    cursor: 'pointer',
+                    textAlign: 'left'
+                  }}
+                >
+                  <span>Squad Number Only (e.g. #07)</span>
+                  <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>Included</span>
+                </button>
 
-          {(gamertag.trim() || playerNumber.trim()) && (
+                <button
+                  type="button"
+                  onClick={() => setUnderTagOption('wordmark_stylized')}
+                  style={{
+                    padding: '0.45rem 0.65rem',
+                    fontSize: '0.78rem',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    fontWeight: underTagOption === 'wordmark_stylized' ? 700 : 400,
+                    background: underTagOption === 'wordmark_stylized' ? 'rgba(57, 255, 20, 0.12)' : 'rgba(255, 255, 255, 0.03)',
+                    border: underTagOption === 'wordmark_stylized' ? '1px solid #39FF14' : '1px solid rgba(255, 255, 255, 0.12)',
+                    color: underTagOption === 'wordmark_stylized' ? '#39FF14' : 'var(--text-main)',
+                    borderRadius: '4px',
+                    cursor: 'pointer',
+                    textAlign: 'left'
+                  }}
+                >
+                  <span>Stylized Font: &ldquo;Aχισм Aℓℓєgιαηcє&rdquo;</span>
+                  <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#39FF14' }}>+$4.99</span>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => setUnderTagOption('wordmark_standard')}
+                  style={{
+                    padding: '0.45rem 0.65rem',
+                    fontSize: '0.78rem',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    fontWeight: underTagOption === 'wordmark_standard' ? 700 : 400,
+                    background: underTagOption === 'wordmark_standard' ? 'rgba(57, 255, 20, 0.12)' : 'rgba(255, 255, 255, 0.03)',
+                    border: underTagOption === 'wordmark_standard' ? '1px solid #39FF14' : '1px solid rgba(255, 255, 255, 0.12)',
+                    color: underTagOption === 'wordmark_standard' ? '#39FF14' : 'var(--text-main)',
+                    borderRadius: '4px',
+                    cursor: 'pointer',
+                    textAlign: 'left'
+                  }}
+                >
+                  <span>Athletic Bold: &ldquo;AXIOM ALLEGIANCE&rdquo;</span>
+                  <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#39FF14' }}>+$4.99</span>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => setUnderTagOption('both_wordmark_number')}
+                  style={{
+                    padding: '0.45rem 0.65rem',
+                    fontSize: '0.78rem',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    fontWeight: underTagOption === 'both_wordmark_number' ? 700 : 400,
+                    background: underTagOption === 'both_wordmark_number' ? 'rgba(57, 255, 20, 0.12)' : 'rgba(255, 255, 255, 0.03)',
+                    border: underTagOption === 'both_wordmark_number' ? '1px solid #39FF14' : '1px solid rgba(255, 255, 255, 0.12)',
+                    color: underTagOption === 'both_wordmark_number' ? '#39FF14' : 'var(--text-main)',
+                    borderRadius: '4px',
+                    cursor: 'pointer',
+                    textAlign: 'left'
+                  }}
+                >
+                  <span>Stylized &ldquo;Aχισм Aℓℓєgιαηcє&rdquo; + Squad Number</span>
+                  <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#39FF14' }}>+$6.99</span>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => setUnderTagOption('creed_motto')}
+                  style={{
+                    padding: '0.45rem 0.65rem',
+                    fontSize: '0.78rem',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    fontWeight: underTagOption === 'creed_motto' ? 700 : 400,
+                    background: underTagOption === 'creed_motto' ? 'rgba(57, 255, 20, 0.12)' : 'rgba(255, 255, 255, 0.03)',
+                    border: underTagOption === 'creed_motto' ? '1px solid #39FF14' : '1px solid rgba(255, 255, 255, 0.12)',
+                    color: underTagOption === 'creed_motto' ? '#39FF14' : 'var(--text-main)',
+                    borderRadius: '4px',
+                    cursor: 'pointer',
+                    textAlign: 'left'
+                  }}
+                >
+                  <span>Official Team Creed Motto (Under Tag)</span>
+                  <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#39FF14' }}>+$4.99</span>
+                </button>
+              </div>
+            </div>
+          )}
+
+          {/* Squad Number input (shown when number is chosen) */}
+          {(underTagOption === 'number' || underTagOption === 'both_wordmark_number' || !isJersey) && (
+            <div className="form-group" style={{ marginBottom: '0.85rem' }}>
+              <label htmlFor="number-input" style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
+                Squad Number (00-99, Optional):
+              </label>
+              <input
+                type="text"
+                id="number-input"
+                value={playerNumber}
+                onChange={(e) => setPlayerNumber(e.target.value.replace(/\D/g, '').slice(0, 2))}
+                placeholder="e.g. 07"
+                className="form-input"
+              />
+            </div>
+          )}
+
+          {/* Pro Team Add-Ons (Sleeve Badges & Hem Creed) */}
+          {isJersey && (
+            <div style={{ marginTop: '0.85rem', paddingTop: '0.85rem', borderTop: '1px solid rgba(255, 255, 255, 0.08)' }}>
+              <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginBottom: '0.5rem' }}>
+                Pro Jersey Add-On Upgrades:
+              </div>
+
+              {/* Sleeve Crests */}
+              <label style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                padding: '0.55rem 0.65rem',
+                borderRadius: '4px',
+                background: hasSleeveBadges ? 'rgba(57, 255, 20, 0.12)' : 'rgba(255, 255, 255, 0.03)',
+                border: hasSleeveBadges ? '1px solid #39FF14' : '1px solid rgba(255, 255, 255, 0.1)',
+                cursor: 'pointer',
+                marginBottom: '0.45rem',
+                fontSize: '0.78rem'
+              }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.55rem' }}>
+                  <input
+                    type="checkbox"
+                    checked={hasSleeveBadges}
+                    onChange={(e) => setHasSleeveBadges(e.target.checked)}
+                    style={{ accentColor: '#39FF14', width: '15px', height: '15px' }}
+                  />
+                  <span>Dual Sleeve Axiom Owl Crest Badges</span>
+                </div>
+                <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#39FF14' }}>+$5.00</span>
+              </label>
+
+              {/* Hem Motto Print */}
+              <label style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                padding: '0.55rem 0.65rem',
+                borderRadius: '4px',
+                background: hasHemCreed ? 'rgba(57, 255, 20, 0.12)' : 'rgba(255, 255, 255, 0.03)',
+                border: hasHemCreed ? '1px solid #39FF14' : '1px solid rgba(255, 255, 255, 0.1)',
+                cursor: 'pointer',
+                fontSize: '0.78rem'
+              }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.55rem' }}>
+                  <input
+                    type="checkbox"
+                    checked={hasHemCreed}
+                    onChange={(e) => setHasHemCreed(e.target.checked)}
+                    style={{ accentColor: '#39FF14', width: '15px', height: '15px' }}
+                  />
+                  <div>
+                    <div>Lower Hem Team Creed Motto Print</div>
+                    <div style={{ fontSize: '0.68rem', color: 'var(--text-muted)' }}>
+                      &ldquo;YOU CANNOT BE TRULY HUMBLE...&rdquo;
+                    </div>
+                  </div>
+                </div>
+                <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#39FF14' }}>+$3.99</span>
+              </label>
+            </div>
+          )}
+
+          {/* Live Back-Print Preview */}
+          {(gamertag.trim() || playerNumber.trim() || hasSleeveBadges || hasHemCreed || underTagOption !== 'number') && (
             <div style={{
-              marginTop: '0.85rem',
-              padding: '0.55rem 0.85rem',
-              background: 'rgba(0, 0, 0, 0.55)',
-              border: '1px solid rgba(57, 255, 20, 0.35)',
+              marginTop: '0.95rem',
+              padding: '0.65rem 0.85rem',
+              background: 'rgba(0, 0, 0, 0.65)',
+              border: '1px solid rgba(57, 255, 20, 0.4)',
               borderRadius: '6px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              fontSize: '0.8rem'
+              fontSize: '0.78rem'
             }}>
-              <span style={{ color: 'var(--text-muted)', fontSize: '0.75rem' }}>Back-Print Preview:</span>
-              <span style={{ fontWeight: 800, color: '#39FF14', letterSpacing: '0.06em', fontFamily: 'monospace' }}>
-                {casingOption === 'uppercase' ? gamertag.trim().toUpperCase() : gamertag.trim()}
-                {playerNumber.trim() ? ` #${playerNumber.trim()}` : ''}
-              </span>
+              <div style={{ color: '#39FF14', fontWeight: 700, fontSize: '0.72rem', letterSpacing: '0.08em', marginBottom: '0.4rem', textTransform: 'uppercase' }}>
+                ⚡ Live Back-Print & Jersey Preview
+              </div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                  <span style={{ color: 'var(--text-muted)' }}>Player Gamertag:</span>
+                  <span style={{ fontWeight: 800, color: 'var(--text-main)', fontFamily: 'monospace' }}>
+                    {casingOption === 'uppercase' ? (gamertag.trim().toUpperCase() || 'YOUR TAG') : (gamertag.trim() || 'YOUR TAG')}
+                  </span>
+                </div>
+
+                {isJersey && (
+                  <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                    <span style={{ color: 'var(--text-muted)' }}>Under Gamertag:</span>
+                    <span style={{ fontWeight: 700, color: '#39FF14' }}>
+                      {underTagOption === 'wordmark_stylized' && 'Aχισм Aℓℓєgιαηcє'}
+                      {underTagOption === 'wordmark_standard' && 'AXIOM ALLEGIANCE'}
+                      {underTagOption === 'both_wordmark_number' && `Aχισм Aℓℓєgιαηcє #${playerNumber.trim() || '00'}`}
+                      {underTagOption === 'creed_motto' && '“YOU CANNOT BE TRULY HUMBLE...”'}
+                      {underTagOption === 'number' && `#${playerNumber.trim() || '00'}`}
+                    </span>
+                  </div>
+                )}
+
+                {hasSleeveBadges && (
+                  <div style={{ display: 'flex', justifyContent: 'space-between', color: '#39FF14', fontSize: '0.72rem' }}>
+                    <span>Sleeves:</span>
+                    <span>✓ Left & Right Axiom Owl Crest Badges</span>
+                  </div>
+                )}
+
+                {hasHemCreed && (
+                  <div style={{ display: 'flex', justifyContent: 'space-between', color: '#39FF14', fontSize: '0.72rem' }}>
+                    <span>Lower Hem:</span>
+                    <span>✓ Full Team Creed Inscription</span>
+                  </div>
+                )}
+              </div>
             </div>
           )}
         </div>
@@ -252,7 +518,7 @@ export default function AddToCartForm({ product }: { product: CatalogProduct }) 
           disabled={isOutOfStock}
           style={{ width: '100%', opacity: isOutOfStock ? 0.5 : 1, cursor: isOutOfStock ? 'not-allowed' : 'pointer' }}
         >
-          {isOutOfStock ? 'Out of Stock' : addedMessage ? '✓ Added to Cart!' : 'Add to Cart / Customize'}
+          {isOutOfStock ? 'Out of Stock' : addedMessage ? '✓ Added to Cart!' : `Add to Cart / Customize — $${(finalUnitPrice * quantity).toFixed(2)}`}
         </button>
       </div>
 

@@ -95,20 +95,27 @@ export default function CartPage() {
                   <p className="cart-item-variant">
                     {item.variant.color} / {item.variant.size}
                   </p>
-                  {item.personalization && (item.personalization.gamertag || item.personalization.playerNumber) && (
+                  {item.personalization && (item.personalization.gamertag || item.personalization.playerNumber || item.personalization.notes) && (
                     <div style={{
                       fontSize: '0.75rem',
                       color: '#39FF14',
                       background: 'rgba(57, 255, 20, 0.08)',
                       border: '1px solid rgba(57, 255, 20, 0.25)',
                       borderRadius: '4px',
-                      padding: '0.2rem 0.5rem',
+                      padding: '0.3rem 0.6rem',
                       marginTop: '0.35rem',
                       display: 'inline-block',
-                      fontWeight: 700,
+                      fontWeight: 600,
                       letterSpacing: '0.04em'
                     }}>
-                      ⚡ Custom Tag: {item.personalization.gamertag || 'NONE'}{item.personalization.playerNumber ? ` | No. #${item.personalization.playerNumber}` : ''}
+                      {item.personalization.gamertag && (
+                        <div>⚡ Tag: {item.personalization.gamertag}{item.personalization.playerNumber ? ` | #${item.personalization.playerNumber}` : ''}</div>
+                      )}
+                      {item.personalization.notes && (
+                        <div style={{ fontSize: '0.7rem', color: '#D4AF37', marginTop: '0.15rem' }}>
+                          {item.personalization.notes}
+                        </div>
+                      )}
                     </div>
                   )}
                   <p className="cart-item-price mobile-only">${item.price.toFixed(2)}</p>

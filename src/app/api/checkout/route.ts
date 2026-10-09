@@ -36,6 +36,9 @@ export async function POST(req: NextRequest) {
       if (item.personalization?.playerNumber) {
         descParts.push(`No: #${item.personalization.playerNumber}`);
       }
+      if (item.personalization?.notes) {
+        descParts.push(`Upgrades: ${item.personalization.notes}`);
+      }
 
       return {
         price_data: {
@@ -55,6 +58,7 @@ export async function POST(req: NextRequest) {
               gamertag: item.personalization?.gamertag || '',
               player_number: item.personalization?.playerNumber || '',
               edition: item.personalization?.edition || item.variant.color,
+              upgrades: item.personalization?.notes || '',
             },
           },
           unit_amount: Math.round(item.price * 100), // Stripe expects amounts in cents
