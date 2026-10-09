@@ -167,17 +167,17 @@ export default function Home() {
               </div>
             </Link>
 
-            <Link href="/products/axiom-shaker-01" className={styles.gamingGearCard}>
+            <Link href="/products/krown-mousepad-01" className={styles.gamingGearCard}>
               <div className={styles.gamingGearThumb}>
                 <img 
-                  src="/images/products/axiom-vibrant-gaming-shaker-bottle.jpg" 
-                  alt="Axiom Allegiance Pro Loadout Shaker" 
+                  src="/images/branding/gaming/axiom-owl-quote-frame.jpg" 
+                  alt="Axiom Allegiance Official Crest Speed Mousepad" 
                 />
-                <span className={styles.gearPill}>KrowN COLLAR</span>
+                <span className={styles.gearPill}>5 CUSTOM SIZES</span>
               </div>
               <div className={styles.gamingGearBody}>
-                <h4>Pro Loadout Shaker (24oz)</h4>
-                <p>Lime, Stealth &amp; Steel Editions • $24.99</p>
+                <h4>Axiom Official Crest Mousepad</h4>
+                <p>Speed Micro-Weave Cloth • From $19.99</p>
               </div>
             </Link>
 

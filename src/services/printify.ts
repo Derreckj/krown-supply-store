@@ -624,31 +624,7 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     material: '100% Breathable Micro-Poly Athletic Bird-Eye Mesh with Antimicrobial Treatment',
     fit: 'Pro-Tier Athletic Fit with Contoured Raglan Sleeve Shoulders',
   },
-  {
-    id: 'axiom-shaker-01',
-    name: 'Axiom Allegiance Pro Loadout Shaker',
-    slug: 'axiom-allegiance-pro-loadout-shaker',
-    description: 'Fuel up for overtime clutches and all-night ranked marathons. Ultra-premium gaming supplement shaker bottle featuring semi-translucent frosted shatterproof BPA-free body with measurement lines up to 20oz, leak-proof snap cap, royal purple silicone collar with crisp KrowN embossing, ergonomic carrying loop, surgical stainless steel whisk ball, and the authentic Axiom Allegiance owl crest with distinctive A-X-A facial geometry and "POWERED BY KROWN" inscription. Available in Toxic Lime & Royal Purple, Stealth Blackout, and Vacuum Insulated Stainless Steel.',
-    collection: 'AXA / Axiom Allegiance',
-    price: 24.99,
-    baseCost: 7.20,
-    printCost: 3.80,
-    images: [
-      '/images/products/axiom-vibrant-gaming-shaker-bottle.jpg',
-      '/images/products/axiom-shaker-stealth-blackout.jpg',
-      '/images/products/axiom-shaker-insulated-steel.jpg',
-      '/images/products/axiom-shaker-bottles-3-editions.jpg',
-      '/images/branding/gaming/axiom-owl-mascot.png'
-    ],
-    variants: [
-      { id: 1201, color: 'Toxic Lime & Royal Purple / Smoke Body', size: '24 oz (700ml)', price: 24.99, sku: 'AXM-SHK-24-LIMEPRP', isAvailable: true },
-      { id: 1202, color: 'Stealth Blackout / Obsidian Body', size: '24 oz (700ml)', price: 24.99, sku: 'AXM-SHK-24-STEALTH', isAvailable: true },
-      { id: 1203, color: 'Pro Insulated Stainless Steel (Double-Wall)', size: '26 oz (770ml)', price: 34.99, sku: 'AXM-SHK-26-STEEL', isAvailable: true },
-    ],
-    isNew: true,
-    material: 'BPA-Free Eastar™ Tritan / Double-Wall Kitchen-Grade Steel • Stainless Steel Whisk Ball',
-    fit: '24–26 oz Capacity • Fits Standard Car & Desk Cupholders',
-  },
+
   {
     id: 'axiom-mug-01',
     name: 'Axiom Owl Two-Tone Ceramic Gaming Mug (15oz)',
@@ -1398,17 +1374,7 @@ export const PRINTIFY_SKU_CATALOG_MAPPINGS: Record<string, PrintifySkuMapping> =
     variantMap: { 'S': 87231, 'M': 87232, 'L': 87233, 'XL': 87234, '2XL': 87235 },
     category: 'Esports Apparel',
   },
-  'axiom-shaker-01': {
-    blueprintId: 540, // Eastman Tritan 24oz / Stainless Shaker Bottle
-    printProviderId: 10,
-    variantMap: {
-      '24 oz (700ml)': 54001,
-      'Toxic Lime & Royal Purple / Smoke Body': 54001,
-      'Stealth Blackout / Obsidian Body': 54002,
-      'Pro Insulated Stainless Steel (Double-Wall)': 54003,
-    },
-    category: 'Drinkware',
-  },
+
   'krown-mat-01': {
     blueprintId: 488, // Extended Gaming Desk Mat
     printProviderId: 1, // Spoke Custom Products / Monster Digital
