@@ -99,6 +99,9 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     baseCost: 28.00,
     printCost: 8.00,
     images: [
+      '/images/products/krown-hoodie-studio-front.jpg',
+      '/images/products/krown-hoodie-male-model.jpg',
+      '/images/products/krown-hoodie-female-model.jpg',
       '/images/products/krown-supply-premium-hoodie-front.jpg',
       '/images/products/krown-heavyweight-hoodie-back-krown.jpg',
     ],
@@ -198,7 +201,8 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     baseCost: 11.50,
     printCost: 4.50,
     images: [
-      '/images/products/krown-r112-custom-supply-sample.jpg',
+      '/images/products/krown-r112-leather-patch-hat-front.jpg',
+      '/images/products/krown-r112-leather-patch-hat-hero.jpg',
     ],
     variants: [
       { id: 1021, color: 'Custom Logo (Single Hat / Sample)', size: '1 Hat', price: 29.99, sku: 'KSC-CUST-112-1', isAvailable: true },
@@ -314,8 +318,8 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     baseCost: 11.50,
     printCost: 4.50,
     images: [
-      '/images/products/krown-r112-straight-front-hex-patch.jpg',
-      '/images/products/krown-r112-isometric-hex-patch.jpg',
+      '/images/products/krown-r112-leather-patch-hat-front.jpg',
+      '/images/products/krown-r112-leather-patch-hat-hero.jpg',
     ],
     variants: [
       { id: 1001, color: 'Jobsite Flagship (Crimson Red / Black Visor / White Mesh)', size: 'OSFA', price: 29.99, sku: 'KSC-HAT-112-BTR-CRIMBLK-WHT', isAvailable: true },
@@ -380,7 +384,8 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     baseCost: 6.20,
     printCost: 4.00,
     images: [
-      '/images/products/krown-construction-cuffed-beanie.png',
+      '/images/products/krown-beanie-studio-front.jpg',
+      '/images/products/krown-beanie-model.jpg',
     ],
     variants: [
       { id: 611, color: 'Charcoal Black / Gold Crest Patch', size: 'OSFA', price: 24.99, sku: 'KRN-BN-RIBBED-BLK', isAvailable: true },
@@ -438,6 +443,7 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     baseCost: 2.40,
     printCost: 1.90,
     images: [
+      '/images/products/krown-stickers-realistic.jpg',
       '/images/products/krown-construction-stickers-pack.png',
     ],
     variants: [
@@ -822,7 +828,7 @@ class PrintifyService {
               const data = JSON.parse(text);
               if (data.data && data.data.length > 0) {
                 const liveProducts = this.transformPrintifyProducts(data.data);
-                return [...processedLaunch, ...liveProducts];
+                return this.mergeAndDeduplicateProducts(processedLaunch, liveProducts);
               }
             } catch {
               console.warn('Invalid JSON from Printify API, using local catalog.');
@@ -838,13 +844,63 @@ class PrintifyService {
   }
 
   /**
+   * Merge live Printify products into catalog and deduplicate matching mock items.
+   */
+  private mergeAndDeduplicateProducts(mockProducts: CatalogProduct[], liveProducts: CatalogProduct[]): CatalogProduct[] {
+    const replacedMockIds = new Set<string>();
+
+    for (const live of liveProducts) {
+      const nameLower = live.name.toLowerCase();
+      if (nameLower.includes('tumbler')) {
+        replacedMockIds.add('kc-tumbler-01');
+      } else if (nameLower.includes('hoodie')) {
+        replacedMockIds.add('krown-hoodie-premium');
+      } else if (nameLower.includes('richardson') || nameLower.includes('snapback') || nameLower.includes('112')) {
+        replacedMockIds.add('custom-krown-works-hat');
+        replacedMockIds.add('krown-hat-btr-leather');
+      } else if (nameLower.includes('comfort colors') || nameLower.includes('1717')) {
+        replacedMockIds.add('krown-tee-cc1717');
+      } else if (nameLower.includes('beanie')) {
+        replacedMockIds.add('kc-beanie-01');
+      } else if (nameLower.includes('jersey')) {
+        replacedMockIds.add('axiom-jersey-home');
+      } else if (nameLower.includes('desk mat')) {
+        replacedMockIds.add('krown-mat-01');
+      } else if (nameLower.includes('sticker') || nameLower.includes('decal')) {
+        replacedMockIds.add('krown-stickers-01');
+      }
+    }
+
+    const uniqueMocks = mockProducts.filter(m => !replacedMockIds.has(m.id));
+    return [...liveProducts, ...uniqueMocks];
+  }
+
+  /**
    * Fetch single product by ID or Slug.
    */
   async getProductById(idOrSlug: string): Promise<CatalogProduct | null> {
     const products = await this.getProducts();
+
+    // Alias mapping between legacy mock slugs and new live Printify products
+    const aliasMap: Record<string, string[]> = {
+      'custom-krown-works-hat': ['6ac80dc2f4d488e1be0b0902', 'richardson', 'snapback'],
+      'krown-hat-btr-leather': ['6ac80dc2f4d488e1be0b0902'],
+      'krown-hoodie-premium': ['6ac80dff9f3e89dde70da38d', 'krown-heavyweight-streetwear-hoodie'],
+      'kc-tumbler-01': ['6ac7ed40fea4d4e68e0a0f6a', '20oz-vacuum-insulated-jobsite-tumbler'],
+      'krown-tee-cc1717': ['6ac7ed0b9bfbeab23800dcdf', 'krown-wear-the-krown-comfort-colors-1717'],
+      'kc-beanie-01': ['6ac80e07cafb2cd4c60b7c96', 'krown-construction-heavy-ribbed-cuffed-beanie'],
+      'axiom-jersey-home': ['6ac80e034a1cdf2ad60e0bed', 'axiom-allegiance-axa-cut-and-sew-pro-esports-jersey'],
+      'krown-mat-01': ['6ac7ed486443c9f27801af1b', 'axiom-owl-panoramic-gaming-desk-mat'],
+      'krown-stickers-01': ['6ac7ed44fea4d4e68e0a0f80', '6ac7ed46ad560d80d10eb55c'],
+    };
+
+    const targetAliases = aliasMap[idOrSlug] || [];
+
     const product = products.find(p => 
       p.id === idOrSlug || 
       p.slug === idOrSlug ||
+      targetAliases.includes(p.id) ||
+      targetAliases.some(alias => p.slug.includes(alias)) ||
       (idOrSlug === 'krown-hat-01' && p.id === 'krown-hat-crimson') ||
       (idOrSlug === 'richardson-112-trucker-hat-crimson-gold' && (p.id === 'krown-hat-crimson' || p.slug === 'richardson-112-trucker-hat-crimson-black'))
     );
@@ -915,11 +971,60 @@ class PrintifyService {
         collection = 'AXA / Axiom Allegiance';
       }
 
-      const productImages = raw.images && raw.images.length > 0 
-        ? raw.images.map(img => img.src)
-        : (collection === 'AXA / Axiom Allegiance' 
-            ? ['/images/branding/gaming/axiom-owl-display.png'] 
-            : ['/images/products/krown-supply-premium-hoodie-front.jpg']);
+      // High-Conversion Commercial Studio & Model Photography Overrides
+      let productImages: string[] = [];
+      if (titleLower.includes('tumbler')) {
+        productImages = [
+          '/images/products/krown-construction-jobsite-tumbler.jpg',
+          '/images/products/krown-construction-jobsite-tumbler-32oz.jpg',
+        ];
+      } else if (titleLower.includes('hoodie')) {
+        productImages = [
+          '/images/products/krown-hoodie-studio-front.jpg',
+          '/images/products/krown-hoodie-male-model.jpg',
+          '/images/products/krown-hoodie-female-model.jpg',
+          '/images/products/krown-heavyweight-hoodie-back-krown.jpg',
+        ];
+      } else if (titleLower.includes('richardson') || titleLower.includes('snapback') || titleLower.includes('112') || titleLower.includes('leather patch')) {
+        productImages = [
+          '/images/products/krown-r112-leather-patch-hat-front.jpg',
+          '/images/products/krown-r112-leather-patch-hat-hero.jpg',
+          '/images/products/krown-r112-crimson-black-angle.jpg',
+        ];
+      } else if (titleLower.includes('beanie')) {
+        productImages = [
+          '/images/products/krown-beanie-studio-front.jpg',
+          '/images/products/krown-beanie-model.jpg',
+        ];
+      } else if (titleLower.includes('sticker') || titleLower.includes('decal')) {
+        productImages = [
+          '/images/products/krown-stickers-realistic.jpg',
+          '/images/products/krown-construction-stickers-pack.png',
+        ];
+      } else if (titleLower.includes('jersey')) {
+        productImages = [
+          '/images/products/axa-pro-jersey-home.jpg',
+          '/images/products/axa-pro-jersey-away.jpg',
+          '/images/products/axa-pro-jersey-stealth.jpg',
+          '/images/products/axiom-pro-esports-jersey-back.jpg',
+        ];
+      } else if (titleLower.includes('desk mat')) {
+        productImages = [
+          '/images/products/axiom-owl-desk-mat-photorealistic.jpg',
+        ];
+      } else if (titleLower.includes('comfort colors') || titleLower.includes('1717')) {
+        productImages = [
+          '/images/products/krown-supply-comfort-colors-1717-tee.jpg',
+        ];
+      }
+
+      if (productImages.length === 0) {
+        productImages = raw.images && raw.images.length > 0 
+          ? raw.images.map(img => img.src)
+          : (collection === 'AXA / Axiom Allegiance' 
+              ? ['/images/branding/gaming/axiom-owl-display.png'] 
+              : ['/images/products/krown-supply-premium-hoodie-front.jpg']);
+      }
 
       return {
         id: raw.id,
