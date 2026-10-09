@@ -80,6 +80,7 @@ export async function POST(req: NextRequest) {
                 quantity: item.quantity || 1,
                 gamertag: product?.metadata?.gamertag || undefined,
                 playerNumber: product?.metadata?.player_number || undefined,
+                notes: product?.metadata?.upgrades || undefined,
               };
             });
           } catch (err) {

@@ -1118,20 +1118,27 @@ class PrintifyService {
         quantity: item.quantity,
       };
 
-      if (item.gamertag || item.playerNumber || item.customLogoUrl) {
+      if (item.gamertag || item.playerNumber || item.customLogoUrl || item.notes) {
         lineItemPayload.metadata = {
           custom_gamertag: item.gamertag,
           custom_player_number: item.playerNumber,
           custom_logo_url: item.customLogoUrl,
+          custom_upgrades: item.notes,
         };
       }
 
       payloadLineItems.push(lineItemPayload);
     }
 
+    const orderNotes = (order.lineItems || [])
+      .filter(i => i.gamertag || i.notes)
+      .map(i => `${i.productId}: [${[i.gamertag ? `Tag: ${i.gamertag}` : '', i.playerNumber ? `#${i.playerNumber}` : '', i.notes || ''].filter(Boolean).join(' | ')}]`)
+      .join(' ; ');
+
     const payload: PrintifyOrderPayload = {
       external_id: order.externalId,
       label: `KrowN Order #${order.externalId}`,
+      notes: orderNotes || undefined,
       shipping_method: order.shippingMethod || 1, // 1 = Standard
       send_shipping_notification: true,
       address_to: {
@@ -1328,6 +1335,7 @@ export interface PrintifyOrderItemInput {
   gamertag?: string;
   playerNumber?: string;
   customLogoUrl?: string;
+  notes?: string;
 }
 
 export interface PrintifyShippingAddress {
@@ -1358,12 +1366,14 @@ export interface PrintifyOrderLineItemPayload {
     custom_gamertag?: string;
     custom_player_number?: string;
     custom_logo_url?: string;
+    custom_upgrades?: string;
   };
 }
 
 export interface PrintifyOrderPayload {
   external_id: string;
   label?: string;
+  notes?: string;
   line_items: PrintifyOrderLineItemPayload[];
   shipping_method: number;
   send_shipping_notification: boolean;
