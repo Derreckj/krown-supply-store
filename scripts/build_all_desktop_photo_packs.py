@@ -90,8 +90,8 @@ categories = {
         (os.path.join(pub_products, 'axiom-crewneck-sweatshirt-model.jpg'), '04_Official_Crewneck_Model_Lookbook.jpg'),
     ],
     '13_Axiom_Pro_Wrist_Rests': [
-        (os.path.join(pub_products, 'axiom-keyboard-wrist-rest-tournament-edition-v2.jpg'), '01_Wrist_Rest_Tournament_Edition_3_Sizes.jpg'),
-        (os.path.join(pub_products, 'axiom-keyboard-wrist-rest-stealth-setup.jpg'), '02_Wrist_Rest_Stealth_Battlestation_Setup.jpg'),
+        (os.path.join(pub_products, 'axiom-keyboard-wrist-rest-clean-v3.jpg'), '01_Wrist_Rest_Tournament_Edition_3_Sizes.jpg'),
+        (os.path.join(pub_products, 'axiom-keyboard-wrist-rest-setup-v3.jpg'), '02_Wrist_Rest_Stealth_Battlestation_Setup.jpg'),
     ],
     '14_Axiom_Ceramic_Gaming_Mugs': [
         (os.path.join(pub_products, 'axiom-mug-clean-photoreal-15oz.jpg'), '01_Photoreal_Ceramic_Mug_15oz_Desk_Render.jpg'),
@@ -121,11 +121,11 @@ categories = {
         (os.path.join(pub_products, 'krown-shaker-bottles-3-editions.jpg'), '07_Luxury_Shaker_Lineup.jpg'),
     ],
     '18_Official_Decal_Sticker_Packs': [
-        (os.path.join(pub_products, 'axiom-stickers-holographic-pack.jpg'), '01_Axiom_Holographic_Decal_5Pack.jpg'),
+        (os.path.join(pub_products, 'axiom-stickers-holographic-battle-pack-v3.jpg'), '01_Axiom_Holographic_Decal_5Pack.jpg'),
         (os.path.join(pub_products, 'kc-stickers-workbench-v2.jpg'), '02_KrowN_Construction_Jobsite_Decal_5Pack.jpg'),
     ],
     '19_KrowN_Supply_Co_Luxury_Streetwear': [
-        (os.path.join(pub_products, 'krown-streetwear-set-v3.jpg'), '01_Premium_Streetwear_Hoodie_Sweatpants_Set_V2.jpg'),
+        (os.path.join(pub_products, 'krown-streetwear-set-clean-v4.jpg'), '01_Premium_Streetwear_Hoodie_Sweatpants_Set_V2.jpg'),
         (os.path.join(pub_products, 'krown-french-terry-shorts-v3.jpg'), '02_French_Terry_Heavyweight_Shorts_V2.jpg'),
         (os.path.join(pub_products, 'krown-dad-hat-washed-black.jpg'), '03_Vintage_Washed_Black_Dad_Hat.jpg'),
         (os.path.join(pub_products, 'krown-broken-rules-gold-tracksuit.jpg'), '04_Broken_Rules_Kintsugi_Gold_Tracksuit.jpg'),

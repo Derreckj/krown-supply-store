@@ -154,7 +154,7 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     baseCost: 52.00,
     printCost: 15.00,
     images: [
-      '/images/products/krown-streetwear-set-v3.jpg',
+      '/images/products/krown-streetwear-set-clean-v4.jpg',
       '/images/products/krown-supply-premium-hoodie-front.jpg',
       '/images/products/krown-supply-premium-sweatpants.jpg',
     ],
@@ -930,24 +930,24 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
   },
   {
     id: 'axiom-wrist-rest-01',
-    name: 'Axiom Pro Cooling Gel Ergonomic Keyboard Wrist Rest',
+    name: 'Axiom Pro Ergonomic Tournament Keyboard Wrist Rest',
     slug: 'axiom-pro-cooling-gel-keyboard-wrist-rest',
-    description: 'HyperX-grade tournament ergonomic cooling gel wrist rest engineered for marathon gaming sessions. Features a dual-layer core of cooling infused memory foam and high-density ergonomic support foam that conforms to your wrists. Wrapped in silky smooth, anti-friction cooling lycra fabric with anti-fray royal purple precision perimeter stitching, textured non-slip silicone rubber base, clean two-tone Gothic AXIOM ALLEGIANCE typography, and the official smoky Axiom Owl crest. Available in Compact 60%, Tenkeyless (TKL 80%), and Full-Size (100%).',
+    description: 'HyperX-grade tournament ergonomic keyboard wrist rest engineered for marathon gaming sessions. Features a high-density contoured support core that conforms to your wrists. Wrapped in silky smooth, anti-friction lycra fabric with anti-fray royal purple & toxic green precision perimeter stitching, textured non-slip silicone rubber base, clean two-tone Gothic AXIOM ALLEGIANCE typography, and the official smoky Axiom Owl crest. Available in Compact 60%, Tenkeyless (TKL 80%), and Full-Size (100%).',
     collection: 'AXA / Axiom Allegiance',
     price: 19.99,
     baseCost: 6.50,
     printCost: 3.50,
     images: [
-      '/images/products/axiom-keyboard-wrist-rest-tournament-edition-v2.jpg',
-      '/images/products/axiom-keyboard-wrist-rest-stealth-setup.jpg',
+      '/images/products/axiom-keyboard-wrist-rest-clean-v3.jpg',
+      '/images/products/axiom-keyboard-wrist-rest-setup-v3.jpg',
     ],
     variants: [
-      { id: 4301, color: 'Tournament Edition / Purple & Lime', size: 'Compact 60% (11.4" x 2.9")', price: 19.99, sku: 'AXM-WRIST-60', isAvailable: true },
-      { id: 4302, color: 'Tournament Edition / Purple & Lime', size: 'Tenkeyless TKL 80% (14.2" x 2.9")', price: 21.99, sku: 'AXM-WRIST-TKL', isAvailable: true },
-      { id: 4303, color: 'Tournament Edition / Purple & Lime', size: 'Full-Size 100% (17.5" x 2.9")', price: 23.99, sku: 'AXM-WRIST-FULL', isAvailable: true },
+      { id: 4301, color: 'Tournament Edition / Purple & Lime', size: 'Compact 60% (11.4" x 2.9")', price: 19.99, sku: 'AXM-WRIST-60', isAvailable: true, image: '/images/products/axiom-keyboard-wrist-rest-clean-v3.jpg' },
+      { id: 4302, color: 'Tournament Edition / Purple & Lime', size: 'Tenkeyless TKL 80% (14.2" x 2.9")', price: 21.99, sku: 'AXM-WRIST-TKL', isAvailable: true, image: '/images/products/axiom-keyboard-wrist-rest-clean-v3.jpg' },
+      { id: 4303, color: 'Tournament Edition / Purple & Lime', size: 'Full-Size 100% (17.5" x 2.9")', price: 23.99, sku: 'AXM-WRIST-FULL', isAvailable: true, image: '/images/products/axiom-keyboard-wrist-rest-clean-v3.jpg' },
     ],
     isNew: true,
-    material: 'Cooling-Infused Memory Gel + Ultra-Dense Support Core + Silky Lycra Face + Non-Slip Base',
+    material: 'High-Density Ergonomic Contour Core + Silky Lycra Face + Non-Slip Silicone Base',
     fit: 'Ergonomic Contoured 15° Slope (0.9" / 23mm Height)',
   },
 
@@ -964,10 +964,10 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     baseCost: 2.10,
     printCost: 1.80,
     images: [
-      '/images/products/axiom-stickers-holographic-pack.jpg',
+      '/images/products/axiom-stickers-holographic-battle-pack-v3.jpg',
     ],
     variants: [
-      { id: 501, color: 'Axiom Holographic 5-Pack', size: '5-Pack', price: 12.99, sku: 'AXM-STK-HOLO-PK5', isAvailable: true, image: '/images/products/axiom-stickers-holographic-pack.jpg' }
+      { id: 501, color: 'Axiom Holographic 5-Pack', size: '5-Pack', price: 12.99, sku: 'AXM-STK-HOLO-PK5', isAvailable: true, image: '/images/products/axiom-stickers-holographic-battle-pack-v3.jpg' }
     ],
     material: '6 mil Thick Weatherproof Holographic Vinyl with UV Shield',
     fit: '3" to 4" Widths',

@@ -209,13 +209,13 @@ export default function Home() {
             <Link href="/products/axiom-wrist-rest-01" className={styles.gamingGearCard}>
               <div className={styles.gamingGearThumb}>
                 <img 
-                  src="/images/products/axiom-keyboard-wrist-rest-tournament-edition-v2.jpg" 
-                  alt="Axiom Pro Cooling Gel Keyboard Wrist Rest" 
+                  src="/images/products/axiom-keyboard-wrist-rest-clean-v3.jpg" 
+                  alt="Axiom Pro Ergonomic Tournament Keyboard Wrist Rest" 
                 />
-                <span className={styles.gearPill}>COOLING GEL</span>
+                <span className={styles.gearPill}>TOURNAMENT SPEC</span>
               </div>
               <div className={styles.gamingGearBody}>
-                <h4>Pro Cooling Gel Keyboard Wrist Rest</h4>
+                <h4>Axiom Pro Tournament Wrist Rest</h4>
                 <p>Ergonomic Slope • 60%, TKL &amp; Full • $19.99</p>
               </div>
             </Link>
