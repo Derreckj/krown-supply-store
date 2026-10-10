@@ -33,7 +33,10 @@ export default function AddToCartForm({ product }: { product: CatalogProduct }) 
 
   const isOutOfStock = currentVariant ? !currentVariant.isAvailable : false;
   const isJersey = product.id.startsWith('axiom-jersey');
-  const isPersonalizable = isJersey;
+  const isSweatshirt = product.id === 'axiom-sweatshirt-01';
+  const isPersonalizable = isJersey || isSweatshirt;
+
+  const [sweatshirtSleeveOption, setSweatshirtSleeveOption] = useState<'left' | 'right' | 'both'>('left');
 
   // Calculate dynamic upcharges
   let addOnsPrice = 0;
@@ -48,6 +51,10 @@ export default function AddToCartForm({ product }: { product: CatalogProduct }) 
     }
     if (hasHemCreed) {
       addOnsPrice += 3.99;
+    }
+  } else if (isSweatshirt) {
+    if (sweatshirtSleeveOption === 'both') {
+      addOnsPrice += 4.99;
     }
   }
 
@@ -69,6 +76,10 @@ export default function AddToCartForm({ product }: { product: CatalogProduct }) 
       if (underTagOption === 'creed_motto') addOnsSummary.push('Creed Motto Under Tag (+$4.99)');
       if (hasSleeveBadges) addOnsSummary.push('Dual Sleeve Owl Badges (+$5.00)');
       if (hasHemCreed) addOnsSummary.push('Hem Creed Print (+$3.99)');
+    } else if (isSweatshirt) {
+      if (sweatshirtSleeveOption === 'left') addOnsSummary.push('Gothic Sleeve Print: Left Sleeve (Standard)');
+      if (sweatshirtSleeveOption === 'right') addOnsSummary.push('Gothic Sleeve Print: Right Sleeve');
+      if (sweatshirtSleeveOption === 'both') addOnsSummary.push('Gothic Sleeve Print: Both Sleeves (+$4.99)');
     }
 
     const customSnippetParts: string[] = [];
@@ -165,7 +176,85 @@ export default function AddToCartForm({ product }: { product: CatalogProduct }) 
         </div>
       )}
 
-      {isPersonalizable && (
+      {/* Sweatshirt Customizable Sleeve Placement */}
+      {isSweatshirt && (
+        <div style={{
+          background: 'rgba(98, 0, 238, 0.08)',
+          border: '1px solid rgba(57, 255, 20, 0.35)',
+          borderRadius: '8px',
+          padding: '1.1rem',
+          marginBottom: '1.25rem'
+        }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.65rem' }}>
+            <span style={{ fontSize: '0.82rem', fontWeight: 800, color: '#39FF14', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+              ⚡ Custom Sleeve Lettering Placement
+            </span>
+            {sweatshirtSleeveOption === 'both' && (
+              <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#39FF14', background: 'rgba(57, 255, 20, 0.15)', padding: '0.2rem 0.5rem', borderRadius: '4px' }}>
+                +$4.99 Dual Sleeve
+              </span>
+            )}
+          </div>
+          <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginBottom: '0.65rem' }}>
+            Choose where to place the Gothic two-tone &ldquo;Axiom Allegiance&rdquo; lettering down your sweatshirt arm:
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '0.5rem' }}>
+            <button
+              type="button"
+              onClick={() => setSweatshirtSleeveOption('left')}
+              style={{
+                padding: '0.55rem 0.4rem',
+                fontSize: '0.75rem',
+                fontWeight: sweatshirtSleeveOption === 'left' ? 700 : 500,
+                background: sweatshirtSleeveOption === 'left' ? 'rgba(57, 255, 20, 0.15)' : 'rgba(255, 255, 255, 0.03)',
+                border: sweatshirtSleeveOption === 'left' ? '1px solid #39FF14' : '1px solid rgba(255, 255, 255, 0.15)',
+                color: sweatshirtSleeveOption === 'left' ? '#39FF14' : 'var(--text-muted)',
+                borderRadius: '4px',
+                cursor: 'pointer',
+                textAlign: 'center',
+              }}
+            >
+              Left Sleeve (Std)
+            </button>
+            <button
+              type="button"
+              onClick={() => setSweatshirtSleeveOption('right')}
+              style={{
+                padding: '0.55rem 0.4rem',
+                fontSize: '0.75rem',
+                fontWeight: sweatshirtSleeveOption === 'right' ? 700 : 500,
+                background: sweatshirtSleeveOption === 'right' ? 'rgba(57, 255, 20, 0.15)' : 'rgba(255, 255, 255, 0.03)',
+                border: sweatshirtSleeveOption === 'right' ? '1px solid #39FF14' : '1px solid rgba(255, 255, 255, 0.15)',
+                color: sweatshirtSleeveOption === 'right' ? '#39FF14' : 'var(--text-muted)',
+                borderRadius: '4px',
+                cursor: 'pointer',
+                textAlign: 'center',
+              }}
+            >
+              Right Sleeve
+            </button>
+            <button
+              type="button"
+              onClick={() => setSweatshirtSleeveOption('both')}
+              style={{
+                padding: '0.55rem 0.4rem',
+                fontSize: '0.75rem',
+                fontWeight: sweatshirtSleeveOption === 'both' ? 700 : 500,
+                background: sweatshirtSleeveOption === 'both' ? 'rgba(57, 255, 20, 0.15)' : 'rgba(255, 255, 255, 0.03)',
+                border: sweatshirtSleeveOption === 'both' ? '1px solid #39FF14' : '1px solid rgba(255, 255, 255, 0.15)',
+                color: sweatshirtSleeveOption === 'both' ? '#39FF14' : 'var(--text-muted)',
+                borderRadius: '4px',
+                cursor: 'pointer',
+                textAlign: 'center',
+              }}
+            >
+              Both Sleeves (+$4.99)
+            </button>
+          </div>
+        </div>
+      )}
+
+      {isJersey && (
         <div style={{
           background: 'rgba(98, 0, 238, 0.08)',
           border: '1px solid rgba(57, 255, 20, 0.35)',

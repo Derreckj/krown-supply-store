@@ -83,6 +83,14 @@ categories = {
         (os.path.join(pub_products, 'axiom-heavyweight-hoodie-model.jpg'), '02_Heavyweight_Hoodie_Model_Lookbook.jpg'),
         (os.path.join(pub_products, 'axiom-crewneck-sweatshirt-studio.jpg'), '03_Official_Crewneck_Studio.jpg'),
         (os.path.join(pub_products, 'axiom-crewneck-sweatshirt-model.jpg'), '04_Official_Crewneck_Model_Lookbook.jpg'),
+    ],
+    '13_Axiom_Pro_Wrist_Rests': [
+        (os.path.join(pub_products, 'axiom-keyboard-wrist-rest-tournament-edition.jpg'), '01_Wrist_Rest_Tournament_Edition_3_Sizes.jpg'),
+        (os.path.join(pub_products, 'axiom-keyboard-wrist-rest-stealth-setup.jpg'), '02_Wrist_Rest_Stealth_Battlestation_Setup.jpg'),
+    ],
+    '14_Axiom_Ceramic_Gaming_Mugs': [
+        (os.path.join(pub_products, 'axiom-mug-smokey-crest-15oz.png'), '01_Smokey_Crest_Gothic_Mug_15oz.png'),
+        (os.path.join(pub_products, 'axiom-owl-gamer-mug-15oz.png'), '02_Two_Tone_Mascot_Quote_Mug_15oz.png'),
     ]
 }
 
