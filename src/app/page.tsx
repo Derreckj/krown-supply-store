@@ -181,7 +181,7 @@ export default function Home() {
             <Link href="/products/axiom-sweatpants-pro" className={styles.gamingGearCard}>
               <div className={styles.gamingGearThumb}>
                 <img 
-                  src="/images/products/axiom-sweatpants-pro-model-v3.jpg" 
+                  src="/images/products/axiom-sweatpants-pro-model-v4.jpg" 
                   alt="Axiom Allegiance Pro Heavyweight Joggers" 
                 />
                 <span className={styles.gearPill}>450 GSM FLEECE</span>
