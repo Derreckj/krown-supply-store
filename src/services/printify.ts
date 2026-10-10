@@ -53,6 +53,7 @@ export interface CatalogProduct {
     price: number;
     sku: string;
     isAvailable: boolean;
+    image?: string;
   }>;
   isNew?: boolean;
   isLimited?: boolean;
@@ -153,7 +154,7 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     baseCost: 52.00,
     printCost: 15.00,
     images: [
-      '/images/products/krown-supply-streetwear-set.jpg',
+      '/images/products/krown-streetwear-set-black.jpg',
       '/images/products/krown-supply-premium-hoodie-front.jpg',
       '/images/products/krown-supply-premium-sweatpants.jpg',
     ],
@@ -181,7 +182,6 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     printCost: 14.00,
     images: [
       '/images/products/krown-broken-rules-gold-tracksuit.jpg',
-      '/images/products/krown-supply-streetwear-set.jpg',
     ],
     variants: [
       { id: 931, color: 'Obsidian Black / Embroidered Gold Kintsugi', size: 'S', price: 128.00, sku: 'KSC-TRK-KNT-S', isAvailable: true },
@@ -205,17 +205,20 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     baseCost: 11.50,
     printCost: 4.50,
     images: [
+      '/images/products/krown-r112-leather-patch-charcoal-black.jpg',
+      '/images/products/krown-r112-leather-patch-heather-grey.jpg',
+      '/images/products/krown-r112-leather-patch-obsidian-black.jpg',
       '/images/products/krown-r112-flagship-leather-patch-snapback.jpg',
       '/images/products/krown-r112-flagship-leather-patch-hero.jpg',
     ],
     variants: [
-      { id: 1021, color: 'Heather Grey & Black / Saddle Tan Leather Patch', size: 'OSFA', price: 29.99, sku: 'KSC-HAT-112-GRY', isAvailable: true },
-      { id: 1022, color: 'Obsidian Black / Raw Black Leather Patch', size: 'OSFA', price: 29.99, sku: 'KSC-HAT-112-BLK', isAvailable: true },
-      { id: 1023, color: 'Charcoal & Black / Honey Leather Patch', size: 'OSFA', price: 29.99, sku: 'KSC-HAT-112-CHR', isAvailable: true },
+      { id: 1021, color: 'Heather Grey & Black / Saddle Tan Leather Patch', size: 'OSFA', price: 29.99, sku: 'KSC-HAT-112-GRY', isAvailable: true, image: '/images/products/krown-r112-leather-patch-heather-grey.jpg' },
+      { id: 1022, color: 'Obsidian Black / Raw Black Leather Patch', size: 'OSFA', price: 29.99, sku: 'KSC-HAT-112-BLK', isAvailable: true, image: '/images/products/krown-r112-leather-patch-obsidian-black.jpg' },
+      { id: 1023, color: 'Charcoal & Black / Honey Leather Patch', size: 'OSFA', price: 29.99, sku: 'KSC-HAT-112-CHR', isAvailable: true, image: '/images/products/krown-r112-leather-patch-charcoal-black.jpg' },
     ],
     isNew: true,
     customBadge: 'Signature Headwear',
-    material: 'Authentic Richardson 112: Heather Grey/Black Mesh with Laser-Engraved Caramel Leatherette Patch',
+    material: 'Authentic Richardson 112: Structured Trucker with Laser-Engraved Genuine Leather Patch',
     fit: 'Structured Mid-Profile Snapback (OSFA 7 - 7 3/4)',
   },
   {
@@ -228,7 +231,7 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     baseCost: 7.50,
     printCost: 5.00,
     images: [
-      '/images/products/krown-vintage-washed-dad-hat.png',
+      '/images/products/krown-dad-hat-washed-black.jpg',
     ],
     variants: [
       { id: 911, color: 'Vintage Washed Black / Gold Embroidery', size: 'OSFA', price: 28.00, sku: 'KRN-HAT-DAD-BLK', isAvailable: true }
@@ -247,7 +250,7 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     baseCost: 13.50,
     printCost: 6.00,
     images: [
-      '/images/products/krown-french-terry-streetwear-shorts.png',
+      '/images/products/krown-french-terry-shorts.jpg',
     ],
     variants: [
       { id: 921, color: 'Washed Black / Gold KrowN', size: 'S', price: 42.00, sku: 'KRN-SHRT-TERRY-S', isAvailable: true },
@@ -309,6 +312,36 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     fit: 'Standard Relaxed Drop-Shoulder Fit',
   },
 
+  {
+    id: 'krown-shaker-01',
+    name: 'KrowN Supply Co. Signature Luxury Shaker Bottle',
+    slug: 'krown-supply-co-signature-luxury-shaker-bottle',
+    description: 'Minimalist luxury meets everyday hydration. Features a leak-proof locking flip cap with ergonomic loop, surgical stainless steel blending whisk, and the authentic metallic antique gold KrowN crown monogram emblem. Engineered in two pro builds: Standard 24oz Frosted Eastman Tritan™ Polymer ($26.99) or Pro 26oz Double-Wall Vacuum Insulated Kitchen-Grade Stainless Steel ($36.99).',
+    collection: 'KrowN Supply Co.',
+    price: 26.99,
+    baseCost: 7.50,
+    printCost: 4.00,
+    images: [
+      '/images/products/krown-shaker-obsidian-steel.jpg',
+      '/images/products/krown-shaker-obsidian-tritan.jpg',
+      '/images/products/krown-shaker-smoke-steel.jpg',
+      '/images/products/krown-shaker-smoke-tritan.jpg',
+      '/images/products/krown-shaker-brushed-steel.jpg',
+      '/images/products/krown-shaker-brushed-tritan.jpg',
+      '/images/products/krown-shaker-bottles-3-editions.jpg',
+    ],
+    variants: [
+      { id: 1221, color: 'Matte Obsidian Black & Antique Gold Crown', size: '24 oz Standard (Eastman Tritan Frosted)', price: 26.99, sku: 'KSC-SHK-OBS-TRITAN', isAvailable: true, image: '/images/products/krown-shaker-obsidian-tritan.jpg' },
+      { id: 1222, color: 'Matte Obsidian Black & Antique Gold Crown', size: '26 oz Pro Double-Wall Insulated Stainless Steel', price: 36.99, sku: 'KSC-SHK-OBS-STEEL', isAvailable: true, image: '/images/products/krown-shaker-obsidian-steel.jpg' },
+      { id: 1223, color: 'Frosted Smoke & Polished Gold Accents', size: '24 oz Standard (Eastman Tritan Frosted)', price: 26.99, sku: 'KSC-SHK-SMK-TRITAN', isAvailable: true, image: '/images/products/krown-shaker-smoke-tritan.jpg' },
+      { id: 1224, color: 'Frosted Smoke & Polished Gold Accents', size: '26 oz Pro Double-Wall Insulated Stainless Steel', price: 36.99, sku: 'KSC-SHK-SMK-STEEL', isAvailable: true, image: '/images/products/krown-shaker-smoke-steel.jpg' },
+      { id: 1225, color: 'Raw Brushed Steel & Minimal Crown Monogram', size: '24 oz Standard (Eastman Tritan Frosted)', price: 26.99, sku: 'KSC-SHK-BRS-TRITAN', isAvailable: true, image: '/images/products/krown-shaker-brushed-tritan.jpg' },
+      { id: 1226, color: 'Raw Brushed Steel & Minimal Crown Monogram', size: '26 oz Pro Double-Wall Insulated Stainless Steel', price: 36.99, sku: 'KSC-SHK-BRS-STEEL', isAvailable: true, image: '/images/products/krown-shaker-brushed-steel.jpg' },
+    ],
+    isNew: true,
+    material: 'BPA-Free Eastman Tritan™ / Double-Wall 18/8 Kitchen-Grade Stainless Steel • Whisk Ball Included',
+    fit: '24–26 oz Capacity • Cup Holder Compatible',
+  },
   // ==========================================
   // 2. KrowN Construction LLC (Jobsite Workwear)
   // Slogan: "BUILT TO REIGN."
@@ -397,22 +430,71 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
   },
   {
     id: 'krown-work-01',
-    name: 'Built to Reign Heavy Work Shirt',
-    slug: 'built-to-reign-heavy-work-shirt',
-    description: 'Designed in conjunction with KrowN Construction LLC field tests. Heavy-duty ripstop poly-cotton blend with reinforced shoulder stitching and chest pencil pockets.',
+    name: 'KrowN Construction "Built to Reign" Heavy Work Shirt',
+    slug: 'krown-construction-built-to-reign-heavy-work-shirt',
+    description: 'Heavyweight jobsite work shirt engineered in conjunction with KrowN Construction LLC field trials. Features a durable 300 GSM ripstop cotton-twill blend, reinforced double-needle seams, chest pencil pocket, and official KrowN Construction branding: Left or Right chest crest, bold full-width "BUILT TO REIGN" back statement piece, and vertical sleeve typography "KrowN Construction".',
     collection: 'KrowN Construction',
     price: 48.00,
     baseCost: 15.00,
     printCost: 6.50,
-    images: ['/images/branding/construction/Krown ConstructionPNG Black.PNG'],
-    variants: [
-      { id: 401, color: 'Charcoal / High-Vis Lime Accents', size: 'M', price: 48.00, sku: 'KRN-WRK-SHR-M', isAvailable: true },
-      { id: 402, color: 'Charcoal / High-Vis Lime Accents', size: 'L', price: 48.00, sku: 'KRN-WRK-SHR-L', isAvailable: true },
-      { id: 403, color: 'Charcoal / High-Vis Lime Accents', size: 'XL', price: 48.00, sku: 'KRN-WRK-SHR-XL', isAvailable: true },
-      { id: 404, color: 'Charcoal / High-Vis Lime Accents', size: '2XL', price: 50.00, sku: 'KRN-WRK-SHR-2XL', isAvailable: true },
+    images: [
+      '/images/products/kc-work-shirt-grey-front.jpg',
+      '/images/products/kc-work-shirt-black-front.jpg',
+      '/images/products/kc-work-shirt-charcoal-back.jpg',
+      '/images/products/kc-work-shirt-model.jpg',
     ],
-    material: '65% Polyester, 35% Cotton Heavy Twill',
-    fit: 'Relaxed Workwear Fit with Enhanced Arm Mobility',
+    variants: [
+      { id: 401, color: 'Heather Steel Grey / Black-Gold Crest', size: 'S', price: 48.00, sku: 'KC-WRK-GRY-S', isAvailable: true, image: '/images/products/kc-work-shirt-grey-front.jpg' },
+      { id: 402, color: 'Heather Steel Grey / Black-Gold Crest', size: 'M', price: 48.00, sku: 'KC-WRK-GRY-M', isAvailable: true, image: '/images/products/kc-work-shirt-grey-front.jpg' },
+      { id: 403, color: 'Heather Steel Grey / Black-Gold Crest', size: 'L', price: 48.00, sku: 'KC-WRK-GRY-L', isAvailable: true, image: '/images/products/kc-work-shirt-grey-front.jpg' },
+      { id: 404, color: 'Heather Steel Grey / Black-Gold Crest', size: 'XL', price: 48.00, sku: 'KC-WRK-GRY-XL', isAvailable: true, image: '/images/products/kc-work-shirt-grey-front.jpg' },
+      { id: 405, color: 'Heather Steel Grey / Black-Gold Crest', size: '2XL', price: 52.00, sku: 'KC-WRK-GRY-2XL', isAvailable: true, image: '/images/products/kc-work-shirt-grey-front.jpg' },
+      { id: 406, color: 'Heather Steel Grey / Black-Gold Crest', size: '3XL', price: 54.00, sku: 'KC-WRK-GRY-3XL', isAvailable: true, image: '/images/products/kc-work-shirt-grey-front.jpg' },
+      { id: 407, color: 'Obsidian Black / Gold & White Crest', size: 'S', price: 48.00, sku: 'KC-WRK-BLK-S', isAvailable: true, image: '/images/products/kc-work-shirt-black-front.jpg' },
+      { id: 408, color: 'Obsidian Black / Gold & White Crest', size: 'M', price: 48.00, sku: 'KC-WRK-BLK-M', isAvailable: true, image: '/images/products/kc-work-shirt-black-front.jpg' },
+      { id: 409, color: 'Obsidian Black / Gold & White Crest', size: 'L', price: 48.00, sku: 'KC-WRK-BLK-L', isAvailable: true, image: '/images/products/kc-work-shirt-black-front.jpg' },
+      { id: 410, color: 'Obsidian Black / Gold & White Crest', size: 'XL', price: 48.00, sku: 'KC-WRK-BLK-XL', isAvailable: true, image: '/images/products/kc-work-shirt-black-front.jpg' },
+      { id: 411, color: 'Obsidian Black / Gold & White Crest', size: '2XL', price: 52.00, sku: 'KC-WRK-BLK-2XL', isAvailable: true, image: '/images/products/kc-work-shirt-black-front.jpg' },
+      { id: 412, color: 'Obsidian Black / Gold & White Crest', size: '3XL', price: 54.00, sku: 'KC-WRK-BLK-3XL', isAvailable: true, image: '/images/products/kc-work-shirt-black-front.jpg' },
+      { id: 413, color: 'Charcoal Slate / Purple & Lime Crest', size: 'S', price: 48.00, sku: 'KC-WRK-CHR-S', isAvailable: true, image: '/images/products/kc-work-shirt-charcoal-back.jpg' },
+      { id: 414, color: 'Charcoal Slate / Purple & Lime Crest', size: 'M', price: 48.00, sku: 'KC-WRK-CHR-M', isAvailable: true, image: '/images/products/kc-work-shirt-charcoal-back.jpg' },
+      { id: 415, color: 'Charcoal Slate / Purple & Lime Crest', size: 'L', price: 48.00, sku: 'KC-WRK-CHR-L', isAvailable: true, image: '/images/products/kc-work-shirt-charcoal-back.jpg' },
+      { id: 416, color: 'Charcoal Slate / Purple & Lime Crest', size: 'XL', price: 48.00, sku: 'KC-WRK-CHR-XL', isAvailable: true, image: '/images/products/kc-work-shirt-charcoal-back.jpg' },
+      { id: 417, color: 'Charcoal Slate / Purple & Lime Crest', size: '2XL', price: 52.00, sku: 'KC-WRK-CHR-2XL', isAvailable: true, image: '/images/products/kc-work-shirt-charcoal-back.jpg' },
+      { id: 418, color: 'Charcoal Slate / Purple & Lime Crest', size: '3XL', price: 54.00, sku: 'KC-WRK-CHR-3XL', isAvailable: true, image: '/images/products/kc-work-shirt-charcoal-back.jpg' },
+    ],
+    material: '300 GSM Heavyweight Cotton-Twill Blend • Stain-Resistant Finish',
+    fit: 'Tradesman Relaxed Mobility Fit with Split-Tail Hem',
+  },
+  {
+    id: 'kc-shaker-01',
+    name: 'KrowN Construction "Built to Reign" Heavy-Duty Shaker Bottle',
+    slug: 'krown-construction-built-to-reign-heavy-duty-shaker-bottle',
+    description: 'Jobsite hydration engineered for tradesmen. Heavy-duty impact-resistant shaker bottle featuring commercial leakproof lock lid, reinforced carry loop, surgical steel blending whisk ball, and the bold industrial KrowN Construction seal. Available in 3 jobsite colorways and 2 builds: 24oz Eastman Tritan™ Frosted Impact Polymer ($26.99) or 26oz Double-Wall Vacuum Insulated Stainless Steel ($36.99).',
+    collection: 'KrowN Construction',
+    price: 26.99,
+    baseCost: 7.50,
+    printCost: 4.00,
+    images: [
+      '/images/products/kc-shaker-highvis-steel.jpg',
+      '/images/products/kc-shaker-highvis-tritan.jpg',
+      '/images/products/kc-shaker-steelcore-steel.jpg',
+      '/images/products/kc-shaker-steelcore-tritan.jpg',
+      '/images/products/kc-shaker-jobsite-steel.jpg',
+      '/images/products/kc-shaker-jobsite-tritan.jpg',
+      '/images/products/kc-shaker-bottles-3-editions.jpg',
+    ],
+    variants: [
+      { id: 1211, color: 'High-Vis Safety Gold & Matte Black', size: '24 oz Standard (Eastman Tritan Frosted)', price: 26.99, sku: 'KC-SHK-HV-TRITAN', isAvailable: true, image: '/images/products/kc-shaker-highvis-tritan.jpg' },
+      { id: 1212, color: 'High-Vis Safety Gold & Matte Black', size: '26 oz Pro Heavy-Duty Insulated Stainless Steel', price: 36.99, sku: 'KC-SHK-HV-STEEL', isAvailable: true, image: '/images/products/kc-shaker-highvis-steel.jpg' },
+      { id: 1213, color: 'Industrial Steel & Concrete Grey', size: '24 oz Standard (Eastman Tritan Frosted)', price: 26.99, sku: 'KC-SHK-SC-TRITAN', isAvailable: true, image: '/images/products/kc-shaker-steelcore-tritan.jpg' },
+      { id: 1214, color: 'Industrial Steel & Concrete Grey', size: '26 oz Pro Heavy-Duty Insulated Stainless Steel', price: 36.99, sku: 'KC-SHK-SC-STEEL', isAvailable: true, image: '/images/products/kc-shaker-steelcore-steel.jpg' },
+      { id: 1215, color: 'Jobsite Lime & Purple Edition', size: '24 oz Standard (Eastman Tritan Frosted)', price: 26.99, sku: 'KC-SHK-JL-TRITAN', isAvailable: true, image: '/images/products/kc-shaker-jobsite-tritan.jpg' },
+      { id: 1216, color: 'Jobsite Lime & Purple Edition', size: '26 oz Pro Heavy-Duty Insulated Stainless Steel', price: 36.99, sku: 'KC-SHK-JL-STEEL', isAvailable: true, image: '/images/products/kc-shaker-jobsite-steel.jpg' },
+    ],
+    isNew: true,
+    material: 'Impact-Resistant Eastman Tritan™ / Double-Wall 18/8 Stainless Steel • Surgical Steel Whisk',
+    fit: '24–26 oz Capacity • Heavy Duty Leakproof Seal',
   },
 
   // ==========================================
@@ -432,8 +514,6 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     images: [
       '/images/products/axa-pro-jersey-home.jpg',
       '/images/products/axa-pro-jersey-home-back.jpg',
-      '/images/branding/gaming/axiom-owl-quote-frame.jpg',
-      '/images/branding/gaming/axiom-owl-mascot.png'
     ],
     variants: [
       { id: 3101, color: 'Obsidian Black / Royal Purple / Silver (No Name)', size: 'S', price: 54.99, sku: 'AXA-JSY-HM-S', isAvailable: true },
@@ -466,8 +546,6 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     images: [
       '/images/products/axa-pro-jersey-away.jpg',
       '/images/products/axa-pro-jersey-away-back.jpg',
-      '/images/branding/gaming/axiom-owl-quote-frame.jpg',
-      '/images/branding/gaming/axiom-owl-mascot.png'
     ],
     variants: [
       { id: 3201, color: 'Bone White / Royal Purple / Black (No Name)', size: 'S', price: 54.99, sku: 'AXA-JSY-AW-S', isAvailable: true },
@@ -500,8 +578,6 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     images: [
       '/images/products/axiom-pro-esports-jersey-front.jpg',
       '/images/products/axa-pro-jersey-championship-back.jpg',
-      '/images/branding/gaming/axiom-owl-quote-frame.jpg',
-      '/images/branding/gaming/axiom-owl-mascot.png'
     ],
     variants: [
       { id: 1101, color: 'Electric/Royal Purple & Neon Toxic Green (No Name)', size: 'S', price: 54.99, sku: 'AXM-JSY-STD-S', isAvailable: true },
@@ -534,8 +610,6 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     images: [
       '/images/products/axa-pro-jersey-stealth.jpg',
       '/images/products/axa-pro-jersey-stealth-back.jpg',
-      '/images/branding/gaming/axiom-owl-quote-frame.jpg',
-      '/images/branding/gaming/axiom-owl-mascot.png'
     ],
     variants: [
       { id: 3301, color: 'Blackout Obsidian / Charcoal / Tonal Purple (No Name)', size: 'S', price: 54.99, sku: 'AXA-JSY-ST-S', isAvailable: true },
@@ -572,13 +646,12 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
       '/images/products/axiom-shaker-stealth-tritan-clean.jpg',
       '/images/products/axiom-shaker-stealth-steel-clean.jpg',
       '/images/products/axiom-shaker-bottles-4-editions.jpg',
-      '/images/branding/gaming/axiom-owl-mascot.png',
     ],
     variants: [
-      { id: 1201, color: 'Signature Toxic Lime & Royal Purple', size: '24 oz Standard (Eastman Tritan Frosted)', price: 24.99, sku: 'AXM-SHK-SIG-TRITAN', isAvailable: true },
-      { id: 1202, color: 'Signature Toxic Lime & Royal Purple', size: '26 oz Pro Insulated Stainless Steel (Double-Wall)', price: 34.99, sku: 'AXM-SHK-SIG-STEEL', isAvailable: true },
-      { id: 1203, color: 'Stealth Blackout Obsidian', size: '24 oz Standard (Eastman Tritan Frosted)', price: 24.99, sku: 'AXM-SHK-STL-TRITAN', isAvailable: true },
-      { id: 1204, color: 'Stealth Blackout Obsidian', size: '26 oz Pro Insulated Stainless Steel (Double-Wall)', price: 34.99, sku: 'AXM-SHK-STL-STEEL', isAvailable: true },
+      { id: 1201, color: 'Signature Toxic Lime & Royal Purple', size: '24 oz Standard (Eastman Tritan Frosted)', price: 24.99, sku: 'AXM-SHK-SIG-TRITAN', isAvailable: true, image: '/images/products/axiom-shaker-signature-tritan-clean.jpg' },
+      { id: 1202, color: 'Signature Toxic Lime & Royal Purple', size: '26 oz Pro Insulated Stainless Steel (Double-Wall)', price: 34.99, sku: 'AXM-SHK-SIG-STEEL', isAvailable: true, image: '/images/products/axiom-shaker-signature-steel-clean.jpg' },
+      { id: 1203, color: 'Stealth Blackout Obsidian', size: '24 oz Standard (Eastman Tritan Frosted)', price: 24.99, sku: 'AXM-SHK-STL-TRITAN', isAvailable: true, image: '/images/products/axiom-shaker-stealth-tritan-clean.jpg' },
+      { id: 1204, color: 'Stealth Blackout Obsidian', size: '26 oz Pro Insulated Stainless Steel (Double-Wall)', price: 34.99, sku: 'AXM-SHK-STL-STEEL', isAvailable: true, image: '/images/products/axiom-shaker-stealth-steel-clean.jpg' },
     ],
     isNew: true,
     material: 'BPA-Free Eastar™ Tritan / Double-Wall Kitchen-Grade Steel • Stainless Steel Whisk Ball',
@@ -594,8 +667,7 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     baseCost: 5.80,
     printCost: 4.20,
     images: [
-      '/images/products/axiom-owl-gamer-mug-15oz.png',
-      '/images/branding/gaming/axiom-owl-quote-frame.jpg'
+      '/images/products/axiom-mug-smokey-crest-15oz.png',
     ],
     variants: [
       { id: 701, color: 'Midnight Obsidian / Electric Lime Interior', size: '15 oz', price: 19.99, sku: 'AXM-MUG-15-LIME', isAvailable: true },
@@ -616,7 +688,6 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     printCost: 4.20,
     images: [
       '/images/products/axiom-mug-smokey-crest-15oz.png',
-      '/images/branding/gaming/axiom-owl-smokey-crest.jpg',
     ],
     variants: [
       { id: 703, color: 'Midnight Obsidian / Electric Lime Interior', size: '15 oz', price: 19.99, sku: 'AXM-MUG-SMK-LIME', isAvailable: true },
@@ -636,7 +707,6 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     printCost: 6.00,
     images: [
       '/images/products/axiom-allegiance-gaming-mesh-shorts.png',
-      '/images/branding/gaming/axiom-owl-mascot.png'
     ],
     variants: [
       { id: 711, color: 'Deep Purple / Electric Lime Piping', size: 'S', price: 38.00, sku: 'AXM-SHRT-SM', isAvailable: true },
@@ -757,8 +827,6 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     images: [
       '/images/products/axiom-owl-desk-mat-photorealistic.jpg',
       '/images/products/axiom-owl-realistic-axa-face-desk-mat.jpg',
-      '/images/branding/gaming/axiom-owl-quote-frame.jpg',
-      '/images/branding/gaming/axiom-owl-mascot.png',
     ],
     variants: [
       // Option 1: Volcanic Obsidian Battlestation
@@ -789,10 +857,7 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     baseCost: 8.50,
     printCost: 4.00,
     images: [
-      '/images/branding/gaming/axiom-owl-display.png',
-      '/images/branding/gaming/axiom-owl-quote-frame.jpg',
       '/images/products/axiom-owl-desk-mat-photorealistic.jpg',
-      '/images/branding/gaming/axiom-owl-mascot.png',
     ],
     variants: [
       // Option 1: Official Axiom Banner
@@ -825,7 +890,6 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     images: [
       '/images/products/axiom-sweatpants-pro-model-clean.jpg',
       '/images/products/axiom-sweatpants-pro-heavyweight-studio.jpg',
-      '/images/branding/gaming/axiom-owl-mascot.png',
     ],
     variants: [
       { id: 4101, color: 'Obsidian Black / Purple & Green Cords', size: 'S', price: 68.00, sku: 'AXM-SWP-PRO-S', isAvailable: true },
@@ -851,7 +915,6 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     images: [
       '/images/products/axiom-fleece-joggers-core-studio.jpg',
       '/images/products/axiom-fleece-joggers-core-model.jpg',
-      '/images/branding/gaming/axiom-owl-mascot.png',
     ],
     variants: [
       { id: 4201, color: 'Obsidian Black / Team Purple & Lime', size: 'S', price: 39.99, sku: 'AXM-SWP-CORE-S', isAvailable: true },
@@ -877,7 +940,6 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     images: [
       '/images/products/axiom-heavyweight-hoodie-studio.jpg',
       '/images/products/axiom-heavyweight-hoodie-model.jpg',
-      '/images/branding/gaming/axiom-owl-mascot.png',
     ],
     variants: [
       { id: 4301, color: 'Obsidian Black / Purple & Green Cords', size: 'S', price: 74.99, sku: 'AXM-HD-450-S', isAvailable: true },
@@ -903,7 +965,6 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     images: [
       '/images/products/axiom-crewneck-sweatshirt-studio.jpg',
       '/images/products/axiom-crewneck-sweatshirt-model.jpg',
-      '/images/branding/gaming/axiom-owl-mascot.png',
     ],
     variants: [
       { id: 4401, color: 'Obsidian Black / Team Purple & Lime', size: 'S', price: 49.99, sku: 'AXM-CRW-380-S', isAvailable: true },
@@ -929,7 +990,6 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     images: [
       '/images/products/axiom-keyboard-wrist-rest-tournament-edition.jpg',
       '/images/products/axiom-keyboard-wrist-rest-stealth-setup.jpg',
-      '/images/branding/gaming/axiom-owl-smokey-crest.jpg',
     ],
     variants: [
       { id: 4301, color: 'Tournament Edition / Purple & Lime', size: 'Compact 60% (11.4" x 2.9")', price: 19.99, sku: 'AXM-WRIST-60', isAvailable: true },
@@ -951,7 +1011,6 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     printCost: 6.00,
     images: [
       '/images/products/axa-pro-jersey-home.jpg',
-      '/images/branding/gaming/axiom-owl-mascot.png'
     ],
     variants: [
       { id: 301, color: 'Obsidian / Electric Lime & Purple', size: 'M', price: 36.00, sku: 'AXM-OWL-TEE-M', isAvailable: true },
@@ -968,22 +1027,39 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
   // 4. Accessories
   // ==========================================
   {
-    id: 'krown-stickers-01',
-    name: 'Axiom Owl & KrowN Holographic Die-Cut Sticker Pack',
-    slug: 'axiom-owl-krown-holographic-sticker-pack',
-    description: 'Pack of 5 heavy UV-laminated holographic vinyl stickers including the Axiom Owl esports emblem, KrowN Construction crest, and metallic brand marks. Waterproof, UV-shielded, and ready for PCs, hardhats, consoles, and toolboxes.',
-    collection: 'Accessories',
-    price: 14.99,
+    id: 'axiom-stickers-01',
+    name: 'Axiom Allegiance Holographic Battle Pack Decals (5-Pack)',
+    slug: 'axiom-allegiance-holographic-battle-pack-decals',
+    description: 'Pack of 5 premium heavy UV-laminated holographic vinyl stickers featuring the official Axiom Owl mascot crest, Gothic typography wordmarks, and geometric A-X-A eye emblems. Waterproof, scratch-proof, and designed for battlestations, laptops, and gear cases.',
+    collection: 'AXA / Axiom Allegiance',
+    price: 12.99,
     baseCost: 2.10,
     printCost: 1.80,
     images: [
-      '/images/branding/gaming/axiom-owl-mascot.png',
-      '/images/branding/construction/KC logo black and white.png',
+      '/images/products/axiom-stickers-holographic-pack.jpg',
     ],
     variants: [
-      { id: 501, color: 'Holographic Multi-Pack', size: '5-Pack', price: 14.99, sku: 'AXM-KRN-STK-PK5', isAvailable: true }
+      { id: 501, color: 'Axiom Holographic 5-Pack', size: '5-Pack', price: 12.99, sku: 'AXM-STK-HOLO-PK5', isAvailable: true, image: '/images/products/axiom-stickers-holographic-pack.jpg' }
     ],
     material: '6 mil Thick Weatherproof Holographic Vinyl with UV Shield',
+    fit: '3" to 4" Widths',
+  },
+  {
+    id: 'kc-stickers-01',
+    name: 'KrowN Construction Weatherproof Jobsite Vinyl Decals (5-Pack)',
+    slug: 'krown-construction-weatherproof-jobsite-vinyl-decals',
+    description: 'Pack of 5 heavy-duty cast vinyl decals tested on commercial jobsites. Features the industrial KrowN Construction badge, "BUILT TO REIGN" seals, and hardhat emblems with high-bond adhesive that withstands weather, dirt, and power washers.',
+    collection: 'KrowN Construction',
+    price: 12.99,
+    baseCost: 2.10,
+    printCost: 1.80,
+    images: [
+      '/images/products/krown-construction-jobsite-decals.jpg',
+    ],
+    variants: [
+      { id: 502, color: 'Jobsite Decal 5-Pack', size: '5-Pack', price: 12.99, sku: 'KC-STK-VNYL-PK5', isAvailable: true, image: '/images/products/krown-construction-jobsite-decals.jpg' }
+    ],
+    material: '6 mil Thick Weatherproof Cast Vinyl with High-Tack Adhesive',
     fit: '3" to 4" Widths',
   },
 ];

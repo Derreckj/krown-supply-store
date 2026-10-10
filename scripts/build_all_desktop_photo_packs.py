@@ -18,14 +18,17 @@ categories = {
         (os.path.join(etsy_packs, 'HOODIE_480GSM', 'Photo_2_Back_Official_KrowN_Statement.jpg'), '05_Back_Statement.jpg'),
     ],
     '02_Richardson_112_Hat': [
-        (os.path.join(scratch_dir, 'etsy_featured_photos', '01_Richardson_112_Front_View.jpg'), '01_Primary_Hat_Front_Clean.jpg'),
-        (os.path.join(scratch_dir, 'etsy_featured_photos', '01_Richardson_112_Hero_Workbench.jpg'), '02_Workbench_Angle_Hero.jpg'),
-        (os.path.join(brain_dir, 'krown_r112_male_model_1791569854721.jpg'), '03_Male_Model_Streetwear.jpg'),
-        (os.path.join(brain_dir, 'krown_r112_female_model_1791569867729.jpg'), '04_Female_Model_Casual.jpg'),
-        (os.path.join(brain_dir, 'krown_r112_patch_detail_1791569885457.jpg'), '05_Macro_Leather_Patch_Detail.jpg'),
+        (os.path.join(pub_products, 'krown-r112-leather-patch-charcoal-black.jpg'), '01_Charcoal_Black_Honey_Leather_Patch.jpg'),
+        (os.path.join(pub_products, 'krown-r112-leather-patch-heather-grey.jpg'), '02_Heather_Grey_Saddle_Leather_Patch.jpg'),
+        (os.path.join(pub_products, 'krown-r112-leather-patch-obsidian-black.jpg'), '03_Obsidian_Black_Raw_Leather_Patch.jpg'),
+        (os.path.join(pub_products, 'krown-r112-flagship-leather-patch-snapback.jpg'), '04_Primary_Hat_Front_Clean.jpg'),
+        (os.path.join(pub_products, 'krown-r112-flagship-leather-patch-hero.jpg'), '05_Workbench_Angle_Hero.jpg'),
+        (os.path.join(brain_dir, 'krown_r112_male_model_1791569854721.jpg'), '06_Male_Model_Streetwear.jpg'),
+        (os.path.join(brain_dir, 'krown_r112_female_model_1791569867729.jpg'), '07_Female_Model_Casual.jpg'),
+        (os.path.join(brain_dir, 'krown_r112_patch_detail_1791569885457.jpg'), '08_Macro_Leather_Patch_Detail.jpg'),
     ],
     '03_Cuffed_Beanie': [
-        (os.path.join(brain_dir, 'krown_beanie_studio_front_1791570168479.jpg'), '01_Primary_Beanie_Studio_Front.jpg'),
+        (os.path.join(pub_products, 'krown-beanie-studio-front.jpg'), '01_Primary_Beanie_Since_2018_Front.jpg'),
         (os.path.join(brain_dir, 'krown_beanie_model_1791570190810.jpg'), '02_Male_Model_Winter_Streetwear.jpg'),
     ],
     '04_Comfort_Colors_1717_Tee': [
@@ -44,11 +47,11 @@ categories = {
         (os.path.join(pub_products, 'axa-pro-jersey-championship-back.jpg'), '05_Jersey_Championship_Back.jpg'),
         (os.path.join(pub_products, 'axa-pro-jersey-stealth.jpg'), '06_Jersey_Stealth_Front.jpg'),
         (os.path.join(pub_products, 'axa-pro-jersey-stealth-back.jpg'), '07_Jersey_Stealth_Back.jpg'),
-        (os.path.join(scratch_dir, 'public', 'images', 'branding', 'gaming', 'axiom-owl-quote-frame.jpg'), '08_Axiom_Creed_Motto_Badge.jpg'),
     ],
     '07_Panoramic_Desk_Mat_32x16': [
-        (os.path.join(etsy_packs, 'DESK_MAT_32x16', 'Photo_1_BattleStation_Perspective.jpg'), '01_Primary_Desk_Mat_Battlestation.jpg'),
-        (os.path.join(etsy_packs, 'DESK_MAT_32x16', 'Photo_2_Gaming_Specs_Infographic.jpg'), '02_Desk_Mat_Specifications.jpg'),
+        (os.path.join(pub_products, 'axiom-owl-desk-mat-photorealistic.jpg'), '01_Desk_Mat_Photorealistic_Battlestation.jpg'),
+        (os.path.join(etsy_packs, 'DESK_MAT_32x16', 'Photo_1_BattleStation_Perspective.jpg'), '02_Desk_Mat_Wide_Angle.jpg'),
+        (os.path.join(etsy_packs, 'DESK_MAT_32x16', 'Photo_2_Gaming_Specs_Infographic.jpg'), '03_Desk_Mat_Specifications.jpg'),
     ],
     '08_Axiom_Richardson_112_Headwear': [
         (os.path.join(pub_products, 'axiom-r112-leather-patch-charcoal.jpg'), '01_R112_Leather_Patch_Charcoal_Front.jpg'),
@@ -61,9 +64,9 @@ categories = {
         (os.path.join(pub_products, 'axiom-hat-model-lookbook.jpg'), '08_Model_Lookbook_Snapback.jpg'),
     ],
     '09_Axiom_Vintage_Dad_Hats': [
-        (os.path.join(pub_products, 'axiom-dad-hat-washed-black.jpg'), '01_Vintage_Washed_Black_Dad_Hat.jpg'),
+        (os.path.join(pub_products, 'axiom-dad-hat-washed-black.jpg'), '01_Vintage_Washed_Black_Dad_Hat_Owl_Only.jpg'),
         (os.path.join(pub_products, 'axiom-headwear-collection-showcase.jpg'), '02_Headwear_Showcase_Banner.jpg'),
-        (os.path.join(pub_products, 'axiom-hat-model-lookbook.jpg'), '03_Model_Wearing_Dad_Hat.jpg'),
+        (os.path.join(pub_products, 'axiom-hat-model-lookbook.jpg'), '03_Model_Wearing_Dad_Hat_Axiom_Apparel.jpg'),
     ],
     '10_Axiom_Pro_Shakers_Tritan_And_Steel': [
         (os.path.join(pub_products, 'axiom-shaker-signature-tritan-clean.jpg'), '01_Signature_Tritan_24oz.jpg'),
@@ -89,11 +92,45 @@ categories = {
         (os.path.join(pub_products, 'axiom-keyboard-wrist-rest-stealth-setup.jpg'), '02_Wrist_Rest_Stealth_Battlestation_Setup.jpg'),
     ],
     '14_Axiom_Ceramic_Gaming_Mugs': [
-        (os.path.join(pub_products, 'axiom-mug-smokey-crest-15oz.png'), '01_Smokey_Crest_Gothic_Mug_15oz.png'),
-        (os.path.join(pub_products, 'axiom-owl-gamer-mug-15oz.png'), '02_Two_Tone_Mascot_Quote_Mug_15oz.png'),
+        (os.path.join(pub_products, 'axiom-mug-smokey-crest-15oz.png'), '01_Smokey_Crest_Gothic_Mug_15oz_Clean.png'),
+    ],
+    '15_KrowN_Construction_Work_Shirt': [
+        (os.path.join(pub_products, 'kc-work-shirt-grey-front.jpg'), '01_Heather_Steel_Grey_Work_Shirt.jpg'),
+        (os.path.join(pub_products, 'kc-work-shirt-black-front.jpg'), '02_Obsidian_Black_Work_Shirt.jpg'),
+        (os.path.join(pub_products, 'kc-work-shirt-charcoal-back.jpg'), '03_Charcoal_Slate_Back_Statement.jpg'),
+        (os.path.join(pub_products, 'kc-work-shirt-model.jpg'), '04_Jobsite_Model_Lookbook.jpg'),
+    ],
+    '16_KrowN_Construction_Shakers': [
+        (os.path.join(pub_products, 'kc-shaker-highvis-steel.jpg'), '01_HighVis_Gold_Pro_Steel_26oz.jpg'),
+        (os.path.join(pub_products, 'kc-shaker-highvis-tritan.jpg'), '02_HighVis_Gold_Tritan_24oz.jpg'),
+        (os.path.join(pub_products, 'kc-shaker-steelcore-steel.jpg'), '03_SteelCore_Titanium_Pro_Steel_26oz.jpg'),
+        (os.path.join(pub_products, 'kc-shaker-steelcore-tritan.jpg'), '04_SteelCore_Titanium_Tritan_24oz.jpg'),
+        (os.path.join(pub_products, 'kc-shaker-jobsite-steel.jpg'), '05_Jobsite_Lime_Purple_Steel_26oz.jpg'),
+        (os.path.join(pub_products, 'kc-shaker-jobsite-tritan.jpg'), '06_Jobsite_Lime_Purple_Tritan_24oz.jpg'),
+        (os.path.join(pub_products, 'kc-shaker-bottles-3-editions.jpg'), '07_Construction_Shaker_Lineup.jpg'),
+    ],
+    '17_KrowN_Supply_Co_Shakers': [
+        (os.path.join(pub_products, 'krown-shaker-obsidian-steel.jpg'), '01_Obsidian_Gold_Crown_Pro_Steel_26oz.jpg'),
+        (os.path.join(pub_products, 'krown-shaker-obsidian-tritan.jpg'), '02_Obsidian_Gold_Crown_Tritan_24oz.jpg'),
+        (os.path.join(pub_products, 'krown-shaker-smoke-steel.jpg'), '03_Frosted_Smoke_Gold_Pro_Steel_26oz.jpg'),
+        (os.path.join(pub_products, 'krown-shaker-smoke-tritan.jpg'), '04_Frosted_Smoke_Gold_Tritan_24oz.jpg'),
+        (os.path.join(pub_products, 'krown-shaker-brushed-steel.jpg'), '05_Brushed_Steel_Crown_Pro_Steel_26oz.jpg'),
+        (os.path.join(pub_products, 'krown-shaker-brushed-tritan.jpg'), '06_Brushed_Steel_Crown_Tritan_24oz.jpg'),
+        (os.path.join(pub_products, 'krown-shaker-bottles-3-editions.jpg'), '07_Luxury_Shaker_Lineup.jpg'),
+    ],
+    '18_Official_Decal_Sticker_Packs': [
+        (os.path.join(pub_products, 'axiom-stickers-holographic-pack.jpg'), '01_Axiom_Holographic_Decal_5Pack.jpg'),
+        (os.path.join(pub_products, 'krown-construction-jobsite-decals.jpg'), '02_KrowN_Construction_Jobsite_Decal_5Pack.jpg'),
+    ],
+    '19_KrowN_Supply_Co_Luxury_Streetwear': [
+        (os.path.join(pub_products, 'krown-streetwear-set-black.jpg'), '01_Premium_Streetwear_Hoodie_Sweatpants_Set.jpg'),
+        (os.path.join(pub_products, 'krown-french-terry-shorts.jpg'), '02_French_Terry_Heavyweight_Shorts.jpg'),
+        (os.path.join(pub_products, 'krown-dad-hat-washed-black.jpg'), '03_Vintage_Washed_Black_Dad_Hat.jpg'),
+        (os.path.join(pub_products, 'krown-broken-rules-gold-tracksuit.jpg'), '04_Broken_Rules_Kintsugi_Gold_Tracksuit.jpg'),
     ]
 }
 
+total_copied = 0
 for folder_name, items in categories.items():
     cat_dir = os.path.join(desktop_packs, folder_name)
     os.makedirs(cat_dir, exist_ok=True)
@@ -101,22 +138,9 @@ for folder_name, items in categories.items():
         if os.path.exists(src):
             dst = os.path.join(cat_dir, fname)
             shutil.copy2(src, dst)
+            total_copied += 1
             print(f"[{folder_name}] Copied: {fname}")
+        else:
+            print(f"[{folder_name}] NOT FOUND: {src}")
 
-# Also copy primary images directly into public/images/products
-pub_map = {
-    os.path.join(brain_dir, 'krown_hoodie_studio_front_1791570097217.jpg'): 'krown-hoodie-studio-front.jpg',
-    os.path.join(brain_dir, 'krown_hoodie_male_model_1791570118463.jpg'): 'krown-hoodie-male-model.jpg',
-    os.path.join(brain_dir, 'krown_hoodie_female_model_1791570141338.jpg'): 'krown-hoodie-female-model.jpg',
-    os.path.join(brain_dir, 'krown_beanie_studio_front_1791570168479.jpg'): 'krown-beanie-studio-front.jpg',
-    os.path.join(brain_dir, 'krown_beanie_model_1791570190810.jpg'): 'krown-beanie-model.jpg',
-}
-
-for src, fname in pub_map.items():
-    if os.path.exists(src):
-        shutil.copy2(src, os.path.join(pub_products, fname))
-        print(f"[public/images/products] Copied: {fname}")
-
-import subprocess
-subprocess.run(['explorer.exe', desktop_packs])
-print("\nAll photo packs generated and opened on Desktop!")
+print(f"\nSuccessfully populated Desktop Photo Packs: {total_copied} listing photos organized across {len(categories)} categories!")

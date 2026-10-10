@@ -1,4 +1,8 @@
-"use client";
+import os
+
+target_file = os.path.join("src", "app", "custom-crew", "page.tsx")
+
+code = '''"use client";
 
 import React, { useState } from 'react';
 import Image from 'next/image';
@@ -665,3 +669,9 @@ export default function CustomCrewPage() {
     </div>
   );
 }
+'''
+
+with open(target_file, "w", encoding="utf-8") as f:
+    f.write(code)
+
+print("Updated CustomCrewPage successfully!")

@@ -15,31 +15,96 @@ export default function ProductImageGallery({ images, productName }: ProductImag
   }, [images]);
 
   useEffect(() => {
-    const handleVariantSync = (colorStr: string, sizeStr: string = '') => {
+    const handleVariantSync = (colorStr: string, sizeStr: string = '', explicitImg?: string) => {
+      if (explicitImg) {
+        setSelectedImage(explicitImg);
+        return;
+      }
+
       const color = colorStr.toLowerCase();
       const size = sizeStr.toLowerCase();
 
-      // Shaker specific precision matching
-      const hasSteel = size.includes('steel') || size.includes('insulated');
+      // Richardson 112 Hat Matching
+      if (color.includes('charcoal')) {
+        const charcoalImg = images.find(img => img.includes('charcoal'));
+        if (charcoalImg) { setSelectedImage(charcoalImg); return; }
+      }
+      if (color.includes('heather') || (color.includes('grey') && color.includes('black'))) {
+        const greyImg = images.find(img => img.includes('heather-grey') || (img.includes('grey') && img.includes('112')));
+        if (greyImg) { setSelectedImage(greyImg); return; }
+      }
+      if (color.includes('obsidian') && color.includes('black')) {
+        const obsImg = images.find(img => img.includes('obsidian-black') || img.includes('raw-black'));
+        if (obsImg) { setSelectedImage(obsImg); return; }
+      }
+
+      // Work Shirt Matching
+      if (color.includes('heather') || color.includes('steel grey')) {
+        const greyFront = images.find(img => img.includes('grey-front'));
+        if (greyFront) { setSelectedImage(greyFront); return; }
+      }
+      if (color.includes('obsidian') && (color.includes('black') || color.includes('crest'))) {
+        const blkFront = images.find(img => img.includes('black-front'));
+        if (blkFront) { setSelectedImage(blkFront); return; }
+      }
+      if (color.includes('charcoal') || color.includes('purple & lime')) {
+        const chrBack = images.find(img => img.includes('charcoal-back'));
+        if (chrBack) { setSelectedImage(chrBack); return; }
+      }
+
+      // Shakers Matching
+      const isSteel = size.includes('steel') || size.includes('insulated');
+      if (color.includes('high-vis') || color.includes('safety gold')) {
+        const img = images.find(i => i.includes(isSteel ? 'highvis-steel' : 'highvis-tritan'));
+        if (img) { setSelectedImage(img); return; }
+      }
+      if (color.includes('steel core') || color.includes('concrete')) {
+        const img = images.find(i => i.includes(isSteel ? 'steelcore-steel' : 'steelcore-tritan'));
+        if (img) { setSelectedImage(img); return; }
+      }
+      if (color.includes('jobsite lime')) {
+        const img = images.find(i => i.includes(isSteel ? 'jobsite-steel' : 'jobsite-tritan'));
+        if (img) { setSelectedImage(img); return; }
+      }
+      if (color.includes('obsidian') && color.includes('gold')) {
+        const img = images.find(i => i.includes(isSteel ? 'krown-shaker-obsidian-steel' : 'krown-shaker-obsidian-tritan'));
+        if (img) { setSelectedImage(img); return; }
+      }
+      if (color.includes('smoke') || color.includes('frosted smoke')) {
+        const img = images.find(i => i.includes(isSteel ? 'smoke-steel' : 'smoke-tritan'));
+        if (img) { setSelectedImage(img); return; }
+      }
+      if (color.includes('brushed') || color.includes('raw brushed')) {
+        const img = images.find(i => i.includes(isSteel ? 'brushed-steel' : 'brushed-tritan'));
+        if (img) { setSelectedImage(img); return; }
+      }
+
+      // Axiom Shaker specific precision matching
       const isStealth = color.includes('stealth');
       const isSignature = color.includes('signature') || color.includes('lime') || color.includes('purple');
 
-      if (isStealth && hasSteel) {
+      if (isStealth && isSteel) {
         const img = images.find(i => i.includes('stealth-steel'));
         if (img) { setSelectedImage(img); return; }
-      } else if (isStealth && (size.includes('tritan') || size.includes('24'))) {
+      } else if (isStealth) {
         const img = images.find(i => i.includes('stealth-tritan'));
         if (img) { setSelectedImage(img); return; }
-      } else if (isSignature && hasSteel) {
+      } else if (isSignature && isSteel) {
         const img = images.find(i => i.includes('signature-steel'));
         if (img) { setSelectedImage(img); return; }
-      } else if (isSignature && (size.includes('tritan') || size.includes('24'))) {
+      } else if (isSignature) {
         const img = images.find(i => i.includes('signature-tritan'));
         if (img) { setSelectedImage(img); return; }
       }
 
-      // Headwear specific matching
-      if (color.includes('charcoal')) {
+      // General color mappings
+      if (color.includes('away') || color.includes('white')) {
+        const awayImg = images.find(img => img.includes('away'));
+        if (awayImg) { setSelectedImage(awayImg); return; }
+      } else if (color.includes('home') || color.includes('electric')) {
+        const homeImg = images.find(img => img.includes('home'));
+        if (homeImg) { setSelectedImage(homeImg); return; }
+      } else if (color.includes('charcoal')) {
         const charcoalImg = images.find(img => img.includes('charcoal'));
         if (charcoalImg) { setSelectedImage(charcoalImg); return; }
       } else if (color.includes('purple')) {
@@ -52,37 +117,16 @@ export default function ProductImageGallery({ images, productName }: ProductImag
         const blackImg = images.find(img => img.includes('black'));
         if (blackImg) { setSelectedImage(blackImg); return; }
       }
-
-      // General color mappings
-      if (color.includes('banner')) {
-        const bannerImg = images.find(img => img.includes('display') || img.includes('banner'));
-        if (bannerImg) setSelectedImage(bannerImg);
-      } else if (color.includes('volcanic') || color.includes('battlestation')) {
-        const volcanicImg = images.find(img => img.includes('quote-frame') || img.includes('photorealistic') || img.includes('face-desk-mat'));
-        if (volcanicImg) setSelectedImage(volcanicImg);
-      } else if (color.includes('away') || color.includes('white')) {
-        const awayImg = images.find(img => img.includes('away'));
-        if (awayImg) setSelectedImage(awayImg);
-      } else if (color.includes('home') || color.includes('electric')) {
-        const homeImg = images.find(img => img.includes('home'));
-        if (homeImg) setSelectedImage(homeImg);
-      } else if (color.includes('stealth') || color.includes('obsidian')) {
-        const stealthImg = images.find(img => img.includes('stealth'));
-        if (stealthImg) setSelectedImage(stealthImg);
-      } else if (color.includes('signature') || color.includes('lime')) {
-        const sigImg = images.find(img => img.includes('signature'));
-        if (sigImg) setSelectedImage(sigImg);
-      }
     };
 
     const handleColorEvent = (e: Event) => {
-      const customEvent = e as CustomEvent<{ color: string }>;
-      handleVariantSync(customEvent.detail?.color || '');
+      const customEvent = e as CustomEvent<{ color: string; image?: string }>;
+      handleVariantSync(customEvent.detail?.color || '', '', customEvent.detail?.image);
     };
 
     const handleVariantEvent = (e: Event) => {
-      const customEvent = e as CustomEvent<{ color: string; size: string }>;
-      handleVariantSync(customEvent.detail?.color || '', customEvent.detail?.size || '');
+      const customEvent = e as CustomEvent<{ color: string; size: string; image?: string }>;
+      handleVariantSync(customEvent.detail?.color || '', customEvent.detail?.size || '', customEvent.detail?.image);
     };
 
     window.addEventListener('krown:color-changed', handleColorEvent);
