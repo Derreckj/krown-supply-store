@@ -78,29 +78,29 @@ categories = {
         (os.path.join(pub_products, 'axiom-shaker-bottles-4-editions.jpg'), '05_Shakers_4_Editions_Comparison.jpg'),
     ],
     '11_Axiom_Joggers_And_Fleece': [
-        (os.path.join(pub_products, 'axiom-sweatpants-pro-model-v2.jpg'), '01_Pro_Heavyweight_450GSM_Model_Clean.jpg'),
+        (os.path.join(pub_products, 'axiom-sweatpants-pro-model-v3.jpg'), '01_Pro_Heavyweight_450GSM_Model_Clean.jpg'),
         (os.path.join(pub_products, 'axiom-sweatpants-pro-heavyweight-studio.jpg'), '02_Pro_Heavyweight_Studio_Specs.jpg'),
         (os.path.join(pub_products, 'axiom-fleece-joggers-core-studio.jpg'), '03_Everyday_Fleece_Studio_Flat.jpg'),
         (os.path.join(pub_products, 'axiom-fleece-joggers-core-model.jpg'), '04_Everyday_Fleece_Creator_Model.jpg'),
     ],
     '12_Axiom_Hoodie_And_Crewneck': [
-        (os.path.join(pub_products, 'axiom-heavyweight-hoodie-studio.jpg'), '01_Heavyweight_450GSM_Hoodie_Studio.jpg'),
-        (os.path.join(pub_products, 'axiom-heavyweight-hoodie-model.jpg'), '02_Heavyweight_Hoodie_Model_Lookbook.jpg'),
+        (os.path.join(pub_products, 'axiom-heavyweight-hoodie-v2.jpg'), '01_Heavyweight_450GSM_Hoodie_Studio.jpg'),
+        (os.path.join(pub_products, 'axiom-heavyweight-hoodie-model-v2.jpg'), '02_Heavyweight_Hoodie_Model_Lookbook.jpg'),
         (os.path.join(pub_products, 'axiom-crewneck-sweatshirt-studio.jpg'), '03_Official_Crewneck_Studio.jpg'),
         (os.path.join(pub_products, 'axiom-crewneck-sweatshirt-model.jpg'), '04_Official_Crewneck_Model_Lookbook.jpg'),
     ],
     '13_Axiom_Pro_Wrist_Rests': [
-        (os.path.join(pub_products, 'axiom-keyboard-wrist-rest-tournament-edition.jpg'), '01_Wrist_Rest_Tournament_Edition_3_Sizes.jpg'),
+        (os.path.join(pub_products, 'axiom-keyboard-wrist-rest-tournament-edition-v2.jpg'), '01_Wrist_Rest_Tournament_Edition_3_Sizes.jpg'),
         (os.path.join(pub_products, 'axiom-keyboard-wrist-rest-stealth-setup.jpg'), '02_Wrist_Rest_Stealth_Battlestation_Setup.jpg'),
     ],
     '14_Axiom_Ceramic_Gaming_Mugs': [
         (os.path.join(pub_products, 'axiom-mug-clean-photoreal-15oz.jpg'), '01_Photoreal_Ceramic_Mug_15oz_Desk_Render.jpg'),
     ],
     '15_KrowN_Construction_Work_Shirt': [
-        (os.path.join(pub_products, 'kc-work-shirt-grey-front.jpg'), '01_Heather_Steel_Grey_Work_Shirt.jpg'),
-        (os.path.join(pub_products, 'kc-work-shirt-black-front.jpg'), '02_Obsidian_Black_Work_Shirt.jpg'),
-        (os.path.join(pub_products, 'kc-work-shirt-charcoal-back.jpg'), '03_Charcoal_Slate_Back_Statement.jpg'),
-        (os.path.join(pub_products, 'kc-work-shirt-model.jpg'), '04_Jobsite_Model_Lookbook.jpg'),
+        (os.path.join(pub_products, 'kc-work-shirt-grey-front-v2.jpg'), '01_Heather_Steel_Grey_Work_Shirt.jpg'),
+        (os.path.join(pub_products, 'kc-work-shirt-black-front-v2.jpg'), '02_Obsidian_Black_Work_Shirt.jpg'),
+        (os.path.join(pub_products, 'kc-work-shirt-charcoal-back-v2.jpg'), '03_Charcoal_Slate_Back_Statement.jpg'),
+        (os.path.join(pub_products, 'kc-work-shirt-model-v2.jpg'), '04_Jobsite_Model_Lookbook.jpg'),
     ],
     '16_KrowN_Construction_Shakers': [
         (os.path.join(pub_products, 'kc-shaker-highvis-steel-v2.jpg'), '01_HighVis_Gold_Pro_Steel_26oz_V2.jpg'),
@@ -122,7 +122,7 @@ categories = {
     ],
     '18_Official_Decal_Sticker_Packs': [
         (os.path.join(pub_products, 'axiom-stickers-holographic-pack.jpg'), '01_Axiom_Holographic_Decal_5Pack.jpg'),
-        (os.path.join(pub_products, 'krown-construction-jobsite-decals.jpg'), '02_KrowN_Construction_Jobsite_Decal_5Pack.jpg'),
+        (os.path.join(pub_products, 'kc-stickers-workbench-v2.jpg'), '02_KrowN_Construction_Jobsite_Decal_5Pack.jpg'),
     ],
     '19_KrowN_Supply_Co_Luxury_Streetwear': [
         (os.path.join(pub_products, 'krown-streetwear-set-v2.jpg'), '01_Premium_Streetwear_Hoodie_Sweatpants_Set_V2.jpg'),

@@ -181,7 +181,7 @@ export default function Home() {
             <Link href="/products/axiom-sweatpants-pro" className={styles.gamingGearCard}>
               <div className={styles.gamingGearThumb}>
                 <img 
-                  src="/images/products/axiom-sweatpants-pro-model-clean.jpg" 
+                  src="/images/products/axiom-sweatpants-pro-model-v3.jpg" 
                   alt="Axiom Allegiance Pro Heavyweight Joggers" 
                 />
                 <span className={styles.gearPill}>450 GSM FLEECE</span>
@@ -209,7 +209,7 @@ export default function Home() {
             <Link href="/products/axiom-wrist-rest-01" className={styles.gamingGearCard}>
               <div className={styles.gamingGearThumb}>
                 <img 
-                  src="/images/products/axiom-keyboard-wrist-rest-tournament-edition.jpg" 
+                  src="/images/products/axiom-keyboard-wrist-rest-tournament-edition-v2.jpg" 
                   alt="Axiom Pro Cooling Gel Keyboard Wrist Rest" 
                 />
                 <span className={styles.gearPill}>COOLING GEL</span>
