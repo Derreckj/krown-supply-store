@@ -49,6 +49,40 @@ categories = {
     '07_Panoramic_Desk_Mat_32x16': [
         (os.path.join(etsy_packs, 'DESK_MAT_32x16', 'Photo_1_BattleStation_Perspective.jpg'), '01_Primary_Desk_Mat_Battlestation.jpg'),
         (os.path.join(etsy_packs, 'DESK_MAT_32x16', 'Photo_2_Gaming_Specs_Infographic.jpg'), '02_Desk_Mat_Specifications.jpg'),
+    ],
+    '08_Axiom_Richardson_112_Headwear': [
+        (os.path.join(pub_products, 'axiom-r112-leather-patch-charcoal.jpg'), '01_R112_Leather_Patch_Charcoal_Front.jpg'),
+        (os.path.join(pub_products, 'axiom-r112-leather-patch-purple.jpg'), '02_R112_Leather_Patch_Purple_Mesh.jpg'),
+        (os.path.join(pub_products, 'axiom-r112-leather-patch-lime.jpg'), '03_R112_Leather_Patch_Toxic_Lime_Mesh.jpg'),
+        (os.path.join(pub_products, 'axiom-r112-embroidered-black.jpg'), '04_R112_3D_Puff_Embroidered_Obsidian.jpg'),
+        (os.path.join(pub_products, 'axiom-r112-embroidered-purple.jpg'), '05_R112_3D_Puff_Embroidered_Purple.jpg'),
+        (os.path.join(pub_products, 'axiom-r112-embroidered-lime.jpg'), '06_R112_3D_Puff_Embroidered_Lime.jpg'),
+        (os.path.join(pub_products, 'axiom-headwear-collection-showcase.jpg'), '07_Headwear_Collection_Showcase.jpg'),
+        (os.path.join(pub_products, 'axiom-hat-model-lookbook.jpg'), '08_Model_Lookbook_Snapback.jpg'),
+    ],
+    '09_Axiom_Vintage_Dad_Hats': [
+        (os.path.join(pub_products, 'axiom-dad-hat-washed-black.jpg'), '01_Vintage_Washed_Black_Dad_Hat.jpg'),
+        (os.path.join(pub_products, 'axiom-headwear-collection-showcase.jpg'), '02_Headwear_Showcase_Banner.jpg'),
+        (os.path.join(pub_products, 'axiom-hat-model-lookbook.jpg'), '03_Model_Wearing_Dad_Hat.jpg'),
+    ],
+    '10_Axiom_Pro_Shakers_Tritan_And_Steel': [
+        (os.path.join(pub_products, 'axiom-shaker-signature-tritan-clean.jpg'), '01_Signature_Tritan_24oz.jpg'),
+        (os.path.join(pub_products, 'axiom-shaker-signature-steel-clean.jpg'), '02_Signature_Pro_Double_Wall_Steel_26oz.jpg'),
+        (os.path.join(pub_products, 'axiom-shaker-stealth-tritan-clean.jpg'), '03_Stealth_Tritan_24oz.jpg'),
+        (os.path.join(pub_products, 'axiom-shaker-stealth-steel-clean.jpg'), '04_Stealth_Pro_Double_Wall_Steel_26oz.jpg'),
+        (os.path.join(pub_products, 'axiom-shaker-bottles-4-editions.jpg'), '05_Shakers_4_Editions_Comparison.jpg'),
+    ],
+    '11_Axiom_Joggers_And_Fleece': [
+        (os.path.join(pub_products, 'axiom-sweatpants-pro-model-clean.jpg'), '01_Pro_Heavyweight_450GSM_Model_Clean.jpg'),
+        (os.path.join(pub_products, 'axiom-sweatpants-pro-heavyweight-studio.jpg'), '02_Pro_Heavyweight_Studio_Specs.jpg'),
+        (os.path.join(pub_products, 'axiom-fleece-joggers-core-studio.jpg'), '03_Everyday_Fleece_Studio_Flat.jpg'),
+        (os.path.join(pub_products, 'axiom-fleece-joggers-core-model.jpg'), '04_Everyday_Fleece_Creator_Model.jpg'),
+    ],
+    '12_Axiom_Hoodie_And_Crewneck': [
+        (os.path.join(pub_products, 'axiom-heavyweight-hoodie-studio.jpg'), '01_Heavyweight_450GSM_Hoodie_Studio.jpg'),
+        (os.path.join(pub_products, 'axiom-heavyweight-hoodie-model.jpg'), '02_Heavyweight_Hoodie_Model_Lookbook.jpg'),
+        (os.path.join(pub_products, 'axiom-crewneck-sweatshirt-studio.jpg'), '03_Official_Crewneck_Studio.jpg'),
+        (os.path.join(pub_products, 'axiom-crewneck-sweatshirt-model.jpg'), '04_Official_Crewneck_Model_Lookbook.jpg'),
     ]
 }
 

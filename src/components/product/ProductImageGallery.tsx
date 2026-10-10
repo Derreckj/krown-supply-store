@@ -38,6 +38,21 @@ export default function ProductImageGallery({ images, productName }: ProductImag
         if (img) { setSelectedImage(img); return; }
       }
 
+      // Headwear specific matching
+      if (color.includes('charcoal')) {
+        const charcoalImg = images.find(img => img.includes('charcoal'));
+        if (charcoalImg) { setSelectedImage(charcoalImg); return; }
+      } else if (color.includes('purple')) {
+        const purpleImg = images.find(img => img.includes('purple'));
+        if (purpleImg) { setSelectedImage(purpleImg); return; }
+      } else if (color.includes('lime') || color.includes('green')) {
+        const limeImg = images.find(img => img.includes('lime'));
+        if (limeImg) { setSelectedImage(limeImg); return; }
+      } else if (color.includes('solid') || color.includes('black')) {
+        const blackImg = images.find(img => img.includes('black'));
+        if (blackImg) { setSelectedImage(blackImg); return; }
+      }
+
       // General color mappings
       if (color.includes('banner')) {
         const bannerImg = images.find(img => img.includes('display') || img.includes('banner'));

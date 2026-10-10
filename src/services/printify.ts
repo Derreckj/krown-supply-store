@@ -630,6 +630,78 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     fit: 'Modern 6.5" Inseam Relaxed Athletic Fit',
   },
   {
+    id: 'axiom-r112-patch-01',
+    name: 'Axiom Richardson 112 Genuine Leather Patch Trucker Snapback',
+    slug: 'axiom-richardson-112-leather-patch-snapback',
+    description: 'The premier competitive snapback for Axiom Allegiance. Authentic Richardson 112 structured mid-profile 6-panel trucker cap featuring pre-curved contrast stitched visor, breathable athletic mesh back, and an adjustable 7-position snapback closure. Front and center is a genuine laser-engraved saddle-tan leather hexagon patch featuring the official Axiom Owl crest and Gothic "Axiom Allegiance" wordmark.',
+    collection: 'AXA / Axiom Allegiance',
+    price: 34.99,
+    baseCost: 13.50,
+    printCost: 4.50,
+    images: [
+      '/images/products/axiom-r112-leather-patch-charcoal.jpg',
+      '/images/products/axiom-r112-leather-patch-purple.jpg',
+      '/images/products/axiom-r112-leather-patch-lime.jpg',
+      '/images/products/axiom-headwear-collection-showcase.jpg',
+      '/images/products/axiom-hat-model-lookbook.jpg',
+    ],
+    variants: [
+      { id: 5101, color: 'Black / Charcoal Mesh', size: 'One Size (Adjustable Snapback)', price: 34.99, sku: 'AXM-R112-PAT-CHR', isAvailable: true },
+      { id: 5102, color: 'Black / Royal Purple Mesh', size: 'One Size (Adjustable Snapback)', price: 34.99, sku: 'AXM-R112-PAT-PRP', isAvailable: true },
+      { id: 5103, color: 'Black / Toxic Green Mesh', size: 'One Size (Adjustable Snapback)', price: 34.99, sku: 'AXM-R112-PAT-LIME', isAvailable: true },
+    ],
+    isNew: true,
+    material: '60% Cotton / 40% Polyester Twill + 100% Poly Mesh • 100% Full-Grain Cowhide Leather Patch',
+    fit: 'Pro-Crown Structured Mid-Profile • Pre-Curved Contrast Visor',
+  },
+  {
+    id: 'axiom-r112-embroidered-01',
+    name: 'Axiom Richardson 112 3D Puff Direct Embroidered Snapback',
+    slug: 'axiom-richardson-112-embroidered-snapback',
+    description: 'Direct 3D high-density puff embroidery on an authentic Richardson 112 trucker snapback cap. Structured twill front, breathable mesh back, pre-curved visor with contrast stitching, and raised satin-stitch embroidery of the Axiom Owl esports crest with arched Gothic lettering.',
+    collection: 'AXA / Axiom Allegiance',
+    price: 32.99,
+    baseCost: 12.80,
+    printCost: 4.20,
+    images: [
+      '/images/products/axiom-r112-embroidered-black.jpg',
+      '/images/products/axiom-r112-embroidered-purple.jpg',
+      '/images/products/axiom-r112-embroidered-lime.jpg',
+      '/images/products/axiom-headwear-collection-showcase.jpg',
+    ],
+    variants: [
+      { id: 5201, color: 'Solid Obsidian Black', size: 'One Size (Adjustable Snapback)', price: 32.99, sku: 'AXM-R112-EMB-BLK', isAvailable: true },
+      { id: 5202, color: 'Black / Royal Purple Mesh', size: 'One Size (Adjustable Snapback)', price: 32.99, sku: 'AXM-R112-EMB-PRP', isAvailable: true },
+      { id: 5203, color: 'Black / Toxic Green Mesh', size: 'One Size (Adjustable Snapback)', price: 32.99, sku: 'AXM-R112-EMB-LIME', isAvailable: true },
+    ],
+    isNew: true,
+    material: '60% Cotton / 40% Polyester Twill + Poly Mesh • 3D High-Density Puff Embroidery',
+    fit: 'Mid-Profile Structured Crown with Pre-Curved Visor',
+  },
+  {
+    id: 'axiom-dad-hat-01',
+    name: 'Axiom Allegiance Vintage Washed Chino Dad Hat',
+    slug: 'axiom-allegiance-vintage-washed-dad-hat',
+    description: 'Relaxed, low-profile unstructured 6-panel dad hat cut from 100% garment-washed cotton chino twill. Features low-profile direct embroidery of the official Axiom Owl mascot and Gothic wordmark, matching fabric strap with brass buckle slider, and pre-curved bill. Everyday comfort meets high-tier esports styling.',
+    collection: 'AXA / Axiom Allegiance',
+    price: 24.99,
+    baseCost: 9.00,
+    printCost: 3.50,
+    images: [
+      '/images/products/axiom-dad-hat-washed-black.jpg',
+      '/images/products/axiom-headwear-collection-showcase.jpg',
+      '/images/products/axiom-hat-model-lookbook.jpg',
+    ],
+    variants: [
+      { id: 5301, color: 'Vintage Washed Black', size: 'One Size (Adjustable Brass Slider)', price: 24.99, sku: 'AXM-DAD-WSH-BLK', isAvailable: true },
+      { id: 5302, color: 'Midnight Dark Purple', size: 'One Size (Adjustable Brass Slider)', price: 24.99, sku: 'AXM-DAD-WSH-PRP', isAvailable: true },
+      { id: 5303, color: 'Dark Charcoal Slate', size: 'One Size (Adjustable Brass Slider)', price: 24.99, sku: 'AXM-DAD-WSH-CHR', isAvailable: true },
+    ],
+    isNew: true,
+    material: '100% Garment-Washed Cotton Chino Twill • Antique Brass Buckle Closure',
+    fit: 'Unstructured Low-Profile 6-Panel Relaxed Fit',
+  },
+  {
     id: 'krown-sleeve-01',
     name: 'Axiom Allegiance Pro Compression Gaming Arm Sleeve',
     slug: 'axiom-allegiance-pro-compression-gaming-arm-sleeve',
@@ -1449,6 +1521,36 @@ export const PRINTIFY_SKU_CATALOG_MAPPINGS: Record<string, PrintifySkuMapping> =
     printProviderId: 16,
     variantMap: { 'S': 3121, 'M': 3122, 'L': 3123, 'XL': 3124, '2XL': 3125, '3XL': 3126 },
     category: 'Esports Apparel',
+  },
+  'axiom-r112-patch-01': {
+    blueprintId: 1743, // Richardson 112 Trucker Snapback with Leather Patch
+    printProviderId: 99,
+    variantMap: {
+      'Black / Charcoal Mesh': 17431,
+      'Black / Royal Purple Mesh': 17432,
+      'Black / Toxic Green Mesh': 17433,
+    },
+    category: 'Headwear',
+  },
+  'axiom-r112-embroidered-01': {
+    blueprintId: 112, // Richardson 112 Direct Embroidered Snapback
+    printProviderId: 42,
+    variantMap: {
+      'Solid Obsidian Black': 11201,
+      'Black / Royal Purple Mesh': 11202,
+      'Black / Toxic Green Mesh': 11203,
+    },
+    category: 'Headwear',
+  },
+  'axiom-dad-hat-01': {
+    blueprintId: 204, // Vintage Washed Chino Twill Dad Hat
+    printProviderId: 16,
+    variantMap: {
+      'Vintage Washed Black': 20401,
+      'Midnight Dark Purple': 20402,
+      'Dark Charcoal Slate': 20403,
+    },
+    category: 'Headwear',
   },
   'krown-mat-01': {
     blueprintId: 488, // Extended Gaming Desk Mat
