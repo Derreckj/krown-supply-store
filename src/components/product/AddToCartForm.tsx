@@ -119,9 +119,11 @@ export default function AddToCartForm({ product }: { product: CatalogProduct }) 
               const newColor = e.target.value;
               setSelectedColor(newColor);
               const newSizes = product.variants.filter(v => v.color === newColor).map(v => v.size);
+              const nextSize = newSizes.length > 0 ? newSizes[0] : selectedSize;
               if (newSizes.length > 0) setSelectedSize(newSizes[0]);
               if (typeof window !== 'undefined') {
                 window.dispatchEvent(new CustomEvent('krown:color-changed', { detail: { color: newColor } }));
+                window.dispatchEvent(new CustomEvent('krown:variant-changed', { detail: { color: newColor, size: nextSize } }));
               }
             }}
           >
@@ -142,7 +144,13 @@ export default function AddToCartForm({ product }: { product: CatalogProduct }) 
             id="size-select" 
             className="form-select"
             value={selectedSize}
-            onChange={(e) => setSelectedSize(e.target.value)}
+            onChange={(e) => {
+              const newSize = e.target.value;
+              setSelectedSize(newSize);
+              if (typeof window !== 'undefined') {
+                window.dispatchEvent(new CustomEvent('krown:variant-changed', { detail: { color: selectedColor, size: newSize } }));
+              }
+            }}
           >
             {sizes.map((s, i) => {
               const v = product.variants.find(item => item.color === selectedColor && item.size === s);

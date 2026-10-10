@@ -167,21 +167,21 @@ export default function Home() {
             <Link href="/products/axiom-shaker-01" className={styles.gamingGearCard}>
               <div className={styles.gamingGearThumb}>
                 <img 
-                  src="/images/products/axiom-vibrant-gaming-shaker-bottle.jpg" 
-                  alt="Axiom Allegiance Pro Loadout Shaker" 
+                  src="/images/products/axiom-shaker-signature-tritan-clean.jpg" 
+                  alt="Axiom Allegiance Pro Loadout Shaker Bottle" 
                 />
-                <span className={styles.gearPill}>3 REAL EDITIONS</span>
+                <span className={styles.gearPill}>STEEL &amp; TRITAN</span>
               </div>
               <div className={styles.gamingGearBody}>
-                <h4>Pro Loadout Shaker (24oz)</h4>
-                <p>Lime, Stealth &amp; Steel Editions • $24.99</p>
+                <h4>Pro Loadout Shaker (24–26oz)</h4>
+                <p>Lime, Stealth &amp; Pro Double-Wall Steel • From $24.99</p>
               </div>
             </Link>
 
             <Link href="/products/axiom-sweatpants-pro" className={styles.gamingGearCard}>
               <div className={styles.gamingGearThumb}>
                 <img 
-                  src="/images/products/axiom-sweatpants-model-streetwear.jpg" 
+                  src="/images/products/axiom-sweatpants-pro-model-clean.jpg" 
                   alt="Axiom Allegiance Pro Heavyweight Joggers" 
                 />
                 <span className={styles.gearPill}>450 GSM FLEECE</span>
