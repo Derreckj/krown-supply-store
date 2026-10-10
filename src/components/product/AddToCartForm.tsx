@@ -120,6 +120,9 @@ export default function AddToCartForm({ product }: { product: CatalogProduct }) 
               setSelectedColor(newColor);
               const newSizes = product.variants.filter(v => v.color === newColor).map(v => v.size);
               if (newSizes.length > 0) setSelectedSize(newSizes[0]);
+              if (typeof window !== 'undefined') {
+                window.dispatchEvent(new CustomEvent('krown:color-changed', { detail: { color: newColor } }));
+              }
             }}
           >
             {colors.map((c, i) => (

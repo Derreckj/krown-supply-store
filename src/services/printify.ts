@@ -667,11 +667,19 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
       '/images/branding/gaming/axiom-owl-mascot.png',
     ],
     variants: [
-      { id: 3101, color: 'Battlestation Obsidian / Lime & Purple Stitching', size: 'Medium (M) 14"x12" (360x300mm)', price: 19.99, sku: 'AXM-MAT-360', isAvailable: true },
-      { id: 3102, color: 'Battlestation Obsidian / Lime & Purple Stitching', size: 'Large (L) 18"x16" (450x400mm)', price: 26.99, sku: 'AXM-MAT-450', isAvailable: true },
-      { id: 3103, color: 'Battlestation Obsidian / Lime & Purple Stitching', size: 'Extended (XL) 31.5"x12" (800x300mm)', price: 34.99, sku: 'AXM-MAT-800', isAvailable: true },
-      { id: 3104, color: 'Battlestation Obsidian / Lime & Purple Stitching', size: 'Panoramic (2XL) 35.4"x16" (900x400mm)', price: 42.99, sku: 'AXM-MAT-900', isAvailable: true },
-      { id: 3105, color: 'Battlestation Obsidian / Lime & Purple Stitching', size: 'Colossal (3XL) 47"x24" (1200x600mm)', price: 54.99, sku: 'AXM-MAT-1200', isAvailable: true },
+      // Option 1: Volcanic Obsidian Battlestation
+      { id: 3101, color: 'Volcanic Obsidian Battlestation', size: 'Medium (M) 14"x12" (360x300mm)', price: 19.99, sku: 'AXM-MAT-VOL-360', isAvailable: true },
+      { id: 3102, color: 'Volcanic Obsidian Battlestation', size: 'Large (L) 18"x16" (450x400mm)', price: 26.99, sku: 'AXM-MAT-VOL-450', isAvailable: true },
+      { id: 3103, color: 'Volcanic Obsidian Battlestation', size: 'Extended (XL) 31.5"x12" (800x300mm)', price: 34.99, sku: 'AXM-MAT-VOL-800', isAvailable: true },
+      { id: 3104, color: 'Volcanic Obsidian Battlestation', size: 'Panoramic (2XL) 35.4"x16" (900x400mm)', price: 42.99, sku: 'AXM-MAT-VOL-900', isAvailable: true },
+      { id: 3105, color: 'Volcanic Obsidian Battlestation', size: 'Colossal (3XL) 47"x24" (1200x600mm)', price: 54.99, sku: 'AXM-MAT-VOL-1200', isAvailable: true },
+
+      // Option 2: Official Axiom Banner
+      { id: 3111, color: 'Official Axiom Banner', size: 'Medium (M) 14"x12" (360x300mm)', price: 19.99, sku: 'AXM-MAT-BAN-360', isAvailable: true },
+      { id: 3112, color: 'Official Axiom Banner', size: 'Large (L) 18"x16" (450x400mm)', price: 26.99, sku: 'AXM-MAT-BAN-450', isAvailable: true },
+      { id: 3113, color: 'Official Axiom Banner', size: 'Extended (XL) 31.5"x12" (800x300mm)', price: 34.99, sku: 'AXM-MAT-BAN-800', isAvailable: true },
+      { id: 3114, color: 'Official Axiom Banner', size: 'Panoramic (2XL) 35.4"x16" (900x400mm)', price: 42.99, sku: 'AXM-MAT-BAN-900', isAvailable: true },
+      { id: 3115, color: 'Official Axiom Banner', size: 'Colossal (3XL) 47"x24" (1200x600mm)', price: 54.99, sku: 'AXM-MAT-BAN-1200', isAvailable: true },
     ],
     isNew: true,
     material: 'Micro-Weave High-Density Cloth + Textured Natural Rubber Base',
@@ -687,16 +695,25 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     baseCost: 8.50,
     printCost: 4.00,
     images: [
-      '/images/branding/gaming/axiom-owl-quote-frame.jpg',
       '/images/branding/gaming/axiom-owl-display.png',
+      '/images/branding/gaming/axiom-owl-quote-frame.jpg',
+      '/images/products/axiom-owl-desk-mat-photorealistic.jpg',
       '/images/branding/gaming/axiom-owl-mascot.png',
     ],
     variants: [
-      { id: 3301, color: 'Official Axiom Banner / Volcanic Obsidian', size: 'Medium (M) 14"x12" (360x300mm)', price: 19.99, sku: 'AXM-PAD-360', isAvailable: true },
-      { id: 3302, color: 'Official Axiom Banner / Volcanic Obsidian', size: 'Large (L) 18"x16" (450x400mm)', price: 26.99, sku: 'AXM-PAD-450', isAvailable: true },
-      { id: 3303, color: 'Official Axiom Banner / Volcanic Obsidian', size: 'Extended (XL) 31.5"x12" (800x300mm)', price: 34.99, sku: 'AXM-PAD-800', isAvailable: true },
-      { id: 3304, color: 'Official Axiom Banner / Volcanic Obsidian', size: 'Panoramic (2XL) 35.4"x16" (900x400mm)', price: 42.99, sku: 'AXM-PAD-900', isAvailable: true },
-      { id: 3305, color: 'Official Axiom Banner / Volcanic Obsidian', size: 'Colossal (3XL) 47"x24" (1200x600mm)', price: 54.99, sku: 'AXM-PAD-1200', isAvailable: true },
+      // Option 1: Official Axiom Banner
+      { id: 3301, color: 'Official Axiom Banner', size: 'Medium (M) 14"x12" (360x300mm)', price: 19.99, sku: 'AXM-PAD-BAN-360', isAvailable: true },
+      { id: 3302, color: 'Official Axiom Banner', size: 'Large (L) 18"x16" (450x400mm)', price: 26.99, sku: 'AXM-PAD-BAN-450', isAvailable: true },
+      { id: 3303, color: 'Official Axiom Banner', size: 'Extended (XL) 31.5"x12" (800x300mm)', price: 34.99, sku: 'AXM-PAD-BAN-800', isAvailable: true },
+      { id: 3304, color: 'Official Axiom Banner', size: 'Panoramic (2XL) 35.4"x16" (900x400mm)', price: 42.99, sku: 'AXM-PAD-BAN-900', isAvailable: true },
+      { id: 3305, color: 'Official Axiom Banner', size: 'Colossal (3XL) 47"x24" (1200x600mm)', price: 54.99, sku: 'AXM-PAD-BAN-1200', isAvailable: true },
+
+      // Option 2: Volcanic Obsidian Battlestation
+      { id: 3311, color: 'Volcanic Obsidian Battlestation', size: 'Medium (M) 14"x12" (360x300mm)', price: 19.99, sku: 'AXM-PAD-VOL-360', isAvailable: true },
+      { id: 3312, color: 'Volcanic Obsidian Battlestation', size: 'Large (L) 18"x16" (450x400mm)', price: 26.99, sku: 'AXM-PAD-VOL-450', isAvailable: true },
+      { id: 3313, color: 'Volcanic Obsidian Battlestation', size: 'Extended (XL) 31.5"x12" (800x300mm)', price: 34.99, sku: 'AXM-PAD-VOL-800', isAvailable: true },
+      { id: 3314, color: 'Volcanic Obsidian Battlestation', size: 'Panoramic (2XL) 35.4"x16" (900x400mm)', price: 42.99, sku: 'AXM-PAD-VOL-900', isAvailable: true },
+      { id: 3315, color: 'Volcanic Obsidian Battlestation', size: 'Colossal (3XL) 47"x24" (1200x600mm)', price: 54.99, sku: 'AXM-PAD-VOL-1200', isAvailable: true },
     ],
     isNew: true,
     material: 'Speed-Weave Polyester Face + Anti-Slip Textured Rubber Base',

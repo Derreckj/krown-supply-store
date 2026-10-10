@@ -36,6 +36,13 @@ export default function ProductCard({
               alt={name} 
               className={`product-image-img ${hoverImage ? 'primary-img' : ''}`}
               loading="eager"
+              onError={(e) => {
+                const target = e.currentTarget;
+                if (hoverImage && !target.dataset.fallbackApplied) {
+                  target.dataset.fallbackApplied = 'true';
+                  target.src = hoverImage;
+                }
+              }}
             />
             {hoverImage && (
               <img 

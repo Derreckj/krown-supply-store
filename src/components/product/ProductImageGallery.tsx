@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 interface ProductImageGalleryProps {
   images: string[];
@@ -9,6 +9,38 @@ interface ProductImageGalleryProps {
 
 export default function ProductImageGallery({ images, productName }: ProductImageGalleryProps) {
   const [selectedImage, setSelectedImage] = useState<string>(images[0] || '');
+
+  useEffect(() => {
+    setSelectedImage(images[0] || '');
+  }, [images]);
+
+  useEffect(() => {
+    const handleColorEvent = (e: Event) => {
+      const customEvent = e as CustomEvent<{ color: string }>;
+      const color = (customEvent.detail?.color || '').toLowerCase();
+      if (!color) return;
+
+      if (color.includes('banner')) {
+        const bannerImg = images.find(img => img.includes('display') || img.includes('banner'));
+        if (bannerImg) setSelectedImage(bannerImg);
+      } else if (color.includes('volcanic') || color.includes('obsidian') || color.includes('battlestation')) {
+        const volcanicImg = images.find(img => img.includes('quote-frame') || img.includes('photorealistic') || img.includes('face-desk-mat'));
+        if (volcanicImg) setSelectedImage(volcanicImg);
+      } else if (color.includes('away') || color.includes('white')) {
+        const awayImg = images.find(img => img.includes('away'));
+        if (awayImg) setSelectedImage(awayImg);
+      } else if (color.includes('home') || color.includes('electric')) {
+        const homeImg = images.find(img => img.includes('home'));
+        if (homeImg) setSelectedImage(homeImg);
+      } else if (color.includes('stealth') || color.includes('black')) {
+        const stealthImg = images.find(img => img.includes('stealth'));
+        if (stealthImg) setSelectedImage(stealthImg);
+      }
+    };
+
+    window.addEventListener('krown:color-changed', handleColorEvent);
+    return () => window.removeEventListener('krown:color-changed', handleColorEvent);
+  }, [images]);
 
   return (
     <div className="product-gallery">
