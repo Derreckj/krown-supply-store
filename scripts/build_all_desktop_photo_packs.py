@@ -66,7 +66,7 @@ categories = {
         (os.path.join(pub_products, 'axiom-hat-model-lookbook-v2.jpg'), '08_Model_Lookbook_Snapback.jpg'),
     ],
     '09_Axiom_Vintage_Dad_Hats': [
-        (os.path.join(pub_products, 'axiom-dad-hat-washed-black-v3.jpg'), '01_Vintage_Washed_Black_Dad_Hat_Owl_Only.jpg'),
+        (os.path.join(pub_products, 'axiom-dad-hat-washed-black-v4.jpg'), '01_Vintage_Washed_Black_Dad_Hat_Owl_Only.jpg'),
         (os.path.join(pub_products, 'axiom-headwear-collection-showcase.jpg'), '02_Headwear_Showcase_Banner.jpg'),
         (os.path.join(pub_products, 'axiom-hat-model-lookbook-v2.jpg'), '03_Model_Wearing_Dad_Hat_Axiom_Apparel.jpg'),
     ],
