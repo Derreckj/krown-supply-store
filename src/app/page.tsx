@@ -181,7 +181,7 @@ export default function Home() {
             <Link href="/products/axiom-sweatpants-pro" className={styles.gamingGearCard}>
               <div className={styles.gamingGearThumb}>
                 <img 
-                  src="/images/products/axiom-sweatpants-pro-model-v4.jpg" 
+                  src="/images/products/axiom-sweatpants-pro-model-v5.jpg" 
                   alt="Axiom Allegiance Pro Heavyweight Joggers" 
                 />
                 <span className={styles.gearPill}>450 GSM FLEECE</span>
@@ -209,7 +209,7 @@ export default function Home() {
             <Link href="/products/axiom-wrist-rest-01" className={styles.gamingGearCard}>
               <div className={styles.gamingGearThumb}>
                 <img 
-                  src="/images/products/axiom-keyboard-wrist-rest-clean-v3.jpg" 
+                  src="/images/products/axiom-keyboard-wrist-rest-clean-v4.jpg" 
                   alt="Axiom Pro Ergonomic Tournament Keyboard Wrist Rest" 
                 />
                 <span className={styles.gearPill}>TOURNAMENT SPEC</span>
@@ -223,7 +223,7 @@ export default function Home() {
             <Link href="/products/axiom-mug-01" className={styles.gamingGearCard}>
               <div className={styles.gamingGearThumb}>
                 <img 
-                  src="/images/products/axiom-mug-clean-photoreal-15oz.jpg" 
+                  src="/images/products/axiom-mug-clean-photoreal-15oz-v3.jpg" 
                   alt="Axiom Owl Two-Tone Ceramic Gaming Mug" 
                 />
                 <span className={styles.gearPill}>15 OZ CERAMIC</span>
