@@ -28,8 +28,9 @@ categories = {
         (os.path.join(brain_dir, 'krown_r112_patch_detail_1791569885457.jpg'), '08_Macro_Leather_Patch_Detail.jpg'),
     ],
     '03_Cuffed_Beanie': [
-        (os.path.join(pub_products, 'krown-beanie-studio-front.jpg'), '01_Primary_Beanie_Since_2018_Front.jpg'),
+        (os.path.join(pub_products, 'krown-beanie-since-2018.jpg'), '01_Primary_Beanie_Since_2018_Front.jpg'),
         (os.path.join(brain_dir, 'krown_beanie_model_1791570190810.jpg'), '02_Male_Model_Winter_Streetwear.jpg'),
+        (os.path.join(pub_products, 'krown-beanie-studio-front.jpg'), '03_Studio_Front_Alt.jpg'),
     ],
     '04_Comfort_Colors_1717_Tee': [
         (os.path.join(pub_products, 'krown-supply-comfort-colors-1717-tee.jpg'), '01_Primary_Tee_Mannequin_Front.jpg'),
@@ -50,8 +51,9 @@ categories = {
     ],
     '07_Panoramic_Desk_Mat_32x16': [
         (os.path.join(pub_products, 'axiom-owl-desk-mat-photorealistic.jpg'), '01_Desk_Mat_Photorealistic_Battlestation.jpg'),
-        (os.path.join(etsy_packs, 'DESK_MAT_32x16', 'Photo_1_BattleStation_Perspective.jpg'), '02_Desk_Mat_Wide_Angle.jpg'),
-        (os.path.join(etsy_packs, 'DESK_MAT_32x16', 'Photo_2_Gaming_Specs_Infographic.jpg'), '03_Desk_Mat_Specifications.jpg'),
+        (os.path.join(pub_products, 'axiom-owl-realistic-axa-face-desk-mat.jpg'), '02_Desk_Mat_Official_Axiom_Banner.jpg'),
+        (os.path.join(etsy_packs, 'DESK_MAT_32x16', 'Photo_1_BattleStation_Perspective.jpg'), '03_Desk_Mat_Wide_Angle.jpg'),
+        (os.path.join(etsy_packs, 'DESK_MAT_32x16', 'Photo_2_Gaming_Specs_Infographic.jpg'), '04_Desk_Mat_Specifications.jpg'),
     ],
     '08_Axiom_Richardson_112_Headwear': [
         (os.path.join(pub_products, 'axiom-r112-leather-patch-charcoal.jpg'), '01_R112_Leather_Patch_Charcoal_Front.jpg'),
@@ -61,12 +63,12 @@ categories = {
         (os.path.join(pub_products, 'axiom-r112-embroidered-purple.jpg'), '05_R112_3D_Puff_Embroidered_Purple.jpg'),
         (os.path.join(pub_products, 'axiom-r112-embroidered-lime.jpg'), '06_R112_3D_Puff_Embroidered_Lime.jpg'),
         (os.path.join(pub_products, 'axiom-headwear-collection-showcase.jpg'), '07_Headwear_Collection_Showcase.jpg'),
-        (os.path.join(pub_products, 'axiom-hat-model-lookbook.jpg'), '08_Model_Lookbook_Snapback.jpg'),
+        (os.path.join(pub_products, 'axiom-hat-model-lookbook-v2.jpg'), '08_Model_Lookbook_Snapback.jpg'),
     ],
     '09_Axiom_Vintage_Dad_Hats': [
-        (os.path.join(pub_products, 'axiom-dad-hat-washed-black.jpg'), '01_Vintage_Washed_Black_Dad_Hat_Owl_Only.jpg'),
+        (os.path.join(pub_products, 'axiom-dad-hat-washed-black-v2.jpg'), '01_Vintage_Washed_Black_Dad_Hat_Owl_Only.jpg'),
         (os.path.join(pub_products, 'axiom-headwear-collection-showcase.jpg'), '02_Headwear_Showcase_Banner.jpg'),
-        (os.path.join(pub_products, 'axiom-hat-model-lookbook.jpg'), '03_Model_Wearing_Dad_Hat_Axiom_Apparel.jpg'),
+        (os.path.join(pub_products, 'axiom-hat-model-lookbook-v2.jpg'), '03_Model_Wearing_Dad_Hat_Axiom_Apparel.jpg'),
     ],
     '10_Axiom_Pro_Shakers_Tritan_And_Steel': [
         (os.path.join(pub_products, 'axiom-shaker-signature-tritan-clean.jpg'), '01_Signature_Tritan_24oz.jpg'),
@@ -76,7 +78,7 @@ categories = {
         (os.path.join(pub_products, 'axiom-shaker-bottles-4-editions.jpg'), '05_Shakers_4_Editions_Comparison.jpg'),
     ],
     '11_Axiom_Joggers_And_Fleece': [
-        (os.path.join(pub_products, 'axiom-sweatpants-pro-model-clean.jpg'), '01_Pro_Heavyweight_450GSM_Model_Clean.jpg'),
+        (os.path.join(pub_products, 'axiom-sweatpants-pro-model-v2.jpg'), '01_Pro_Heavyweight_450GSM_Model_Clean.jpg'),
         (os.path.join(pub_products, 'axiom-sweatpants-pro-heavyweight-studio.jpg'), '02_Pro_Heavyweight_Studio_Specs.jpg'),
         (os.path.join(pub_products, 'axiom-fleece-joggers-core-studio.jpg'), '03_Everyday_Fleece_Studio_Flat.jpg'),
         (os.path.join(pub_products, 'axiom-fleece-joggers-core-model.jpg'), '04_Everyday_Fleece_Creator_Model.jpg'),
@@ -92,7 +94,7 @@ categories = {
         (os.path.join(pub_products, 'axiom-keyboard-wrist-rest-stealth-setup.jpg'), '02_Wrist_Rest_Stealth_Battlestation_Setup.jpg'),
     ],
     '14_Axiom_Ceramic_Gaming_Mugs': [
-        (os.path.join(pub_products, 'axiom-mug-smokey-crest-15oz.png'), '01_Smokey_Crest_Gothic_Mug_15oz_Clean.png'),
+        (os.path.join(pub_products, 'axiom-mug-clean-photoreal-15oz.jpg'), '01_Photoreal_Ceramic_Mug_15oz_Desk_Render.jpg'),
     ],
     '15_KrowN_Construction_Work_Shirt': [
         (os.path.join(pub_products, 'kc-work-shirt-grey-front.jpg'), '01_Heather_Steel_Grey_Work_Shirt.jpg'),
@@ -101,7 +103,7 @@ categories = {
         (os.path.join(pub_products, 'kc-work-shirt-model.jpg'), '04_Jobsite_Model_Lookbook.jpg'),
     ],
     '16_KrowN_Construction_Shakers': [
-        (os.path.join(pub_products, 'kc-shaker-highvis-steel.jpg'), '01_HighVis_Gold_Pro_Steel_26oz.jpg'),
+        (os.path.join(pub_products, 'kc-shaker-highvis-steel-v2.jpg'), '01_HighVis_Gold_Pro_Steel_26oz_V2.jpg'),
         (os.path.join(pub_products, 'kc-shaker-highvis-tritan.jpg'), '02_HighVis_Gold_Tritan_24oz.jpg'),
         (os.path.join(pub_products, 'kc-shaker-steelcore-steel.jpg'), '03_SteelCore_Titanium_Pro_Steel_26oz.jpg'),
         (os.path.join(pub_products, 'kc-shaker-steelcore-tritan.jpg'), '04_SteelCore_Titanium_Tritan_24oz.jpg'),
@@ -110,7 +112,7 @@ categories = {
         (os.path.join(pub_products, 'kc-shaker-bottles-3-editions.jpg'), '07_Construction_Shaker_Lineup.jpg'),
     ],
     '17_KrowN_Supply_Co_Shakers': [
-        (os.path.join(pub_products, 'krown-shaker-obsidian-steel.jpg'), '01_Obsidian_Gold_Crown_Pro_Steel_26oz.jpg'),
+        (os.path.join(pub_products, 'krown-shaker-obsidian-steel-v2.jpg'), '01_Obsidian_Gold_Crown_Pro_Steel_26oz_V2.jpg'),
         (os.path.join(pub_products, 'krown-shaker-obsidian-tritan.jpg'), '02_Obsidian_Gold_Crown_Tritan_24oz.jpg'),
         (os.path.join(pub_products, 'krown-shaker-smoke-steel.jpg'), '03_Frosted_Smoke_Gold_Pro_Steel_26oz.jpg'),
         (os.path.join(pub_products, 'krown-shaker-smoke-tritan.jpg'), '04_Frosted_Smoke_Gold_Tritan_24oz.jpg'),
@@ -123,8 +125,8 @@ categories = {
         (os.path.join(pub_products, 'krown-construction-jobsite-decals.jpg'), '02_KrowN_Construction_Jobsite_Decal_5Pack.jpg'),
     ],
     '19_KrowN_Supply_Co_Luxury_Streetwear': [
-        (os.path.join(pub_products, 'krown-streetwear-set-black.jpg'), '01_Premium_Streetwear_Hoodie_Sweatpants_Set.jpg'),
-        (os.path.join(pub_products, 'krown-french-terry-shorts.jpg'), '02_French_Terry_Heavyweight_Shorts.jpg'),
+        (os.path.join(pub_products, 'krown-streetwear-set-v2.jpg'), '01_Premium_Streetwear_Hoodie_Sweatpants_Set_V2.jpg'),
+        (os.path.join(pub_products, 'krown-french-terry-shorts-v2.jpg'), '02_French_Terry_Heavyweight_Shorts_V2.jpg'),
         (os.path.join(pub_products, 'krown-dad-hat-washed-black.jpg'), '03_Vintage_Washed_Black_Dad_Hat.jpg'),
         (os.path.join(pub_products, 'krown-broken-rules-gold-tracksuit.jpg'), '04_Broken_Rules_Kintsugi_Gold_Tracksuit.jpg'),
     ]

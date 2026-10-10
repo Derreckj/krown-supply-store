@@ -220,17 +220,17 @@ export default function Home() {
               </div>
             </Link>
 
-            <Link href="/products/krown-mousepad-01" className={styles.gamingGearCard}>
+            <Link href="/products/axiom-mug-01" className={styles.gamingGearCard}>
               <div className={styles.gamingGearThumb}>
                 <img 
-                  src="/images/branding/gaming/axiom-owl-quote-frame.jpg" 
-                  alt="Axiom Allegiance Official Crest Speed Mousepad" 
+                  src="/images/products/axiom-mug-clean-photoreal-15oz.jpg" 
+                  alt="Axiom Owl Two-Tone Ceramic Gaming Mug" 
                 />
-                <span className={styles.gearPill}>5 CUSTOM SIZES</span>
+                <span className={styles.gearPill}>15 OZ CERAMIC</span>
               </div>
               <div className={styles.gamingGearBody}>
-                <h4>Axiom Official Crest Mousepad</h4>
-                <p>Speed Micro-Weave Cloth • From $19.99</p>
+                <h4>Axiom Two-Tone Ceramic Gamer Mug</h4>
+                <p>Midnight Obsidian &amp; Lime Glaze • $19.99</p>
               </div>
             </Link>
           </div>

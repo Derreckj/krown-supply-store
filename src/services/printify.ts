@@ -154,7 +154,7 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     baseCost: 52.00,
     printCost: 15.00,
     images: [
-      '/images/products/krown-streetwear-set-black.jpg',
+      '/images/products/krown-streetwear-set-v2.jpg',
       '/images/products/krown-supply-premium-hoodie-front.jpg',
       '/images/products/krown-supply-premium-sweatpants.jpg',
     ],
@@ -205,9 +205,9 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     baseCost: 11.50,
     printCost: 4.50,
     images: [
-      '/images/products/krown-r112-leather-patch-charcoal-black.jpg',
       '/images/products/krown-r112-leather-patch-heather-grey.jpg',
       '/images/products/krown-r112-leather-patch-obsidian-black.jpg',
+      '/images/products/krown-r112-leather-patch-charcoal-black.jpg',
       '/images/products/krown-r112-flagship-leather-patch-snapback.jpg',
       '/images/products/krown-r112-flagship-leather-patch-hero.jpg',
     ],
@@ -250,7 +250,7 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     baseCost: 13.50,
     printCost: 6.00,
     images: [
-      '/images/products/krown-french-terry-shorts.jpg',
+      '/images/products/krown-french-terry-shorts-v2.jpg',
     ],
     variants: [
       { id: 921, color: 'Washed Black / Gold KrowN', size: 'S', price: 42.00, sku: 'KRN-SHRT-TERRY-S', isAvailable: true },
@@ -322,7 +322,7 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     baseCost: 7.50,
     printCost: 4.00,
     images: [
-      '/images/products/krown-shaker-obsidian-steel.jpg',
+      '/images/products/krown-shaker-obsidian-steel-v2.jpg',
       '/images/products/krown-shaker-obsidian-tritan.jpg',
       '/images/products/krown-shaker-smoke-steel.jpg',
       '/images/products/krown-shaker-smoke-tritan.jpg',
@@ -357,7 +357,7 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     baseCost: 6.20,
     printCost: 4.00,
     images: [
-      '/images/products/krown-construction-cuffed-beanie.png',
+      '/images/products/krown-beanie-since-2018.jpg',
       '/images/products/krown-beanie-model.jpg',
       '/images/products/krown-beanie-studio-front.jpg',
     ],
@@ -476,7 +476,7 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     baseCost: 7.50,
     printCost: 4.00,
     images: [
-      '/images/products/kc-shaker-highvis-steel.jpg',
+      '/images/products/kc-shaker-highvis-steel-v2.jpg',
       '/images/products/kc-shaker-highvis-tritan.jpg',
       '/images/products/kc-shaker-steelcore-steel.jpg',
       '/images/products/kc-shaker-steelcore-tritan.jpg',
@@ -667,30 +667,11 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     baseCost: 5.80,
     printCost: 4.20,
     images: [
-      '/images/products/axiom-mug-smokey-crest-15oz.png',
+      '/images/products/axiom-mug-clean-photoreal-15oz.jpg',
     ],
     variants: [
       { id: 701, color: 'Midnight Obsidian / Electric Lime Interior', size: '15 oz', price: 19.99, sku: 'AXM-MUG-15-LIME', isAvailable: true },
       { id: 702, color: 'Midnight Obsidian / Royal Purple Interior', size: '15 oz', price: 19.99, sku: 'AXM-MUG-15-PRP', isAvailable: true }
-    ],
-    isNew: true,
-    material: '100% High-Grade Durable Ceramic • Gloss Finish',
-    fit: '15 oz Jumbo Gamer Mug (4.7" H x 3.3" D)',
-  },
-  {
-    id: 'axiom-mug-02',
-    name: 'Axiom Smokey Crest Gothic Ceramic Gamer Mug (15oz)',
-    slug: 'axiom-smokey-crest-gothic-ceramic-gamer-mug-15oz',
-    description: 'The next evolution of esports battlestation drinkware. Finished in midnight obsidian black ceramic on the exterior with a vibrant electric lime glazed interior and handle. Showcases the official smoky Axiom Owl mascot with glowing green eyes and two-tone Gothic "Axiom Allegiance" branding along the body. Built to keep your coffee piping hot through all-night gaming marathons.',
-    collection: 'AXA / Axiom Allegiance',
-    price: 19.99,
-    baseCost: 5.80,
-    printCost: 4.20,
-    images: [
-      '/images/products/axiom-mug-smokey-crest-15oz.png',
-    ],
-    variants: [
-      { id: 703, color: 'Midnight Obsidian / Electric Lime Interior', size: '15 oz', price: 19.99, sku: 'AXM-MUG-SMK-LIME', isAvailable: true },
     ],
     isNew: true,
     material: '100% High-Grade Durable Ceramic • Gloss Finish',
@@ -772,20 +753,20 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     id: 'axiom-dad-hat-01',
     name: 'Axiom Allegiance Vintage Washed Chino Dad Hat',
     slug: 'axiom-allegiance-vintage-washed-dad-hat',
-    description: 'Relaxed, low-profile unstructured 6-panel dad hat cut from 100% garment-washed cotton chino twill. Features low-profile direct embroidery of the official Axiom Owl mascot and Gothic wordmark, matching fabric strap with brass buckle slider, and pre-curved bill. Everyday comfort meets high-tier esports styling.',
+    description: 'Relaxed, low-profile unstructured 6-panel dad hat cut from 100% garment-washed cotton chino twill. Features low-profile direct embroidery of the official Axiom Owl mascot (clean, zero crown) and Gothic wordmark, matching fabric strap with brass buckle slider, and pre-curved bill. Everyday comfort meets high-tier esports styling.',
     collection: 'AXA / Axiom Allegiance',
     price: 24.99,
     baseCost: 9.00,
     printCost: 3.50,
     images: [
-      '/images/products/axiom-dad-hat-washed-black.jpg',
+      '/images/products/axiom-dad-hat-washed-black-v2.jpg',
+      '/images/products/axiom-hat-model-lookbook-v2.jpg',
       '/images/products/axiom-headwear-collection-showcase.jpg',
-      '/images/products/axiom-hat-model-lookbook.jpg',
     ],
     variants: [
-      { id: 5301, color: 'Vintage Washed Black', size: 'One Size (Adjustable Brass Slider)', price: 24.99, sku: 'AXM-DAD-WSH-BLK', isAvailable: true },
-      { id: 5302, color: 'Midnight Dark Purple', size: 'One Size (Adjustable Brass Slider)', price: 24.99, sku: 'AXM-DAD-WSH-PRP', isAvailable: true },
-      { id: 5303, color: 'Dark Charcoal Slate', size: 'One Size (Adjustable Brass Slider)', price: 24.99, sku: 'AXM-DAD-WSH-CHR', isAvailable: true },
+      { id: 5301, color: 'Vintage Washed Black', size: 'One Size (Adjustable Brass Slider)', price: 24.99, sku: 'AXM-DAD-WSH-BLK', isAvailable: true, image: '/images/products/axiom-dad-hat-washed-black-v2.jpg' },
+      { id: 5302, color: 'Midnight Dark Purple', size: 'One Size (Adjustable Brass Slider)', price: 24.99, sku: 'AXM-DAD-WSH-PRP', isAvailable: true, image: '/images/products/axiom-dad-hat-washed-black-v2.jpg' },
+      { id: 5303, color: 'Dark Charcoal Slate', size: 'One Size (Adjustable Brass Slider)', price: 24.99, sku: 'AXM-DAD-WSH-CHR', isAvailable: true, image: '/images/products/axiom-dad-hat-washed-black-v2.jpg' },
     ],
     isNew: true,
     material: '100% Garment-Washed Cotton Chino Twill • Antique Brass Buckle Closure',
@@ -830,52 +811,21 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     ],
     variants: [
       // Option 1: Volcanic Obsidian Battlestation
-      { id: 3101, color: 'Volcanic Obsidian Battlestation', size: 'Medium (M) 14"x12" (360x300mm)', price: 19.99, sku: 'AXM-MAT-VOL-360', isAvailable: true },
-      { id: 3102, color: 'Volcanic Obsidian Battlestation', size: 'Large (L) 18"x16" (450x400mm)', price: 26.99, sku: 'AXM-MAT-VOL-450', isAvailable: true },
-      { id: 3103, color: 'Volcanic Obsidian Battlestation', size: 'Extended (XL) 31.5"x12" (800x300mm)', price: 34.99, sku: 'AXM-MAT-VOL-800', isAvailable: true },
-      { id: 3104, color: 'Volcanic Obsidian Battlestation', size: 'Panoramic (2XL) 35.4"x16" (900x400mm)', price: 42.99, sku: 'AXM-MAT-VOL-900', isAvailable: true },
-      { id: 3105, color: 'Volcanic Obsidian Battlestation', size: 'Colossal (3XL) 47"x24" (1200x600mm)', price: 54.99, sku: 'AXM-MAT-VOL-1200', isAvailable: true },
+      { id: 3101, color: 'Volcanic Obsidian Battlestation', size: 'Medium (M) 14"x12" (360x300mm)', price: 19.99, sku: 'AXM-MAT-VOL-360', isAvailable: true, image: '/images/products/axiom-owl-desk-mat-photorealistic.jpg' },
+      { id: 3102, color: 'Volcanic Obsidian Battlestation', size: 'Large (L) 18"x16" (450x400mm)', price: 26.99, sku: 'AXM-MAT-VOL-450', isAvailable: true, image: '/images/products/axiom-owl-desk-mat-photorealistic.jpg' },
+      { id: 3103, color: 'Volcanic Obsidian Battlestation', size: 'Extended (XL) 31.5"x12" (800x300mm)', price: 34.99, sku: 'AXM-MAT-VOL-800', isAvailable: true, image: '/images/products/axiom-owl-desk-mat-photorealistic.jpg' },
+      { id: 3104, color: 'Volcanic Obsidian Battlestation', size: 'Panoramic (2XL) 35.4"x16" (900x400mm)', price: 42.99, sku: 'AXM-MAT-VOL-900', isAvailable: true, image: '/images/products/axiom-owl-desk-mat-photorealistic.jpg' },
+      { id: 3105, color: 'Volcanic Obsidian Battlestation', size: 'Colossal (3XL) 47"x24" (1200x600mm)', price: 54.99, sku: 'AXM-MAT-VOL-1200', isAvailable: true, image: '/images/products/axiom-owl-desk-mat-photorealistic.jpg' },
 
       // Option 2: Official Axiom Banner
-      { id: 3111, color: 'Official Axiom Banner', size: 'Medium (M) 14"x12" (360x300mm)', price: 19.99, sku: 'AXM-MAT-BAN-360', isAvailable: true },
-      { id: 3112, color: 'Official Axiom Banner', size: 'Large (L) 18"x16" (450x400mm)', price: 26.99, sku: 'AXM-MAT-BAN-450', isAvailable: true },
-      { id: 3113, color: 'Official Axiom Banner', size: 'Extended (XL) 31.5"x12" (800x300mm)', price: 34.99, sku: 'AXM-MAT-BAN-800', isAvailable: true },
-      { id: 3114, color: 'Official Axiom Banner', size: 'Panoramic (2XL) 35.4"x16" (900x400mm)', price: 42.99, sku: 'AXM-MAT-BAN-900', isAvailable: true },
-      { id: 3115, color: 'Official Axiom Banner', size: 'Colossal (3XL) 47"x24" (1200x600mm)', price: 54.99, sku: 'AXM-MAT-BAN-1200', isAvailable: true },
+      { id: 3111, color: 'Official Axiom Banner', size: 'Medium (M) 14"x12" (360x300mm)', price: 19.99, sku: 'AXM-MAT-BAN-360', isAvailable: true, image: '/images/products/axiom-owl-realistic-axa-face-desk-mat.jpg' },
+      { id: 3112, color: 'Official Axiom Banner', size: 'Large (L) 18"x16" (450x400mm)', price: 26.99, sku: 'AXM-MAT-BAN-450', isAvailable: true, image: '/images/products/axiom-owl-realistic-axa-face-desk-mat.jpg' },
+      { id: 3113, color: 'Official Axiom Banner', size: 'Extended (XL) 31.5"x12" (800x300mm)', price: 34.99, sku: 'AXM-MAT-BAN-800', isAvailable: true, image: '/images/products/axiom-owl-realistic-axa-face-desk-mat.jpg' },
+      { id: 3114, color: 'Official Axiom Banner', size: 'Panoramic (2XL) 35.4"x16" (900x400mm)', price: 42.99, sku: 'AXM-MAT-BAN-900', isAvailable: true, image: '/images/products/axiom-owl-realistic-axa-face-desk-mat.jpg' },
+      { id: 3115, color: 'Official Axiom Banner', size: 'Colossal (3XL) 47"x24" (1200x600mm)', price: 54.99, sku: 'AXM-MAT-BAN-1200', isAvailable: true, image: '/images/products/axiom-owl-realistic-axa-face-desk-mat.jpg' },
     ],
     isNew: true,
     material: 'Micro-Weave High-Density Cloth + Textured Natural Rubber Base',
-    fit: '5 Custom Sizes: 14"x12" to 47"x24" (4mm Thickness)',
-  },
-  {
-    id: 'krown-mousepad-01',
-    name: 'Axiom Allegiance Official Crest Gaming Mousepad (5 Custom Sizes)',
-    slug: 'axiom-owl-speed-gaming-mousepad',
-    description: 'High-density micro-texture mousepad tuned for fast flick shots and pinpoint tracking. Showcases the iconic Axiom Owl crest banner with dark volcanic backdrop and the official team creed: "YOU CANNOT BE TRULY HUMBLE, UNLESS YOU TRULY BELIEVE THAT LIFE CAN AND WILL GO ON WITHOUT YOU". Available in 5 custom competition sizes from Medium (14"x12") to Colossal (47"x24").',
-    collection: 'AXA / Axiom Allegiance',
-    price: 19.99,
-    baseCost: 8.50,
-    printCost: 4.00,
-    images: [
-      '/images/products/axiom-owl-desk-mat-photorealistic.jpg',
-    ],
-    variants: [
-      // Option 1: Official Axiom Banner
-      { id: 3301, color: 'Official Axiom Banner', size: 'Medium (M) 14"x12" (360x300mm)', price: 19.99, sku: 'AXM-PAD-BAN-360', isAvailable: true },
-      { id: 3302, color: 'Official Axiom Banner', size: 'Large (L) 18"x16" (450x400mm)', price: 26.99, sku: 'AXM-PAD-BAN-450', isAvailable: true },
-      { id: 3303, color: 'Official Axiom Banner', size: 'Extended (XL) 31.5"x12" (800x300mm)', price: 34.99, sku: 'AXM-PAD-BAN-800', isAvailable: true },
-      { id: 3304, color: 'Official Axiom Banner', size: 'Panoramic (2XL) 35.4"x16" (900x400mm)', price: 42.99, sku: 'AXM-PAD-BAN-900', isAvailable: true },
-      { id: 3305, color: 'Official Axiom Banner', size: 'Colossal (3XL) 47"x24" (1200x600mm)', price: 54.99, sku: 'AXM-PAD-BAN-1200', isAvailable: true },
-
-      // Option 2: Volcanic Obsidian Battlestation
-      { id: 3311, color: 'Volcanic Obsidian Battlestation', size: 'Medium (M) 14"x12" (360x300mm)', price: 19.99, sku: 'AXM-PAD-VOL-360', isAvailable: true },
-      { id: 3312, color: 'Volcanic Obsidian Battlestation', size: 'Large (L) 18"x16" (450x400mm)', price: 26.99, sku: 'AXM-PAD-VOL-450', isAvailable: true },
-      { id: 3313, color: 'Volcanic Obsidian Battlestation', size: 'Extended (XL) 31.5"x12" (800x300mm)', price: 34.99, sku: 'AXM-PAD-VOL-800', isAvailable: true },
-      { id: 3314, color: 'Volcanic Obsidian Battlestation', size: 'Panoramic (2XL) 35.4"x16" (900x400mm)', price: 42.99, sku: 'AXM-PAD-VOL-900', isAvailable: true },
-      { id: 3315, color: 'Volcanic Obsidian Battlestation', size: 'Colossal (3XL) 47"x24" (1200x600mm)', price: 54.99, sku: 'AXM-PAD-VOL-1200', isAvailable: true },
-    ],
-    isNew: true,
-    material: 'Speed-Weave Polyester Face + Anti-Slip Textured Rubber Base',
     fit: '5 Custom Sizes: 14"x12" to 47"x24" (4mm Thickness)',
   },
   {
@@ -888,16 +838,16 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     baseCost: 22.00,
     printCost: 7.00,
     images: [
-      '/images/products/axiom-sweatpants-pro-model-clean.jpg',
+      '/images/products/axiom-sweatpants-pro-model-v2.jpg',
       '/images/products/axiom-sweatpants-pro-heavyweight-studio.jpg',
     ],
     variants: [
-      { id: 4101, color: 'Obsidian Black / Purple & Green Cords', size: 'S', price: 68.00, sku: 'AXM-SWP-PRO-S', isAvailable: true },
-      { id: 4102, color: 'Obsidian Black / Purple & Green Cords', size: 'M', price: 68.00, sku: 'AXM-SWP-PRO-M', isAvailable: true },
-      { id: 4103, color: 'Obsidian Black / Purple & Green Cords', size: 'L', price: 68.00, sku: 'AXM-SWP-PRO-L', isAvailable: true },
-      { id: 4104, color: 'Obsidian Black / Purple & Green Cords', size: 'XL', price: 68.00, sku: 'AXM-SWP-PRO-XL', isAvailable: true },
-      { id: 4105, color: 'Obsidian Black / Purple & Green Cords', size: '2XL', price: 68.00, sku: 'AXM-SWP-PRO-2XL', isAvailable: true },
-      { id: 4106, color: 'Obsidian Black / Purple & Green Cords', size: '3XL', price: 74.00, sku: 'AXM-SWP-PRO-3XL', isAvailable: true },
+      { id: 4101, color: 'Obsidian Black / Purple & Green Cords', size: 'S', price: 68.00, sku: 'AXM-SWP-PRO-S', isAvailable: true, image: '/images/products/axiom-sweatpants-pro-model-v2.jpg' },
+      { id: 4102, color: 'Obsidian Black / Purple & Green Cords', size: 'M', price: 68.00, sku: 'AXM-SWP-PRO-M', isAvailable: true, image: '/images/products/axiom-sweatpants-pro-model-v2.jpg' },
+      { id: 4103, color: 'Obsidian Black / Purple & Green Cords', size: 'L', price: 68.00, sku: 'AXM-SWP-PRO-L', isAvailable: true, image: '/images/products/axiom-sweatpants-pro-model-v2.jpg' },
+      { id: 4104, color: 'Obsidian Black / Purple & Green Cords', size: 'XL', price: 68.00, sku: 'AXM-SWP-PRO-XL', isAvailable: true, image: '/images/products/axiom-sweatpants-pro-model-v2.jpg' },
+      { id: 4105, color: 'Obsidian Black / Purple & Green Cords', size: '2XL', price: 68.00, sku: 'AXM-SWP-PRO-2XL', isAvailable: true, image: '/images/products/axiom-sweatpants-pro-model-v2.jpg' },
+      { id: 4106, color: 'Obsidian Black / Purple & Green Cords', size: '3XL', price: 74.00, sku: 'AXM-SWP-PRO-3XL', isAvailable: true, image: '/images/products/axiom-sweatpants-pro-model-v2.jpg' },
     ],
     isNew: true,
     material: '450 GSM Ultra-Heavyweight 100% French Terry Cotton • Dual-Tone Cords',
@@ -999,28 +949,6 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     isNew: true,
     material: 'Cooling-Infused Memory Gel + Ultra-Dense Support Core + Silky Lycra Face + Non-Slip Base',
     fit: 'Ergonomic Contoured 15° Slope (0.9" / 23mm Height)',
-  },
-  {
-    id: 'krown-tee-01',
-    name: 'Axiom Owl Esports Performance Tee',
-    slug: 'axiom-owl-esports-performance-tee',
-    description: 'The official esports tee of Axiom Allegiance. Powered by KrowN. Features the razor-sharp Axiom Owl crest in electric lime and royal purple over ultra-combed 240 GSM organic cotton. Built for prolonged comfort on stream or on the street.',
-    collection: 'AXA / Axiom Allegiance',
-    price: 36.00,
-    baseCost: 10.20,
-    printCost: 6.00,
-    images: [
-      '/images/products/axa-pro-jersey-home.jpg',
-    ],
-    variants: [
-      { id: 301, color: 'Obsidian / Electric Lime & Purple', size: 'M', price: 36.00, sku: 'AXM-OWL-TEE-M', isAvailable: true },
-      { id: 302, color: 'Obsidian / Electric Lime & Purple', size: 'L', price: 36.00, sku: 'AXM-OWL-TEE-L', isAvailable: true },
-      { id: 303, color: 'Obsidian / Electric Lime & Purple', size: 'XL', price: 36.00, sku: 'AXM-OWL-TEE-XL', isAvailable: true },
-      { id: 304, color: 'Obsidian / Electric Lime & Purple', size: '2XL', price: 38.00, sku: 'AXM-OWL-TEE-2XL', isAvailable: true },
-    ],
-    isNew: true,
-    material: '100% Combed Ring-Spun Heavyweight Cotton',
-    fit: 'Standard Relaxed Drop-Shoulder',
   },
 
   // ==========================================
@@ -1660,18 +1588,6 @@ export const PRINTIFY_SKU_CATALOG_MAPPINGS: Record<string, PrintifySkuMapping> =
     },
     category: 'Desk Accessories',
   },
-  'krown-mousepad-01': {
-    blueprintId: 488, // Gaming Mouse Pad
-    printProviderId: 1,
-    variantMap: {
-      'Medium (M) 14"x12" (360x300mm)': 48811,
-      'Large (L) 18"x16" (450x400mm)': 48812,
-      'Extended (XL) 31.5"x12" (800x300mm)': 48813,
-      'Panoramic (2XL) 35.4"x16" (900x400mm)': 48814,
-      'Colossal (3XL) 47"x24" (1200x600mm)': 48815,
-    },
-    category: 'Desk Accessories',
-  },
   'axiom-sweatpants-pro': {
     blueprintId: 1089, // Ultra-Heavy French Terry Joggers
     printProviderId: 29,
@@ -1695,12 +1611,6 @@ export const PRINTIFY_SKU_CATALOG_MAPPINGS: Record<string, PrintifySkuMapping> =
     category: 'Desk Accessories',
   },
   'axiom-mug-01': {
-    blueprintId: 78, // Two-Tone 15oz Ceramic Mug
-    printProviderId: 10,
-    variantMap: { '15 oz': 78015 },
-    category: 'Drinkware',
-  },
-  'axiom-mug-02': {
     blueprintId: 78, // Two-Tone 15oz Ceramic Mug
     printProviderId: 10,
     variantMap: { '15 oz': 78015 },

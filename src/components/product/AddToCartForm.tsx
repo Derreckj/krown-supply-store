@@ -20,6 +20,7 @@ export default function AddToCartForm({ product }: { product: CatalogProduct }) 
   const [gamertag, setGamertag] = useState<string>('');
   const [casingOption, setCasingOption] = useState<'exact' | 'uppercase'>('exact');
   const [playerNumber, setPlayerNumber] = useState<string>('');
+  const [frontWordmarkOption, setFrontWordmarkOption] = useState<'clean' | 'standard' | 'stylized'>('clean');
   const [underTagOption, setUnderTagOption] = useState<'number' | 'wordmark_stylized' | 'wordmark_standard' | 'both_wordmark_number' | 'creed_motto'>('number');
   const [hasSleeveBadges, setHasSleeveBadges] = useState<boolean>(false);
   const [hasHemCreed, setHasHemCreed] = useState<boolean>(false);
@@ -51,6 +52,9 @@ export default function AddToCartForm({ product }: { product: CatalogProduct }) 
   // Calculate dynamic upcharges
   let addOnsPrice = 0;
   if (isJersey) {
+    if (frontWordmarkOption === 'stylized') {
+      addOnsPrice += 4.99;
+    }
     if (underTagOption === 'wordmark_stylized' || underTagOption === 'wordmark_standard' || underTagOption === 'creed_motto') {
       addOnsPrice += 4.99;
     } else if (underTagOption === 'both_wordmark_number') {
@@ -80,6 +84,9 @@ export default function AddToCartForm({ product }: { product: CatalogProduct }) 
 
     const addOnsSummary: string[] = [];
     if (isJersey) {
+      if (frontWordmarkOption === 'clean') addOnsSummary.push('Front: Crest Only (Clean)');
+      if (frontWordmarkOption === 'standard') addOnsSummary.push('Front: Standard "AXIOM ALLEGIANCE"');
+      if (frontWordmarkOption === 'stylized') addOnsSummary.push('Front: Stylized "Aχισм Aℓℓєgιαηcє" (+$4.99)');
       if (underTagOption === 'wordmark_stylized') addOnsSummary.push('Wordmark: Aχισм Aℓℓєgιαηcє (+$4.99)');
       if (underTagOption === 'wordmark_standard') addOnsSummary.push('Wordmark: AXIOM ALLEGIANCE (+$4.99)');
       if (underTagOption === 'both_wordmark_number') addOnsSummary.push(`Aχισм Aℓℓєgιαηcє + #${sanitizedNum || '00'} (+$6.99)`);
@@ -285,6 +292,78 @@ export default function AddToCartForm({ product }: { product: CatalogProduct }) 
                 +${addOnsPrice.toFixed(2)} Add-Ons Selected
               </span>
             )}
+          </div>
+
+          {/* Front Chest Crest & Wordmark Styling */}
+          <div style={{ marginBottom: '0.85rem' }}>
+            <label style={{ fontSize: '0.75rem', color: 'var(--text-muted)', display: 'block', marginBottom: '0.35rem' }}>
+              Front Chest Crest &amp; Wordmark Styling:
+            </label>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '0.4rem' }}>
+              <button
+                type="button"
+                onClick={() => setFrontWordmarkOption('clean')}
+                style={{
+                  padding: '0.45rem 0.65rem',
+                  fontSize: '0.78rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  fontWeight: frontWordmarkOption === 'clean' ? 700 : 400,
+                  background: frontWordmarkOption === 'clean' ? 'rgba(57, 255, 20, 0.12)' : 'rgba(255, 255, 255, 0.03)',
+                  border: frontWordmarkOption === 'clean' ? '1px solid #39FF14' : '1px solid rgba(255, 255, 255, 0.12)',
+                  color: frontWordmarkOption === 'clean' ? '#39FF14' : 'var(--text-main)',
+                  borderRadius: '4px',
+                  cursor: 'pointer',
+                  textAlign: 'left'
+                }}
+              >
+                <span>Crest Only (Clean Pro Look)</span>
+                <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>Included</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => setFrontWordmarkOption('standard')}
+                style={{
+                  padding: '0.45rem 0.65rem',
+                  fontSize: '0.78rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  fontWeight: frontWordmarkOption === 'standard' ? 700 : 400,
+                  background: frontWordmarkOption === 'standard' ? 'rgba(57, 255, 20, 0.12)' : 'rgba(255, 255, 255, 0.03)',
+                  border: frontWordmarkOption === 'standard' ? '1px solid #39FF14' : '1px solid rgba(255, 255, 255, 0.12)',
+                  color: frontWordmarkOption === 'standard' ? '#39FF14' : 'var(--text-main)',
+                  borderRadius: '4px',
+                  cursor: 'pointer',
+                  textAlign: 'left'
+                }}
+              >
+                <span>Standard Wordmark: &ldquo;AXIOM ALLEGIANCE&rdquo; (Under Crest)</span>
+                <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>Included</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => setFrontWordmarkOption('stylized')}
+                style={{
+                  padding: '0.45rem 0.65rem',
+                  fontSize: '0.78rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  fontWeight: frontWordmarkOption === 'stylized' ? 700 : 400,
+                  background: frontWordmarkOption === 'stylized' ? 'rgba(57, 255, 20, 0.12)' : 'rgba(255, 255, 255, 0.03)',
+                  border: frontWordmarkOption === 'stylized' ? '1px solid #39FF14' : '1px solid rgba(255, 255, 255, 0.12)',
+                  color: frontWordmarkOption === 'stylized' ? '#39FF14' : 'var(--text-main)',
+                  borderRadius: '4px',
+                  cursor: 'pointer',
+                  textAlign: 'left'
+                }}
+              >
+                <span>Stylized Gothic: &ldquo;Aχισм Aℓℓєgιαηcє&rdquo; (Under Crest)</span>
+                <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#39FF14' }}>+$4.99</span>
+              </button>
+            </div>
           </div>
 
           {/* Casing Style Option */}
