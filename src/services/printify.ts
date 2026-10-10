@@ -972,24 +972,6 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     material: '6 mil Thick Weatherproof Holographic Vinyl with UV Shield',
     fit: '3" to 4" Widths',
   },
-  {
-    id: 'kc-stickers-01',
-    name: 'KrowN Construction Weatherproof Jobsite Vinyl Decals (5-Pack)',
-    slug: 'krown-construction-weatherproof-jobsite-vinyl-decals',
-    description: 'Pack of 5 heavy-duty cast vinyl decals tested on commercial jobsites. Features the industrial KrowN Construction badge, "BUILT TO REIGN" seals, and hardhat emblems with high-bond adhesive that withstands weather, dirt, and power washers.',
-    collection: 'KrowN Construction',
-    price: 12.99,
-    baseCost: 2.10,
-    printCost: 1.80,
-    images: [
-      '/images/products/krown-construction-jobsite-decals.jpg',
-    ],
-    variants: [
-      { id: 502, color: 'Jobsite Decal 5-Pack', size: '5-Pack', price: 12.99, sku: 'KC-STK-VNYL-PK5', isAvailable: true, image: '/images/products/krown-construction-jobsite-decals.jpg' }
-    ],
-    material: '6 mil Thick Weatherproof Cast Vinyl with High-Tack Adhesive',
-    fit: '3" to 4" Widths',
-  },
 ];
 
 class PrintifyService {
