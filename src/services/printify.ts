@@ -772,9 +772,9 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     baseCost: 7.20,
     printCost: 4.80,
     images: [
-      '/images/products/axiom-arm-sleeve-3d-front.png',
-      '/images/products/axiom-arm-sleeve-3d-back.png',
-      '/images/products/axiom-arm-sleeve-flat.png',
+      '/images/products/axiom-arm-sleeve-3d-front-studio.jpg',
+      '/images/products/axiom-arm-sleeve-3d-back-studio.jpg',
+      '/images/products/axiom-arm-sleeve-3d-front-studio.jpg',
     ],
     variants: [
       { id: 321, color: 'Purple / Electric Lime Split (Single Sleeve)', size: 'S/M', price: 24.99, sku: 'AXM-SLV-SPLIT-SM', isAvailable: true },

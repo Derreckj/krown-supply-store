@@ -1,9 +1,16 @@
-<!-- BEGIN:nextjs-agent-rules -->
+# KrowN Supply Co. Workspace Directives
 
-## This is NOT the Next.js you know
+## Brand & Catalog Image Integrity Rules
 
-This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+See [.agents/rules/brand_guidelines.md](file:///.agents/rules/brand_guidelines.md) for the complete Brand & Asset Contract.
 
-This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+### Core Commandments
+1. **Strict Brand Silos**:
+   - **Axiom Allegiance**: Owl mascot only, royal purple & toxic neon green. **ZERO gold crowns**.
+   - **KrowN Construction**: Industrial workbench, KC mark, "BUILT TO REIGN". **ZERO gaming desks or owls**.
+   - **KrowN Supply Co.**: Luxury studio, 3D gold crown monogram. **ZERO gaming setups, olive arches, or pillarboxes**.
 
-<!-- END:nextjs-agent-rules -->
+2. **Master Assets Vault**:
+   - Master approved assets are vaulted in `public/images/products/masters/`.
+   - Never run bulk scripts that overwrite these files without visual inspection.
+   - Run `python scripts/verify_catalog_integrity.py` before building or deploying.
