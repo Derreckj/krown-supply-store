@@ -191,75 +191,20 @@ print("-> Saved dad hats v6 (Axiom & Krown pristine studio stone shots)")
 # 4. REDESIGNED AXIOM 450 GSM HEAVYWEIGHT HOODIE (STUDIO & MODEL LOOKBOOK)
 # ==============================================================================
 print("\n[4/8] Redesigning Axiom Heavyweight Streetwear Hoodie (v6)...")
-# Base: Genuine heavyweight studio French Terry hoodie on hanger
-hoodie_base_raw = Image.open(os.path.join(prod_dir, 'krown-supply-premium-hoodie-front.jpg')).convert('RGBA')
-
-# 1. Clean Owl Mascot Chest Emblem
-owl_w_h = 240
-owl_h_h = int(owl_smokey.height * (owl_w_h / owl_smokey.width))
-owl_resized = owl_smokey.resize((owl_w_h, owl_h_h), Image.Resampling.LANCZOS)
-
-# Soft realistic embroidery shadow
-sh_owl = Image.new('RGBA', (owl_w_h + 6, owl_h_h + 6), (0, 0, 0, 0))
-sh_owl_mask = owl_resized.split()[3].point(lambda p: int(p * 0.40))
-sh_owl.paste((12, 12, 15, 200), (3, 3), mask=sh_owl_mask)
-sh_owl = sh_owl.filter(ImageFilter.GaussianBlur(1.5))
-
-cx_chest = (1024 - owl_w_h) // 2
-cy_chest = 460
-hoodie_base_raw.paste(sh_owl, (cx_chest, cy_chest + 2), mask=sh_owl.split()[3])
-hoodie_base_raw.paste(owl_resized, (cx_chest, cy_chest), mask=owl_resized.split()[3])
-
-# 2. Clean Gothic Two-Tone "AXIOM ALLEGIANCE" down the right sleeve
-# Rotate -90 degrees so text runs vertically down forearm
-gothic_vert = gothic_img.rotate(-90, expand=True, resample=Image.Resampling.BICUBIC)
-gw_sl = 48
-gh_sl = int(gothic_vert.height * (gw_sl / gothic_vert.width))
-gothic_sl = gothic_vert.resize((gw_sl, gh_sl), Image.Resampling.LANCZOS)
-
-sh_sl = Image.new('RGBA', (gw_sl + 4, gh_sl + 4), (0, 0, 0, 0))
-sh_sl_mask = gothic_sl.split()[3].point(lambda p: int(p * 0.35))
-sh_sl.paste((10, 10, 10, 180), (2, 2), mask=sh_sl_mask)
-sh_sl = sh_sl.filter(ImageFilter.GaussianBlur(1.2))
-
-# Position on right forearm sleeve (our right: x: 745..795, y: 460..740)
-sx = 750
-sy = 480
-hoodie_base_raw.paste(sh_sl, (sx, sy + 2), mask=sh_sl.split()[3])
-hoodie_base_raw.paste(gothic_sl, (sx, sy), mask=gothic_sl.split()[3])
-
-# 3. Add dipped dual-tone metal aglet accents to the drawstrings
-# The drawstrings in this base hang at x ~ 485 and x ~ 538, y ~ 370..430
-ag_draw = ImageDraw.Draw(hoodie_base_raw)
-# Left cord aglet tip: Royal Purple
-ag_draw.rounded_rectangle([482, 420, 488, 436], radius=2, fill=(138, 43, 226, 240), outline=(100, 30, 170, 255))
-# Right cord aglet tip: Toxic Neon Green
-ag_draw.rounded_rectangle([535, 420, 541, 436], radius=2, fill=(57, 255, 20, 240), outline=(40, 180, 15, 255))
-
+# Base: Genuine studio French Terry mannequin hoodie with zero gold crowns
+hoodie_base_raw = Image.open(os.path.join(prod_dir, 'axiom-heavyweight-hoodie-photoreal-v6.jpg')).convert('RGB')
 ax_hoodie_v6_path = os.path.join(prod_dir, 'axiom-heavyweight-hoodie-photoreal-v6.jpg')
-hoodie_base_raw.convert('RGB').save(ax_hoodie_v6_path, quality=96)
-hoodie_base_raw.convert('RGB').save(os.path.join(prod_dir, 'axiom-heavyweight-hoodie-v3.jpg'), quality=96)
+hoodie_base_raw.save(ax_hoodie_v6_path, quality=96)
+hoodie_base_raw.save(os.path.join(prod_dir, 'axiom-heavyweight-hoodie-v3.jpg'), quality=96)
+hoodie_base_raw.save(os.path.join(prod_dir, 'axiom-heavyweight-hoodie-studio.jpg'), quality=96)
+print("-> Saved axiom-heavyweight-hoodie-photoreal-v6.jpg (Zero crown, Pure Axiom Owl crest)")
 
-# 4. Urban Male Model Lookbook Photo for Axiom Hoodie
-model_hoodie_raw = Image.open(os.path.join(prod_dir, 'krown-hoodie-male-model.jpg')).convert('RGBA')
-# Composite the Axiom Owl chest crest onto the model
-owl_m_w = 175
-owl_m_h = int(owl_smokey.height * (owl_m_w / owl_smokey.width))
-owl_m_res = owl_smokey.resize((owl_m_w, owl_m_h), Image.Resampling.LANCZOS)
-
-sh_m = Image.new('RGBA', (owl_m_w + 4, owl_m_h + 4), (0, 0, 0, 0))
-sh_m_mask = owl_m_res.split()[3].point(lambda p: int(p * 0.40))
-sh_m.paste((10, 10, 10, 200), (2, 2), mask=sh_m_mask)
-sh_m = sh_m.filter(ImageFilter.GaussianBlur(1.5))
-
-# Chest center on male model: x ~ 425, y ~ 450
-model_hoodie_raw.paste(sh_m, (425, 452), mask=sh_m.split()[3])
-model_hoodie_raw.paste(owl_m_res, (425, 450), mask=owl_m_res.split()[3])
-
+# 4. Urban Male Model Lookbook Photo for Axiom Hoodie (Zero crown, Esports Studio)
+model_hoodie_raw = Image.open(os.path.join(prod_dir, 'axiom-heavyweight-hoodie-model-v6.jpg')).convert('RGB')
 ax_model_v6_path = os.path.join(prod_dir, 'axiom-heavyweight-hoodie-model-v6.jpg')
-model_hoodie_raw.convert('RGB').save(ax_model_v6_path, quality=96)
-model_hoodie_raw.convert('RGB').save(os.path.join(prod_dir, 'axiom-heavyweight-hoodie-model-v4.jpg'), quality=96)
-model_hoodie_raw.convert('RGB').save(os.path.join(prod_dir, 'axiom-heavyweight-hoodie-model.jpg'), quality=96)
+model_hoodie_raw.save(ax_model_v6_path, quality=96)
+model_hoodie_raw.save(os.path.join(prod_dir, 'axiom-heavyweight-hoodie-model-v4.jpg'), quality=96)
+model_hoodie_raw.save(os.path.join(prod_dir, 'axiom-heavyweight-hoodie-model.jpg'), quality=96)
 print("-> Saved redesigned Axiom Hoodie (Studio front v6 & Urban Lookbook Model v6)")
 
 
