@@ -205,8 +205,8 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     baseCost: 11.50,
     printCost: 4.50,
     images: [
-      '/images/products/krown-r112-leather-patch-hat-front.jpg',
-      '/images/products/krown-r112-leather-patch-hat-hero.jpg',
+      '/images/products/krown-r112-flagship-leather-patch-snapback.jpg',
+      '/images/products/krown-r112-flagship-leather-patch-hero.jpg',
     ],
     variants: [
       { id: 1021, color: 'Heather Grey & Black / Saddle Tan Leather Patch', size: 'OSFA', price: 29.99, sku: 'KSC-HAT-112-GRY', isAvailable: true },
@@ -1071,8 +1071,8 @@ class PrintifyService {
         ];
       } else if (isRichardsonHat) {
         productImages = [
-          '/images/products/krown-r112-leather-patch-hat-front.jpg',
-          '/images/products/krown-r112-leather-patch-hat-hero.jpg',
+          '/images/products/krown-r112-flagship-leather-patch-snapback.jpg',
+          '/images/products/krown-r112-flagship-leather-patch-hero.jpg',
         ];
       } else if (titleLower.includes('beanie')) {
         productImages = [

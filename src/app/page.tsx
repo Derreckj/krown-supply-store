@@ -75,7 +75,7 @@ export default function Home() {
           <div className={styles.headwearImageGrid}>
             <div className={styles.headwearCard}>
               <img 
-                src="/images/products/krown-r112-leather-patch-hat-front.jpg" 
+                src="/images/products/krown-r112-flagship-leather-patch-snapback.jpg" 
                 alt="Richardson 112 Saddle Leather Patch Snapback" 
                 className={styles.headwearImg}
               />
@@ -83,7 +83,7 @@ export default function Home() {
             </div>
             <div className={styles.headwearCard}>
               <img 
-                src="/images/products/krown-r112-leather-patch-hat-hero.jpg" 
+                src="/images/products/krown-r112-flagship-leather-patch-hero.jpg" 
                 alt="Richardson 112 Leather Patch Angle" 
                 className={styles.headwearImg}
               />
