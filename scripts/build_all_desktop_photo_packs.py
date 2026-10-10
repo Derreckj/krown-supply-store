@@ -104,11 +104,11 @@ categories = {
     ],
     '16_KrowN_Construction_Shakers': [
         (os.path.join(pub_products, 'kc-shaker-highvis-steel-v2.jpg'), '01_HighVis_Gold_Pro_Steel_26oz_V2.jpg'),
-        (os.path.join(pub_products, 'kc-shaker-highvis-tritan-v3.jpg'), '02_HighVis_Gold_Tritan_24oz.jpg'),
+        (os.path.join(pub_products, 'kc-shaker-highvis-tritan-v4.jpg'), '02_HighVis_Gold_Tritan_24oz.jpg'),
         (os.path.join(pub_products, 'kc-shaker-steelcore-steel.jpg'), '03_SteelCore_Titanium_Pro_Steel_26oz.jpg'),
         (os.path.join(pub_products, 'kc-shaker-steelcore-tritan.jpg'), '04_SteelCore_Titanium_Tritan_24oz.jpg'),
-        (os.path.join(pub_products, 'kc-shaker-jobsite-steel.jpg'), '05_Jobsite_Lime_Purple_Steel_26oz.jpg'),
-        (os.path.join(pub_products, 'kc-shaker-jobsite-tritan.jpg'), '06_Jobsite_Lime_Purple_Tritan_24oz.jpg'),
+        (os.path.join(pub_products, 'kc-shaker-jobsite-steel.jpg'), '05_Jobsite_Tradesman_Steel_26oz.jpg'),
+        (os.path.join(pub_products, 'kc-shaker-jobsite-tritan.jpg'), '06_Jobsite_Tradesman_Tritan_24oz.jpg'),
         (os.path.join(pub_products, 'kc-shaker-bottles-3-editions.jpg'), '07_Construction_Shaker_Lineup.jpg'),
     ],
     '17_KrowN_Supply_Co_Shakers': [
@@ -125,8 +125,8 @@ categories = {
         (os.path.join(pub_products, 'kc-stickers-workbench-v2.jpg'), '02_KrowN_Construction_Jobsite_Decal_5Pack.jpg'),
     ],
     '19_KrowN_Supply_Co_Luxury_Streetwear': [
-        (os.path.join(pub_products, 'krown-streetwear-set-clean-v4.jpg'), '01_Premium_Streetwear_Hoodie_Sweatpants_Set_V2.jpg'),
-        (os.path.join(pub_products, 'krown-french-terry-shorts-clean-v4.jpg'), '02_French_Terry_Heavyweight_Shorts_V2.jpg'),
+        (os.path.join(pub_products, 'krown-streetwear-set-clean-v5.jpg'), '01_Premium_Streetwear_Hoodie_Sweatpants_Set_V2.jpg'),
+        (os.path.join(pub_products, 'krown-french-terry-shorts-clean-v5.jpg'), '02_French_Terry_Heavyweight_Shorts_V2.jpg'),
         (os.path.join(pub_products, 'krown-dad-hat-washed-black.jpg'), '03_Vintage_Washed_Black_Dad_Hat.jpg'),
         (os.path.join(pub_products, 'krown-broken-rules-gold-tracksuit.jpg'), '04_Broken_Rules_Kintsugi_Gold_Tracksuit.jpg'),
     ]
