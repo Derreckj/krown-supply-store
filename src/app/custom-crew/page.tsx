@@ -112,25 +112,25 @@ const HAT_COLORWAYS: HatColorway[] = [
     id: 'charcoal-black', 
     name: 'Charcoal & Black Mesh', 
     badge: 'Best Seller',
-    image: '/images/products/krown-r112-leather-patch-charcoal-black.jpg'
+    image: '/images/products/krown-r112-custom-charcoal-black-v9.jpg'
   },
   { 
     id: 'heather-black', 
     name: 'Heather Grey & Black Mesh', 
     badge: 'Modern Pro',
-    image: '/images/products/krown-r112-leather-patch-heather-grey.jpg'
+    image: '/images/products/krown-r112-custom-heather-grey-v9.jpg'
   },
   { 
     id: 'stealth-black', 
     name: 'Solid Obsidian Black', 
     badge: 'Stealth',
-    image: '/images/products/krown-r112-leather-patch-obsidian-black.jpg'
+    image: '/images/products/krown-r112-custom-obsidian-black-v9.jpg'
   },
   { 
     id: 'khaki-coffee', 
     name: 'Khaki & Coffee Mesh', 
     badge: 'Classic 112',
-    image: '/images/products/krown-r112-flagship-leather-patch-snapback.jpg'
+    image: '/images/products/krown-r112-custom-khaki-coffee-v9.jpg'
   },
 ];
 
