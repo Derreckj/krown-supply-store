@@ -273,7 +273,11 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     baseCost: 11.00,
     printCost: 5.50,
     images: [
-      '/images/products/krown-supply-comfort-colors-1717-tee.png',
+      '/images/products/krown-supply-comfort-colors-1717-tee.jpg',
+      '/images/deliveries/01_KrowN_Supply_Co/KrowN_Supply_Streetwear_Tee/02_Studio_Back_Large_Statement_Print.jpg',
+      '/images/deliveries/01_KrowN_Supply_Co/KrowN_Supply_Streetwear_Tee/03_Model_Worn_Streetwear_Lookbook.jpg',
+      '/images/deliveries/01_KrowN_Supply_Co/KrowN_Supply_Streetwear_Tee/04_Mineral_Wash_Print_Macro.jpg',
+      '/images/deliveries/01_KrowN_Supply_Co/KrowN_Supply_Streetwear_Tee/05_Blank_Comparison_Specifications.jpg'
     ],
     variants: [
       { id: 801, color: 'Pepper Washed Black / Faded Gold', size: 'S', price: 34.00, sku: 'KRN-CC1717-PEP-S', isAvailable: true },
@@ -322,9 +326,9 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     baseCost: 7.50,
     printCost: 4.00,
     images: [
-      '/images/products/krown-shaker-photoreal-v11.jpg',
+      '/images/products/krown-shaker-front-clean.jpg',
       '/images/products/krown-shaker-smoke-v11.jpg',
-      '/images/products/krown-shaker-brushed-v11.jpg',
+      '/images/products/krown-shaker-brushed-v11.jpg'
     ],
     variants: [
       { id: 1221, color: 'Matte Obsidian Black & Antique Gold Crown', size: '24 oz Standard (Eastman Tritan Frosted)', price: 26.99, sku: 'KSC-SHK-OBS-TRITAN', isAvailable: true, image: '/images/products/krown-shaker-photoreal-v11.jpg' },
@@ -348,14 +352,14 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     name: 'KrowN Heavy Ribbed Cuffed Jobsite Beanie',
     slug: 'krown-heavy-ribbed-cuffed-jobsite-beanie',
     description: 'Built for freezing morning concrete pours and winter jobsites. Thick 4-gauge tight-knit hypoallergenic acrylic with 3-inch foldover cuff. Decorated with a centered metallic gold-embroidered KrowN Construction LLC emblem patch with reinforced perimeter stitching.',
-    collection: 'KrowN Supply Co.',
+    collection: 'KrowN Construction',
     price: 24.99,
     baseCost: 6.20,
     printCost: 4.00,
     images: [
-      '/images/products/krown-beanie-since-2018.jpg',
-      '/images/products/krown-beanie-model.jpg',
+      '/images/products/krown-construction-cuffed-beanie.png',
       '/images/products/krown-beanie-studio-front.jpg',
+      '/images/products/krown-beanie-model.jpg'
     ],
     variants: [
       { id: 611, color: 'Charcoal Black / Gold Crest Patch', size: 'OSFA', price: 24.99, sku: 'KRN-BN-RIBBED-BLK', isAvailable: true },
@@ -425,44 +429,6 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     fit: 'Contoured Die-Cut for Hardhats, Toolboxes, and Vehicles',
   },
   {
-    id: 'krown-work-01',
-    name: 'KrowN Construction "Built to Reign" Heavy Work Shirt',
-    slug: 'krown-construction-built-to-reign-heavy-work-shirt',
-    description: 'Heavyweight jobsite work shirt engineered in conjunction with KrowN Construction LLC field trials. Features a durable 300 GSM ripstop cotton-twill blend, reinforced double-needle seams, chest pencil pocket, and official KrowN Construction branding: Left or Right chest crest, bold full-width "BUILT TO REIGN" back statement piece, and vertical sleeve typography "KrowN Construction".',
-    collection: 'KrowN Construction',
-    price: 48.00,
-    baseCost: 15.00,
-    printCost: 6.50,
-    images: [
-      '/images/products/kc-work-shirt-grey-front-v11.jpg',
-      '/images/products/kc-work-shirt-black-front-v11.jpg',
-      '/images/products/kc-work-shirt-charcoal-back-v11.jpg',
-      '/images/products/kc-work-shirt-model-v11.jpg',
-    ],
-    variants: [
-      { id: 401, color: 'Heather Steel Grey / Black-Gold Crest', size: 'S', price: 48.00, sku: 'KC-WRK-GRY-S', isAvailable: true, image: '/images/products/kc-work-shirt-grey-front-v11.jpg' },
-      { id: 402, color: 'Heather Steel Grey / Black-Gold Crest', size: 'M', price: 48.00, sku: 'KC-WRK-GRY-M', isAvailable: true, image: '/images/products/kc-work-shirt-grey-front-v11.jpg' },
-      { id: 403, color: 'Heather Steel Grey / Black-Gold Crest', size: 'L', price: 48.00, sku: 'KC-WRK-GRY-L', isAvailable: true, image: '/images/products/kc-work-shirt-grey-front-v11.jpg' },
-      { id: 404, color: 'Heather Steel Grey / Black-Gold Crest', size: 'XL', price: 48.00, sku: 'KC-WRK-GRY-XL', isAvailable: true, image: '/images/products/kc-work-shirt-grey-front-v11.jpg' },
-      { id: 405, color: 'Heather Steel Grey / Black-Gold Crest', size: '2XL', price: 52.00, sku: 'KC-WRK-GRY-2XL', isAvailable: true, image: '/images/products/kc-work-shirt-grey-front-v11.jpg' },
-      { id: 406, color: 'Heather Steel Grey / Black-Gold Crest', size: '3XL', price: 54.00, sku: 'KC-WRK-GRY-3XL', isAvailable: true, image: '/images/products/kc-work-shirt-grey-front-v11.jpg' },
-      { id: 407, color: 'Obsidian Black / Gold & White Crest', size: 'S', price: 48.00, sku: 'KC-WRK-BLK-S', isAvailable: true, image: '/images/products/kc-work-shirt-black-front-v11.jpg' },
-      { id: 408, color: 'Obsidian Black / Gold & White Crest', size: 'M', price: 48.00, sku: 'KC-WRK-BLK-M', isAvailable: true, image: '/images/products/kc-work-shirt-black-front-v11.jpg' },
-      { id: 409, color: 'Obsidian Black / Gold & White Crest', size: 'L', price: 48.00, sku: 'KC-WRK-BLK-L', isAvailable: true, image: '/images/products/kc-work-shirt-black-front-v11.jpg' },
-      { id: 410, color: 'Obsidian Black / Gold & White Crest', size: 'XL', price: 48.00, sku: 'KC-WRK-BLK-XL', isAvailable: true, image: '/images/products/kc-work-shirt-black-front-v11.jpg' },
-      { id: 411, color: 'Obsidian Black / Gold & White Crest', size: '2XL', price: 52.00, sku: 'KC-WRK-BLK-2XL', isAvailable: true, image: '/images/products/kc-work-shirt-black-front-v11.jpg' },
-      { id: 412, color: 'Obsidian Black / Gold & White Crest', size: '3XL', price: 54.00, sku: 'KC-WRK-BLK-3XL', isAvailable: true, image: '/images/products/kc-work-shirt-black-front-v11.jpg' },
-      { id: 413, color: 'Charcoal Slate / Safety Gold Back Statement', size: 'S', price: 48.00, sku: 'KC-WRK-CHR-S', isAvailable: true, image: '/images/products/kc-work-shirt-charcoal-back-v11.jpg' },
-      { id: 414, color: 'Charcoal Slate / Safety Gold Back Statement', size: 'M', price: 48.00, sku: 'KC-WRK-CHR-M', isAvailable: true, image: '/images/products/kc-work-shirt-charcoal-back-v11.jpg' },
-      { id: 415, color: 'Charcoal Slate / Safety Gold Back Statement', size: 'L', price: 48.00, sku: 'KC-WRK-CHR-L', isAvailable: true, image: '/images/products/kc-work-shirt-charcoal-back-v11.jpg' },
-      { id: 416, color: 'Charcoal Slate / Safety Gold Back Statement', size: 'XL', price: 48.00, sku: 'KC-WRK-CHR-XL', isAvailable: true, image: '/images/products/kc-work-shirt-charcoal-back-v11.jpg' },
-      { id: 417, color: 'Charcoal Slate / Safety Gold Back Statement', size: '2XL', price: 52.00, sku: 'KC-WRK-CHR-2XL', isAvailable: true, image: '/images/products/kc-work-shirt-charcoal-back-v11.jpg' },
-      { id: 418, color: 'Charcoal Slate / Safety Gold Back Statement', size: '3XL', price: 54.00, sku: 'KC-WRK-CHR-3XL', isAvailable: true, image: '/images/products/kc-work-shirt-charcoal-back-v11.jpg' },
-    ],
-    material: '300 GSM Heavyweight Cotton-Twill Blend • Stain-Resistant Finish',
-    fit: 'Tradesman Relaxed Mobility Fit with Split-Tail Hem',
-  },
-  {
     id: 'kc-shaker-01',
     name: 'KrowN Construction "Built to Reign" Heavy-Duty Shaker Bottle',
     slug: 'krown-construction-built-to-reign-heavy-duty-shaker-bottle',
@@ -472,9 +438,9 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     baseCost: 7.50,
     printCost: 4.00,
     images: [
-      '/images/products/kc-shaker-photoreal-v11.jpg',
-      '/images/products/kc-shaker-steelcore-v11.jpg',
-      '/images/products/kc-shaker-tradesman-v11.jpg',
+      '/images/products/kc-shaker-highvis-tritan-v3.jpg',
+      '/images/products/kc-shaker-workbench-v2.jpg',
+      '/images/products/kc-shaker-steelcore-v11.jpg'
     ],
     variants: [
       { id: 1211, color: 'High-Vis Safety Gold & Matte Black', size: '24 oz Standard (Eastman Tritan Frosted)', price: 26.99, sku: 'KC-SHK-HV-TRITAN', isAvailable: true, image: '/images/products/kc-shaker-photoreal-v11.jpg' },
@@ -633,11 +599,10 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     baseCost: 7.20,
     printCost: 3.80,
     images: [
+      '/images/products/axiom-shaker-lifestyle-desk.jpg',
       '/images/products/axiom-shaker-signature-tritan-clean.jpg',
       '/images/products/axiom-shaker-signature-steel-clean.jpg',
-      '/images/products/axiom-shaker-stealth-tritan-clean.jpg',
-      '/images/products/axiom-shaker-stealth-steel-clean.jpg',
-      '/images/products/axiom-shaker-bottles-4-editions.jpg',
+      '/images/products/axiom-shaker-stealth-tritan-clean.jpg'
     ],
     variants: [
       { id: 1201, color: 'Signature Toxic Lime & Royal Purple', size: '24 oz Standard (Eastman Tritan Frosted)', price: 24.99, sku: 'AXM-SHK-SIG-TRITAN', isAvailable: true, image: '/images/products/axiom-shaker-signature-tritan-clean.jpg' },

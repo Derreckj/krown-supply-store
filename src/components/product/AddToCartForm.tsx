@@ -35,12 +35,11 @@ export default function AddToCartForm({ product }: { product: CatalogProduct }) 
   const isOutOfStock = currentVariant ? !currentVariant.isAvailable : false;
   const isJersey = product.id.startsWith('axiom-jersey');
   const isSweatshirt = product.id === 'axiom-sweatshirt-01';
-  const isWorkShirt = product.id === 'krown-work-01';
-  const isPersonalizable = isJersey || isSweatshirt || isWorkShirt;
+  // Removed work shirt
+  const isPersonalizable = isJersey || isSweatshirt;
 
   const [sweatshirtSleeveOption, setSweatshirtSleeveOption] = useState<'left' | 'right' | 'both'>('left');
-  const [workShirtBadgePlacement, setWorkShirtBadgePlacement] = useState<'left' | 'right'>('left');
-
+  
   React.useEffect(() => {
     if (typeof window !== 'undefined' && currentVariant?.image) {
       window.dispatchEvent(new CustomEvent('krown:variant-changed', {
@@ -97,8 +96,6 @@ export default function AddToCartForm({ product }: { product: CatalogProduct }) 
       if (sweatshirtSleeveOption === 'left') addOnsSummary.push('Gothic Sleeve Print: Left Sleeve (Standard)');
       if (sweatshirtSleeveOption === 'right') addOnsSummary.push('Gothic Sleeve Print: Right Sleeve');
       if (sweatshirtSleeveOption === 'both') addOnsSummary.push('Gothic Sleeve Print: Both Sleeves (+$4.99)');
-    } else if (isWorkShirt) {
-      addOnsSummary.push(workShirtBadgePlacement === 'left' ? 'Badge: Left Chest (Standard)' : 'Badge: Right Chest');
     }
 
     const customSnippetParts: string[] = [];
@@ -691,52 +688,7 @@ export default function AddToCartForm({ product }: { product: CatalogProduct }) 
         </div>
       )}
 
-      {/* Work Shirt Chest Badge Placement Option */}
-      {isWorkShirt && (
-        <div className="form-group" style={{ marginBottom: '1.25rem', background: 'rgba(212, 175, 55, 0.05)', padding: '0.85rem', borderRadius: '6px', border: '1px solid rgba(212, 175, 55, 0.2)' }}>
-          <label style={{ fontSize: '0.82rem', fontWeight: 700, color: 'var(--accent-gold)', display: 'block', marginBottom: '0.45rem' }}>
-            KrowN Construction Chest Badge Placement:
-          </label>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem' }}>
-            <button
-              type="button"
-              onClick={() => setWorkShirtBadgePlacement('left')}
-              style={{
-                padding: '0.5rem',
-                fontSize: '0.78rem',
-                fontWeight: workShirtBadgePlacement === 'left' ? 700 : 400,
-                background: workShirtBadgePlacement === 'left' ? 'rgba(212, 175, 55, 0.2)' : 'rgba(255, 255, 255, 0.03)',
-                border: workShirtBadgePlacement === 'left' ? '1px solid var(--accent-gold)' : '1px solid rgba(255, 255, 255, 0.1)',
-                color: workShirtBadgePlacement === 'left' ? 'var(--accent-gold)' : 'var(--text-muted)',
-                borderRadius: '4px',
-                cursor: 'pointer',
-              }}
-            >
-              Left Chest (Standard)
-            </button>
-            <button
-              type="button"
-              onClick={() => setWorkShirtBadgePlacement('right')}
-              style={{
-                padding: '0.5rem',
-                fontSize: '0.78rem',
-                fontWeight: workShirtBadgePlacement === 'right' ? 700 : 400,
-                background: workShirtBadgePlacement === 'right' ? 'rgba(212, 175, 55, 0.2)' : 'rgba(255, 255, 255, 0.03)',
-                border: workShirtBadgePlacement === 'right' ? '1px solid var(--accent-gold)' : '1px solid rgba(255, 255, 255, 0.1)',
-                color: workShirtBadgePlacement === 'right' ? 'var(--accent-gold)' : 'var(--text-muted)',
-                borderRadius: '4px',
-                cursor: 'pointer',
-              }}
-            >
-              Right Chest
-            </button>
-          </div>
-          <p style={{ margin: '0.4rem 0 0 0', fontSize: '0.72rem', color: 'var(--text-muted)' }}>
-            Includes bold &ldquo;BUILT TO REIGN&rdquo; back statement piece &amp; &ldquo;KrowN Construction&rdquo; sleeve lettering.
-          </p>
-        </div>
-      )}
-
+      
       <div className="form-group">
         <label htmlFor="quantity">Quantity</label>
         <input 
@@ -812,23 +764,7 @@ export default function AddToCartForm({ product }: { product: CatalogProduct }) 
                 </div>
               )}
 
-              {/* Work Shirt Guide */}
-              {isWorkShirt && (
-                <div>
-                  <h3 style={{ marginTop: '0.5rem', marginBottom: '0.5rem', fontSize: '1rem', color: 'var(--accent-gold)' }}>KrowN Construction Work Shirt Measurements</h3>
-                  <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '0.88rem' }}>
-                    <thead><tr style={{ borderBottom: '1px solid var(--border)' }}><th style={{ padding: '0.5rem' }}>Size</th><th style={{ padding: '0.5rem' }}>Chest</th><th style={{ padding: '0.5rem' }}>Body Length</th><th style={{ padding: '0.5rem' }}>Sleeve Length</th></tr></thead>
-                    <tbody>
-                      <tr style={{ borderBottom: '1px solid var(--border)' }}><td style={{ padding: '0.5rem' }}>S</td><td style={{ padding: '0.5rem' }}>38&quot; – 40&quot;</td><td style={{ padding: '0.5rem' }}>30.0&quot;</td><td style={{ padding: '0.5rem' }}>33.5&quot;</td></tr>
-                      <tr style={{ borderBottom: '1px solid var(--border)' }}><td style={{ padding: '0.5rem' }}>M</td><td style={{ padding: '0.5rem' }}>42&quot; – 44&quot;</td><td style={{ padding: '0.5rem' }}>31.0&quot;</td><td style={{ padding: '0.5rem' }}>34.5&quot;</td></tr>
-                      <tr style={{ borderBottom: '1px solid var(--border)' }}><td style={{ padding: '0.5rem' }}>L</td><td style={{ padding: '0.5rem' }}>46&quot; – 48&quot;</td><td style={{ padding: '0.5rem' }}>32.0&quot;</td><td style={{ padding: '0.5rem' }}>35.5&quot;</td></tr>
-                      <tr style={{ borderBottom: '1px solid var(--border)' }}><td style={{ padding: '0.5rem' }}>XL</td><td style={{ padding: '0.5rem' }}>50&quot; – 52&quot;</td><td style={{ padding: '0.5rem' }}>33.0&quot;</td><td style={{ padding: '0.5rem' }}>36.5&quot;</td></tr>
-                      <tr style={{ borderBottom: '1px solid var(--border)' }}><td style={{ padding: '0.5rem' }}>2XL</td><td style={{ padding: '0.5rem' }}>54&quot; – 56&quot;</td><td style={{ padding: '0.5rem' }}>34.0&quot;</td><td style={{ padding: '0.5rem' }}>37.5&quot;</td></tr>
-                      <tr><td style={{ padding: '0.5rem' }}>3XL</td><td style={{ padding: '0.5rem' }}>58&quot; – 60&quot;</td><td style={{ padding: '0.5rem' }}>35.0&quot;</td><td style={{ padding: '0.5rem' }}>38.5&quot;</td></tr>
-                    </tbody>
-                  </table>
-                </div>
-              )}
+              
 
               {/* Jersey Guide */}
               {isJersey && (
@@ -879,7 +815,7 @@ export default function AddToCartForm({ product }: { product: CatalogProduct }) 
               )}
 
               {/* Hoodies & Tops Fallback */}
-              {!isWorkShirt && !isJersey && !product.id.includes('hat') && !product.id.includes('beanie') && !product.id.includes('shaker') && !product.id.includes('mug') && !product.id.includes('sleeve') && !product.id.includes('short') && !product.id.includes('jogger') && !product.id.includes('sweatpant') && (
+              {!isJersey && !product.id.includes('hat') && !product.id.includes('beanie') && !product.id.includes('shaker') && !product.id.includes('mug') && !product.id.includes('sleeve') && !product.id.includes('short') && !product.id.includes('jogger') && !product.id.includes('sweatpant') && (
                 <div>
                   <h3 style={{ marginTop: '0.5rem', marginBottom: '0.5rem', fontSize: '1rem', color: 'var(--accent-gold)' }}>Heavyweight Hoodies &amp; Streetwear Tops</h3>
                   <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '0.88rem' }}>

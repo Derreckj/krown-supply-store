@@ -178,21 +178,6 @@ const PRODUCT_PACKS: ProductPack[] = [
   // 02 KROWN CONSTRUCTION
   {
     division: '02_KrowN_Construction',
-    name: 'KrowN Construction Heavy Duty Tradesman Work Shirt',
-    slug: 'krown-work-01',
-    productBlank: 'Gildan Hammer H000 / Carhartt Heavyweight Workwear Cotton',
-    decorationMethod: 'Durable High-Density Screen Print / DTF Workwear Transfer',
-    supplierRoute: 'Printify Blueprint 64000 / 5000 (SwiftPOD / Awkward Styles)',
-    singleLogoCheck: 'PASS: Strict KrowN Construction branding only (KC Logo Black / White). Zero Supply crowns, zero Axiom logos.',
-    images: [
-      { title: '01 Studio Front Heather Grey', src: '/images/products/kc-work-shirt-grey-front-v3.jpg', caption: 'Heather Steel Grey heavy work shirt with clean KrowN Construction left chest emblem.' },
-      { title: '02 Studio Front Black Workwear', src: '/images/deliveries/02_KrowN_Construction/KrowN_Construction_Work_Shirt/02_Studio_Front_Black_Workwear.jpg', caption: 'Obsidian Black heavy workwear tee with high-contrast white KC tradesman branding.' },
-      { title: '03 Chest Badge Macro Detail', src: '/images/deliveries/02_KrowN_Construction/KrowN_Construction_Work_Shirt/03_Chest_Badge_Macro_Detail.jpg', caption: 'Macro zoom of authentic KrowN Construction insignia on durable 6.0 oz combed cotton.' },
-      { title: '05 Jobsite Specifications Chart', src: '/images/deliveries/02_KrowN_Construction/KrowN_Construction_Work_Shirt/05_Jobsite_Specifications_Chart.jpg', caption: 'Verified tradesman specifications: double-needle neck and hem, taped neck and shoulders.' }
-    ]
-  },
-  {
-    division: '02_KrowN_Construction',
     name: 'KrowN Construction Tradesman Jobsite Shaker Bottle',
     slug: 'kc-shaker-01',
     productBlank: '24 oz Impact-Resistant Tritan Shaker with Safety Carry Loop',
