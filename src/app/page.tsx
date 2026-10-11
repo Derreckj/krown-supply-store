@@ -195,7 +195,7 @@ export default function Home() {
             <Link href="/products/krown-mat-01" className={styles.gamingGearCard}>
               <div className={styles.gamingGearThumb}>
                 <img 
-                  src="/images/products/axiom-mat-original-banner-v9.jpg" 
+                  src="/images/products/axiom-banner-gaming-desk-mat-official.jpg" 
                   alt="Axiom Owl Extended Gaming Desk Mat" 
                 />
                 <span className={styles.gearPill}>5 CUSTOM SIZES</span>
