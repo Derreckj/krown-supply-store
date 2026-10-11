@@ -154,7 +154,7 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     baseCost: 52.00,
     printCost: 15.00,
     images: [
-      '/images/products/krown-streetwear-set-photoreal-v6.jpg',
+      '/images/products/krown-streetwear-set-photoreal-v10.jpg',
       '/images/products/krown-supply-premium-hoodie-front.jpg',
       '/images/products/krown-supply-premium-sweatpants.jpg',
     ],
