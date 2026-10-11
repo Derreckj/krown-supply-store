@@ -178,45 +178,45 @@ export default function Home() {
               </div>
             </Link>
 
-            <Link href="/products/axiom-sweatpants-pro" className={styles.gamingGearCard}>
+            <Link href="/products/axiom-sweatshirt-01" className={styles.gamingGearCard}>
               <div className={styles.gamingGearThumb}>
                 <img 
-                  src="/images/products/axiom-sweatpants-pro-model-v5.jpg" 
-                  alt="Axiom Allegiance Pro Heavyweight Joggers" 
+                  src="/images/products/axiom-crewneck-sweatshirt-studio.jpg" 
+                  alt="Axiom Allegiance Official Crewneck Sweatshirt" 
                 />
-                <span className={styles.gearPill}>450 GSM FLEECE</span>
+                <span className={styles.gearPill}>380 GSM FLEECE</span>
               </div>
               <div className={styles.gamingGearBody}>
-                <h4>Axiom Pro Heavyweight Joggers</h4>
-                <p>Dual Purple/Green Cords • S to 3XL • $68.00</p>
+                <h4>Axiom Official Crewneck Sweatshirt</h4>
+                <p>Mascot &amp; Vertical Sleeve Print • $49.99</p>
               </div>
             </Link>
 
             <Link href="/products/krown-mat-01" className={styles.gamingGearCard}>
               <div className={styles.gamingGearThumb}>
                 <img 
-                  src="/images/products/axiom-owl-desk-mat-photorealistic.jpg" 
+                  src="/images/products/axiom-mat-hero-desk-setup.jpg" 
                   alt="Axiom Owl Extended Gaming Desk Mat" 
                 />
                 <span className={styles.gearPill}>5 CUSTOM SIZES</span>
               </div>
               <div className={styles.gamingGearBody}>
-                <h4>Axiom Extended Gaming Desk Mat</h4>
+                <h4>Axiom Owl Display Gaming Desk Mat</h4>
                 <p>Micro-Weave Precision Cloth • From $19.99</p>
               </div>
             </Link>
 
-            <Link href="/products/axiom-shaker-01" className={styles.gamingGearCard}>
+            <Link href="/products/axiom-r112-patch-01" className={styles.gamingGearCard}>
               <div className={styles.gamingGearThumb}>
                 <img 
-                  src="/images/products/axiom-shaker-signature-tritan-clean.jpg" 
-                  alt="Axiom Allegiance Pro Loadout Shaker Bottle" 
+                  src="/images/products/axiom-r112-leather-patch-charcoal.jpg" 
+                  alt="Axiom Richardson 112 Genuine Leather Patch Snapback" 
                 />
-                <span className={styles.gearPill}>24 OZ TRITAN</span>
+                <span className={styles.gearPill}>LEATHER PATCH</span>
               </div>
               <div className={styles.gamingGearBody}>
-                <h4>Axiom Pro Loadout Shaker Bottle</h4>
-                <p>BPA-Free Tritan • Leak-Proof Flip Cap • $24.99</p>
+                <h4>Axiom Richardson 112 Snapback</h4>
+                <p>Genuine Leather Hex Patch • $34.99</p>
               </div>
             </Link>
 

@@ -343,26 +343,6 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
   // Slogan: "BUILT TO REIGN."
   // ==========================================
   {
-    id: 'kc-tumbler-01',
-    name: 'KrowN 20oz Vacuum Insulated Jobsite Tumbler',
-    slug: 'krown-20oz-vacuum-insulated-jobsite-tumbler',
-    description: 'Engineered for long days on the jobsite. Double-wall vacuum insulated 18/8 kitchen-grade stainless steel with sweat-free matte black finish. Features the laser-etched metallic gold KrowN Construction emblem, "BUILT TO REIGN" hallmark, and splash-proof clear slider lid. Keeps beverages piping hot for 8 hours or ice-cold for 24 hours.',
-    collection: 'KrowN Construction',
-    price: 29.99,
-    baseCost: 8.50,
-    printCost: 4.50,
-    images: [
-      '/images/products/krown-construction-jobsite-tumbler.jpg',
-      '/images/products/krown-construction-jobsite-tumbler-32oz.jpg',
-    ],
-    variants: [
-      { id: 601, color: 'Matte Black / Laser Gold Crest', size: '20oz', price: 29.99, sku: 'KRN-TUMB-20-BLK', isAvailable: true }
-    ],
-    isNew: true,
-    material: '18/8 Stainless Steel • Copper-Lined Double-Wall Vacuum Insulation',
-    fit: '20 oz Capacity • Standard Cupholder Compatible',
-  },
-  {
     id: 'krown-tumbler-32oz',
     name: 'KrowN "Built to Reign" Thermal Insulated Matte Tumbler (32 oz)',
     slug: 'krown-built-to-reign-thermal-insulated-matte-tumbler-32oz',
@@ -688,15 +668,14 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     id: 'krown-mat-01',
     name: 'Axiom Owl Extended Gaming Desk Mat (5 Custom Esports Sizes)',
     slug: 'axiom-owl-extended-gaming-desk-mat',
-    description: 'Tournament-grade micro-weave fabric surface showcasing the signature Axiom Owl battlestation panoramic artwork. Engineered for pixel-precise optical tracking and zero-drag wrist flicking. Features a textured non-slip natural rubber base, anti-fray precision dual-stitched perimeter in electric lime and royal purple, and the official motto inscribed along the border: "YOU CANNOT BE TRULY HUMBLE, UNLESS YOU TRULY BELIEVE THAT LIFE CAN AND WILL GO ON WITHOUT YOU". Available in 5 custom competition sizes from Medium (14"x12") to Colossal (47"x24").',
+    description: 'Official Axiom Owl Display tournament desk mat. High-density micro-weave fabric surface showcasing the vibrant panoramic Axiom Owl team artwork. Engineered for pixel-precise optical tracking and zero-drag wrist flicking. Features a 4mm textured non-slip natural rubber base and anti-fray precision black perimeter lockstitching. Available in 5 competition sizes from Medium (14\"x12\") to Colossal (47\"x24\").',
     collection: 'AXA / Axiom Allegiance',
     price: 19.99,
     baseCost: 8.50,
     printCost: 4.00,
     images: [
       '/images/products/axiom-mat-hero-desk-setup.jpg',
-      '/images/products/axiom-mat-design-a-tactical.jpg',
-      '/images/products/axiom-mat-design-b-sovereign.jpg',
+      '/images/products/axiom-mat-display-flat-panoramic.jpg',
       '/images/products/axiom-mat-stitched-macro.jpg',
       '/images/products/axiom-mat-sizing-pricing-specs.jpg'
     ],
@@ -725,34 +704,6 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     isNew: true,
     material: 'Micro-Weave High-Density Cloth + Textured Natural Rubber Base',
     fit: '5 Custom Sizes: 14"x12" to 47"x24" (4mm Thickness)',
-  },
-  {
-    id: 'axiom-sweatpants-pro',
-    name: 'Axiom Allegiance Pro Heavyweight 450 GSM Joggers',
-    slug: 'axiom-allegiance-pro-heavyweight-joggers',
-    description: 'Pro-tier tournament joggers engineered for unmatched warmth and esports performance. Cut from ultra-heavyweight 450 GSM French terry fleece in midnight obsidian black. Features dual-tone braided drawstrings (royal purple & neon toxic green with dipped aglets), vertical athletic "AXIOM ALLEGIANCE" typography running down the left leg, and the authentic high-density embroidered Axiom Owl mascot on the right thigh. Deep zippered stash pockets, ribbed gusset crotch, and tailored ankle cuffs.',
-    collection: 'AXA / Axiom Allegiance',
-    price: 68.00,
-    baseCost: 22.00,
-    printCost: 7.00,
-    images: [
-      '/images/products/axiom-sweatpants-pro-model-v10.jpg',
-      '/images/products/axiom-sweatpants-pro-studio-v10.jpg',
-      '/images/products/axiom-joggers-waistband-detail.jpg',
-      '/images/products/axiom-joggers-fabric-macro.jpg',
-      '/images/products/axiom-joggers-core-vs-pro-specs.jpg'
-    ],
-    variants: [
-      { id: 4101, color: 'Obsidian Black / Purple & Green Cords', size: 'S', price: 68.00, sku: 'AXM-SWP-PRO-S', isAvailable: true, image: '/images/products/axiom-sweatpants-pro-model-v10.jpg' },
-      { id: 4102, color: 'Obsidian Black / Purple & Green Cords', size: 'M', price: 68.00, sku: 'AXM-SWP-PRO-M', isAvailable: true, image: '/images/products/axiom-sweatpants-pro-model-v10.jpg' },
-      { id: 4103, color: 'Obsidian Black / Purple & Green Cords', size: 'L', price: 68.00, sku: 'AXM-SWP-PRO-L', isAvailable: true, image: '/images/products/axiom-sweatpants-pro-model-v10.jpg' },
-      { id: 4104, color: 'Obsidian Black / Purple & Green Cords', size: 'XL', price: 68.00, sku: 'AXM-SWP-PRO-XL', isAvailable: true, image: '/images/products/axiom-sweatpants-pro-model-v10.jpg' },
-      { id: 4105, color: 'Obsidian Black / Purple & Green Cords', size: '2XL', price: 68.00, sku: 'AXM-SWP-PRO-2XL', isAvailable: true, image: '/images/products/axiom-sweatpants-pro-model-v10.jpg' },
-      { id: 4106, color: 'Obsidian Black / Purple & Green Cords', size: '3XL', price: 74.00, sku: 'AXM-SWP-PRO-3XL', isAvailable: true, image: '/images/products/axiom-sweatpants-pro-model-v10.jpg' },
-    ],
-    isNew: true,
-    material: '450 GSM Ultra-Heavyweight 100% French Terry Cotton • Dual-Tone Cords',
-    fit: 'Tailored Athletic Taper with Heavy Ribbed Cuffs',
   },
   {
     id: 'axiom-sweatpants-core',
@@ -808,17 +759,16 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     id: 'axiom-sweatshirt-01',
     name: 'Axiom Allegiance Official Crewneck Sweatshirt',
     slug: 'axiom-allegiance-official-crewneck-sweatshirt',
-    description: 'Tournament-grade everyday crewneck sweatshirt in midnight obsidian black. Crafted from premium 380 GSM brushed fleece with classic triangular athletic collar V-stitch, heavyweight ribbed collar, cuffs and waistband. Emblazoned with high-density direct embroidery of the clean Axiom Owl mascot centered on the chest, paired with custom Gothic "Axiom Allegiance" lettering down the sleeve (customizable sleeve placement at checkout).',
+    description: 'Tournament-grade everyday crewneck sweatshirt in midnight obsidian black. Crafted from premium 380 GSM brushed fleece with classic triangular athletic collar V-stitch, heavyweight ribbed collar, cuffs, and waistband. Features high-density direct embroidery of the clean Axiom Owl mascot centered on the chest, paired with bold vertical \"Aχισм Aℓℓєgιαηcє\" stylized lettering running down the sleeve in electric toxic lime and royal purple.',
     collection: 'AXA / Axiom Allegiance',
     price: 49.99,
     baseCost: 19.50,
     printCost: 7.00,
     images: [
       '/images/products/axiom-crewneck-sweatshirt-studio.jpg',
-      '/images/products/axiom-crewneck-sweatshirt-model.jpg',
       '/images/products/axiom-crewneck-sleeve-detail.jpg',
       '/images/products/axiom-crewneck-chest-macro.jpg',
-      '/images/products/axiom-crewneck-option-specs.jpg'
+      '/images/products/axiom-crewneck-sweatshirt-model.jpg'
     ],
     variants: [
       { id: 4401, color: 'Obsidian Black / Team Purple & Lime', size: 'S', price: 49.99, sku: 'AXM-CRW-380-S', isAvailable: true },
@@ -836,24 +786,6 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
   // ==========================================
   // 4. Accessories
   // ==========================================
-  {
-    id: 'axiom-stickers-01',
-    name: 'Axiom Allegiance Holographic Battle Pack Decals (5-Pack)',
-    slug: 'axiom-allegiance-holographic-battle-pack-decals',
-    description: 'Pack of 5 premium heavy UV-laminated holographic vinyl stickers featuring the official Axiom Owl mascot crest, Gothic typography wordmarks, and geometric A-X-A eye emblems. Waterproof, scratch-proof, and designed for battlestations, laptops, and gear cases.',
-    collection: 'AXA / Axiom Allegiance',
-    price: 12.99,
-    baseCost: 2.10,
-    printCost: 1.80,
-    images: [
-      '/images/products/axiom-stickers-holographic-battle-pack-v11.jpg',
-    ],
-    variants: [
-      { id: 501, color: 'Axiom Holographic 5-Pack', size: '5-Pack', price: 12.99, sku: 'AXM-STK-HOLO-PK5', isAvailable: true, image: '/images/products/axiom-stickers-holographic-battle-pack-v11.jpg' }
-    ],
-    material: '6 mil Thick Weatherproof Holographic Vinyl with UV Shield',
-    fit: '3" to 4" Widths',
-  },
 ];
 
 class PrintifyService {
@@ -927,8 +859,8 @@ class PrintifyService {
 
     for (const live of liveProducts) {
       const nameLower = live.name.toLowerCase();
-      if (nameLower.includes('tumbler')) {
-        replacedMockIds.add('kc-tumbler-01');
+      if (nameLower.includes('tumbler') && !nameLower.includes('20oz')) {
+        replacedMockIds.add('krown-tumbler-32oz');
       } else if (nameLower.includes('hoodie')) {
         replacedMockIds.add('krown-hoodie-premium');
       } else if (nameLower.includes('richardson') || nameLower.includes('snapback') || nameLower.includes('112')) {
@@ -945,7 +877,7 @@ class PrintifyService {
     }
 
     // Filter out raw uncurated desk mat from live list so krown-mat-01 with 5 sizes is the primary product
-    const filteredLive = liveProducts.filter(p => !p.name.toLowerCase().includes('desk mat') && !p.name.toLowerCase().includes('beanie'));
+    const filteredLive = liveProducts.filter(p => !p.name.toLowerCase().includes('desk mat') && !p.name.toLowerCase().includes('beanie') && !(p.name.toLowerCase().includes('20oz') && p.name.toLowerCase().includes('tumbler')));
     const uniqueMocks = mockProducts.filter(m => !replacedMockIds.has(m.id));
     return [...filteredLive, ...uniqueMocks];
   }
@@ -960,7 +892,6 @@ class PrintifyService {
     const aliasMap: Record<string, string[]> = {
       'custom-krown-works-hat': ['6ac80dc2f4d488e1be0b0902', 'richardson', 'snapback'],
       'krown-hoodie-premium': ['6ac80dff9f3e89dde70da38d', 'krown-heavyweight-streetwear-hoodie'],
-      'kc-tumbler-01': ['6ac7ed40fea4d4e68e0a0f6a', '20oz-vacuum-insulated-jobsite-tumbler'],
       'krown-tee-cc1717': ['6ac7ed0b9bfbeab23800dcdf', 'krown-wear-the-krown-comfort-colors-1717'],
       'axiom-jersey-home': ['6ac80e034a1cdf2ad60e0bed', 'axiom-allegiance-axa-cut-and-sew-pro-esports-jersey'],
       'krown-mat-01': ['6ac7ed486443c9f27801af1b', 'axiom-owl-panoramic-gaming-desk-mat'],
@@ -1418,12 +1349,6 @@ export const PRINTIFY_SKU_CATALOG_MAPPINGS: Record<string, PrintifySkuMapping> =
     },
     category: 'Desk Accessories',
   },
-  'axiom-sweatpants-pro': {
-    blueprintId: 1089, // Ultra-Heavy French Terry Joggers
-    printProviderId: 29,
-    variantMap: { 'S': 48101, 'M': 48102, 'L': 48103, 'XL': 48104, '2XL': 48105, '3XL': 48106 },
-    category: 'Esports Apparel',
-  },
   'axiom-sweatpants-core': {
     blueprintId: 350, // Midweight Fleece Joggers
     printProviderId: 29,
@@ -1434,12 +1359,6 @@ export const PRINTIFY_SKU_CATALOG_MAPPINGS: Record<string, PrintifySkuMapping> =
     blueprintId: 78, // Two-Tone 15oz Ceramic Mug
     printProviderId: 10,
     variantMap: { '15 oz': 78015 },
-    category: 'Drinkware',
-  },
-  'kc-tumbler-01': {
-    blueprintId: 615, // Double-Wall Vacuum Tumbler 20oz
-    printProviderId: 10,
-    variantMap: { '20oz': 61520 },
     category: 'Drinkware',
   },
 };

@@ -54,50 +54,32 @@ const PRODUCT_PACKS: ProductPack[] = [
   },
   {
     division: '03_Axiom_Allegiance',
-    name: 'Axiom Allegiance Pro Heavyweight 450 GSM Joggers',
-    slug: 'axiom-sweatpants-pro',
-    productBlank: 'Independent Trading Co. PRM50PTPD (450 GSM Heavyweight French Terry Fleece)',
-    decorationMethod: 'Precision Direct-to-Film (DTF) Stretch Heat Transfer',
-    supplierRoute: 'Printify Verified / Independent Contract Route',
-    singleLogoCheck: 'PASS: Zero ghost owls on studio walls. Single vertical leg typography + single authentic owl on upper left pocket.',
-    images: [
-      { title: '01 Studio Model Hero (Clean Wall)', src: '/images/products/axiom-sweatpants-pro-model-v10.jpg', caption: 'Studio model on neutral concrete cyclorama with zero floating ghost graphics or wall smudges.' },
-      { title: '02 Studio Flat Lay Heavyweight', src: '/images/products/axiom-sweatpants-pro-studio-v10.jpg', caption: 'Full flat-lay garment layout showing tailored taper, ribbed cuffs, and heavy split-stitch construction.' },
-      { title: '03 Waistband & Drawcords', src: '/images/products/axiom-joggers-waistband-detail.jpg', caption: 'Close-up of elastic waistband, metal eyelets, and two-tone heavy cotton drawcords.' },
-      { title: '04 Leg Print & Fleece Macro', src: '/images/products/axiom-joggers-fabric-macro.jpg', caption: 'Macro detail of flexible DTF graphic placement along outer leg seam.' },
-      { title: '05 Core vs Pro Comparison', src: '/images/products/axiom-joggers-core-vs-pro-specs.jpg', caption: 'Comparison chart detailing Pro 450 GSM French Terry vs Core 280 GSM fleece differences.' }
-    ]
-  },
-  {
-    division: '03_Axiom_Allegiance',
     name: 'Axiom Allegiance Official Crewneck Sweatshirt',
     slug: 'axiom-sweatshirt-01',
     productBlank: 'Gildan 18000 Heavy Blend / Comfort Colors 1566 Garment-Dyed Fleece',
-    decorationMethod: 'Direct-to-Garment (DTG) Chest Crest + Left Sleeve Lettering',
+    decorationMethod: 'Direct-to-Garment (DTG) Chest Mascot + Vertical Sleeve Typography',
     supplierRoute: 'Printify Blueprint 49 (Monster Digital / SwiftPOD)',
-    singleLogoCheck: 'PASS: Exactly ONE authentic Axiom Owl centered on chest. Overlapping text and doubled contours removed.',
+    singleLogoCheck: 'PASS: Clean centered Axiom Owl mascot on chest + bold vertical "Aχισм Aℓℓєgιαηcє" running down sleeve in toxic lime & royal purple.',
     images: [
-      { title: '01 Studio Flat Lay Chest Owl', src: '/images/products/axiom-crewneck-sweatshirt-studio.jpg', caption: 'Studio flat lay featuring single authentic Axiom Owl mascot centered on chest.' },
-      { title: '02 Model Worn Lookbook', src: '/images/products/axiom-crewneck-sweatshirt-model.jpg', caption: 'Model worn view showing relaxed streetwear fit and ribbed collar V-stitch accent.' },
-      { title: '03 Left Sleeve Lettering Detail', src: '/images/products/axiom-crewneck-sleeve-detail.jpg', caption: 'Vertical Gothic "AXIOM ALLEGIANCE" lettering along the wearer left forearm print zone.' },
-      { title: '04 Chest Print & Collar Macro', src: '/images/products/axiom-crewneck-chest-macro.jpg', caption: 'Close-up of ribbed collar, split-stitch seams, and breathable DTG ink absorption.' },
-      { title: '05 Original vs New Owl Option', src: '/images/products/axiom-crewneck-option-specs.jpg', caption: 'Verification specifications highlighting original master owl as primary option with new owl alternate.' }
+      { title: '01 Studio Flat Lay (Chest Owl & Sleeve)', src: '/images/products/axiom-crewneck-sweatshirt-studio.jpg', caption: 'Clean studio presentation with center Axiom Owl mascot and vertical sleeve lettering.' },
+      { title: '02 Left Sleeve Lettering Macro', src: '/images/products/axiom-crewneck-sleeve-detail.jpg', caption: 'Macro zoom on bold vertical "Aχισм Aℓℓєgιαηcє" typography with electric lime stroke and purple core.' },
+      { title: '03 Chest Mascot Macro', src: '/images/products/axiom-crewneck-chest-macro.jpg', caption: 'Close-up of clean centered Axiom Owl mascot print.' },
+      { title: '04 Model Worn Lookbook', src: '/images/products/axiom-crewneck-sweatshirt-model.jpg', caption: 'Model worn view showing relaxed streetwear fit and sleeve placement.' }
     ]
   },
   {
     division: '03_Axiom_Allegiance',
-    name: 'Axiom Redesigned Gaming Desk Mats (2 New Directions)',
+    name: 'Axiom Owl Display Gaming Desk Mats (5 Custom Sizes)',
     slug: 'krown-mat-01',
     productBlank: 'Printify Blueprint 488 / 975 (4mm Anti-Slip Natural Rubber + Micro-Weave Cloth)',
     decorationMethod: 'Edge-to-Edge Dye Sublimation with Precision Anti-Fray Black Stitched Edge',
     supplierRoute: 'Printify Verified (Spoke Custom / FYBY)',
-    singleLogoCheck: 'PASS: Completely fresh redesigns. Hero owl positioned on right flank so keyboard and mouse never cover it. Zero fake printed LEDs or fake glow borders.',
+    singleLogoCheck: 'PASS: Official Axiom Owl Display artwork. 4mm high-density natural rubber base + anti-fray lockstitched perimeter.',
     images: [
-      { title: '01 Studio Hero Desk Setup', src: '/images/products/axiom-mat-hero-desk-setup.jpg', caption: 'Desk setup with mechanical keyboard and mouse proving right-flank mascot remains 100% visible.' },
-      { title: '02 Design 1: Tactical Arena Flat Lay', src: '/images/products/axiom-mat-design-a-tactical.jpg', caption: 'Direction A: Tactical Esports Grid with subtle coordinate typography and hero owl.' },
-      { title: '03 Design 2: Stealth Sovereign Flat Lay', src: '/images/products/axiom-mat-design-b-sovereign.jpg', caption: 'Direction B: Stealth Sovereign Hexagonal Battle Arena with dark isometric line accents.' },
-      { title: '04 Stitched Edge & Fabric Macro', src: '/images/products/axiom-mat-stitched-macro.jpg', caption: 'Macro zoom of black anti-fray perimeter lockstitching and 4mm textured rubber base.' },
-      { title: '05 Sizing & Pricing Matrix', src: '/images/products/axiom-mat-sizing-pricing-specs.jpg', caption: 'Dimension matrix for all 5 verified sizes: 14.5x12.2, 18x12, 22x12, 31.5x15.5, and 48x24.' }
+      { title: '01 Studio Hero Desk Setup', src: '/images/products/axiom-mat-hero-desk-setup.jpg', caption: 'Battlestation setup with mechanical keyboard and mouse on official Axiom Owl Display mat.' },
+      { title: '02 Studio Panoramic Flat Lay', src: '/images/products/axiom-mat-display-flat-panoramic.jpg', caption: 'Panoramic desk mat displaying full edge-to-edge Axiom Owl Display artwork and black perimeter stitching.' },
+      { title: '03 Stitched Edge & Fabric Macro', src: '/images/products/axiom-mat-stitched-macro.jpg', caption: 'Extreme macro zoom of micro-weave cloth and precision black lockstitching.' },
+      { title: '04 Sizing & Pricing Matrix', src: '/images/products/axiom-mat-sizing-pricing-specs.jpg', caption: 'Comprehensive matrix for all 5 verified sizes: 14x12, 18x16, 31.5x12, 35.4x16, and 47x24.' }
     ]
   },
   {
@@ -208,8 +190,8 @@ export default function AuditGalleryPage() {
           </div>
           <div>
             <div style={{ color: '#94a3b8', fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase' }}>Redesigned Desk Mats</div>
-            <div style={{ color: '#39ff14', fontSize: '1.1rem', fontWeight: 800, marginTop: '0.25rem' }}>2 NEW DIRECTIONS</div>
-            <p style={{ color: '#64748b', fontSize: '0.8rem', margin: '0.25rem 0 0 0' }}>Right-flank mascot + 5 proportional size formats.</p>
+            <div style={{ color: '#39ff14', fontSize: '1.1rem', fontWeight: 800, marginTop: '0.25rem' }}>OFFICIAL OWL DISPLAY</div>
+            <p style={{ color: '#64748b', fontSize: '0.8rem', margin: '0.25rem 0 0 0' }}>Official Axiom Owl Display artwork across 5 sizes.</p>
           </div>
         </div>
 
