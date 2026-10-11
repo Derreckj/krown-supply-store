@@ -55,27 +55,27 @@ export default function ProductImageGallery({ images, productName }: ProductImag
       // Shakers Matching
       const isSteel = size.includes('steel') || size.includes('insulated');
       if (color.includes('high-vis') || color.includes('safety gold')) {
-        const img = images.find(i => i.includes(isSteel ? 'highvis-steel' : 'highvis-tritan'));
+        const img = images.find(i => i.includes('photoreal') || i.includes('highvis'));
         if (img) { setSelectedImage(img); return; }
       }
-      if (color.includes('steel core') || color.includes('concrete')) {
-        const img = images.find(i => i.includes(isSteel ? 'steelcore-steel' : 'steelcore-tritan'));
+      if (color.includes('steel core') || color.includes('concrete') || color.includes('industrial steel')) {
+        const img = images.find(i => i.includes('steelcore'));
         if (img) { setSelectedImage(img); return; }
       }
-      if (color.includes('jobsite lime')) {
-        const img = images.find(i => i.includes(isSteel ? 'jobsite-steel' : 'jobsite-tritan'));
+      if (color.includes('tradesman') || color.includes('jobsite lime')) {
+        const img = images.find(i => i.includes('tradesman') || i.includes('jobsite'));
         if (img) { setSelectedImage(img); return; }
       }
-      if (color.includes('obsidian') && color.includes('gold')) {
-        const img = images.find(i => i.includes(isSteel ? 'krown-shaker-obsidian-steel' : 'krown-shaker-obsidian-tritan'));
+      if (color.includes('obsidian') && (color.includes('gold') || color.includes('krown'))) {
+        const img = images.find(i => i.includes('photoreal') || i.includes('obsidian'));
         if (img) { setSelectedImage(img); return; }
       }
       if (color.includes('smoke') || color.includes('frosted smoke')) {
-        const img = images.find(i => i.includes(isSteel ? 'smoke-steel' : 'smoke-tritan'));
+        const img = images.find(i => i.includes('smoke'));
         if (img) { setSelectedImage(img); return; }
       }
       if (color.includes('brushed') || color.includes('raw brushed')) {
-        const img = images.find(i => i.includes(isSteel ? 'brushed-steel' : 'brushed-tritan'));
+        const img = images.find(i => i.includes('brushed'));
         if (img) { setSelectedImage(img); return; }
       }
 
