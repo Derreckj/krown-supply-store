@@ -544,15 +544,18 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
 
   {
     id: 'axiom-shaker-01',
-    name: 'Axiom Allegiance Pro Loadout Shaker Bottle',
+    name: 'Axiom Allegiance Shaker Bottle (Multi-Edition)',
     slug: 'axiom-allegiance-pro-loadout-shaker',
-    description: 'Fuel up for overtime clutches and all-night ranked marathons. Ultra-premium gaming supplement shaker bottle featuring leak-proof locking cap, silicone collar, ergonomic carrying loop, surgical stainless steel whisk ball, and the iconic official Axiom Allegiance owl crest with distinctive A-X-A facial geometry. Available in two official esports colorways (Signature Toxic Lime & Royal Purple, and Stealth Blackout Obsidian), each engineered in two pro builds: Standard 24oz Frosted Shatterproof Eastman Tritan™ Polymer or Pro 26oz Double-Wall Vacuum Insulated Stainless Steel.',
+    description: 'Fuel up for overtime clutches and all-night ranked marathons. Ultra-premium gaming supplement shaker bottle featuring leak-proof locking cap, silicone collar, ergonomic carrying loop, surgical stainless steel whisk ball, and the iconic official Axiom Allegiance owl crest with distinctive A-X-A facial geometry. Available in two official esports colorways (Signature Toxic Lime & Royal Purple, and Stealth Blackout Obsidian), each engineered in two pro builds: Standard 24oz Frosted Shatterproof Eastman Tritan™ Polymer or Pro 26oz Double-Wall Vacuum Insulated Stainless Steel.\n\n### Now Available: Statement Edition (Frosted Tritan & Pro Stainless Steel)\nInspired by our flagship Statement Edition apparel, this new release features the arched collegiate Axiom chest graphic and owl on the front, paired with the iconic vertical sleeve typography down the reverse.\n\n**Choose Your Build:**\n• **Frosted Eastman Tritan (24oz):** Lightweight, shatterproof, odor- and stain-resistant BPA-free Tritan with an ergonomic flip lid and 316 surgical stainless spiral whisk ball.\n• **Pro Insulated Stainless Steel (24oz):** Heavy-duty double-wall vacuum insulation keeps pre-workouts and BCAAs ice-cold for up to 24 hours without exterior condensation. Finished with a durable matte powder coat.',
     collection: 'AXA / Axiom Allegiance',
     price: 24.99,
     baseCost: 7.20,
     printCost: 3.80,
     images: [
       '/images/products/axiom-shaker-signature-tritan-clean.jpg',
+      '/images/products/axiom-shaker-statement-dual.jpg',
+      '/images/products/axiom-shaker-statement-tritan.jpg',
+      '/images/products/axiom-shaker-statement-steel.jpg',
       '/images/products/axiom-shaker-signature-steel-clean.jpg',
       '/images/products/axiom-shaker-stealth-tritan-clean.jpg',
       '/images/products/axiom-shaker-stealth-steel-clean.jpg',
@@ -563,10 +566,12 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
       { id: 1202, color: 'Signature Toxic Lime & Royal Purple', size: '26 oz Pro Insulated Stainless Steel (Double-Wall)', price: 34.99, sku: 'AXM-SHK-SIG-STEEL', isAvailable: true, image: '/images/products/axiom-shaker-signature-steel-clean.jpg' },
       { id: 1203, color: 'Stealth Blackout Obsidian', size: '24 oz Standard (Eastman Tritan Frosted)', price: 24.99, sku: 'AXM-SHK-STL-TRITAN', isAvailable: true, image: '/images/products/axiom-shaker-stealth-tritan-clean.jpg' },
       { id: 1204, color: 'Stealth Blackout Obsidian', size: '26 oz Pro Insulated Stainless Steel (Double-Wall)', price: 34.99, sku: 'AXM-SHK-STL-STEEL', isAvailable: true, image: '/images/products/axiom-shaker-stealth-steel-clean.jpg' },
+      { id: 1205, color: 'Statement Edition — Frosted Eastman Tritan', size: '24 oz', price: 27.99, sku: 'AXM-SHK-STM-TRITAN-24', isAvailable: true, image: '/images/products/axiom-shaker-statement-tritan.jpg' },
+      { id: 1206, color: 'Statement Edition — Pro Insulated Stainless Steel', size: '24 oz', price: 39.99, sku: 'AXM-SHK-STM-STEEL-24', isAvailable: true, image: '/images/products/axiom-shaker-statement-steel.jpg' },
     ],
     isNew: true,
-    material: 'BPA-Free Eastar™ Tritan / Double-Wall Kitchen-Grade Steel • Stainless Steel Whisk Ball',
-    fit: '24–26 oz Capacity • Fits Standard Car & Desk Cupholders',
+    material: 'BPA-Free Eastman Tritan™ / Double-Wall 18/8 Vacuum Stainless Steel • 316 Surgical Stainless Whisk Ball Included',
+    fit: '24–26 oz Capacity • Cup Holder Compatible',
   },
   {
     id: 'axiom-mug-01',
@@ -1298,13 +1303,17 @@ export const PRINTIFY_SKU_CATALOG_MAPPINGS: Record<string, PrintifySkuMapping> =
     category: 'Esports Apparel',
   },
   'axiom-shaker-01': {
-    blueprintId: 540, // Eastman Tritan 24oz / Stainless Shaker Bottle
-    printProviderId: 10,
+    blueprintId: 1938, // Blueprint 1938 (Tritan) / Blueprint 482 (Vacuum Stainless Drinkware)
+    printProviderId: 80,
     variantMap: {
       '24 oz Standard (Eastman Tritan Frosted)': 54001,
       '26 oz Pro Insulated Stainless Steel (Double-Wall)': 54003,
       'Signature Toxic Lime & Royal Purple': 54001,
       'Stealth Blackout Obsidian': 54002,
+      'Statement Edition — Frosted Eastman Tritan': 119926, // BP 1938 Provider 80 Clear/24oz
+      'Statement Edition — Pro Insulated Stainless Steel': 65220, // BP 482 Provider 99 20-24oz Stainless
+      'AXM-SHK-STM-TRITAN-24': 119926,
+      'AXM-SHK-STM-STEEL-24': 65220,
     },
     category: 'Drinkware',
   },

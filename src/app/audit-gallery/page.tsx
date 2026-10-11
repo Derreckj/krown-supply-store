@@ -107,14 +107,18 @@ const PRODUCT_PACKS: ProductPack[] = [
   },
   {
     division: '03_Axiom_Allegiance',
-    name: 'Axiom Allegiance Pro Loadout Shaker Bottle',
+    name: 'Axiom Allegiance Shaker Bottle (Multi-Edition)',
     slug: 'axiom-shaker-01',
-    productBlank: '24 oz BPA-Free Shatterproof Smoke Tritan Shaker with Stainless Whisk Ball',
-    decorationMethod: 'Screen Printed / UV Curable Ink Wrap',
-    supplierRoute: 'Printify Verified Drinkware Provider',
-    singleLogoCheck: 'PASS: Single authentic Axiom Owl mascot on smoke Tritan bottle with embossed measurement markings.',
+    productBlank: '24 oz BPA-Free Shatterproof Eastman Tritan / 24 oz Pro Double-Wall Vacuum Insulated Stainless Steel',
+    decorationMethod: 'Direct Cylindrical UV Print / 360° Rotary Dye-Sublimation Wrap',
+    supplierRoute: 'Printify Blueprint 1938 (M.i.A Merchandise) / Blueprint 482 (District Photo / Printify Choice)',
+    singleLogoCheck: 'PASS: Statement Edition dual cylindrical composition: Arched collegiate AXIOM + owl front, vertical A-X-I-O-M + Gothic Allegiance back.',
     images: [
-      { title: '01 Studio Hero Front', src: '/images/products/axiom-shaker-signature-tritan-clean.jpg', caption: '24 oz smoke Tritan shaker bottle with leak-proof flip cap and single authentic Axiom Owl.' }
+      { title: '01 Studio Hero Front (Signature Tritan)', src: '/images/products/axiom-shaker-signature-tritan-clean.jpg', caption: '24 oz smoke Tritan shaker bottle with leak-proof flip cap and signature Axiom Owl.' },
+      { title: '02 Statement Edition Dual Master', src: '/images/products/axiom-shaker-statement-dual.jpg', caption: 'Statement Edition dual lineup showing Frosted Eastman Tritan and Pro Insulated Stainless Steel.' },
+      { title: '03 Statement Edition Frosted Tritan', src: '/images/products/axiom-shaker-statement-tritan.jpg', caption: 'Statement Edition 24oz Frosted Eastman Tritan shaker with spiral whisk ball.' },
+      { title: '04 Statement Edition Pro Stainless Steel', src: '/images/products/axiom-shaker-statement-steel.jpg', caption: 'Statement Edition 24oz Pro double-wall vacuum insulated stainless steel shaker.' },
+      { title: '05 Multi-Edition Lineup', src: '/images/products/axiom-shaker-bottles-4-editions.jpg', caption: 'Full Axiom Allegiance multi-edition shaker lineup across Tritan and Stainless Steel builds.' }
     ]
   },
 

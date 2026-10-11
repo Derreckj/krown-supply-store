@@ -83,10 +83,17 @@ export default function ProductImageGallery({ images, productName }: ProductImag
         }
 
         // Axiom Shaker specific precision matching
+        const isStatement = color.includes('statement');
         const isStealth = color.includes('stealth');
-        const isSignature = color.includes('signature') || color.includes('lime') || color.includes('purple');
+        const isSignature = color.includes('signature') || (color.includes('toxic') && color.includes('lime'));
 
-        if (isStealth && isSteel) {
+        if (isStatement && isSteel) {
+          const img = images.find(i => i.includes('statement-steel'));
+          if (img) { setSelectedImage(img); return; }
+        } else if (isStatement) {
+          const img = images.find(i => i.includes('statement-tritan'));
+          if (img) { setSelectedImage(img); return; }
+        } else if (isStealth && isSteel) {
           const img = images.find(i => i.includes('stealth-steel'));
           if (img) { setSelectedImage(img); return; }
         } else if (isStealth) {
