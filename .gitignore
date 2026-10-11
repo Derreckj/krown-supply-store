@@ -13,15 +13,26 @@
 # testing
 /coverage
 
-# next.js
-/.next/
-/out/
-
-# production
+# Next.js and Vercel build caches
+.next/
+out/
+.vercel/
 /build
 
-# misc
+# Python automation & mockup render scratchpads
+__pycache__/
+*.py[cod]
+scripts/output_temp/
+scripts/*.log
+
+# Scratch / Brain session dumps
+.user_uploaded/
+*.tmp
+scratch/
+
+# misc & OS
 .DS_Store
+Thumbs.db
 *.pem
 
 # debug
@@ -35,9 +46,6 @@ yarn-error.log*
 !.env.production.example
 !.env.example
 
-# vercel
-.vercel
-
 # typescript
 *.tsbuildinfo
 next-env.d.ts
@@ -45,5 +53,3 @@ next-env.d.ts
 # Large media and asset archives
 public/media/*.mp4
 public/images/**/masters/
-scratch/
-

@@ -1,3 +1,16 @@
-# Exclude large local video files exceeding Vercel CLI 100MB upload limit
+# Exclude large local video files exceeding Vercel CLI upload limit
 public/media/axiom-intro.mp4
 public/media/*.mp4
+
+# Python automation & mockup render scripts
+scripts/
+*.py
+*.pyc
+__pycache__/
+
+# Scratch & development assets
+scratch/
+.user_uploaded/
+public/images/**/masters/
+*.tmp
+etsy_featured_photos/
