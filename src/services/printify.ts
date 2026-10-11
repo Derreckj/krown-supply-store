@@ -205,16 +205,13 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     baseCost: 11.50,
     printCost: 4.50,
     images: [
-      '/images/products/krown-r112-photoreal-hero-front.jpg',
-      '/images/products/krown-r112-leather-patch-charcoal-black.jpg',
-      '/images/products/krown-r112-leather-patch-heather-grey.jpg',
-      '/images/products/krown-r112-leather-patch-obsidian-black.jpg',
       '/images/products/krown-r112-flagship-leather-patch-hero.jpg',
+      '/images/products/krown-r112-flagship-leather-patch-snapback.jpg',
     ],
     variants: [
-      { id: 1021, color: 'Heather Grey & Black / Saddle Tan Leather Patch', size: 'OSFA', price: 29.99, sku: 'KSC-HAT-112-GRY', isAvailable: true, image: '/images/products/krown-r112-leather-patch-heather-grey.jpg' },
-      { id: 1022, color: 'Obsidian Black / Raw Black Leather Patch', size: 'OSFA', price: 29.99, sku: 'KSC-HAT-112-BLK', isAvailable: true, image: '/images/products/krown-r112-leather-patch-obsidian-black.jpg' },
-      { id: 1023, color: 'Charcoal & Black / Honey Leather Patch', size: 'OSFA', price: 29.99, sku: 'KSC-HAT-112-CHR', isAvailable: true, image: '/images/products/krown-r112-leather-patch-charcoal-black.jpg' },
+      { id: 1021, color: 'Heather Grey & Black / Saddle Tan Leather Patch', size: 'OSFA', price: 29.99, sku: 'KSC-HAT-112-GRY', isAvailable: true, image: '/images/products/krown-r112-flagship-leather-patch-hero.jpg' },
+      { id: 1022, color: 'Obsidian Black / Raw Black Leather Patch', size: 'OSFA', price: 29.99, sku: 'KSC-HAT-112-BLK', isAvailable: true, image: '/images/products/krown-r112-flagship-leather-patch-hero.jpg' },
+      { id: 1023, color: 'Charcoal & Black / Honey Leather Patch', size: 'OSFA', price: 29.99, sku: 'KSC-HAT-112-CHR', isAvailable: true, image: '/images/products/krown-r112-flagship-leather-patch-hero.jpg' },
     ],
     isNew: true,
     customBadge: 'Signature Headwear',
@@ -1007,8 +1004,8 @@ class PrintifyService {
         ];
       } else if (isRichardsonHat) {
         productImages = [
-          '/images/products/krown-r112-flagship-leather-patch-snapback.jpg',
           '/images/products/krown-r112-flagship-leather-patch-hero.jpg',
+          '/images/products/krown-r112-flagship-leather-patch-snapback.jpg',
         ];
       } else if (titleLower.includes('sticker') || titleLower.includes('decal')) {
         productImages = [

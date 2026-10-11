@@ -25,17 +25,12 @@ export default function ProductImageGallery({ images, productName }: ProductImag
       const size = sizeStr.toLowerCase();
 
       // Richardson 112 Hat Matching
-      if (color.includes('charcoal')) {
-        const charcoalImg = images.find(img => img.includes('charcoal'));
-        if (charcoalImg) { setSelectedImage(charcoalImg); return; }
-      }
-      if (color.includes('heather') || (color.includes('grey') && color.includes('black'))) {
-        const greyImg = images.find(img => img.includes('heather-grey') || (img.includes('grey') && img.includes('112')));
-        if (greyImg) { setSelectedImage(greyImg); return; }
-      }
-      if (color.includes('obsidian') && color.includes('black')) {
-        const obsImg = images.find(img => img.includes('obsidian-black') || img.includes('raw-black'));
-        if (obsImg) { setSelectedImage(obsImg); return; }
+      const isRichardson = productName.toLowerCase().includes('richardson') || productName.toLowerCase().includes('112') || productName.toLowerCase().includes('patch trucker');
+      if (isRichardson) {
+        // If color options are selected, default to hero workbench image unless user clicks thumbnails
+        const heroImg = images.find(img => img.includes('hero'));
+        if (heroImg) { setSelectedImage(heroImg); return; }
+        if (images[0]) { setSelectedImage(images[0]); return; }
       }
 
       // Work Shirt Matching
