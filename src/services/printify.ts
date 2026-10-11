@@ -754,12 +754,12 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
       '/images/products/axiom-crewneck-sweatshirt-model.jpg'
     ],
     variants: [
-      { id: 4401, color: 'Obsidian Black / Team Purple & Lime', size: 'S', price: 54.99, sku: 'AXM-CRW-18000-S', isAvailable: true },
-      { id: 4402, color: 'Obsidian Black / Team Purple & Lime', size: 'M', price: 54.99, sku: 'AXM-CRW-18000-M', isAvailable: true },
-      { id: 4403, color: 'Obsidian Black / Team Purple & Lime', size: 'L', price: 54.99, sku: 'AXM-CRW-18000-L', isAvailable: true },
-      { id: 4404, color: 'Obsidian Black / Team Purple & Lime', size: 'XL', price: 54.99, sku: 'AXM-CRW-18000-XL', isAvailable: true },
-      { id: 4405, color: 'Obsidian Black / Team Purple & Lime', size: '2XL', price: 59.99, sku: 'AXM-CRW-18000-2XL', isAvailable: true },
-      { id: 4406, color: 'Obsidian Black / Team Purple & Lime', size: '3XL', price: 62.99, sku: 'AXM-CRW-18000-3XL', isAvailable: true },
+      { id: 4401, color: 'Solid Black', size: 'S', price: 54.99, sku: 'AXM-CRW-18000-S', isAvailable: true, image: '/images/products/axiom-crewneck-sweatshirt-studio.jpg' },
+      { id: 4402, color: 'Solid Black', size: 'M', price: 54.99, sku: 'AXM-CRW-18000-M', isAvailable: true, image: '/images/products/axiom-crewneck-sweatshirt-studio.jpg' },
+      { id: 4403, color: 'Solid Black', size: 'L', price: 54.99, sku: 'AXM-CRW-18000-L', isAvailable: true, image: '/images/products/axiom-crewneck-sweatshirt-studio.jpg' },
+      { id: 4404, color: 'Solid Black', size: 'XL', price: 54.99, sku: 'AXM-CRW-18000-XL', isAvailable: true, image: '/images/products/axiom-crewneck-sweatshirt-studio.jpg' },
+      { id: 4405, color: 'Solid Black', size: '2XL', price: 59.99, sku: 'AXM-CRW-18000-2XL', isAvailable: true, image: '/images/products/axiom-crewneck-sweatshirt-studio.jpg' },
+      { id: 4406, color: 'Solid Black', size: '3XL', price: 62.99, sku: 'AXM-CRW-18000-3XL', isAvailable: true, image: '/images/products/axiom-crewneck-sweatshirt-studio.jpg' },
     ],
     isNew: true,
     material: 'Premium Heavy Blend™ Fleece (8.0 oz/yd² / 271 g/m²) • 50% US Cotton / 50% Polyester • 1x1 Ribbed Collar, Cuffs & Hem with Spandex',

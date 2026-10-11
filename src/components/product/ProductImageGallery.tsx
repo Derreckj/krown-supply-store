@@ -108,25 +108,25 @@ export default function ProductImageGallery({ images, productName }: ProductImag
         }
       }
 
-      // General color mappings
-      if (color.includes('away') || color.includes('white')) {
+      // General color mappings (for non-shakers/apparel)
+      if (color.includes('solid') || color.includes('black')) {
+        // If the first image is studio composite or matches black, prioritize it
+        const studioImg = images.find(img => img.includes('studio'));
+        if (studioImg) { setSelectedImage(studioImg); return; }
+        const blackImg = images.find(img => img.includes('black'));
+        if (blackImg) { setSelectedImage(blackImg); return; }
+      } else if (color.includes('away') || color.includes('white')) {
         const awayImg = images.find(img => img.includes('away'));
         if (awayImg) { setSelectedImage(awayImg); return; }
       } else if (color.includes('home') || color.includes('electric')) {
         const homeImg = images.find(img => img.includes('home'));
         if (homeImg) { setSelectedImage(homeImg); return; }
-      } else if (color.includes('charcoal')) {
-        const charcoalImg = images.find(img => img.includes('charcoal'));
-        if (charcoalImg) { setSelectedImage(charcoalImg); return; }
       } else if (color.includes('purple')) {
         const purpleImg = images.find(img => img.includes('purple'));
         if (purpleImg) { setSelectedImage(purpleImg); return; }
       } else if (color.includes('lime') || color.includes('green')) {
         const limeImg = images.find(img => img.includes('lime'));
         if (limeImg) { setSelectedImage(limeImg); return; }
-      } else if (color.includes('solid') || color.includes('black')) {
-        const blackImg = images.find(img => img.includes('black'));
-        if (blackImg) { setSelectedImage(blackImg); return; }
       }
     };
 
