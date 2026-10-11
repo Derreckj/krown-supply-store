@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { stripe, isStripeConfigured } from '@/lib/stripe';
 import { CartItem } from '@/context/CartContext';
-import { validateDiscountCode } from '@/lib/discounts';
+import { validateDiscountCode, isCustomHatItem } from '@/lib/discounts';
 
 export const dynamic = 'force-dynamic';
 
@@ -35,9 +35,12 @@ export async function POST(req: NextRequest) {
       });
     }
 
-    // Prepare line items for Stripe Checkout Session with full personalization metadata
+    // Prepare line items for Stripe Checkout Session with full personalization metadata.
+    // Custom hats must NEVER receive promotional discounts and retain full configured price.
     const line_items = items.map((item) => {
+      const isCustomHat = isCustomHatItem(item);
       const descParts = [`${item.variant.color} - Size: ${item.variant.size}`];
+      
       if (item.personalization?.gamertag) {
         descParts.push(`Gamertag: ${item.personalization.gamertag}`);
       }
@@ -47,11 +50,17 @@ export async function POST(req: NextRequest) {
       if (item.personalization?.notes) {
         descParts.push(`Upgrades: ${item.personalization.notes}`);
       }
-      if (discount) {
+      
+      if (isCustomHat) {
+        descParts.push('Custom Headwear • Full configured price (promotional discounts excluded)');
+      } else if (discount) {
         descParts.push(`Promo ${discount.code}: -${discount.percentage}% applied`);
       }
 
-      const effectivePrice = discount ? item.price * (1 - discount.percentage / 100) : item.price;
+      // Exclude custom hats from promotional discount
+      const effectivePrice = (!isCustomHat && discount)
+        ? item.price * (1 - discount.percentage / 100)
+        : item.price;
 
       return {
         price_data: {
@@ -73,7 +82,8 @@ export async function POST(req: NextRequest) {
               edition: item.personalization?.edition || item.variant.color,
               upgrades: item.personalization?.notes || '',
               original_price: item.price.toFixed(2),
-              discount_code: discount?.code || '',
+              discount_code: (!isCustomHat && discount) ? discount.code : 'EXCLUDED_OR_NONE',
+              is_custom_hat: isCustomHat ? 'true' : 'false',
             },
           },
           unit_amount: Math.round(effectivePrice * 100), // Stripe expects amounts in cents

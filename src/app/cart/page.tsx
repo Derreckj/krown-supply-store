@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { useCart } from '@/context/CartContext';
-import { validateDiscountCode, DiscountCodeConfig } from '@/lib/discounts';
+import { validateDiscountCode, calculateCartDiscount, isCustomHatItem, DiscountCodeConfig } from '@/lib/discounts';
 import './CartPage.css';
 
 export default function CartPage() {
@@ -16,8 +16,8 @@ export default function CartPage() {
   const [appliedDiscount, setAppliedDiscount] = useState<DiscountCodeConfig | null>(null);
   const [discountError, setDiscountError] = useState<string | null>(null);
 
-  const discountAmount = appliedDiscount ? (cartTotal * appliedDiscount.percentage) / 100 : 0;
-  const finalTotal = Math.max(0, cartTotal - discountAmount);
+  const discountBreakdown = calculateCartDiscount(items, appliedDiscount);
+  const { discountAmount, finalTotal, hasCustomHats, hasEligibleItems, customHatSubtotal, discountableSubtotal } = discountBreakdown;
 
   const handleApplyDiscount = (e?: React.FormEvent) => {
     if (e) e.preventDefault();
@@ -150,6 +150,21 @@ export default function CartPage() {
                       )}
                     </div>
                   )}
+                  {isCustomHatItem(item) && (
+                    <div style={{
+                      fontSize: '0.72rem',
+                      color: 'var(--accent-gold)',
+                      background: 'rgba(212, 175, 55, 0.08)',
+                      border: '1px solid rgba(212, 175, 55, 0.25)',
+                      borderRadius: '4px',
+                      padding: '0.25rem 0.5rem',
+                      marginTop: '0.35rem',
+                      display: 'inline-block',
+                      fontWeight: 500,
+                    }}>
+                      ⚡ Custom Hat • Promotional discounts excluded
+                    </div>
+                  )}
                   <p className="cart-item-price mobile-only">${item.price.toFixed(2)}</p>
                   <button 
                     type="button" 
@@ -212,6 +227,28 @@ export default function CartPage() {
             </span>
           </div>
 
+          {/* Custom hats promotional exclusion notice */}
+          {hasCustomHats && (
+            <div style={{
+              background: 'rgba(212, 175, 55, 0.1)',
+              border: '1px solid rgba(212, 175, 55, 0.35)',
+              borderRadius: '6px',
+              padding: '0.65rem 0.85rem',
+              marginTop: '1rem',
+              marginBottom: '0.25rem',
+              fontSize: '0.8rem',
+              color: 'var(--accent-gold)',
+              lineHeight: '1.4',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              fontWeight: 500
+            }}>
+              <span>ℹ️</span>
+              <span>Custom hats are excluded from promotional discounts.</span>
+            </div>
+          )}
+
           {/* Friends & Family Discount Code Section */}
           <div className="discount-box">
             <div className="discount-header">
@@ -251,6 +288,11 @@ export default function CartPage() {
                   <span className="discount-applied-label">
                     {appliedDiscount.label} • Saving ${discountAmount.toFixed(2)}
                   </span>
+                  {hasCustomHats && (
+                    <span style={{ fontSize: '0.68rem', color: 'var(--accent-gold)', marginTop: '0.2rem' }}>
+                      Custom hats excluded from discount
+                    </span>
+                  )}
                 </div>
                 <button
                   type="button"
