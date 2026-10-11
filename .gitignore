@@ -41,3 +41,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Large media and asset archives
+public/media/*.mp4
+public/images/**/masters/
+scratch/
+

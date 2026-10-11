@@ -120,16 +120,22 @@ export default function Home() {
           </div>
 
           <div className={styles.gamingMediaCard}>
-            <div className={styles.gamingVideoWrap}>
-              <video 
-                src="/media/axiom-intro.mp4" 
-                controls 
-                poster="/images/branding/gaming/axiom-owl-display.png"
-                className={styles.gamingVideo}
-                preload="metadata"
-              >
-                Your browser does not support the video tag.
-              </video>
+            <div className={styles.gamingVideoWrap} style={{ position: 'relative', overflow: 'hidden', borderRadius: '12px', background: '#000' }}>
+              <img 
+                src="/images/branding/gaming/axiom-owl-display.png" 
+                alt="Axiom Allegiance Esports Anthem" 
+                style={{ width: '100%', height: 'auto', display: 'block' }}
+              />
+              <div style={{ padding: '0.75rem', background: 'rgba(15, 15, 20, 0.95)', borderTop: '1px solid rgba(138, 43, 226, 0.3)' }}>
+                <audio 
+                  controls 
+                  src="/media/axiom-intro.mp3" 
+                  style={{ width: '100%', height: '36px' }}
+                  preload="metadata"
+                >
+                  Your browser does not support the audio element.
+                </audio>
+              </div>
             </div>
             <div className={styles.gamingMediaMeta}>
               <div className={styles.gamingMetaTrack}>
