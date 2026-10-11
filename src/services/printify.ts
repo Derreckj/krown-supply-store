@@ -668,15 +668,15 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     baseCost: 8.50,
     printCost: 4.00,
     images: [
-      '/images/products/axiom-banner-gaming-desk-mat-official.jpg',
+      '/images/products/axiom-owl-banner-v10-official.png',
       '/images/products/axiom-mat-sizing-pricing-specs.jpg'
     ],
     variants: [
-      { id: 3101, color: 'Official Axiom Banner (Green & Purple Flame)', size: 'Medium (M) 14"x12" (360x300mm)', price: 19.99, sku: 'AXM-MAT-BAN-360', isAvailable: true, image: '/images/products/axiom-banner-gaming-desk-mat-official.jpg' },
-      { id: 3102, color: 'Official Axiom Banner (Green & Purple Flame)', size: 'Large (L) 18"x16" (450x400mm)', price: 26.99, sku: 'AXM-MAT-BAN-450', isAvailable: true, image: '/images/products/axiom-banner-gaming-desk-mat-official.jpg' },
-      { id: 3103, color: 'Official Axiom Banner (Green & Purple Flame)', size: 'Extended (XL) 31.5"x12" (800x300mm)', price: 34.99, sku: 'AXM-MAT-BAN-800', isAvailable: true, image: '/images/products/axiom-banner-gaming-desk-mat-official.jpg' },
-      { id: 3104, color: 'Official Axiom Banner (Green & Purple Flame)', size: 'Panoramic (2XL) 35.4"x16" (900x400mm)', price: 42.99, sku: 'AXM-MAT-BAN-900', isAvailable: true, image: '/images/products/axiom-banner-gaming-desk-mat-official.jpg' },
-      { id: 3105, color: 'Official Axiom Banner (Green & Purple Flame)', size: 'Colossal (3XL) 47"x24" (1200x600mm)', price: 54.99, sku: 'AXM-MAT-BAN-1200', isAvailable: true, image: '/images/products/axiom-banner-gaming-desk-mat-official.jpg' },
+      { id: 3101, color: 'Official Axiom Banner (Green & Purple Flame)', size: 'Medium (M) 14"x12" (360x300mm)', price: 19.99, sku: 'AXM-MAT-BAN-360', isAvailable: true, image: '/images/products/axiom-owl-banner-v10-official.png' },
+      { id: 3102, color: 'Official Axiom Banner (Green & Purple Flame)', size: 'Large (L) 18"x16" (450x400mm)', price: 26.99, sku: 'AXM-MAT-BAN-450', isAvailable: true, image: '/images/products/axiom-owl-banner-v10-official.png' },
+      { id: 3103, color: 'Official Axiom Banner (Green & Purple Flame)', size: 'Extended (XL) 31.5"x12" (800x300mm)', price: 34.99, sku: 'AXM-MAT-BAN-800', isAvailable: true, image: '/images/products/axiom-owl-banner-v10-official.png' },
+      { id: 3104, color: 'Official Axiom Banner (Green & Purple Flame)', size: 'Panoramic (2XL) 35.4"x16" (900x400mm)', price: 42.99, sku: 'AXM-MAT-BAN-900', isAvailable: true, image: '/images/products/axiom-owl-banner-v10-official.png' },
+      { id: 3105, color: 'Official Axiom Banner (Green & Purple Flame)', size: 'Colossal (3XL) 47"x24" (1200x600mm)', price: 54.99, sku: 'AXM-MAT-BAN-1200', isAvailable: true, image: '/images/products/axiom-owl-banner-v10-official.png' },
     ],
     isNew: true,
     material: 'Micro-Weave High-Density Cloth + Textured Natural Rubber Base',
@@ -1009,9 +1009,9 @@ class PrintifyService {
           '/images/products/axa-pro-jersey-stealth.jpg',
           '/images/products/axiom-pro-esports-jersey-back.jpg',
         ];
-      } else if (titleLower.includes('desk mat')) {
+      } else if (titleLower.includes('desk mat') || titleLower.includes('mouse pad')) {
         productImages = [
-          '/images/products/axiom-banner-gaming-desk-mat-official.jpg',
+          '/images/products/axiom-owl-banner-v10-official.png',
           '/images/products/axiom-mat-sizing-pricing-specs.jpg',
         ];
       } else if (titleLower.includes('comfort colors') || titleLower.includes('1717')) {

@@ -35,10 +35,11 @@ export default function AddToCartForm({ product }: { product: CatalogProduct }) 
   const isOutOfStock = currentVariant ? !currentVariant.isAvailable : false;
   const isJersey = product.id.startsWith('axiom-jersey');
   const isSweatshirt = product.id === 'axiom-sweatshirt-01';
-  // Removed work shirt
-  const isPersonalizable = isJersey || isSweatshirt;
+  const isMat = product.id === 'krown-mat-01' || product.slug.includes('mat') || product.slug.includes('mouse');
+  const isPersonalizable = isJersey || isSweatshirt || isMat;
 
   const [sweatshirtSleeveOption, setSweatshirtSleeveOption] = useState<'left' | 'right' | 'both'>('left');
+  const [matPlacementOption, setMatPlacementOption] = useState<'right' | 'left' | 'none'>('right');
   
   React.useEffect(() => {
     if (typeof window !== 'undefined' && currentVariant?.image) {
@@ -96,11 +97,16 @@ export default function AddToCartForm({ product }: { product: CatalogProduct }) 
       if (sweatshirtSleeveOption === 'left') addOnsSummary.push('Gothic Sleeve Print: Left Sleeve (Standard)');
       if (sweatshirtSleeveOption === 'right') addOnsSummary.push('Gothic Sleeve Print: Right Sleeve');
       if (sweatshirtSleeveOption === 'both') addOnsSummary.push('Gothic Sleeve Print: Both Sleeves (+$4.99)');
+    } else if (isMat) {
+      if (matPlacementOption !== 'none' && sanitizedTag) {
+        addOnsSummary.push(`Custom Gamertag: ${sanitizedTag} (${matPlacementOption === 'right' ? 'Lower-Right' : 'Lower-Left'} Corner)`);
+        if (sanitizedNum) addOnsSummary.push(`Squad #${sanitizedNum}`);
+      }
     }
 
     const customSnippetParts: string[] = [];
     if (sanitizedTag) customSnippetParts.push(`Tag: ${sanitizedTag}`);
-    if (sanitizedNum && (underTagOption === 'number' || underTagOption === 'both_wordmark_number')) {
+    if (sanitizedNum && (underTagOption === 'number' || underTagOption === 'both_wordmark_number' || isMat)) {
       customSnippetParts.push(`#${sanitizedNum}`);
     }
     if (addOnsSummary.length > 0) {
@@ -269,6 +275,206 @@ export default function AddToCartForm({ product }: { product: CatalogProduct }) 
               Both Sleeves (+$4.99)
             </button>
           </div>
+        </div>
+      )}
+
+      {/* Mouse Pad / Desk Mat Customization */}
+      {isMat && (
+        <div style={{
+          background: 'rgba(98, 0, 238, 0.08)',
+          border: '1px solid rgba(57, 255, 20, 0.35)',
+          borderRadius: '8px',
+          padding: '1.1rem',
+          marginBottom: '1.25rem'
+        }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.65rem' }}>
+            <span style={{ fontSize: '0.82rem', fontWeight: 800, color: '#39FF14', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+              ⚡ Custom Gamertag &amp; Mat Personalization
+            </span>
+            <span style={{ fontSize: '0.72rem', color: '#39FF14', background: 'rgba(57, 255, 20, 0.15)', padding: '0.15rem 0.5rem', borderRadius: '4px', fontWeight: 700 }}>
+              Included Free
+            </span>
+          </div>
+          <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginBottom: '0.75rem' }}>
+            Personalize your Axiom competition desk mat with your official Gamertag, clan handle, or player name:
+          </div>
+
+          {/* Gamertag Casing */}
+          <div style={{ marginBottom: '0.75rem' }}>
+            <label style={{ fontSize: '0.75rem', color: 'var(--text-muted)', display: 'block', marginBottom: '0.35rem' }}>
+              Gamertag Casing Style:
+            </label>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem' }}>
+              <button
+                type="button"
+                onClick={() => setCasingOption('exact')}
+                style={{
+                  padding: '0.45rem 0.5rem',
+                  fontSize: '0.75rem',
+                  fontWeight: casingOption === 'exact' ? 700 : 500,
+                  background: casingOption === 'exact' ? 'rgba(57, 255, 20, 0.15)' : 'rgba(255, 255, 255, 0.03)',
+                  border: casingOption === 'exact' ? '1px solid #39FF14' : '1px solid rgba(255, 255, 255, 0.15)',
+                  color: casingOption === 'exact' ? '#39FF14' : 'var(--text-muted)',
+                  borderRadius: '4px',
+                  cursor: 'pointer',
+                  textAlign: 'center',
+                }}
+              >
+                Exact Case (e.g. &ldquo;KrowN&rdquo;)
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  setCasingOption('uppercase');
+                  if (gamertag) setGamertag(gamertag.toUpperCase());
+                }}
+                style={{
+                  padding: '0.45rem 0.5rem',
+                  fontSize: '0.75rem',
+                  fontWeight: casingOption === 'uppercase' ? 700 : 500,
+                  background: casingOption === 'uppercase' ? 'rgba(57, 255, 20, 0.15)' : 'rgba(255, 255, 255, 0.03)',
+                  border: casingOption === 'uppercase' ? '1px solid #39FF14' : '1px solid rgba(255, 255, 255, 0.15)',
+                  color: casingOption === 'uppercase' ? '#39FF14' : 'var(--text-muted)',
+                  borderRadius: '4px',
+                  cursor: 'pointer',
+                  textAlign: 'center',
+                }}
+              >
+                ALL CAPS (e.g. &ldquo;KROWN&rdquo;)
+              </button>
+            </div>
+          </div>
+
+          {/* Gamertag Input */}
+          <div className="form-group" style={{ marginBottom: '0.75rem' }}>
+            <label htmlFor="mat-gamertag-input" style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
+              Gamertag / Player Name (Max 16 Chars, Optional):
+            </label>
+            <input
+              type="text"
+              id="mat-gamertag-input"
+              value={gamertag}
+              onChange={(e) => {
+                const val = e.target.value.slice(0, 16);
+                setGamertag(casingOption === 'uppercase' ? val.toUpperCase() : val);
+              }}
+              placeholder={casingOption === 'exact' ? 'e.g. KrowN' : 'e.g. KROWN'}
+              className="form-input"
+              style={{
+                textTransform: casingOption === 'uppercase' ? 'uppercase' : 'none',
+                letterSpacing: casingOption === 'uppercase' ? '0.08em' : '0.04em'
+              }}
+              autoComplete="off"
+              spellCheck={false}
+            />
+          </div>
+
+          {/* Squad Number */}
+          <div className="form-group" style={{ marginBottom: '0.75rem' }}>
+            <label htmlFor="mat-number-input" style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
+              Squad / Player Number (00-99, Optional):
+            </label>
+            <input
+              type="text"
+              id="mat-number-input"
+              value={playerNumber}
+              onChange={(e) => setPlayerNumber(e.target.value.replace(/\D/g, '').slice(0, 2))}
+              placeholder="e.g. 07"
+              className="form-input"
+              style={{ maxWidth: '120px' }}
+              autoComplete="off"
+            />
+          </div>
+
+          {/* Placement Option */}
+          <div style={{ marginBottom: '0.75rem' }}>
+            <label style={{ fontSize: '0.75rem', color: 'var(--text-muted)', display: 'block', marginBottom: '0.35rem' }}>
+              Tag Print Placement:
+            </label>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '0.4rem' }}>
+              <button
+                type="button"
+                onClick={() => setMatPlacementOption('right')}
+                style={{
+                  padding: '0.45rem 0.3rem',
+                  fontSize: '0.73rem',
+                  fontWeight: matPlacementOption === 'right' ? 700 : 500,
+                  background: matPlacementOption === 'right' ? 'rgba(57, 255, 20, 0.15)' : 'rgba(255, 255, 255, 0.03)',
+                  border: matPlacementOption === 'right' ? '1px solid #39FF14' : '1px solid rgba(255, 255, 255, 0.12)',
+                  color: matPlacementOption === 'right' ? '#39FF14' : 'var(--text-muted)',
+                  borderRadius: '4px',
+                  cursor: 'pointer',
+                  textAlign: 'center',
+                }}
+              >
+                Lower-Right (Std)
+              </button>
+              <button
+                type="button"
+                onClick={() => setMatPlacementOption('left')}
+                style={{
+                  padding: '0.45rem 0.3rem',
+                  fontSize: '0.73rem',
+                  fontWeight: matPlacementOption === 'left' ? 700 : 500,
+                  background: matPlacementOption === 'left' ? 'rgba(57, 255, 20, 0.15)' : 'rgba(255, 255, 255, 0.03)',
+                  border: matPlacementOption === 'left' ? '1px solid #39FF14' : '1px solid rgba(255, 255, 255, 0.12)',
+                  color: matPlacementOption === 'left' ? '#39FF14' : 'var(--text-muted)',
+                  borderRadius: '4px',
+                  cursor: 'pointer',
+                  textAlign: 'center',
+                }}
+              >
+                Lower-Left
+              </button>
+              <button
+                type="button"
+                onClick={() => setMatPlacementOption('none')}
+                style={{
+                  padding: '0.45rem 0.3rem',
+                  fontSize: '0.73rem',
+                  fontWeight: matPlacementOption === 'none' ? 700 : 500,
+                  background: matPlacementOption === 'none' ? 'rgba(57, 255, 20, 0.15)' : 'rgba(255, 255, 255, 0.03)',
+                  border: matPlacementOption === 'none' ? '1px solid #39FF14' : '1px solid rgba(255, 255, 255, 0.12)',
+                  color: matPlacementOption === 'none' ? '#39FF14' : 'var(--text-muted)',
+                  borderRadius: '4px',
+                  cursor: 'pointer',
+                  textAlign: 'center',
+                }}
+              >
+                Artwork Only
+              </button>
+            </div>
+          </div>
+
+          {/* Live Desk Mat Badge Preview */}
+          {gamertag.trim() && matPlacementOption !== 'none' && (
+            <div style={{
+              marginTop: '0.75rem',
+              padding: '0.65rem 0.85rem',
+              background: 'rgba(0, 0, 0, 0.65)',
+              border: '1px solid rgba(57, 255, 20, 0.4)',
+              borderRadius: '6px',
+              fontSize: '0.78rem'
+            }}>
+              <div style={{ color: '#39FF14', fontWeight: 700, fontSize: '0.72rem', letterSpacing: '0.08em', marginBottom: '0.3rem', textTransform: 'uppercase' }}>
+                ⚡ Live Custom Mat Print Preview
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', color: '#fff' }}>
+                <span>Placement: <strong>{matPlacementOption === 'right' ? 'Bottom Right' : 'Bottom Left'} Corner</strong></span>
+                <span style={{
+                  background: 'rgba(57, 255, 20, 0.2)',
+                  color: '#39FF14',
+                  fontWeight: 800,
+                  padding: '0.2rem 0.6rem',
+                  borderRadius: '3px',
+                  letterSpacing: '0.05em',
+                  fontFamily: 'monospace'
+                }}>
+                  {gamertag.trim()}{playerNumber.trim() ? ` #${playerNumber.trim()}` : ''}
+                </span>
+              </div>
+            </div>
+          )}
         </div>
       )}
 

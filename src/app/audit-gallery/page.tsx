@@ -72,7 +72,7 @@ const PRODUCT_PACKS: ProductPack[] = [
     supplierRoute: 'Printify Verified (Spoke Custom / FYBY)',
     singleLogoCheck: 'PASS: Official Axiom Owl Display artwork. 4mm high-density natural rubber base + anti-fray lockstitched perimeter.',
     images: [
-      { title: '01 Official Axiom Banner Mat', src: '/images/products/axiom-banner-gaming-desk-mat-official.jpg', caption: 'Official Axiom Banner (Green & Purple Flame) tournament desk mat.' },
+      { title: '01 Official Axiom Banner Mat', src: '/images/products/axiom-owl-banner-v10-official.png', caption: 'Official Axiom Banner (Green & Purple Flame) tournament desk mat.' },
       { title: '02 Sizing & Pricing Matrix', src: '/images/products/axiom-mat-sizing-pricing-specs.jpg', caption: 'Comprehensive matrix for all 5 verified sizes: 14x12, 18x16, 31.5x12, 35.4x16, and 47x24.' }
     ]
   },
