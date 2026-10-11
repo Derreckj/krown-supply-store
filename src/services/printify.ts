@@ -746,7 +746,6 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
       '/images/products/axiom-crewneck-sweatshirt-front.jpg',
       '/images/products/axiom-crewneck-sweatshirt-back.jpg',
       '/images/products/axiom-crewneck-sleeve-detail.jpg',
-      '/images/products/axiom-crewneck-chest-macro.jpg',
       '/images/products/axiom-crewneck-sweatshirt-model.jpg'
     ],
     variants: [

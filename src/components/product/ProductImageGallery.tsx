@@ -47,54 +47,58 @@ export default function ProductImageGallery({ images, productName }: ProductImag
         const blkFront = images.find(img => img.includes('black-front'));
         if (blkFront) { setSelectedImage(blkFront); return; }
       }
-      if (color.includes('charcoal') || color.includes('purple & lime')) {
+      if (color.includes('charcoal') && productName.toLowerCase().includes('jersey')) {
         const chrBack = images.find(img => img.includes('charcoal-back'));
         if (chrBack) { setSelectedImage(chrBack); return; }
       }
 
-      // Shakers Matching
-      const isSteel = size.includes('steel') || size.includes('insulated');
-      if (color.includes('high-vis') || color.includes('safety gold')) {
-        const img = images.find(i => i.includes('photoreal') || i.includes('highvis'));
-        if (img) { setSelectedImage(img); return; }
-      }
-      if (color.includes('steel core') || color.includes('concrete') || color.includes('industrial steel')) {
-        const img = images.find(i => i.includes('steelcore'));
-        if (img) { setSelectedImage(img); return; }
-      }
-      if (color.includes('tradesman') || color.includes('jobsite lime')) {
-        const img = images.find(i => i.includes('tradesman') || i.includes('jobsite'));
-        if (img) { setSelectedImage(img); return; }
-      }
-      if (color.includes('obsidian') && (color.includes('gold') || color.includes('krown'))) {
-        const img = images.find(i => i.includes('photoreal') || i.includes('obsidian'));
-        if (img) { setSelectedImage(img); return; }
-      }
-      if (color.includes('smoke') || color.includes('frosted smoke')) {
-        const img = images.find(i => i.includes('smoke'));
-        if (img) { setSelectedImage(img); return; }
-      }
-      if (color.includes('brushed') || color.includes('raw brushed')) {
-        const img = images.find(i => i.includes('brushed'));
-        if (img) { setSelectedImage(img); return; }
-      }
+      const isShakerOrBottle = productName.toLowerCase().includes('shaker') || productName.toLowerCase().includes('bottle');
 
-      // Axiom Shaker specific precision matching
-      const isStealth = color.includes('stealth');
-      const isSignature = color.includes('signature') || color.includes('lime') || color.includes('purple');
+      if (isShakerOrBottle) {
+        // Shakers Matching
+        const isSteel = size.includes('steel') || size.includes('insulated');
+        if (color.includes('high-vis') || color.includes('safety gold')) {
+          const img = images.find(i => i.includes('photoreal') || i.includes('highvis'));
+          if (img) { setSelectedImage(img); return; }
+        }
+        if (color.includes('steel core') || color.includes('concrete') || color.includes('industrial steel')) {
+          const img = images.find(i => i.includes('steelcore'));
+          if (img) { setSelectedImage(img); return; }
+        }
+        if (color.includes('tradesman') || color.includes('jobsite lime')) {
+          const img = images.find(i => i.includes('tradesman') || i.includes('jobsite'));
+          if (img) { setSelectedImage(img); return; }
+        }
+        if (color.includes('obsidian') && (color.includes('gold') || color.includes('krown'))) {
+          const img = images.find(i => i.includes('photoreal') || i.includes('obsidian'));
+          if (img) { setSelectedImage(img); return; }
+        }
+        if (color.includes('smoke') || color.includes('frosted smoke')) {
+          const img = images.find(i => i.includes('smoke'));
+          if (img) { setSelectedImage(img); return; }
+        }
+        if (color.includes('brushed') || color.includes('raw brushed')) {
+          const img = images.find(i => i.includes('brushed'));
+          if (img) { setSelectedImage(img); return; }
+        }
 
-      if (isStealth && isSteel) {
-        const img = images.find(i => i.includes('stealth-steel'));
-        if (img) { setSelectedImage(img); return; }
-      } else if (isStealth) {
-        const img = images.find(i => i.includes('stealth-tritan'));
-        if (img) { setSelectedImage(img); return; }
-      } else if (isSignature && isSteel) {
-        const img = images.find(i => i.includes('signature-steel'));
-        if (img) { setSelectedImage(img); return; }
-      } else if (isSignature) {
-        const img = images.find(i => i.includes('signature-tritan'));
-        if (img) { setSelectedImage(img); return; }
+        // Axiom Shaker specific precision matching
+        const isStealth = color.includes('stealth');
+        const isSignature = color.includes('signature') || color.includes('lime') || color.includes('purple');
+
+        if (isStealth && isSteel) {
+          const img = images.find(i => i.includes('stealth-steel'));
+          if (img) { setSelectedImage(img); return; }
+        } else if (isStealth) {
+          const img = images.find(i => i.includes('stealth-tritan'));
+          if (img) { setSelectedImage(img); return; }
+        } else if (isSignature && isSteel) {
+          const img = images.find(i => i.includes('signature-steel'));
+          if (img) { setSelectedImage(img); return; }
+        } else if (isSignature) {
+          const img = images.find(i => i.includes('signature-tritan'));
+          if (img) { setSelectedImage(img); return; }
+        }
       }
 
       // General color mappings

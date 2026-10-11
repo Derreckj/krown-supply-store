@@ -73,8 +73,7 @@ const PRODUCT_PACKS: ProductPack[] = [
       { title: '02 Front Arched Chest View', src: '/images/products/axiom-crewneck-sweatshirt-front.jpg', caption: 'Centered front view displaying arched collegiate AXIOM, original mascot, and collar ribbing.' },
       { title: '03 Back Hero Motto & Eyes View', src: '/images/products/axiom-crewneck-sweatshirt-back.jpg', caption: 'Full back DTG composition featuring complete humility motto over glowing owl eyes.' },
       { title: '04 Left Sleeve Detail', src: '/images/products/axiom-crewneck-sleeve-detail.jpg', caption: 'Macro zoom on bold vertical AXIOM and Gothic Allegiance typography at cuff.' },
-      { title: '05 Chest Emblem Macro', src: '/images/products/axiom-crewneck-chest-macro.jpg', caption: 'Close-up of high-definition DTG soft-hand print details.' },
-      { title: '06 Streetwear Drape & Fit', src: '/images/products/axiom-crewneck-sweatshirt-model.jpg', caption: 'Model worn view showing relaxed streetwear fit and print scale.' }
+      { title: '05 Streetwear Drape & Fit', src: '/images/products/axiom-crewneck-sweatshirt-model.jpg', caption: 'Model worn view showing relaxed streetwear fit and print scale.' }
     ]
   },
   {
