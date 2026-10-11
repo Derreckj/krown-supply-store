@@ -3,47 +3,50 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { useCart } from '@/context/CartContext';
-import { validateDiscountCode, calculateCartDiscount, isCustomHatItem, DiscountCodeConfig } from '@/lib/discounts';
+import { validateDiscountCode, calculateCartDiscount, isCustomHatItem, isExcludedDiscountItem, DiscountCodeConfig } from '@/lib/discounts';
 import './CartPage.css';
 
 export default function CartPage() {
-  const { items, removeItem, updateQuantity, cartTotal } = useCart();
+  const { 
+    items, 
+    removeItem, 
+    updateQuantity, 
+    cartTotal,
+    appliedDiscountCode,
+    discountConfig,
+    discountBreakdown,
+    discountError: contextDiscountError,
+    applyDiscount,
+    removeDiscount
+  } = useCart();
   const [isCheckingOut, setIsCheckingOut] = useState(false);
   const [checkoutError, setCheckoutError] = useState<string | null>(null);
 
-  // Friends & Family Discount Code State
+  // Local input state for the discount form
   const [discountInput, setDiscountInput] = useState('');
-  const [appliedDiscount, setAppliedDiscount] = useState<DiscountCodeConfig | null>(null);
-  const [discountError, setDiscountError] = useState<string | null>(null);
+  const [localDiscountError, setLocalDiscountError] = useState<string | null>(null);
 
-  const discountBreakdown = calculateCartDiscount(items, appliedDiscount);
-  const { discountAmount, finalTotal, hasCustomHats, hasEligibleItems, customHatSubtotal, discountableSubtotal } = discountBreakdown;
+  const discountError = localDiscountError || contextDiscountError;
+  const appliedDiscount = discountConfig;
+  const { discountAmount, finalTotal, hasCustomHats, hasExcludedHoodie } = discountBreakdown;
 
   const handleApplyDiscount = (e?: React.FormEvent) => {
     if (e) e.preventDefault();
     const trimmed = discountInput.trim();
     if (!trimmed) return;
 
-    const validated = validateDiscountCode(trimmed);
-    if (!validated) {
-      setDiscountError('Invalid discount code. Enter KROWN10.');
-      return;
+    const res = applyDiscount(trimmed);
+    if (!res.success) {
+      setLocalDiscountError(res.error || 'Invalid discount code.');
+    } else {
+      setLocalDiscountError(null);
     }
-
-    const testBreakdown = calculateCartDiscount(items, validated);
-    if (testBreakdown.errorMessage) {
-      setDiscountError(testBreakdown.errorMessage);
-      return;
-    }
-
-    setAppliedDiscount(validated);
-    setDiscountError(null);
   };
 
   const handleRemoveDiscount = () => {
-    setAppliedDiscount(null);
+    removeDiscount();
     setDiscountInput('');
-    setDiscountError(null);
+    setLocalDiscountError(null);
   };
 
   const handleCheckout = async () => {
@@ -172,6 +175,36 @@ export default function CartPage() {
                       ⚡ Custom Hat • Promotional discounts excluded
                     </div>
                   )}
+                  {isExcludedDiscountItem(item) && (
+                    <div style={{
+                      fontSize: '0.72rem',
+                      color: 'var(--text-muted)',
+                      background: 'rgba(255, 255, 255, 0.04)',
+                      border: '1px solid rgba(255, 255, 255, 0.15)',
+                      borderRadius: '4px',
+                      padding: '0.25rem 0.5rem',
+                      marginTop: '0.35rem',
+                      display: 'inline-block',
+                      fontWeight: 500,
+                    }}>
+                      🔒 Luxury Outerwear • Price locked (discounts excluded)
+                    </div>
+                  )}
+                  {appliedDiscount && !isCustomHatItem(item) && !isExcludedDiscountItem(item) && (
+                    <div style={{
+                      fontSize: '0.72rem',
+                      color: '#39FF14',
+                      background: 'rgba(57, 255, 20, 0.08)',
+                      border: '1px solid rgba(57, 255, 20, 0.25)',
+                      borderRadius: '4px',
+                      padding: '0.25rem 0.5rem',
+                      marginTop: '0.35rem',
+                      display: 'inline-block',
+                      fontWeight: 600,
+                    }}>
+                      ✨ 10% OFF APPLIED (-${((item.price * item.quantity) * 0.10).toFixed(2)})
+                    </div>
+                  )}
                   <p className="cart-item-price mobile-only">${item.price.toFixed(2)}</p>
                   <button 
                     type="button" 
@@ -196,14 +229,25 @@ export default function CartPage() {
                     readOnly
                   />
                   <button 
-                    type="button"
+                    type="button" 
                     onClick={() => updateQuantity(item.id, item.quantity + 1)}
                   >+</button>
                 </div>
               </div>
               
               <div className="cart-item-total desktop-only">
-                ${(item.price * item.quantity).toFixed(2)}
+                {appliedDiscount && !isCustomHatItem(item) && !isExcludedDiscountItem(item) ? (
+                  <div>
+                    <span style={{ textDecoration: 'line-through', color: 'var(--text-muted)', fontSize: '0.85rem', marginRight: '0.5rem' }}>
+                      ${(item.price * item.quantity).toFixed(2)}
+                    </span>
+                    <span style={{ color: '#39FF14', fontWeight: 700 }}>
+                      ${((item.price * item.quantity) * 0.90).toFixed(2)}
+                    </span>
+                  </div>
+                ) : (
+                  <span>${(item.price * item.quantity).toFixed(2)}</span>
+                )}
               </div>
             </div>
           ))}
@@ -276,7 +320,7 @@ export default function CartPage() {
                   value={discountInput}
                   onChange={(e) => {
                     setDiscountInput(e.target.value);
-                    if (discountError) setDiscountError(null);
+                    if (localDiscountError) setLocalDiscountError(null);
                   }}
                   aria-label="Discount Code"
                 />
