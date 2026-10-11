@@ -188,13 +188,13 @@ export default function Home() {
               <div className={styles.gamingGearThumb}>
                 <img 
                   src="/images/products/axiom-crewneck-sweatshirt-studio.jpg" 
-                  alt="Axiom Allegiance Official Crewneck Sweatshirt" 
+                  alt="Axiom Allegiance Legacy Owl Crewneck — Statement Edition" 
                 />
-                <span className={styles.gearPill}>380 GSM FLEECE</span>
+                <span className={styles.gearPill}>3-LOCATION DTG</span>
               </div>
               <div className={styles.gamingGearBody}>
-                <h4>Axiom Official Crewneck Sweatshirt</h4>
-                <p>Mascot &amp; Vertical Sleeve Print • $49.99</p>
+                <h4>Axiom Legacy Owl Crewneck</h4>
+                <p>Arched Chest, Hero Motto &amp; Sleeve • $54.99</p>
               </div>
             </Link>
 

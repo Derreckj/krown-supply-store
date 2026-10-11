@@ -730,30 +730,32 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
   },
   {
     id: 'axiom-sweatshirt-01',
-    name: 'Axiom Allegiance Official Crewneck Sweatshirt',
-    slug: 'axiom-allegiance-official-crewneck-sweatshirt',
-    description: 'Tournament-grade everyday crewneck sweatshirt in midnight obsidian black. Crafted from premium 380 GSM brushed fleece with classic triangular athletic collar V-stitch, heavyweight ribbed collar, cuffs, and waistband. Features high-density direct embroidery of the clean Axiom Owl mascot centered on the chest, paired with bold vertical \"Aχισм Aℓℓєgιαηcє\" stylized lettering running down the sleeve in electric toxic lime and royal purple.',
+    name: 'Axiom Allegiance Legacy Owl Crewneck — Statement Edition',
+    slug: 'axiom-allegiance-legacy-owl-crewneck-statement-edition',
+    description: 'A bold reinterpretation of the Axiom Allegiance legacy. This heavyweight black crewneck features an arched collegiate Axiom chest graphic over our signature owl, vertical left-sleeve typography, and an oversized back composition pairing the piercing eyes of the mascot with the complete humility motto.\n\nEngineered on a durable, ultra-soft fleece blank with reinforced ribbed collar, cuffs, and hem. Printed using soft-hand Direct-to-Garment inks designed to flex with the fabric and resist cracking.',
     collection: 'AXA / Axiom Allegiance',
-    price: 49.99,
-    baseCost: 19.50,
-    printCost: 7.00,
+    price: 54.99,
+    baseCost: 24.01,
+    printCost: 8.50,
     images: [
       '/images/products/axiom-crewneck-sweatshirt-studio.jpg',
+      '/images/products/axiom-crewneck-sweatshirt-front.jpg',
+      '/images/products/axiom-crewneck-sweatshirt-back.jpg',
       '/images/products/axiom-crewneck-sleeve-detail.jpg',
       '/images/products/axiom-crewneck-chest-macro.jpg',
       '/images/products/axiom-crewneck-sweatshirt-model.jpg'
     ],
     variants: [
-      { id: 4401, color: 'Obsidian Black / Team Purple & Lime', size: 'S', price: 49.99, sku: 'AXM-CRW-380-S', isAvailable: true },
-      { id: 4402, color: 'Obsidian Black / Team Purple & Lime', size: 'M', price: 49.99, sku: 'AXM-CRW-380-M', isAvailable: true },
-      { id: 4403, color: 'Obsidian Black / Team Purple & Lime', size: 'L', price: 49.99, sku: 'AXM-CRW-380-L', isAvailable: true },
-      { id: 4404, color: 'Obsidian Black / Team Purple & Lime', size: 'XL', price: 49.99, sku: 'AXM-CRW-380-XL', isAvailable: true },
-      { id: 4405, color: 'Obsidian Black / Team Purple & Lime', size: '2XL', price: 49.99, sku: 'AXM-CRW-380-2XL', isAvailable: true },
-      { id: 4406, color: 'Obsidian Black / Team Purple & Lime', size: '3XL', price: 54.99, sku: 'AXM-CRW-380-3XL', isAvailable: true },
+      { id: 4401, color: 'Obsidian Black / Team Purple & Lime', size: 'S', price: 54.99, sku: 'AXM-CRW-18000-S', isAvailable: true },
+      { id: 4402, color: 'Obsidian Black / Team Purple & Lime', size: 'M', price: 54.99, sku: 'AXM-CRW-18000-M', isAvailable: true },
+      { id: 4403, color: 'Obsidian Black / Team Purple & Lime', size: 'L', price: 54.99, sku: 'AXM-CRW-18000-L', isAvailable: true },
+      { id: 4404, color: 'Obsidian Black / Team Purple & Lime', size: 'XL', price: 54.99, sku: 'AXM-CRW-18000-XL', isAvailable: true },
+      { id: 4405, color: 'Obsidian Black / Team Purple & Lime', size: '2XL', price: 59.99, sku: 'AXM-CRW-18000-2XL', isAvailable: true },
+      { id: 4406, color: 'Obsidian Black / Team Purple & Lime', size: '3XL', price: 62.99, sku: 'AXM-CRW-18000-3XL', isAvailable: true },
     ],
     isNew: true,
-    material: '380 GSM Heavyweight Brushed Cotton/Poly Fleece • V-Stitch Collar Accent',
-    fit: 'Athletic Tailored Streetwear Fit with Heavy Ribbed Cuffs',
+    material: 'Premium Heavy Blend™ Fleece (8.0 oz/yd² / 271 g/m²) • 50% US Cotton / 50% Polyester • 1x1 Ribbed Collar, Cuffs & Hem with Spandex',
+    fit: 'Classic Streetwear Boxy Fit • High-Definition 3-Location Direct-to-Garment (DTG) Inks',
   },
 
   // ==========================================
@@ -846,6 +848,8 @@ class PrintifyService {
         // Retain master 5-size krown-mat-01 with photorealistic imagery and full size ladder
       } else if (nameLower.includes('sticker') || nameLower.includes('decal')) {
         replacedMockIds.add('krown-stickers-01');
+      } else if (nameLower.includes('crewneck') || nameLower.includes('sweatshirt')) {
+        replacedMockIds.add('axiom-sweatshirt-01');
       }
     }
 
@@ -867,6 +871,7 @@ class PrintifyService {
       'krown-hoodie-premium': ['6ac80dff9f3e89dde70da38d', 'krown-heavyweight-streetwear-hoodie'],
       'krown-tee-cc1717': ['6ac7ed0b9bfbeab23800dcdf', 'krown-wear-the-krown-comfort-colors-1717'],
       'axiom-jersey-home': ['6ac80e034a1cdf2ad60e0bed', 'axiom-allegiance-axa-cut-and-sew-pro-esports-jersey'],
+      'axiom-sweatshirt-01': ['6acb288b7e3c0f166405e965', '6acb28893b1e860dda05860f', 'axiom-allegiance-legacy-owl-crewneck', 'axiom-sweatshirt-01'],
       'krown-mat-01': ['6ac7ed486443c9f27801af1b', 'axiom-owl-panoramic-gaming-desk-mat'],
       'krown-stickers-01': ['6ac7ed44fea4d4e68e0a0f80', '6ac7ed46ad560d80d10eb55c'],
     };

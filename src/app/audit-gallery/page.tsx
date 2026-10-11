@@ -46,17 +46,19 @@ const PRODUCT_PACKS: ProductPack[] = [
   },
   {
     division: '03_Axiom_Allegiance',
-    name: 'Axiom Allegiance Official Crewneck Sweatshirt',
+    name: 'Axiom Allegiance Legacy Owl Crewneck — Statement Edition',
     slug: 'axiom-sweatshirt-01',
-    productBlank: 'Gildan 18000 Heavy Blend / Comfort Colors 1566 Garment-Dyed Fleece',
-    decorationMethod: 'Direct-to-Garment (DTG) Chest Mascot + Vertical Sleeve Typography',
-    supplierRoute: 'Printify Blueprint 49 (Monster Digital / SwiftPOD)',
-    singleLogoCheck: 'PASS: Clean centered Axiom Owl mascot on chest + bold vertical "Aχισм Aℓℓєgιαηcє" running down sleeve in toxic lime & royal purple.',
+    productBlank: 'Gildan 18000 Heavy Blend / Lane Seven LS14004 / IND5000C (8.0 oz/yd² Fleece, Solid Black)',
+    decorationMethod: 'Direct-to-Garment (DTG) 3-Location (Arched Chest + Hero Motto Back + Left Sleeve)',
+    supplierRoute: 'Printify Blueprint 49 (Printify Choice / SwiftPOD) — Verified 3-Location DTG',
+    singleLogoCheck: 'PASS: Arched collegiate AXIOM with centered mascot on chest, full humility motto with glowing background owl eyes on back, and vertical sleeve typography.',
     images: [
-      { title: '01 Studio Flat Lay (Chest Owl & Sleeve)', src: '/images/products/axiom-crewneck-sweatshirt-studio.jpg', caption: 'Clean studio presentation with center Axiom Owl mascot and vertical sleeve lettering.' },
-      { title: '02 Left Sleeve Lettering Macro', src: '/images/products/axiom-crewneck-sleeve-detail.jpg', caption: 'Macro zoom on bold vertical "Aχισм Aℓℓєgιαηcє" typography with electric lime stroke and purple core.' },
-      { title: '03 Chest Mascot Macro', src: '/images/products/axiom-crewneck-chest-macro.jpg', caption: 'Close-up of clean centered Axiom Owl mascot print.' },
-      { title: '04 Model Worn Lookbook', src: '/images/products/axiom-crewneck-sweatshirt-model.jpg', caption: 'Model worn view showing relaxed streetwear fit and sleeve placement.' }
+      { title: '01 3-View Studio Composite', src: '/images/products/axiom-crewneck-sweatshirt-studio.jpg', caption: 'Clean 3-view studio composite showing Front, Back, and Left Sleeve side-by-side.' },
+      { title: '02 Front Arched Chest View', src: '/images/products/axiom-crewneck-sweatshirt-front.jpg', caption: 'Centered front view displaying arched collegiate AXIOM, original mascot, and collar ribbing.' },
+      { title: '03 Back Hero Motto & Eyes View', src: '/images/products/axiom-crewneck-sweatshirt-back.jpg', caption: 'Full back DTG composition featuring complete humility motto over glowing owl eyes.' },
+      { title: '04 Left Sleeve Detail', src: '/images/products/axiom-crewneck-sleeve-detail.jpg', caption: 'Macro zoom on bold vertical AXIOM and Gothic Allegiance typography at cuff.' },
+      { title: '05 Chest Emblem Macro', src: '/images/products/axiom-crewneck-chest-macro.jpg', caption: 'Close-up of high-definition DTG soft-hand print details.' },
+      { title: '06 Streetwear Drape & Fit', src: '/images/products/axiom-crewneck-sweatshirt-model.jpg', caption: 'Model worn view showing relaxed streetwear fit and print scale.' }
     ]
   },
   {
