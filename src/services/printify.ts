@@ -674,32 +674,15 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     baseCost: 8.50,
     printCost: 4.00,
     images: [
-      '/images/products/axiom-mat-hero-desk-setup.jpg',
-      '/images/products/axiom-mat-display-flat-panoramic.jpg',
-      '/images/products/axiom-mat-stitched-macro.jpg',
+      '/images/products/axiom-mat-original-banner-v9.jpg',
       '/images/products/axiom-mat-sizing-pricing-specs.jpg'
     ],
     variants: [
-      // Option 1: Official Axiom Banner (Green & Purple Flame)
       { id: 3101, color: 'Official Axiom Banner (Green & Purple Flame)', size: 'Medium (M) 14"x12" (360x300mm)', price: 19.99, sku: 'AXM-MAT-BAN-360', isAvailable: true, image: '/images/products/axiom-mat-original-banner-v9.jpg' },
       { id: 3102, color: 'Official Axiom Banner (Green & Purple Flame)', size: 'Large (L) 18"x16" (450x400mm)', price: 26.99, sku: 'AXM-MAT-BAN-450', isAvailable: true, image: '/images/products/axiom-mat-original-banner-v9.jpg' },
       { id: 3103, color: 'Official Axiom Banner (Green & Purple Flame)', size: 'Extended (XL) 31.5"x12" (800x300mm)', price: 34.99, sku: 'AXM-MAT-BAN-800', isAvailable: true, image: '/images/products/axiom-mat-original-banner-v9.jpg' },
       { id: 3104, color: 'Official Axiom Banner (Green & Purple Flame)', size: 'Panoramic (2XL) 35.4"x16" (900x400mm)', price: 42.99, sku: 'AXM-MAT-BAN-900', isAvailable: true, image: '/images/products/axiom-mat-original-banner-v9.jpg' },
       { id: 3105, color: 'Official Axiom Banner (Green & Purple Flame)', size: 'Colossal (3XL) 47"x24" (1200x600mm)', price: 54.99, sku: 'AXM-MAT-BAN-1200', isAvailable: true, image: '/images/products/axiom-mat-original-banner-v9.jpg' },
-
-      // Option 2: Volcanic Crimson Ember Flame Edition
-      { id: 3111, color: 'Volcanic Crimson Ember Flame Edition', size: 'Medium (M) 14"x12" (360x300mm)', price: 19.99, sku: 'AXM-MAT-VOL-360', isAvailable: true, image: '/images/products/axiom-mat-volcanic-flame-v9.jpg' },
-      { id: 3112, color: 'Volcanic Crimson Ember Flame Edition', size: 'Large (L) 18"x16" (450x400mm)', price: 26.99, sku: 'AXM-MAT-VOL-450', isAvailable: true, image: '/images/products/axiom-mat-volcanic-flame-v9.jpg' },
-      { id: 3113, color: 'Volcanic Crimson Ember Flame Edition', size: 'Extended (XL) 31.5"x12" (800x300mm)', price: 34.99, sku: 'AXM-MAT-VOL-800', isAvailable: true, image: '/images/products/axiom-mat-volcanic-flame-v9.jpg' },
-      { id: 3114, color: 'Volcanic Crimson Ember Flame Edition', size: 'Panoramic (2XL) 35.4"x16" (900x400mm)', price: 42.99, sku: 'AXM-MAT-VOL-900', isAvailable: true, image: '/images/products/axiom-mat-volcanic-flame-v9.jpg' },
-      { id: 3115, color: 'Volcanic Crimson Ember Flame Edition', size: 'Colossal (3XL) 47"x24" (1200x600mm)', price: 54.99, sku: 'AXM-MAT-VOL-1200', isAvailable: true, image: '/images/products/axiom-mat-volcanic-flame-v9.jpg' },
-
-      // Option 3: Cyber Neon Mascot Edition
-      { id: 3121, color: 'Cyber Neon Mascot Edition', size: 'Medium (M) 14"x12" (360x300mm)', price: 19.99, sku: 'AXM-MAT-NEO-360', isAvailable: true, image: '/images/products/axiom-mat-cyber-neon-v9.jpg' },
-      { id: 3122, color: 'Cyber Neon Mascot Edition', size: 'Large (L) 18"x16" (450x400mm)', price: 26.99, sku: 'AXM-MAT-NEO-450', isAvailable: true, image: '/images/products/axiom-mat-cyber-neon-v9.jpg' },
-      { id: 3123, color: 'Cyber Neon Mascot Edition', size: 'Extended (XL) 31.5"x12" (800x300mm)', price: 34.99, sku: 'AXM-MAT-NEO-800', isAvailable: true, image: '/images/products/axiom-mat-cyber-neon-v9.jpg' },
-      { id: 3124, color: 'Cyber Neon Mascot Edition', size: 'Panoramic (2XL) 35.4"x16" (900x400mm)', price: 42.99, sku: 'AXM-MAT-NEO-900', isAvailable: true, image: '/images/products/axiom-mat-cyber-neon-v9.jpg' },
-      { id: 3125, color: 'Cyber Neon Mascot Edition', size: 'Colossal (3XL) 47"x24" (1200x600mm)', price: 54.99, sku: 'AXM-MAT-NEO-1200', isAvailable: true, image: '/images/products/axiom-mat-cyber-neon-v9.jpg' },
     ],
     isNew: true,
     material: 'Micro-Weave High-Density Cloth + Textured Natural Rubber Base',

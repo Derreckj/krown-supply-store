@@ -76,10 +76,8 @@ const PRODUCT_PACKS: ProductPack[] = [
     supplierRoute: 'Printify Verified (Spoke Custom / FYBY)',
     singleLogoCheck: 'PASS: Official Axiom Owl Display artwork. 4mm high-density natural rubber base + anti-fray lockstitched perimeter.',
     images: [
-      { title: '01 Studio Hero Desk Setup', src: '/images/products/axiom-mat-hero-desk-setup.jpg', caption: 'Battlestation setup with mechanical keyboard and mouse on official Axiom Owl Display mat.' },
-      { title: '02 Studio Panoramic Flat Lay', src: '/images/products/axiom-mat-display-flat-panoramic.jpg', caption: 'Panoramic desk mat displaying full edge-to-edge Axiom Owl Display artwork and black perimeter stitching.' },
-      { title: '03 Stitched Edge & Fabric Macro', src: '/images/products/axiom-mat-stitched-macro.jpg', caption: 'Extreme macro zoom of micro-weave cloth and precision black lockstitching.' },
-      { title: '04 Sizing & Pricing Matrix', src: '/images/products/axiom-mat-sizing-pricing-specs.jpg', caption: 'Comprehensive matrix for all 5 verified sizes: 14x12, 18x16, 31.5x12, 35.4x16, and 47x24.' }
+      { title: '01 Official Axiom Banner Mat', src: '/images/products/axiom-mat-original-banner-v9.jpg', caption: 'Official Axiom Banner (Green & Purple Flame) tournament desk mat.' },
+      { title: '02 Sizing & Pricing Matrix', src: '/images/products/axiom-mat-sizing-pricing-specs.jpg', caption: 'Comprehensive matrix for all 5 verified sizes: 14x12, 18x16, 31.5x12, 35.4x16, and 47x24.' }
     ]
   },
   {
