@@ -660,6 +660,10 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     printCost: 4.20,
     images: [
       '/images/products/axiom-mug-clean-photoreal-15oz-v3.jpg',
+      '/images/products/axiom-mug-desk-setup.jpg',
+      '/images/products/axiom-mug-lime-interior.jpg',
+      '/images/products/axiom-mug-crest-detail.jpg',
+      '/images/products/axiom-mug-specifications.jpg'
     ],
     variants: [
       { id: 701, color: 'Midnight Obsidian / Electric Lime Interior', size: '15 oz', price: 19.99, sku: 'AXM-MUG-15-LIME', isAvailable: true, image: '/images/products/axiom-mug-clean-photoreal-15oz-v3.jpg' },
@@ -703,10 +707,10 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     printCost: 4.50,
     images: [
       '/images/products/axiom-r112-leather-patch-charcoal.jpg',
-      '/images/products/axiom-r112-leather-patch-purple.jpg',
-      '/images/products/axiom-r112-leather-patch-lime.jpg',
-      '/images/products/axiom-headwear-collection-showcase.jpg',
-      '/images/products/axiom-hat-model-lookbook.jpg',
+      '/images/products/axiom-r112-worn-lifestyle.jpg',
+      '/images/products/axiom-r112-mesh-profile.jpg',
+      '/images/products/axiom-r112-leather-macro.jpg',
+      '/images/products/axiom-r112-supplier-specs.jpg'
     ],
     variants: [
       { id: 5101, color: 'Black / Charcoal Mesh', size: 'One Size (Adjustable Snapback)', price: 34.99, sku: 'AXM-R112-PAT-CHR', isAvailable: true },
@@ -752,6 +756,10 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     printCost: 3.50,
     images: [
       '/images/products/axiom-dad-hat-photoreal-v10.jpg',
+      '/images/products/axiom-dad-hat-worn-lookbook.jpg',
+      '/images/products/axiom-dad-hat-side-profile.jpg',
+      '/images/products/axiom-dad-hat-embroidery-macro.jpg',
+      '/images/products/axiom-dad-hat-closure-specs.jpg'
     ],
     variants: [
       { id: 5301, color: 'Vintage Washed Black', size: 'One Size (Adjustable Brass Slider)', price: 24.99, sku: 'AXM-DAD-WSH-BLK', isAvailable: true, image: '/images/products/axiom-dad-hat-photoreal-v10.jpg' },
@@ -796,10 +804,11 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     baseCost: 8.50,
     printCost: 4.00,
     images: [
-      '/images/products/axiom-mat-original-banner-v9.jpg',
-      '/images/products/axiom-mat-volcanic-flame-v9.jpg',
-      '/images/products/axiom-mat-cyber-neon-v9.jpg',
-      '/images/products/axiom-mat-original-banner-flat-v9.jpg',
+      '/images/products/axiom-mat-hero-desk-setup.jpg',
+      '/images/products/axiom-mat-design-a-tactical.jpg',
+      '/images/products/axiom-mat-design-b-sovereign.jpg',
+      '/images/products/axiom-mat-stitched-macro.jpg',
+      '/images/products/axiom-mat-sizing-pricing-specs.jpg'
     ],
     variants: [
       // Option 1: Official Axiom Banner (Green & Purple Flame)
@@ -839,6 +848,9 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     images: [
       '/images/products/axiom-sweatpants-pro-model-v10.jpg',
       '/images/products/axiom-sweatpants-pro-studio-v10.jpg',
+      '/images/products/axiom-joggers-waistband-detail.jpg',
+      '/images/products/axiom-joggers-fabric-macro.jpg',
+      '/images/products/axiom-joggers-core-vs-pro-specs.jpg'
     ],
     variants: [
       { id: 4101, color: 'Obsidian Black / Purple & Green Cords', size: 'S', price: 68.00, sku: 'AXM-SWP-PRO-S', isAvailable: true, image: '/images/products/axiom-sweatpants-pro-model-v10.jpg' },
@@ -914,6 +926,9 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     images: [
       '/images/products/axiom-crewneck-sweatshirt-studio.jpg',
       '/images/products/axiom-crewneck-sweatshirt-model.jpg',
+      '/images/products/axiom-crewneck-sleeve-detail.jpg',
+      '/images/products/axiom-crewneck-chest-macro.jpg',
+      '/images/products/axiom-crewneck-option-specs.jpg'
     ],
     variants: [
       { id: 4401, color: 'Obsidian Black / Team Purple & Lime', size: 'S', price: 49.99, sku: 'AXM-CRW-380-S', isAvailable: true },
@@ -926,40 +941,6 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     isNew: true,
     material: '380 GSM Heavyweight Brushed Cotton/Poly Fleece • V-Stitch Collar Accent',
     fit: 'Athletic Tailored Streetwear Fit with Heavy Ribbed Cuffs',
-  },
-  {
-    id: 'axiom-wrist-rest-01',
-    name: 'Axiom Pro Ergonomic Tournament Keyboard Wrist Rest',
-    slug: 'axiom-pro-cooling-gel-keyboard-wrist-rest',
-    description: 'HyperX-grade tournament ergonomic keyboard wrist rest engineered for marathon gaming sessions. Features a high-density contoured support core that conforms to your wrists. Wrapped in silky smooth, anti-friction lycra fabric with anti-fray royal purple & toxic green precision perimeter stitching, textured non-slip silicone rubber base, clean two-tone Gothic AXIOM ALLEGIANCE typography, and the official smoky Axiom Owl crest. Available in Compact 60%, Tenkeyless (TKL 80%), and Full-Size (100%).',
-    collection: 'AXA / Axiom Allegiance',
-    price: 19.99,
-    baseCost: 6.50,
-    printCost: 3.50,
-    images: [
-      '/images/products/axiom-wrist-rest-classic-green-v10.jpg',
-      '/images/products/axiom-wrist-rest-new-font-v10.jpg',
-      '/images/products/axiom-wrist-rest-stealth-v10.jpg',
-    ],
-    variants: [
-      // Option 1: Original Green Banner Edition (Classic Gothic Text)
-      { id: 4301, color: 'Original Green Banner Edition (Classic Gothic)', size: 'Compact 60% (11.4" x 2.9")', price: 19.99, sku: 'AXM-WRIST-GRN-60', isAvailable: true, image: '/images/products/axiom-wrist-rest-classic-green-v10.jpg' },
-      { id: 4302, color: 'Original Green Banner Edition (Classic Gothic)', size: 'Tenkeyless TKL 80% (14.2" x 2.9")', price: 21.99, sku: 'AXM-WRIST-GRN-TKL', isAvailable: true, image: '/images/products/axiom-wrist-rest-classic-green-v10.jpg' },
-      { id: 4303, color: 'Original Green Banner Edition (Classic Gothic)', size: 'Full-Size 100% (17.5" x 2.9")', price: 23.99, sku: 'AXM-WRIST-GRN-FULL', isAvailable: true, image: '/images/products/axiom-wrist-rest-classic-green-v10.jpg' },
-
-      // Option 2: Tournament Edition (New Esports Font & Crest)
-      { id: 4311, color: 'Tournament Edition (New Esports Font & Crest)', size: 'Compact 60% (11.4" x 2.9")', price: 19.99, sku: 'AXM-WRIST-NEW-60', isAvailable: true, image: '/images/products/axiom-wrist-rest-new-font-v10.jpg' },
-      { id: 4312, color: 'Tournament Edition (New Esports Font & Crest)', size: 'Tenkeyless TKL 80% (14.2" x 2.9")', price: 21.99, sku: 'AXM-WRIST-NEW-TKL', isAvailable: true, image: '/images/products/axiom-wrist-rest-new-font-v10.jpg' },
-      { id: 4313, color: 'Tournament Edition (New Esports Font & Crest)', size: 'Full-Size 100% (17.5" x 2.9")', price: 23.99, sku: 'AXM-WRIST-NEW-FULL', isAvailable: true, image: '/images/products/axiom-wrist-rest-new-font-v10.jpg' },
-
-      // Option 3: Stealth Blackout Edition
-      { id: 4321, color: 'Stealth Blackout Tournament Edition', size: 'Compact 60% (11.4" x 2.9")', price: 19.99, sku: 'AXM-WRIST-STL-60', isAvailable: true, image: '/images/products/axiom-wrist-rest-stealth-v10.jpg' },
-      { id: 4322, color: 'Stealth Blackout Tournament Edition', size: 'Tenkeyless TKL 80% (14.2" x 2.9")', price: 21.99, sku: 'AXM-WRIST-STL-TKL', isAvailable: true, image: '/images/products/axiom-wrist-rest-stealth-v10.jpg' },
-      { id: 4323, color: 'Stealth Blackout Tournament Edition', size: 'Full-Size 100% (17.5" x 2.9")', price: 23.99, sku: 'AXM-WRIST-STL-FULL', isAvailable: true, image: '/images/products/axiom-wrist-rest-stealth-v10.jpg' },
-    ],
-    isNew: true,
-    material: 'High-Density Ergonomic Contour Core + Silky Lycra Face + Non-Slip Silicone Base',
-    fit: 'Ergonomic Contoured 15° Slope (0.9" / 23mm Height)',
   },
 
   // ==========================================
@@ -976,8 +957,10 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     printCost: 4.00,
     images: [
       '/images/products/axiom-beanie-obsidian-lime-v11.jpg',
+      '/images/products/axiom-beanie-worn-lifestyle.jpg',
       '/images/products/axiom-beanie-purple-green-v11.jpg',
-      '/images/products/axiom-beanie-volcanic-v11.jpg',
+      '/images/products/axiom-beanie-ribknit-macro.jpg',
+      '/images/products/axiom-beanie-lineup-specs.jpg'
     ],
     variants: [
       { id: 4401, color: 'Midnight Obsidian / Toxic Green Owl Crest', size: 'One Size (OSFA)', price: 24.99, sku: 'AXM-BN-OBS-GRN', isAvailable: true, image: '/images/products/axiom-beanie-obsidian-lime-v11.jpg' },
@@ -1615,16 +1598,6 @@ export const PRINTIFY_SKU_CATALOG_MAPPINGS: Record<string, PrintifySkuMapping> =
     printProviderId: 29,
     variantMap: { 'S': 48201, 'M': 48202, 'L': 48203, 'XL': 48204, '2XL': 48205, '3XL': 48206 },
     category: 'Esports Apparel',
-  },
-  'axiom-wrist-rest-01': {
-    blueprintId: 920, // Ergonomic Memory Gel Keyboard Wrist Rest
-    printProviderId: 42,
-    variantMap: {
-      'Compact 60% (11.4" x 2.9")': 92001,
-      'Tenkeyless TKL 80% (14.2" x 2.9")': 92002,
-      'Full-Size 100% (17.5" x 2.9")': 92003,
-    },
-    category: 'Desk Accessories',
   },
   'axiom-mug-01': {
     blueprintId: 78, // Two-Tone 15oz Ceramic Mug

@@ -206,17 +206,17 @@ export default function Home() {
               </div>
             </Link>
 
-            <Link href="/products/axiom-wrist-rest-01" className={styles.gamingGearCard}>
+            <Link href="/products/axiom-shaker-01" className={styles.gamingGearCard}>
               <div className={styles.gamingGearThumb}>
                 <img 
-                  src="/images/products/axiom-keyboard-wrist-rest-clean-v4.jpg" 
-                  alt="Axiom Pro Ergonomic Tournament Keyboard Wrist Rest" 
+                  src="/images/products/axiom-shaker-lifestyle-desk.jpg" 
+                  alt="Axiom Allegiance Pro Loadout Shaker Bottle" 
                 />
-                <span className={styles.gearPill}>TOURNAMENT SPEC</span>
+                <span className={styles.gearPill}>24 OZ TRITAN</span>
               </div>
               <div className={styles.gamingGearBody}>
-                <h4>Axiom Pro Tournament Wrist Rest</h4>
-                <p>Ergonomic Slope • 60%, TKL &amp; Full • $19.99</p>
+                <h4>Axiom Pro Loadout Shaker Bottle</h4>
+                <p>BPA-Free Tritan • Leak-Proof Flip Cap • $24.99</p>
               </div>
             </Link>
 
