@@ -705,28 +705,32 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
   },
   {
     id: 'axiom-hoodie-01',
-    name: 'Axiom Allegiance Heavyweight 450 GSM Streetwear Hoodie',
-    slug: 'axiom-allegiance-heavyweight-streetwear-hoodie',
-    description: 'The definitive competitive streetwear hoodie for Axiom Allegiance. Built from ultra-heavyweight 450 GSM French terry cotton in midnight obsidian black. Features a structured double-layer hood, thick dual-tone braided drawstrings (royal purple & toxic neon green with matte metal aglets), spacious kangaroo pocket with reinforced stitching, heavy ribbed cuffs and hem, and high-density direct embroidery of the official Axiom Owl crest across the chest.',
+    name: 'Axiom Allegiance Legacy Owl Hoodie — Statement Edition',
+    slug: 'axiom-allegiance-legacy-owl-hoodie-statement-edition',
+    description: 'A bold reinterpretation of the Axiom Allegiance legacy. Built on a luxury 13.5 oz heavyweight fleece blank in solid black, this statement hoodie features an arched collegiate Axiom chest graphic over our signature owl, vertical left-sleeve typography, and an oversized back piece integrating the piercing eyes of the mascot with the complete humility motto.\n\nFinished with antique silver hardware, a double-lined fleece hood, and ribbed side panels for structural shape retention and authentic streetwear weight.',
     collection: 'AXA / Axiom Allegiance',
-    price: 74.99,
-    baseCost: 24.50,
-    printCost: 8.50,
+    price: 89.99,
+    baseCost: 38.50,
+    printCost: 14.50,
     images: [
       '/images/products/axiom-heavyweight-hoodie-studio-v8.jpg',
+      '/images/products/axiom-heavyweight-hoodie-front.jpg',
+      '/images/products/axiom-heavyweight-hoodie-back.jpg',
+      '/images/products/axiom-heavyweight-hoodie-sleeve-detail.jpg',
       '/images/products/axiom-heavyweight-hoodie-model-v8.jpg',
     ],
     variants: [
-      { id: 4301, color: 'Obsidian Black / Purple & Green Cords', size: 'S', price: 74.99, sku: 'AXM-HD-450-S', isAvailable: true, image: '/images/products/axiom-heavyweight-hoodie-studio-v8.jpg' },
-      { id: 4302, color: 'Obsidian Black / Purple & Green Cords', size: 'M', price: 74.99, sku: 'AXM-HD-450-M', isAvailable: true, image: '/images/products/axiom-heavyweight-hoodie-studio-v8.jpg' },
-      { id: 4303, color: 'Obsidian Black / Purple & Green Cords', size: 'L', price: 74.99, sku: 'AXM-HD-450-L', isAvailable: true, image: '/images/products/axiom-heavyweight-hoodie-studio-v8.jpg' },
-      { id: 4304, color: 'Obsidian Black / Purple & Green Cords', size: 'XL', price: 74.99, sku: 'AXM-HD-450-XL', isAvailable: true, image: '/images/products/axiom-heavyweight-hoodie-studio-v8.jpg' },
-      { id: 4305, color: 'Obsidian Black / Purple & Green Cords', size: '2XL', price: 74.99, sku: 'AXM-HD-450-2XL', isAvailable: true, image: '/images/products/axiom-heavyweight-hoodie-studio-v8.jpg' },
-      { id: 4306, color: 'Obsidian Black / Purple & Green Cords', size: '3XL', price: 79.99, sku: 'AXM-HD-450-3XL', isAvailable: true, image: '/images/products/axiom-heavyweight-hoodie-studio-v8.jpg' },
+      { id: 4300, color: 'Solid Black', size: 'XS', price: 89.99, sku: 'AXM-IND5000P-XS', isAvailable: true, image: '/images/products/axiom-heavyweight-hoodie-studio-v8.jpg' },
+      { id: 4301, color: 'Solid Black', size: 'S', price: 89.99, sku: 'AXM-IND5000P-S', isAvailable: true, image: '/images/products/axiom-heavyweight-hoodie-studio-v8.jpg' },
+      { id: 4302, color: 'Solid Black', size: 'M', price: 89.99, sku: 'AXM-IND5000P-M', isAvailable: true, image: '/images/products/axiom-heavyweight-hoodie-studio-v8.jpg' },
+      { id: 4303, color: 'Solid Black', size: 'L', price: 89.99, sku: 'AXM-IND5000P-L', isAvailable: true, image: '/images/products/axiom-heavyweight-hoodie-studio-v8.jpg' },
+      { id: 4304, color: 'Solid Black', size: 'XL', price: 89.99, sku: 'AXM-IND5000P-XL', isAvailable: true, image: '/images/products/axiom-heavyweight-hoodie-studio-v8.jpg' },
+      { id: 4305, color: 'Solid Black', size: '2XL', price: 94.99, sku: 'AXM-IND5000P-2XL', isAvailable: true, image: '/images/products/axiom-heavyweight-hoodie-studio-v8.jpg' },
+      { id: 4306, color: 'Solid Black', size: '3XL', price: 98.99, sku: 'AXM-IND5000P-3XL', isAvailable: true, image: '/images/products/axiom-heavyweight-hoodie-studio-v8.jpg' },
     ],
     isNew: true,
-    material: '450 GSM Heavyweight 100% French Terry Cotton • Dual-Tone Braided Cords',
-    fit: 'Modern Boxy Streetwear Cut with Heavyweight Structured Drop Shoulders',
+    material: 'Independent Trading Co. IND5000P 13.5 oz/yd² (450 gsm) • 70% Ring-Spun Cotton / 30% Polyester 3-End Fleece • 100% Cotton Face • Antique Silver Eyelets & Metal Tipped Drawcords',
+    fit: 'Generous Luxury Streetwear Fit • Heavyweight Double-Lined Hood • High-Definition 3-Location Direct-to-Garment (DTG) Inks',
   },
   {
     id: 'axiom-sweatshirt-01',
@@ -850,6 +854,8 @@ class PrintifyService {
         replacedMockIds.add('krown-stickers-01');
       } else if (nameLower.includes('crewneck') || nameLower.includes('sweatshirt')) {
         replacedMockIds.add('axiom-sweatshirt-01');
+      } else if (nameLower.includes('legacy owl hoodie') || (nameLower.includes('axiom') && nameLower.includes('hoodie'))) {
+        replacedMockIds.add('axiom-hoodie-01');
       }
     }
 
@@ -871,6 +877,7 @@ class PrintifyService {
       'krown-hoodie-premium': ['6ac80dff9f3e89dde70da38d', 'krown-heavyweight-streetwear-hoodie'],
       'krown-tee-cc1717': ['6ac7ed0b9bfbeab23800dcdf', 'krown-wear-the-krown-comfort-colors-1717'],
       'axiom-jersey-home': ['6ac80e034a1cdf2ad60e0bed', 'axiom-allegiance-axa-cut-and-sew-pro-esports-jersey'],
+      'axiom-hoodie-01': ['6acb99e5b310d6f6f60a3aa3', '6acb89b7b310d6f6f60a260a', 'axiom-allegiance-legacy-owl-hoodie', 'axiom-hoodie-01'],
       'axiom-sweatshirt-01': ['6acb288b7e3c0f166405e965', '6acb28893b1e860dda05860f', 'axiom-allegiance-legacy-owl-crewneck', 'axiom-sweatshirt-01'],
       'krown-mat-01': ['6ac7ed486443c9f27801af1b', 'axiom-owl-panoramic-gaming-desk-mat'],
       'krown-stickers-01': ['6ac7ed44fea4d4e68e0a0f80', '6ac7ed46ad560d80d10eb55c'],
@@ -1303,9 +1310,17 @@ export const PRINTIFY_SKU_CATALOG_MAPPINGS: Record<string, PrintifySkuMapping> =
     category: 'Drinkware',
   },
   'axiom-hoodie-01': {
-    blueprintId: 380, // Heavyweight Streetwear Hoodie
-    printProviderId: 16,
-    variantMap: { 'S': 3801, 'M': 3802, 'L': 3803, 'XL': 3804, '2XL': 3805, '3XL': 3806 },
+    blueprintId: 6998, // Independent Trading Co. IND5000P Heavyweight Hoodie
+    printProviderId: 217, // Fulfill Engine
+    variantMap: {
+      'XS': 303185,
+      'S': 303211,
+      'M': 303181,
+      'L': 303165,
+      'XL': 303167,
+      '2XL': 303200,
+      '3XL': 303171,
+    },
     category: 'Esports Apparel',
   },
   'axiom-sweatshirt-01': {

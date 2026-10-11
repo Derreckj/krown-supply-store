@@ -22,6 +22,22 @@ const PRODUCT_PACKS: ProductPack[] = [
   // 03 AXIOM ALLEGIANCE
   {
     division: '03_Axiom_Allegiance',
+    name: 'Axiom Allegiance Legacy Owl Hoodie — Statement Edition',
+    slug: 'axiom-hoodie-01',
+    productBlank: 'Independent Trading Co. IND5000P (13.5 oz/yd² Fleece, Solid Black)',
+    decorationMethod: 'Direct-to-Garment (DTG) 3-Location (Arched Chest + Hero Motto Back + Left Sleeve)',
+    supplierRoute: 'Printify Blueprint 6998 (Fulfill Engine) — Verified 3-Location DTG',
+    singleLogoCheck: 'PASS: Arched collegiate AXIOM with centered mascot on chest, full humility motto with glowing background owl eyes on back, and vertical sleeve typography.',
+    images: [
+      { title: '01 3-Way Studio Comparison', src: '/images/products/axiom-heavyweight-hoodie-studio-v8.jpg', caption: 'Clean 3-way studio comparison showing Front, Back, and Left Sleeve side-by-side on dark slate.' },
+      { title: '02 Front Arched Chest View', src: '/images/products/axiom-heavyweight-hoodie-front.jpg', caption: 'Centered front shot showcasing arched chest typography, owl, pocket clearance, and drawcord drop.' },
+      { title: '03 Back Hero Motto & Eyes View', src: '/images/products/axiom-heavyweight-hoodie-back.jpg', caption: 'Clean back shot displaying hood clearance above glowing eyes and complete humility motto.' },
+      { title: '04 Left Sleeve Detail', src: '/images/products/axiom-heavyweight-hoodie-sleeve-detail.jpg', caption: 'Close-up macro view of vertical sleeve lettering and cuff placement.' },
+      { title: '05 Streetwear Drape Lookbook', src: '/images/products/axiom-heavyweight-hoodie-model-v8.jpg', caption: 'Full streetwear drape illustrating true 13.5 oz fleece weight and print scale.' }
+    ]
+  },
+  {
+    division: '03_Axiom_Allegiance',
     name: 'Axiom Owl Two-Tone Ceramic Gaming Mug (15oz)',
     slug: 'axiom-mug-01',
     productBlank: 'Printify Blueprint 78 (15oz Two-Tone Ceramic Mug)',

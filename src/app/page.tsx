@@ -170,6 +170,20 @@ export default function Home() {
               </div>
             </Link>
 
+            <Link href="/products/axiom-hoodie-01" className={styles.gamingGearCard}>
+              <div className={styles.gamingGearThumb}>
+                <img 
+                  src="/images/products/axiom-heavyweight-hoodie-studio-v8.jpg" 
+                  alt="Axiom Allegiance Legacy Owl Hoodie — Statement Edition" 
+                />
+                <span className={styles.gearPill}>13.5 OZ FLEECE</span>
+              </div>
+              <div className={styles.gamingGearBody}>
+                <h4>Axiom Legacy Owl Hoodie</h4>
+                <p>3-Location DTG Statement Piece • $89.99</p>
+              </div>
+            </Link>
+
             <Link href="/products/axiom-shaker-01" className={styles.gamingGearCard}>
               <div className={styles.gamingGearThumb}>
                 <img 
