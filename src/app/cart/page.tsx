@@ -25,12 +25,19 @@ export default function CartPage() {
     if (!trimmed) return;
 
     const validated = validateDiscountCode(trimmed);
-    if (validated) {
-      setAppliedDiscount(validated);
-      setDiscountError(null);
-    } else {
-      setDiscountError('Invalid code. Please enter a valid Friends & Family discount code (e.g. KROWN10 or KROWN15).');
+    if (!validated) {
+      setDiscountError('Invalid discount code. Enter KROWN10.');
+      return;
     }
+
+    const testBreakdown = calculateCartDiscount(items, validated);
+    if (testBreakdown.errorMessage) {
+      setDiscountError(testBreakdown.errorMessage);
+      return;
+    }
+
+    setAppliedDiscount(validated);
+    setDiscountError(null);
   };
 
   const handleRemoveDiscount = () => {
@@ -211,7 +218,7 @@ export default function CartPage() {
 
           {appliedDiscount && (
             <div className="summary-row discount-row">
-              <span>Friends & Family Discount ({appliedDiscount.code} • {appliedDiscount.percentage}%)</span>
+              <span>Discount ({appliedDiscount.code} • 10% OFF)</span>
               <span>-${discountAmount.toFixed(2)}</span>
             </div>
           )}
@@ -255,7 +262,7 @@ export default function CartPage() {
               <span className="discount-title">🎁 Promo / Discount Code</span>
               {appliedDiscount && (
                 <span style={{ fontSize: '0.72rem', color: '#39FF14', fontWeight: 700 }}>
-                  {appliedDiscount.percentage}% OFF APPLIED
+                  10% OFF APPLIED
                 </span>
               )}
             </div>
@@ -265,7 +272,7 @@ export default function CartPage() {
                 <input
                   type="text"
                   className="discount-input"
-                  placeholder="Code (e.g. KROWN10, KROWN15)"
+                  placeholder="Promo Code (KROWN10)"
                   value={discountInput}
                   onChange={(e) => {
                     setDiscountInput(e.target.value);

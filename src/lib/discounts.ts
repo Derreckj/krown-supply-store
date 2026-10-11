@@ -1,3 +1,13 @@
+import { 
+  HARD_EXCLUDED_PRODUCT_IDS, 
+  ALLOWED_DISCOUNT_CATEGORIES, 
+  calculateKrown10Discount, 
+  CartLineItem 
+} from '@/config/discounts';
+
+export { HARD_EXCLUDED_PRODUCT_IDS, ALLOWED_DISCOUNT_CATEGORIES, calculateKrown10Discount };
+export type { CartLineItem };
+
 export interface DiscountCodeConfig {
   code: string;
   percentage: number;
@@ -5,45 +15,13 @@ export interface DiscountCodeConfig {
   description: string;
 }
 
+// Single active discount code across storefront
 export const VALID_DISCOUNT_CODES: Record<string, DiscountCodeConfig> = {
-  // 10% Off Friends & Family Codes
   'KROWN10': {
     code: 'KROWN10',
     percentage: 10,
-    label: '10% Friends & Family Discount',
-    description: '10% off entire order for KrowN friends & family',
-  },
-  'FAMILY10': {
-    code: 'FAMILY10',
-    percentage: 10,
-    label: '10% Friends & Family Discount',
-    description: '10% off entire order for KrowN friends & family',
-  },
-  'FRIENDS10': {
-    code: 'FRIENDS10',
-    percentage: 10,
-    label: '10% Friends & Family Discount',
-    description: '10% off entire order for KrowN friends & family',
-  },
-
-  // 15% Off Friends & Family Codes
-  'KROWN15': {
-    code: 'KROWN15',
-    percentage: 15,
-    label: '15% Friends & Family VIP Discount',
-    description: '15% off entire order for KrowN inner circle and VIP family',
-  },
-  'FAMILY15': {
-    code: 'FAMILY15',
-    percentage: 15,
-    label: '15% Friends & Family VIP Discount',
-    description: '15% off entire order for KrowN inner circle and VIP family',
-  },
-  'VIP15': {
-    code: 'VIP15',
-    percentage: 15,
-    label: '15% Friends & Family VIP Discount',
-    description: '15% off entire order for KrowN inner circle and VIP family',
+    label: '10% Storewide Discount',
+    description: '10% off eligible items',
   },
 };
 
@@ -57,10 +35,10 @@ export function validateDiscountCode(rawCode: string | null | undefined): Discou
  * Checks whether an item represents a custom hat from the configurator or catalogue.
  * Evaluates product ID, title/name, and variant specifications against trusted custom hat identifiers.
  */
-export function isCustomHatItem(item: { productId?: string; name?: string; variant?: { color?: string; size?: string } } | null | undefined): boolean {
+export function isCustomHatItem(item: { productId?: string; id?: string; name?: string; title?: string; variant?: { color?: string; size?: string } } | null | undefined): boolean {
   if (!item) return false;
-  const pid = (item.productId || '').toLowerCase();
-  const name = (item.name || '').toLowerCase();
+  const pid = (item.productId || item.id || '').toLowerCase();
+  const name = (item.name || item.title || '').toLowerCase();
   const color = (item.variant?.color || '').toLowerCase();
   const size = (item.variant?.size || '').toLowerCase();
 
@@ -89,55 +67,96 @@ export function isCustomHatItem(item: { productId?: string; name?: string; varia
   return false;
 }
 
+/**
+ * Checks if an item is strictly excluded from KROWN10 (e.g. axiom-hoodie-01 luxury 3-location DTG outerwear).
+ */
+export function isExcludedDiscountItem(item: { productId?: string; id?: string; name?: string; title?: string } | null | undefined): boolean {
+  if (!item) return false;
+  const pid = (item.productId || item.id || '').toLowerCase();
+  const name = (item.name || item.title || '').toLowerCase();
+
+  if (HARD_EXCLUDED_PRODUCT_IDS.some(id => pid === id.toLowerCase())) {
+    return true;
+  }
+  if (name.includes('axiom allegiance statement hoodie') || name.includes('statement hoodie 01') || (name.includes('hoodie') && pid.includes('hoodie'))) {
+    return true;
+  }
+  return false;
+}
+
 export interface CartDiscountBreakdown {
   cartTotal: number;
   discountableSubtotal: number;
+  excludedSubtotal: number;
   customHatSubtotal: number;
   discountAmount: number;
   finalTotal: number;
   hasCustomHats: boolean;
+  hasExcludedHoodie: boolean;
   hasEligibleItems: boolean;
+  errorMessage?: string | null;
 }
 
 /**
  * Computes exact breakdown of cart total, discountable portion, and promotional discount.
- * Custom hats are strictly excluded from promotional discounts (such as Krown10 and Krown15).
+ * Enforces KROWN10 single code with hard hoodie exclusion and custom hat exclusion.
  */
 export function calculateCartDiscount(
-  items: Array<{ productId?: string; name?: string; price: number; quantity: number; variant?: { color?: string; size?: string } }>,
+  items: Array<{ productId?: string; id?: string; name?: string; title?: string; price: number; quantity: number; variant?: { color?: string; size?: string } }>,
   discountConfig: DiscountCodeConfig | null | undefined
 ): CartDiscountBreakdown {
   let discountableSubtotal = 0;
+  let excludedSubtotal = 0;
   let customHatSubtotal = 0;
   let hasCustomHats = false;
+  let hasExcludedHoodie = false;
 
   for (const item of items) {
     const lineTotal = item.price * item.quantity;
-    if (isCustomHatItem(item)) {
+    const isHat = isCustomHatItem(item);
+    const isHoodie = isExcludedDiscountItem(item);
+
+    if (isHat) {
       hasCustomHats = true;
       customHatSubtotal += lineTotal;
+    } else if (isHoodie) {
+      hasExcludedHoodie = true;
+      excludedSubtotal += lineTotal;
     } else {
       discountableSubtotal += lineTotal;
     }
   }
 
-  const cartTotal = discountableSubtotal + customHatSubtotal;
+  const cartTotal = discountableSubtotal + excludedSubtotal + customHatSubtotal;
   const hasEligibleItems = discountableSubtotal > 0;
 
   let discountAmount = 0;
-  if (discountConfig && discountConfig.percentage > 0 && discountableSubtotal > 0) {
-    discountAmount = (discountableSubtotal * discountConfig.percentage) / 100;
+  let errorMessage: string | null = null;
+
+  if (discountConfig) {
+    if (discountConfig.code === 'KROWN10') {
+      if (discountableSubtotal > 0) {
+        discountAmount = Math.round(discountableSubtotal * 0.10 * 100) / 100;
+      } else if (hasExcludedHoodie) {
+        errorMessage = 'Discount cannot be applied to luxury 3-location DTG outerwear (Hoodie excluded).';
+      } else {
+        errorMessage = 'No eligible items found in cart for this discount.';
+      }
+    }
   }
 
-  const finalTotal = Math.max(0, cartTotal - discountAmount);
+  const finalTotal = Math.max(0, Math.round((cartTotal - discountAmount) * 100) / 100);
 
   return {
     cartTotal,
     discountableSubtotal,
+    excludedSubtotal,
     customHatSubtotal,
     discountAmount,
     finalTotal,
     hasCustomHats,
+    hasExcludedHoodie,
     hasEligibleItems,
+    errorMessage,
   };
 }
