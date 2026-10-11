@@ -228,3 +228,135 @@
   margin-top: var(--spacing-lg);
   padding: 1.25rem;
 }
+
+/* Promo / Discount Code Section */
+.discount-box {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 8px;
+}
+
+.discount-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.65rem;
+}
+
+.discount-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent-gold);
+}
+
+.discount-input-group {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.discount-input {
+  flex: 1;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.6rem 0.75rem;
+  color: var(--foreground);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.discount-input:focus {
+  border-color: var(--accent-gold);
+  box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.2);
+}
+
+.discount-apply-btn {
+  background: var(--accent-gold);
+  color: #0b0c10;
+  border: none;
+  border-radius: 4px;
+  padding: 0.6rem 1.1rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  transition: all 0.2s ease;
+}
+
+.discount-apply-btn:hover:not(:disabled) {
+  background: #e5be3c;
+  transform: translateY(-1px);
+}
+
+.discount-apply-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.discount-error-text {
+  margin-top: 0.45rem;
+  font-size: 0.75rem;
+  color: #ff6b6b;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.discount-applied-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.65rem 0.85rem;
+  background: rgba(57, 255, 20, 0.08);
+  border: 1px solid rgba(57, 255, 20, 0.35);
+  border-radius: 6px;
+}
+
+.discount-applied-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.discount-applied-code {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #39FF14;
+  letter-spacing: 0.06em;
+}
+
+.discount-applied-label {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.discount-remove-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--text-muted);
+  border-radius: 4px;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.72rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.discount-remove-btn:hover {
+  border-color: #ff6b6b;
+  color: #ff6b6b;
+}
+
+.summary-row.discount-row {
+  color: #39FF14;
+  font-weight: 600;
+}
+

@@ -1,12 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { stripe, isStripeConfigured } from '@/lib/stripe';
 import { CartItem } from '@/context/CartContext';
+import { validateDiscountCode } from '@/lib/discounts';
 
 export const dynamic = 'force-dynamic';
 
 export async function POST(req: NextRequest) {
   try {
-    const { items } = (await req.json()) as { items: CartItem[] };
+    const { items, discountCode } = (await req.json()) as { items: CartItem[]; discountCode?: string };
 
     if (!items || !Array.isArray(items) || items.length === 0) {
       return NextResponse.json(
@@ -15,14 +16,17 @@ export async function POST(req: NextRequest) {
       );
     }
 
+    const discount = validateDiscountCode(discountCode);
+
     const origin = req.headers.get('origin') || process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
 
     // When Stripe live credentials are not yet populated, provide smooth mock checkout testing
     if (!isStripeConfigured()) {
       console.warn('STRIPE_SECRET_KEY is not configured or using placeholder. Redirecting to mock success.');
       const mockSessionId = `mock_krown_session_${Date.now()}`;
+      const discountQuery = discount ? `&discount_code=${encodeURIComponent(discount.code)}&discount_pct=${discount.percentage}` : '';
       return NextResponse.json({
-        url: `${origin}/checkout/success?session_id=${mockSessionId}&mode=mock_sandbox`,
+        url: `${origin}/checkout/success?session_id=${mockSessionId}&mode=mock_sandbox${discountQuery}`,
         isMock: true,
       });
     }
@@ -39,6 +43,11 @@ export async function POST(req: NextRequest) {
       if (item.personalization?.notes) {
         descParts.push(`Upgrades: ${item.personalization.notes}`);
       }
+      if (discount) {
+        descParts.push(`Promo ${discount.code}: -${discount.percentage}% applied`);
+      }
+
+      const effectivePrice = discount ? item.price * (1 - discount.percentage / 100) : item.price;
 
       return {
         price_data: {
@@ -59,9 +68,11 @@ export async function POST(req: NextRequest) {
               player_number: item.personalization?.playerNumber || '',
               edition: item.personalization?.edition || item.variant.color,
               upgrades: item.personalization?.notes || '',
+              original_price: item.price.toFixed(2),
+              discount_code: discount?.code || '',
             },
           },
-          unit_amount: Math.round(item.price * 100), // Stripe expects amounts in cents
+          unit_amount: Math.round(effectivePrice * 100), // Stripe expects amounts in cents
         },
         quantity: item.quantity,
       };
@@ -74,10 +85,13 @@ export async function POST(req: NextRequest) {
         allowed_countries: ['US', 'CA'],
       },
       billing_address_collection: 'required',
-      success_url: `${origin}/checkout/success?session_id={CHECKOUT_SESSION_ID}`,
+      allow_promotion_codes: !discount, // If discount is already applied at cart, don't double discount
+      success_url: `${origin}/checkout/success?session_id={CHECKOUT_SESSION_ID}${discount ? `&discount_code=${encodeURIComponent(discount.code)}&discount_pct=${discount.percentage}` : ''}`,
       cancel_url: `${origin}/checkout/cancel`,
       metadata: {
         brand: 'KrowN Supply Co.',
+        discount_code: discount?.code || 'NONE',
+        discount_percentage: discount ? discount.percentage.toString() : '0',
         total_items: items.reduce((acc, it) => acc + it.quantity, 0).toString(),
         custom_orders: items
           .filter(i => i.personalization?.gamertag)

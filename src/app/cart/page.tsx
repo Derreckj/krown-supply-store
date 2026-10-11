@@ -3,12 +3,41 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { useCart } from '@/context/CartContext';
+import { validateDiscountCode, DiscountCodeConfig } from '@/lib/discounts';
 import './CartPage.css';
 
 export default function CartPage() {
   const { items, removeItem, updateQuantity, cartTotal } = useCart();
   const [isCheckingOut, setIsCheckingOut] = useState(false);
   const [checkoutError, setCheckoutError] = useState<string | null>(null);
+
+  // Friends & Family Discount Code State
+  const [discountInput, setDiscountInput] = useState('');
+  const [appliedDiscount, setAppliedDiscount] = useState<DiscountCodeConfig | null>(null);
+  const [discountError, setDiscountError] = useState<string | null>(null);
+
+  const discountAmount = appliedDiscount ? (cartTotal * appliedDiscount.percentage) / 100 : 0;
+  const finalTotal = Math.max(0, cartTotal - discountAmount);
+
+  const handleApplyDiscount = (e?: React.FormEvent) => {
+    if (e) e.preventDefault();
+    const trimmed = discountInput.trim();
+    if (!trimmed) return;
+
+    const validated = validateDiscountCode(trimmed);
+    if (validated) {
+      setAppliedDiscount(validated);
+      setDiscountError(null);
+    } else {
+      setDiscountError('Invalid code. Please enter a valid Friends & Family discount code (e.g. KROWN10 or KROWN15).');
+    }
+  };
+
+  const handleRemoveDiscount = () => {
+    setAppliedDiscount(null);
+    setDiscountInput('');
+    setDiscountError(null);
+  };
 
   const handleCheckout = async () => {
     try {
@@ -20,7 +49,10 @@ export default function CartPage() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ items }),
+        body: JSON.stringify({
+          items,
+          discountCode: appliedDiscount?.code,
+        }),
       });
 
       const data = await response.json();
@@ -161,13 +193,81 @@ export default function CartPage() {
             <span>Subtotal</span>
             <span>${cartTotal.toFixed(2)}</span>
           </div>
+
+          {appliedDiscount && (
+            <div className="summary-row discount-row">
+              <span>Friends & Family Discount ({appliedDiscount.code} • {appliedDiscount.percentage}%)</span>
+              <span>-${discountAmount.toFixed(2)}</span>
+            </div>
+          )}
+
           <div className="summary-row">
             <span>Estimated Shipping</span>
             <span className="text-muted">Calculated at Stripe Checkout</span>
           </div>
           <div className="summary-row summary-total">
             <span>Total</span>
-            <span>${cartTotal.toFixed(2)}</span>
+            <span style={{ color: appliedDiscount ? 'var(--accent-gold)' : undefined }}>
+              ${finalTotal.toFixed(2)}
+            </span>
+          </div>
+
+          {/* Friends & Family Discount Code Section */}
+          <div className="discount-box">
+            <div className="discount-header">
+              <span className="discount-title">🎁 Promo / Discount Code</span>
+              {appliedDiscount && (
+                <span style={{ fontSize: '0.72rem', color: '#39FF14', fontWeight: 700 }}>
+                  {appliedDiscount.percentage}% OFF APPLIED
+                </span>
+              )}
+            </div>
+
+            {!appliedDiscount ? (
+              <form onSubmit={handleApplyDiscount} className="discount-input-group">
+                <input
+                  type="text"
+                  className="discount-input"
+                  placeholder="Code (e.g. KROWN10, KROWN15)"
+                  value={discountInput}
+                  onChange={(e) => {
+                    setDiscountInput(e.target.value);
+                    if (discountError) setDiscountError(null);
+                  }}
+                  aria-label="Discount Code"
+                />
+                <button
+                  type="submit"
+                  className="discount-apply-btn"
+                  disabled={!discountInput.trim()}
+                >
+                  Apply
+                </button>
+              </form>
+            ) : (
+              <div className="discount-applied-card">
+                <div className="discount-applied-info">
+                  <span className="discount-applied-code">✓ {appliedDiscount.code} APPLIED</span>
+                  <span className="discount-applied-label">
+                    {appliedDiscount.label} • Saving ${discountAmount.toFixed(2)}
+                  </span>
+                </div>
+                <button
+                  type="button"
+                  className="discount-remove-btn"
+                  onClick={handleRemoveDiscount}
+                  aria-label="Remove discount code"
+                >
+                  Remove
+                </button>
+              </div>
+            )}
+
+            {discountError && (
+              <div className="discount-error-text">
+                ⚠️ {discountError}
+              </div>
+            )}
           </div>
 
           <div style={{
@@ -175,7 +275,7 @@ export default function CartPage() {
             border: '1px solid rgba(212, 175, 55, 0.25)',
             borderRadius: '6px',
             padding: '0.65rem 0.85rem',
-            marginTop: '1.25rem',
+            marginTop: '0.5rem',
             marginBottom: '1rem',
             fontSize: '0.8rem',
             color: 'var(--accent-gold)',

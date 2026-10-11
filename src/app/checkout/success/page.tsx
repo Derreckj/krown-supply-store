@@ -10,6 +10,8 @@ function SuccessContent() {
   const searchParams = useSearchParams();
   const sessionId = searchParams.get('session_id');
   const isMock = searchParams.get('mode') === 'mock_sandbox';
+  const discountCode = searchParams.get('discount_code');
+  const discountPct = searchParams.get('discount_pct');
   const { clearCart } = useCart();
 
   useEffect(() => {
@@ -30,6 +32,23 @@ function SuccessContent() {
         <span className="brand-badge">KrowN Supply Co.</span>
         <h1>Order Confirmed</h1>
         <p className="status-tagline">WEAR THE KROWN.</p>
+
+        {discountCode && (
+          <div style={{
+            background: 'rgba(57, 255, 20, 0.08)',
+            border: '1px solid rgba(57, 255, 20, 0.35)',
+            borderRadius: '6px',
+            padding: '0.6rem 0.85rem',
+            margin: '0.85rem auto 1.25rem auto',
+            maxWidth: '420px',
+            fontSize: '0.82rem',
+            color: '#39FF14',
+            textAlign: 'center',
+            fontWeight: 600
+          }}>
+            🎁 Friends & Family Discount Applied: <strong>{discountCode}</strong> ({discountPct}% OFF)
+          </div>
+        )}
 
         <p className="status-description">
           Thank you for joining the Reign. Your order has been placed into our production queue.
