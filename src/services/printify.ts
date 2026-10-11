@@ -751,12 +751,12 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     baseCost: 9.00,
     printCost: 3.50,
     images: [
-      '/images/products/axiom-dad-hat-photoreal-v6.jpg',
+      '/images/products/axiom-dad-hat-photoreal-v10.jpg',
     ],
     variants: [
-      { id: 5301, color: 'Vintage Washed Black', size: 'One Size (Adjustable Brass Slider)', price: 24.99, sku: 'AXM-DAD-WSH-BLK', isAvailable: true, image: '/images/products/axiom-dad-hat-photoreal-v6.jpg' },
-      { id: 5302, color: 'Midnight Dark Purple', size: 'One Size (Adjustable Brass Slider)', price: 24.99, sku: 'AXM-DAD-WSH-PRP', isAvailable: true, image: '/images/products/axiom-dad-hat-photoreal-v6.jpg' },
-      { id: 5303, color: 'Dark Charcoal Slate', size: 'One Size (Adjustable Brass Slider)', price: 24.99, sku: 'AXM-DAD-WSH-CHR', isAvailable: true, image: '/images/products/axiom-dad-hat-photoreal-v6.jpg' },
+      { id: 5301, color: 'Vintage Washed Black', size: 'One Size (Adjustable Brass Slider)', price: 24.99, sku: 'AXM-DAD-WSH-BLK', isAvailable: true, image: '/images/products/axiom-dad-hat-photoreal-v10.jpg' },
+      { id: 5302, color: 'Midnight Dark Purple', size: 'One Size (Adjustable Brass Slider)', price: 24.99, sku: 'AXM-DAD-WSH-PRP', isAvailable: true, image: '/images/products/axiom-dad-hat-photoreal-v10.jpg' },
+      { id: 5303, color: 'Dark Charcoal Slate', size: 'One Size (Adjustable Brass Slider)', price: 24.99, sku: 'AXM-DAD-WSH-CHR', isAvailable: true, image: '/images/products/axiom-dad-hat-photoreal-v10.jpg' },
     ],
     isNew: true,
     material: '100% Garment-Washed Cotton Chino Twill • Antique Brass Buckle Closure',
@@ -837,16 +837,16 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     baseCost: 22.00,
     printCost: 7.00,
     images: [
-      '/images/products/axiom-sweatpants-pro-model-v8.jpg',
-      '/images/products/axiom-sweatpants-pro-studio-v8.jpg',
+      '/images/products/axiom-sweatpants-pro-model-v10.jpg',
+      '/images/products/axiom-sweatpants-pro-studio-v10.jpg',
     ],
     variants: [
-      { id: 4101, color: 'Obsidian Black / Purple & Green Cords', size: 'S', price: 68.00, sku: 'AXM-SWP-PRO-S', isAvailable: true, image: '/images/products/axiom-sweatpants-pro-model-v8.jpg' },
-      { id: 4102, color: 'Obsidian Black / Purple & Green Cords', size: 'M', price: 68.00, sku: 'AXM-SWP-PRO-M', isAvailable: true, image: '/images/products/axiom-sweatpants-pro-model-v8.jpg' },
-      { id: 4103, color: 'Obsidian Black / Purple & Green Cords', size: 'L', price: 68.00, sku: 'AXM-SWP-PRO-L', isAvailable: true, image: '/images/products/axiom-sweatpants-pro-model-v8.jpg' },
-      { id: 4104, color: 'Obsidian Black / Purple & Green Cords', size: 'XL', price: 68.00, sku: 'AXM-SWP-PRO-XL', isAvailable: true, image: '/images/products/axiom-sweatpants-pro-model-v8.jpg' },
-      { id: 4105, color: 'Obsidian Black / Purple & Green Cords', size: '2XL', price: 68.00, sku: 'AXM-SWP-PRO-2XL', isAvailable: true, image: '/images/products/axiom-sweatpants-pro-model-v8.jpg' },
-      { id: 4106, color: 'Obsidian Black / Purple & Green Cords', size: '3XL', price: 74.00, sku: 'AXM-SWP-PRO-3XL', isAvailable: true, image: '/images/products/axiom-sweatpants-pro-model-v8.jpg' },
+      { id: 4101, color: 'Obsidian Black / Purple & Green Cords', size: 'S', price: 68.00, sku: 'AXM-SWP-PRO-S', isAvailable: true, image: '/images/products/axiom-sweatpants-pro-model-v10.jpg' },
+      { id: 4102, color: 'Obsidian Black / Purple & Green Cords', size: 'M', price: 68.00, sku: 'AXM-SWP-PRO-M', isAvailable: true, image: '/images/products/axiom-sweatpants-pro-model-v10.jpg' },
+      { id: 4103, color: 'Obsidian Black / Purple & Green Cords', size: 'L', price: 68.00, sku: 'AXM-SWP-PRO-L', isAvailable: true, image: '/images/products/axiom-sweatpants-pro-model-v10.jpg' },
+      { id: 4104, color: 'Obsidian Black / Purple & Green Cords', size: 'XL', price: 68.00, sku: 'AXM-SWP-PRO-XL', isAvailable: true, image: '/images/products/axiom-sweatpants-pro-model-v10.jpg' },
+      { id: 4105, color: 'Obsidian Black / Purple & Green Cords', size: '2XL', price: 68.00, sku: 'AXM-SWP-PRO-2XL', isAvailable: true, image: '/images/products/axiom-sweatpants-pro-model-v10.jpg' },
+      { id: 4106, color: 'Obsidian Black / Purple & Green Cords', size: '3XL', price: 74.00, sku: 'AXM-SWP-PRO-3XL', isAvailable: true, image: '/images/products/axiom-sweatpants-pro-model-v10.jpg' },
     ],
     isNew: true,
     material: '450 GSM Ultra-Heavyweight 100% French Terry Cotton • Dual-Tone Cords',
@@ -937,25 +937,25 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     baseCost: 6.50,
     printCost: 3.50,
     images: [
-      '/images/products/axiom-wrist-rest-classic-green-v9.jpg',
-      '/images/products/axiom-wrist-rest-new-font-v9.jpg',
-      '/images/products/axiom-wrist-rest-stealth-v9.jpg',
+      '/images/products/axiom-wrist-rest-classic-green-v10.jpg',
+      '/images/products/axiom-wrist-rest-new-font-v10.jpg',
+      '/images/products/axiom-wrist-rest-stealth-v10.jpg',
     ],
     variants: [
       // Option 1: Original Green Banner Edition (Classic Gothic Text)
-      { id: 4301, color: 'Original Green Banner Edition (Classic Gothic)', size: 'Compact 60% (11.4" x 2.9")', price: 19.99, sku: 'AXM-WRIST-GRN-60', isAvailable: true, image: '/images/products/axiom-wrist-rest-classic-green-v9.jpg' },
-      { id: 4302, color: 'Original Green Banner Edition (Classic Gothic)', size: 'Tenkeyless TKL 80% (14.2" x 2.9")', price: 21.99, sku: 'AXM-WRIST-GRN-TKL', isAvailable: true, image: '/images/products/axiom-wrist-rest-classic-green-v9.jpg' },
-      { id: 4303, color: 'Original Green Banner Edition (Classic Gothic)', size: 'Full-Size 100% (17.5" x 2.9")', price: 23.99, sku: 'AXM-WRIST-GRN-FULL', isAvailable: true, image: '/images/products/axiom-wrist-rest-classic-green-v9.jpg' },
+      { id: 4301, color: 'Original Green Banner Edition (Classic Gothic)', size: 'Compact 60% (11.4" x 2.9")', price: 19.99, sku: 'AXM-WRIST-GRN-60', isAvailable: true, image: '/images/products/axiom-wrist-rest-classic-green-v10.jpg' },
+      { id: 4302, color: 'Original Green Banner Edition (Classic Gothic)', size: 'Tenkeyless TKL 80% (14.2" x 2.9")', price: 21.99, sku: 'AXM-WRIST-GRN-TKL', isAvailable: true, image: '/images/products/axiom-wrist-rest-classic-green-v10.jpg' },
+      { id: 4303, color: 'Original Green Banner Edition (Classic Gothic)', size: 'Full-Size 100% (17.5" x 2.9")', price: 23.99, sku: 'AXM-WRIST-GRN-FULL', isAvailable: true, image: '/images/products/axiom-wrist-rest-classic-green-v10.jpg' },
 
       // Option 2: Tournament Edition (New Esports Font & Crest)
-      { id: 4311, color: 'Tournament Edition (New Esports Font & Crest)', size: 'Compact 60% (11.4" x 2.9")', price: 19.99, sku: 'AXM-WRIST-NEW-60', isAvailable: true, image: '/images/products/axiom-wrist-rest-new-font-v9.jpg' },
-      { id: 4312, color: 'Tournament Edition (New Esports Font & Crest)', size: 'Tenkeyless TKL 80% (14.2" x 2.9")', price: 21.99, sku: 'AXM-WRIST-NEW-TKL', isAvailable: true, image: '/images/products/axiom-wrist-rest-new-font-v9.jpg' },
-      { id: 4313, color: 'Tournament Edition (New Esports Font & Crest)', size: 'Full-Size 100% (17.5" x 2.9")', price: 23.99, sku: 'AXM-WRIST-NEW-FULL', isAvailable: true, image: '/images/products/axiom-wrist-rest-new-font-v9.jpg' },
+      { id: 4311, color: 'Tournament Edition (New Esports Font & Crest)', size: 'Compact 60% (11.4" x 2.9")', price: 19.99, sku: 'AXM-WRIST-NEW-60', isAvailable: true, image: '/images/products/axiom-wrist-rest-new-font-v10.jpg' },
+      { id: 4312, color: 'Tournament Edition (New Esports Font & Crest)', size: 'Tenkeyless TKL 80% (14.2" x 2.9")', price: 21.99, sku: 'AXM-WRIST-NEW-TKL', isAvailable: true, image: '/images/products/axiom-wrist-rest-new-font-v10.jpg' },
+      { id: 4313, color: 'Tournament Edition (New Esports Font & Crest)', size: 'Full-Size 100% (17.5" x 2.9")', price: 23.99, sku: 'AXM-WRIST-NEW-FULL', isAvailable: true, image: '/images/products/axiom-wrist-rest-new-font-v10.jpg' },
 
       // Option 3: Stealth Blackout Edition
-      { id: 4321, color: 'Stealth Blackout Tournament Edition', size: 'Compact 60% (11.4" x 2.9")', price: 19.99, sku: 'AXM-WRIST-STL-60', isAvailable: true, image: '/images/products/axiom-wrist-rest-stealth-v9.jpg' },
-      { id: 4322, color: 'Stealth Blackout Tournament Edition', size: 'Tenkeyless TKL 80% (14.2" x 2.9")', price: 21.99, sku: 'AXM-WRIST-STL-TKL', isAvailable: true, image: '/images/products/axiom-wrist-rest-stealth-v9.jpg' },
-      { id: 4323, color: 'Stealth Blackout Tournament Edition', size: 'Full-Size 100% (17.5" x 2.9")', price: 23.99, sku: 'AXM-WRIST-STL-FULL', isAvailable: true, image: '/images/products/axiom-wrist-rest-stealth-v9.jpg' },
+      { id: 4321, color: 'Stealth Blackout Tournament Edition', size: 'Compact 60% (11.4" x 2.9")', price: 19.99, sku: 'AXM-WRIST-STL-60', isAvailable: true, image: '/images/products/axiom-wrist-rest-stealth-v10.jpg' },
+      { id: 4322, color: 'Stealth Blackout Tournament Edition', size: 'Tenkeyless TKL 80% (14.2" x 2.9")', price: 21.99, sku: 'AXM-WRIST-STL-TKL', isAvailable: true, image: '/images/products/axiom-wrist-rest-stealth-v10.jpg' },
+      { id: 4323, color: 'Stealth Blackout Tournament Edition', size: 'Full-Size 100% (17.5" x 2.9")', price: 23.99, sku: 'AXM-WRIST-STL-FULL', isAvailable: true, image: '/images/products/axiom-wrist-rest-stealth-v10.jpg' },
     ],
     isNew: true,
     material: 'High-Density Ergonomic Contour Core + Silky Lycra Face + Non-Slip Silicone Base',
@@ -975,14 +975,14 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     baseCost: 7.50,
     printCost: 4.00,
     images: [
-      '/images/products/axiom-beanie-obsidian-lime-v9.jpg',
-      '/images/products/axiom-beanie-purple-green-v9.jpg',
-      '/images/products/axiom-beanie-volcanic-v9.jpg',
+      '/images/products/axiom-beanie-obsidian-lime-v10.jpg',
+      '/images/products/axiom-beanie-purple-green-v10.jpg',
+      '/images/products/axiom-beanie-volcanic-v10.jpg',
     ],
     variants: [
-      { id: 4401, color: 'Midnight Obsidian / Toxic Green Owl Crest', size: 'One Size (OSFA)', price: 24.99, sku: 'AXM-BN-OBS-GRN', isAvailable: true, image: '/images/products/axiom-beanie-obsidian-lime-v9.jpg' },
-      { id: 4402, color: 'Royal Purple & Electric Green Dual-Tone', size: 'One Size (OSFA)', price: 24.99, sku: 'AXM-BN-PRP-GRN', isAvailable: true, image: '/images/products/axiom-beanie-purple-green-v9.jpg' },
-      { id: 4403, color: 'Volcanic Crimson / Ember Owl Crest', size: 'One Size (OSFA)', price: 24.99, sku: 'AXM-BN-VOL-RED', isAvailable: true, image: '/images/products/axiom-beanie-volcanic-v9.jpg' },
+      { id: 4401, color: 'Midnight Obsidian / Toxic Green Owl Crest', size: 'One Size (OSFA)', price: 24.99, sku: 'AXM-BN-OBS-GRN', isAvailable: true, image: '/images/products/axiom-beanie-obsidian-lime-v10.jpg' },
+      { id: 4402, color: 'Royal Purple & Electric Green Dual-Tone', size: 'One Size (OSFA)', price: 24.99, sku: 'AXM-BN-PRP-GRN', isAvailable: true, image: '/images/products/axiom-beanie-purple-green-v10.jpg' },
+      { id: 4403, color: 'Volcanic Crimson / Ember Owl Crest', size: 'One Size (OSFA)', price: 24.99, sku: 'AXM-BN-VOL-RED', isAvailable: true, image: '/images/products/axiom-beanie-volcanic-v10.jpg' },
     ],
     isNew: true,
     material: '100% Hypoallergenic Acrylic • High-Density Direct Embroidery',
@@ -998,10 +998,10 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     baseCost: 2.10,
     printCost: 1.80,
     images: [
-      '/images/products/axiom-stickers-holographic-battle-pack-v4.jpg',
+      '/images/products/axiom-stickers-holographic-battle-pack-v10.jpg',
     ],
     variants: [
-      { id: 501, color: 'Axiom Holographic 5-Pack', size: '5-Pack', price: 12.99, sku: 'AXM-STK-HOLO-PK5', isAvailable: true, image: '/images/products/axiom-stickers-holographic-battle-pack-v4.jpg' }
+      { id: 501, color: 'Axiom Holographic 5-Pack', size: '5-Pack', price: 12.99, sku: 'AXM-STK-HOLO-PK5', isAvailable: true, image: '/images/products/axiom-stickers-holographic-battle-pack-v10.jpg' }
     ],
     material: '6 mil Thick Weatherproof Holographic Vinyl with UV Shield',
     fit: '3" to 4" Widths',
