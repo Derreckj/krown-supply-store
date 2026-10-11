@@ -29,11 +29,7 @@ const PRODUCT_PACKS: ProductPack[] = [
     supplierRoute: 'Printify Verified (District Photo / SPO)',
     singleLogoCheck: 'PASS: Exactly ONE authentic Axiom Owl mascot centered on mug face with glossy cylindrical reflections. Zero doubled horn outlines, zero ghosting.',
     images: [
-      { title: '01 Studio Hero Front', src: '/images/products/axiom-mug-clean-photoreal-15oz-v3.jpg', caption: 'Clean studio presentation showing single authentic owl crest and centered typography.' },
-      { title: '02 Battlestation Desk Setup', src: '/images/products/axiom-mug-desk-setup.jpg', caption: 'In-use battlestation desk setup with ambient purple lighting and tournament desk pad.' },
-      { title: '03 Lime Glaze Interior Angle', src: '/images/products/axiom-mug-lime-interior.jpg', caption: 'Angled view highlighting the vibrant electric lime interior glaze and ergonomic handle.' },
-      { title: '04 Crest & Glaze Macro', src: '/images/products/axiom-mug-crest-detail.jpg', caption: 'Macro zoom proving zero doubled lines, crisp original vector geometry, and glossy specular glaze.' },
-      { title: '05 Scale & Specifications', src: '/images/products/axiom-mug-specifications.jpg', caption: 'Product dimension specifications: 15 oz capacity, dishwasher & microwave safe.' }
+      { title: '01 Battlestation Desk Setup (Single Official Owl)', src: '/images/products/axiom-mug-single-owl-official.jpg', caption: 'Single authentic Axiom Owl esports crest centered on midnight obsidian ceramic mug. Zero doubled horn outlines, zero ghosting.' }
     ]
   },
   {

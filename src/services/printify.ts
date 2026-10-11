@@ -578,15 +578,11 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     baseCost: 5.80,
     printCost: 4.20,
     images: [
-      '/images/products/axiom-mug-clean-photoreal-15oz-v3.jpg',
-      '/images/products/axiom-mug-desk-setup.jpg',
-      '/images/products/axiom-mug-lime-interior.jpg',
-      '/images/products/axiom-mug-crest-detail.jpg',
-      '/images/products/axiom-mug-specifications.jpg'
+      '/images/products/axiom-mug-single-owl-official.jpg'
     ],
     variants: [
-      { id: 701, color: 'Midnight Obsidian / Electric Lime Interior', size: '15 oz', price: 19.99, sku: 'AXM-MUG-15-LIME', isAvailable: true, image: '/images/products/axiom-mug-clean-photoreal-15oz-v3.jpg' },
-      { id: 702, color: 'Midnight Obsidian / Royal Purple Interior', size: '15 oz', price: 19.99, sku: 'AXM-MUG-15-PRP', isAvailable: true, image: '/images/products/axiom-mug-clean-photoreal-15oz-v3.jpg' }
+      { id: 701, color: 'Midnight Obsidian / Electric Lime Interior', size: '15 oz', price: 19.99, sku: 'AXM-MUG-15-LIME', isAvailable: true, image: '/images/products/axiom-mug-single-owl-official.jpg' },
+      { id: 702, color: 'Midnight Obsidian / Royal Purple Interior', size: '15 oz', price: 19.99, sku: 'AXM-MUG-15-PRP', isAvailable: true, image: '/images/products/axiom-mug-single-owl-official.jpg' }
     ],
     isNew: true,
     material: '100% High-Grade Durable Ceramic • Gloss Finish',
@@ -1013,6 +1009,10 @@ class PrintifyService {
         productImages = [
           '/images/products/axiom-owl-banner-v10-official.png',
           '/images/products/axiom-mat-sizing-pricing-specs.jpg',
+        ];
+      } else if (titleLower.includes('mug')) {
+        productImages = [
+          '/images/products/axiom-mug-single-owl-official.jpg',
         ];
       } else if (titleLower.includes('comfort colors') || titleLower.includes('1717')) {
         productImages = [

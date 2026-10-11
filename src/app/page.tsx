@@ -223,7 +223,7 @@ export default function Home() {
             <Link href="/products/axiom-mug-01" className={styles.gamingGearCard}>
               <div className={styles.gamingGearThumb}>
                 <img 
-                  src="/images/products/axiom-mug-clean-photoreal-15oz-v3.jpg" 
+                  src="/images/products/axiom-mug-single-owl-official.jpg" 
                   alt="Axiom Owl Two-Tone Ceramic Gaming Mug" 
                 />
                 <span className={styles.gearPill}>15 OZ CERAMIC</span>
