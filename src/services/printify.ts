@@ -626,10 +626,11 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     baseCost: 13.50,
     printCost: 4.50,
     images: [
+      '/images/products/axiom-r112-leather-patch-snapback.jpg',
       '/images/products/axiom-r112-leather-patch-charcoal.jpg'
     ],
     variants: [
-      { id: 5101, color: 'Black / Charcoal Mesh', size: 'One Size (Adjustable Snapback)', price: 34.99, sku: 'AXM-R112-PAT-CHR', isAvailable: true, image: '/images/products/axiom-r112-leather-patch-charcoal.jpg' },
+      { id: 5101, color: 'Black / Charcoal Mesh', size: 'One Size (Adjustable Snapback)', price: 34.99, sku: 'AXM-R112-PAT-CHR', isAvailable: true, image: '/images/products/axiom-r112-leather-patch-snapback.jpg' },
     ],
     isNew: true,
     material: '60% Cotton / 40% Polyester Twill + 100% Poly Mesh • 100% Full-Grain Cowhide Leather Patch',
