@@ -7,7 +7,11 @@ export const dynamic = 'force-dynamic';
 
 export async function POST(req: NextRequest) {
   try {
-    const { items, discountCode } = (await req.json()) as { items: CartItem[]; discountCode?: string };
+    const { items, discountCode, customerEmail } = (await req.json()) as { 
+      items: CartItem[]; 
+      discountCode?: string;
+      customerEmail?: string;
+    };
 
     if (!items || !Array.isArray(items) || items.length === 0) {
       return NextResponse.json(
@@ -81,6 +85,10 @@ export async function POST(req: NextRequest) {
     const session = await stripe.checkout.sessions.create({
       line_items,
       mode: 'payment',
+      customer_email: customerEmail || undefined,
+      invoice_creation: {
+        enabled: true,
+      },
       shipping_address_collection: {
         allowed_countries: ['US', 'CA'],
       },

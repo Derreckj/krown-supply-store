@@ -1322,9 +1322,18 @@ export const PRINTIFY_SKU_CATALOG_MAPPINGS: Record<string, PrintifySkuMapping> =
     category: 'Esports Apparel',
   },
   'axiom-sweatshirt-01': {
-    blueprintId: 312, // Heavyweight Fleece Crewneck
-    printProviderId: 16,
-    variantMap: { 'S': 3121, 'M': 3122, 'L': 3123, 'XL': 3124, '2XL': 3125, '3XL': 3126 },
+    blueprintId: 49, // Gildan 18000 Heavy Blend Crewneck Sweatshirt
+    printProviderId: 99, // Printify Choice
+    variantMap: {
+      'S': 25397,
+      'M': 25428,
+      'L': 25459,
+      'XL': 25490,
+      '2XL': 25521,
+      '3XL': 25552,
+      '4XL': 25583,
+      '5XL': 25614,
+    },
     category: 'Esports Apparel',
   },
   'axiom-r112-patch-01': {
