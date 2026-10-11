@@ -45,11 +45,7 @@ const PRODUCT_PACKS: ProductPack[] = [
     supplierRoute: 'Specialized Contract Supplier (Lone Star Leather / CustomCaps / Richardson Direct Decorator)',
     singleLogoCheck: 'PASS: Exactly ONE laser-debossed Axiom Owl housed in hexagonal full-grain leather patch with perimeter saddle stitching. Monochromatic deboss truthfully presented.',
     images: [
-      { title: '01 Studio Hero Cognac Patch', src: '/images/products/axiom-r112-leather-patch-charcoal.jpg', caption: 'Structured charcoal/black Richardson 112 with genuine cognac leather patch.' },
-      { title: '02 Worn Outdoor Lifestyle', src: '/images/products/axiom-r112-worn-lifestyle.jpg', caption: 'Outdoor lifestyle view showcasing structured mid-profile silhouette and contrast stitching.' },
-      { title: '03 Trucker Mesh Profile', src: '/images/products/axiom-r112-mesh-profile.jpg', caption: 'Breathable nylon mesh rear panels and adjustable heavy-duty snapback closure.' },
-      { title: '04 Leather Grain Macro', src: '/images/products/axiom-r112-leather-macro.jpg', caption: 'Close-up macro of natural full-grain leather texture, burnt-edge laser relief, and saddle stitching.' },
-      { title: '05 Supplier & Material Specs', src: '/images/products/axiom-r112-supplier-specs.jpg', caption: 'Authentic blank disclosure: 60/40 cotton-poly front, nylon mesh back, industrial thermo-bonded patch.' }
+      { title: '01 Official Leather Patch Snapback', src: '/images/products/axiom-r112-leather-patch-charcoal.jpg', caption: 'Structured charcoal/black Richardson 112 with genuine hexagonal debossed leather patch.' }
     ]
   },
   {

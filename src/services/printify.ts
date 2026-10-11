@@ -625,16 +625,10 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     baseCost: 13.50,
     printCost: 4.50,
     images: [
-      '/images/products/axiom-r112-leather-patch-charcoal.jpg',
-      '/images/products/axiom-r112-worn-lifestyle.jpg',
-      '/images/products/axiom-r112-mesh-profile.jpg',
-      '/images/products/axiom-r112-leather-macro.jpg',
-      '/images/products/axiom-r112-supplier-specs.jpg'
+      '/images/products/axiom-r112-leather-patch-charcoal.jpg'
     ],
     variants: [
-      { id: 5101, color: 'Black / Charcoal Mesh', size: 'One Size (Adjustable Snapback)', price: 34.99, sku: 'AXM-R112-PAT-CHR', isAvailable: true },
-      { id: 5102, color: 'Black / Royal Purple Mesh', size: 'One Size (Adjustable Snapback)', price: 34.99, sku: 'AXM-R112-PAT-PRP', isAvailable: true },
-      { id: 5103, color: 'Black / Toxic Green Mesh', size: 'One Size (Adjustable Snapback)', price: 34.99, sku: 'AXM-R112-PAT-LIME', isAvailable: true },
+      { id: 5101, color: 'Black / Charcoal Mesh', size: 'One Size (Adjustable Snapback)', price: 34.99, sku: 'AXM-R112-PAT-CHR', isAvailable: true, image: '/images/products/axiom-r112-leather-patch-charcoal.jpg' },
     ],
     isNew: true,
     material: '60% Cotton / 40% Polyester Twill + 100% Poly Mesh • 100% Full-Grain Cowhide Leather Patch',
@@ -994,6 +988,10 @@ class PrintifyService {
           '/images/products/krown-hoodie-female-model.jpg',
           '/images/products/krown-heavyweight-hoodie-back-krown.jpg',
         ];
+      } else if (titleLower.includes('axiom') && (titleLower.includes('richardson') || titleLower.includes('112') || titleLower.includes('patch'))) {
+        productImages = [
+          '/images/products/axiom-r112-leather-patch-charcoal.jpg',
+        ];
       } else if (isRichardsonHat) {
         productImages = [
           '/images/products/krown-r112-flagship-leather-patch-snapback.jpg',
@@ -1013,7 +1011,8 @@ class PrintifyService {
         ];
       } else if (titleLower.includes('desk mat')) {
         productImages = [
-          '/images/products/axiom-owl-desk-mat-photorealistic.jpg',
+          '/images/products/axiom-mat-original-banner-v9.jpg',
+          '/images/products/axiom-mat-sizing-pricing-specs.jpg',
         ];
       } else if (titleLower.includes('comfort colors') || titleLower.includes('1717')) {
         productImages = [
