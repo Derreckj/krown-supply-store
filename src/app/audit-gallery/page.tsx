@@ -62,6 +62,22 @@ const PRODUCT_PACKS: ProductPack[] = [
   },
   {
     division: '03_Axiom_Allegiance',
+    name: 'Axiom Allegiance Legacy Owl Hoodie — Statement Edition',
+    slug: 'axiom-hoodie-01',
+    productBlank: 'Independent Trading Co. IND5000P (13.5 oz/yd² 3-End Fleece, Solid Black)',
+    decorationMethod: 'Direct-to-Garment (DTG) 3-Location (Arched Chest + Hero Motto Back + Left Sleeve)',
+    supplierRoute: 'Printify Blueprint 6998 (Fulfill Engine) — Verified 3-Location DTG',
+    singleLogoCheck: 'PASS: Statement Edition arched collegiate AXIOM on chest, full humility creed with glowing eyes on back, vertical sleeve print, and authentic on-figure drape.',
+    images: [
+      { title: '01 3-View Studio Composite', src: '/images/products/axiom-heavyweight-hoodie-studio-v8.jpg', caption: 'Clean 3-view studio composite showing Front, Back, and Left Sleeve side-by-side on dark slate.' },
+      { title: '02 Front Arched Chest View', src: '/images/products/axiom-heavyweight-hoodie-front.jpg', caption: 'Centered front view displaying arched collegiate AXIOM, original mascot with purple aura, and ALLEGIANCE.' },
+      { title: '03 Back Hero Motto & Eyes View', src: '/images/products/axiom-heavyweight-hoodie-back.jpg', caption: 'Full back DTG composition featuring complete humility motto over glowing owl eyes.' },
+      { title: '04 Left Sleeve Detail', src: '/images/products/axiom-heavyweight-hoodie-sleeve-detail.jpg', caption: 'Macro zoom on bold vertical AXIOM and Gothic Allegiance typography at cuff.' },
+      { title: '05 Streetwear Drape & Fit', src: '/images/products/axiom-heavyweight-hoodie-model-v8.jpg', caption: 'Model worn view showing relaxed streetwear fit and print scale.' }
+    ]
+  },
+  {
+    division: '03_Axiom_Allegiance',
     name: 'Axiom Allegiance Legacy Owl Crewneck — Statement Edition',
     slug: 'axiom-sweatshirt-01',
     productBlank: 'Gildan 18000 Heavy Blend / Lane Seven LS14004 / IND5000C (8.0 oz/yd² Fleece, Solid Black)',
