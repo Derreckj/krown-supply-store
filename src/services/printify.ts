@@ -273,11 +273,7 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     baseCost: 11.00,
     printCost: 5.50,
     images: [
-      '/images/products/krown-supply-comfort-colors-1717-tee.jpg',
-      '/images/deliveries/01_KrowN_Supply_Co/KrowN_Supply_Streetwear_Tee/02_Studio_Back_Large_Statement_Print.jpg',
-      '/images/deliveries/01_KrowN_Supply_Co/KrowN_Supply_Streetwear_Tee/03_Model_Worn_Streetwear_Lookbook.jpg',
-      '/images/deliveries/01_KrowN_Supply_Co/KrowN_Supply_Streetwear_Tee/04_Mineral_Wash_Print_Macro.jpg',
-      '/images/deliveries/01_KrowN_Supply_Co/KrowN_Supply_Streetwear_Tee/05_Blank_Comparison_Specifications.jpg'
+      '/images/products/krown-supply-comfort-colors-1717-tee.png',
     ],
     variants: [
       { id: 801, color: 'Pepper Washed Black / Faded Gold', size: 'S', price: 34.00, sku: 'KRN-CC1717-PEP-S', isAvailable: true },
@@ -326,9 +322,9 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     baseCost: 7.50,
     printCost: 4.00,
     images: [
-      '/images/products/krown-shaker-front-clean.jpg',
+      '/images/products/krown-shaker-photoreal-v11.jpg',
       '/images/products/krown-shaker-smoke-v11.jpg',
-      '/images/products/krown-shaker-brushed-v11.jpg'
+      '/images/products/krown-shaker-brushed-v11.jpg',
     ],
     variants: [
       { id: 1221, color: 'Matte Obsidian Black & Antique Gold Crown', size: '24 oz Standard (Eastman Tritan Frosted)', price: 26.99, sku: 'KSC-SHK-OBS-TRITAN', isAvailable: true, image: '/images/products/krown-shaker-photoreal-v11.jpg' },
@@ -346,29 +342,6 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
   // 2. KrowN Construction LLC (Jobsite Workwear)
   // Slogan: "BUILT TO REIGN."
   // ==========================================
-
-  {
-    id: 'kc-beanie-01',
-    name: 'KrowN Heavy Ribbed Cuffed Jobsite Beanie',
-    slug: 'krown-heavy-ribbed-cuffed-jobsite-beanie',
-    description: 'Built for freezing morning concrete pours and winter jobsites. Thick 4-gauge tight-knit hypoallergenic acrylic with 3-inch foldover cuff. Decorated with a centered metallic gold-embroidered KrowN Construction LLC emblem patch with reinforced perimeter stitching.',
-    collection: 'KrowN Construction',
-    price: 24.99,
-    baseCost: 6.20,
-    printCost: 4.00,
-    images: [
-      '/images/products/krown-construction-cuffed-beanie.png',
-      '/images/products/krown-beanie-studio-front.jpg',
-      '/images/products/krown-beanie-model.jpg'
-    ],
-    variants: [
-      { id: 611, color: 'Charcoal Black / Gold Crest Patch', size: 'OSFA', price: 24.99, sku: 'KRN-BN-RIBBED-BLK', isAvailable: true },
-      { id: 612, color: 'Heather Slate / Gold Crest Patch', size: 'OSFA', price: 24.99, sku: 'KRN-BN-RIBBED-SLT', isAvailable: true }
-    ],
-    isNew: true,
-    material: '100% Heavy Turbo Acrylic Rib-Knit',
-    fit: 'One Size Fits All (OSFA) • 12" Uncuffed / 3" Foldover Cuff',
-  },
   {
     id: 'kc-tumbler-01',
     name: 'KrowN 20oz Vacuum Insulated Jobsite Tumbler',
@@ -438,9 +411,9 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     baseCost: 7.50,
     printCost: 4.00,
     images: [
-      '/images/products/kc-shaker-highvis-tritan-v3.jpg',
-      '/images/products/kc-shaker-workbench-v2.jpg',
-      '/images/products/kc-shaker-steelcore-v11.jpg'
+      '/images/products/kc-shaker-photoreal-v11.jpg',
+      '/images/products/kc-shaker-steelcore-v11.jpg',
+      '/images/products/kc-shaker-tradesman-v11.jpg',
     ],
     variants: [
       { id: 1211, color: 'High-Vis Safety Gold & Matte Black', size: '24 oz Standard (Eastman Tritan Frosted)', price: 26.99, sku: 'KC-SHK-HV-TRITAN', isAvailable: true, image: '/images/products/kc-shaker-photoreal-v11.jpg' },
@@ -599,10 +572,11 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     baseCost: 7.20,
     printCost: 3.80,
     images: [
-      '/images/products/axiom-shaker-lifestyle-desk.jpg',
       '/images/products/axiom-shaker-signature-tritan-clean.jpg',
       '/images/products/axiom-shaker-signature-steel-clean.jpg',
-      '/images/products/axiom-shaker-stealth-tritan-clean.jpg'
+      '/images/products/axiom-shaker-stealth-tritan-clean.jpg',
+      '/images/products/axiom-shaker-stealth-steel-clean.jpg',
+      '/images/products/axiom-shaker-bottles-4-editions.jpg',
     ],
     variants: [
       { id: 1201, color: 'Signature Toxic Lime & Royal Purple', size: '24 oz Standard (Eastman Tritan Frosted)', price: 24.99, sku: 'AXM-SHK-SIG-TRITAN', isAvailable: true, image: '/images/products/axiom-shaker-signature-tritan-clean.jpg' },
@@ -685,55 +659,6 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
     isNew: true,
     material: '60% Cotton / 40% Polyester Twill + 100% Poly Mesh • 100% Full-Grain Cowhide Leather Patch',
     fit: 'Pro-Crown Structured Mid-Profile • Pre-Curved Contrast Visor',
-  },
-  {
-    id: 'axiom-r112-embroidered-01',
-    name: 'Axiom Richardson 112 3D Puff Direct Embroidered Snapback',
-    slug: 'axiom-richardson-112-embroidered-snapback',
-    description: 'Direct 3D high-density puff embroidery on an authentic Richardson 112 trucker snapback cap. Structured twill front, breathable mesh back, pre-curved visor with contrast stitching, and raised satin-stitch embroidery of the Axiom Owl esports crest with arched Gothic lettering.',
-    collection: 'AXA / Axiom Allegiance',
-    price: 32.99,
-    baseCost: 12.80,
-    printCost: 4.20,
-    images: [
-      '/images/products/axiom-r112-embroidered-black.jpg',
-      '/images/products/axiom-r112-embroidered-purple.jpg',
-      '/images/products/axiom-r112-embroidered-lime.jpg',
-      '/images/products/axiom-headwear-collection-showcase.jpg',
-    ],
-    variants: [
-      { id: 5201, color: 'Solid Obsidian Black', size: 'One Size (Adjustable Snapback)', price: 32.99, sku: 'AXM-R112-EMB-BLK', isAvailable: true },
-      { id: 5202, color: 'Black / Royal Purple Mesh', size: 'One Size (Adjustable Snapback)', price: 32.99, sku: 'AXM-R112-EMB-PRP', isAvailable: true },
-      { id: 5203, color: 'Black / Toxic Green Mesh', size: 'One Size (Adjustable Snapback)', price: 32.99, sku: 'AXM-R112-EMB-LIME', isAvailable: true },
-    ],
-    isNew: true,
-    material: '60% Cotton / 40% Polyester Twill + Poly Mesh • 3D High-Density Puff Embroidery',
-    fit: 'Mid-Profile Structured Crown with Pre-Curved Visor',
-  },
-  {
-    id: 'axiom-dad-hat-01',
-    name: 'Axiom Allegiance Vintage Washed Chino Dad Hat',
-    slug: 'axiom-allegiance-vintage-washed-dad-hat',
-    description: 'Relaxed, low-profile unstructured 6-panel dad hat cut from 100% garment-washed cotton chino twill. Features low-profile direct embroidery of the official Axiom Owl mascot (clean, zero crown) and Gothic wordmark, matching fabric strap with brass buckle slider, and pre-curved bill. Everyday comfort meets high-tier esports styling.',
-    collection: 'AXA / Axiom Allegiance',
-    price: 24.99,
-    baseCost: 9.00,
-    printCost: 3.50,
-    images: [
-      '/images/products/axiom-dad-hat-photoreal-v10.jpg',
-      '/images/products/axiom-dad-hat-worn-lookbook.jpg',
-      '/images/products/axiom-dad-hat-side-profile.jpg',
-      '/images/products/axiom-dad-hat-embroidery-macro.jpg',
-      '/images/products/axiom-dad-hat-closure-specs.jpg'
-    ],
-    variants: [
-      { id: 5301, color: 'Vintage Washed Black', size: 'One Size (Adjustable Brass Slider)', price: 24.99, sku: 'AXM-DAD-WSH-BLK', isAvailable: true, image: '/images/products/axiom-dad-hat-photoreal-v10.jpg' },
-      { id: 5302, color: 'Midnight Dark Purple', size: 'One Size (Adjustable Brass Slider)', price: 24.99, sku: 'AXM-DAD-WSH-PRP', isAvailable: true, image: '/images/products/axiom-dad-hat-photoreal-v10.jpg' },
-      { id: 5303, color: 'Dark Charcoal Slate', size: 'One Size (Adjustable Brass Slider)', price: 24.99, sku: 'AXM-DAD-WSH-CHR', isAvailable: true, image: '/images/products/axiom-dad-hat-photoreal-v10.jpg' },
-    ],
-    isNew: true,
-    material: '100% Garment-Washed Cotton Chino Twill • Antique Brass Buckle Closure',
-    fit: 'Unstructured Low-Profile 6-Panel Relaxed Fit',
   },
   {
     id: 'krown-sleeve-01',
@@ -912,31 +837,6 @@ const INITIAL_MOCK_CATALOG: CatalogProduct[] = [
   // 4. Accessories
   // ==========================================
   {
-    id: 'axiom-beanie-01',
-    name: 'Axiom Allegiance Heavy Ribbed Tournament Cuffed Beanie',
-    slug: 'axiom-allegiance-heavy-ribbed-tournament-cuffed-beanie',
-    description: 'Tournament-ready cold-weather headwear for Axiom Allegiance. Built from ultra-thick 4-gauge hypoallergenic acrylic with a snug 3-inch foldover cuff. Decorated with a centered, high-density embroidered Axiom Owl tournament crest with reinforced perimeter stitching.',
-    collection: 'AXA / Axiom Allegiance',
-    price: 24.99,
-    baseCost: 7.50,
-    printCost: 4.00,
-    images: [
-      '/images/products/axiom-beanie-obsidian-lime-v11.jpg',
-      '/images/products/axiom-beanie-worn-lifestyle.jpg',
-      '/images/products/axiom-beanie-purple-green-v11.jpg',
-      '/images/products/axiom-beanie-ribknit-macro.jpg',
-      '/images/products/axiom-beanie-lineup-specs.jpg'
-    ],
-    variants: [
-      { id: 4401, color: 'Midnight Obsidian / Toxic Green Owl Crest', size: 'One Size (OSFA)', price: 24.99, sku: 'AXM-BN-OBS-GRN', isAvailable: true, image: '/images/products/axiom-beanie-obsidian-lime-v11.jpg' },
-      { id: 4402, color: 'Royal Purple & Electric Green Dual-Tone', size: 'One Size (OSFA)', price: 24.99, sku: 'AXM-BN-PRP-GRN', isAvailable: true, image: '/images/products/axiom-beanie-purple-green-v11.jpg' },
-      { id: 4403, color: 'Volcanic Crimson / Ember Owl Crest', size: 'One Size (OSFA)', price: 24.99, sku: 'AXM-BN-VOL-RED', isAvailable: true, image: '/images/products/axiom-beanie-volcanic-v11.jpg' },
-    ],
-    isNew: true,
-    material: '100% Hypoallergenic Acrylic • High-Density Direct Embroidery',
-    fit: 'Classic Cuffed Snug Fit (One Size Fits Most)',
-  },
-  {
     id: 'axiom-stickers-01',
     name: 'Axiom Allegiance Holographic Battle Pack Decals (5-Pack)',
     slug: 'axiom-allegiance-holographic-battle-pack-decals',
@@ -1035,8 +935,6 @@ class PrintifyService {
         replacedMockIds.add('custom-krown-works-hat');
       } else if (nameLower.includes('comfort colors') || nameLower.includes('1717')) {
         replacedMockIds.add('krown-tee-cc1717');
-      } else if (nameLower.includes('beanie')) {
-        replacedMockIds.add('kc-beanie-01');
       } else if (nameLower.includes('jersey')) {
         replacedMockIds.add('axiom-jersey-home');
       } else if (nameLower.includes('desk mat')) {
@@ -1047,7 +945,7 @@ class PrintifyService {
     }
 
     // Filter out raw uncurated desk mat from live list so krown-mat-01 with 5 sizes is the primary product
-    const filteredLive = liveProducts.filter(p => !p.name.toLowerCase().includes('desk mat'));
+    const filteredLive = liveProducts.filter(p => !p.name.toLowerCase().includes('desk mat') && !p.name.toLowerCase().includes('beanie'));
     const uniqueMocks = mockProducts.filter(m => !replacedMockIds.has(m.id));
     return [...filteredLive, ...uniqueMocks];
   }
@@ -1064,7 +962,6 @@ class PrintifyService {
       'krown-hoodie-premium': ['6ac80dff9f3e89dde70da38d', 'krown-heavyweight-streetwear-hoodie'],
       'kc-tumbler-01': ['6ac7ed40fea4d4e68e0a0f6a', '20oz-vacuum-insulated-jobsite-tumbler'],
       'krown-tee-cc1717': ['6ac7ed0b9bfbeab23800dcdf', 'krown-wear-the-krown-comfort-colors-1717'],
-      'kc-beanie-01': ['6ac80e07cafb2cd4c60b7c96', 'krown-construction-heavy-ribbed-cuffed-beanie'],
       'axiom-jersey-home': ['6ac80e034a1cdf2ad60e0bed', 'axiom-allegiance-axa-cut-and-sew-pro-esports-jersey'],
       'krown-mat-01': ['6ac7ed486443c9f27801af1b', 'axiom-owl-panoramic-gaming-desk-mat'],
       'krown-stickers-01': ['6ac7ed44fea4d4e68e0a0f80', '6ac7ed46ad560d80d10eb55c'],
@@ -1188,11 +1085,6 @@ class PrintifyService {
           '/images/products/krown-r112-flagship-leather-patch-snapback.jpg',
           '/images/products/krown-r112-flagship-leather-patch-hero.jpg',
         ];
-      } else if (titleLower.includes('beanie')) {
-        productImages = [
-          '/images/products/krown-beanie-studio-front.jpg',
-          '/images/products/krown-beanie-model.jpg',
-        ];
       } else if (titleLower.includes('sticker') || titleLower.includes('decal')) {
         productImages = [
           '/images/products/krown-stickers-realistic.jpg',
@@ -1211,7 +1103,7 @@ class PrintifyService {
         ];
       } else if (titleLower.includes('comfort colors') || titleLower.includes('1717')) {
         productImages = [
-          '/images/products/krown-supply-comfort-colors-1717-tee.jpg',
+          '/images/products/krown-supply-comfort-colors-1717-tee.png',
         ];
       }
 
@@ -1457,12 +1349,6 @@ export const PRINTIFY_SKU_CATALOG_MAPPINGS: Record<string, PrintifySkuMapping> =
     variantMap: { 'OSFA': 20401, 'Vintage Washed Black / Gold Embroidery': 20401 },
     category: 'Headwear',
   },
-  'kc-beanie-01': {
-    blueprintId: 342, // Ribbed Knit Cuffed Beanie
-    printProviderId: 42,
-    variantMap: { 'OSFA': 34201 },
-    category: 'Headwear',
-  },
   'axiom-jersey-home': {
     blueprintId: 872, // Athletic All-Over-Print Cut & Sew Mesh Jersey
     printProviderId: 16, // Sublimation & Athletic Specialist
@@ -1517,26 +1403,6 @@ export const PRINTIFY_SKU_CATALOG_MAPPINGS: Record<string, PrintifySkuMapping> =
       'Black / Charcoal Mesh': 17431,
       'Black / Royal Purple Mesh': 17432,
       'Black / Toxic Green Mesh': 17433,
-    },
-    category: 'Headwear',
-  },
-  'axiom-r112-embroidered-01': {
-    blueprintId: 112, // Richardson 112 Direct Embroidered Snapback
-    printProviderId: 42,
-    variantMap: {
-      'Solid Obsidian Black': 11201,
-      'Black / Royal Purple Mesh': 11202,
-      'Black / Toxic Green Mesh': 11203,
-    },
-    category: 'Headwear',
-  },
-  'axiom-dad-hat-01': {
-    blueprintId: 204, // Vintage Washed Chino Twill Dad Hat
-    printProviderId: 16,
-    variantMap: {
-      'Vintage Washed Black': 20401,
-      'Midnight Dark Purple': 20402,
-      'Dark Charcoal Slate': 20403,
     },
     category: 'Headwear',
   },

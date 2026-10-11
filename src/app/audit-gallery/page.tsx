@@ -38,22 +38,6 @@ const PRODUCT_PACKS: ProductPack[] = [
   },
   {
     division: '03_Axiom_Allegiance',
-    name: 'Axiom Allegiance Vintage Washed Chino Dad Hat',
-    slug: 'axiom-dad-hat-01',
-    productBlank: 'ValuCap VC300A / Yupoong 6245CM Unstructured Bio-Washed Chino Twill',
-    decorationMethod: 'Direct High-Density Twill Embroidery (approx 2.2" wide)',
-    supplierRoute: 'Printify Blueprint 7651 / 7659 (Underground Printing / Awkward Styles)',
-    singleLogoCheck: 'PASS: Exactly ONE authentic Axiom Owl centered on lower front crown. Previously stacked second owl on crown 100% removed.',
-    images: [
-      { title: '01 Studio Hero Front', src: '/images/products/axiom-dad-hat-photoreal-v10.jpg', caption: 'Clean front view on slate display block with exactly ONE embroidered owl mascot.' },
-      { title: '02 Worn Lookbook', src: '/images/products/axiom-dad-hat-worn-lookbook.jpg', caption: 'Lifestyle worn angle showing authentic low-profile unstructured crown drape.' },
-      { title: '03 Side Profile & Curved Bill', src: '/images/products/axiom-dad-hat-side-profile.jpg', caption: 'Side profile showing relaxed pre-curved visor and 6-panel twill crown construction.' },
-      { title: '04 Embroidery Thread Macro', src: '/images/products/axiom-dad-hat-embroidery-macro.jpg', caption: 'Macro thread detail showing authentic embroidery texture and contact shadow.' },
-      { title: '05 Closure & Rear Specifications', src: '/images/products/axiom-dad-hat-closure-specs.jpg', caption: 'Rear view showing self-fabric strap with antique brass tri-glide buckle and tuck-in grommet.' }
-    ]
-  },
-  {
-    division: '03_Axiom_Allegiance',
     name: 'Axiom Richardson 112 Genuine Leather Patch Trucker Snapback',
     slug: 'axiom-r112-patch-01',
     productBlank: 'Authentic Richardson 112 Structured Mid-Profile 6-Panel Trucker',
@@ -82,22 +66,6 @@ const PRODUCT_PACKS: ProductPack[] = [
       { title: '03 Waistband & Drawcords', src: '/images/products/axiom-joggers-waistband-detail.jpg', caption: 'Close-up of elastic waistband, metal eyelets, and two-tone heavy cotton drawcords.' },
       { title: '04 Leg Print & Fleece Macro', src: '/images/products/axiom-joggers-fabric-macro.jpg', caption: 'Macro detail of flexible DTF graphic placement along outer leg seam.' },
       { title: '05 Core vs Pro Comparison', src: '/images/products/axiom-joggers-core-vs-pro-specs.jpg', caption: 'Comparison chart detailing Pro 450 GSM French Terry vs Core 280 GSM fleece differences.' }
-    ]
-  },
-  {
-    division: '03_Axiom_Allegiance',
-    name: 'Axiom Allegiance Heavy Ribbed Tournament Cuffed Beanie',
-    slug: 'axiom-beanie-01',
-    productBlank: 'Heavy 4-Gauge Hypoallergenic 100% Acrylic Rib Knit (3" Foldover Cuff)',
-    decorationMethod: 'Direct High-Density Embroidery on Ribbed Cuff',
-    supplierRoute: 'Printify Blueprint 414 / 644 (OTTO Cap / Yupoong)',
-    singleLogoCheck: 'PASS: Clean continuous rib-knit stitching under owl crest. Defective rectangular dark patch artifact completely removed.',
-    images: [
-      { title: '01 Studio Hero Obsidian/Lime', src: '/images/products/axiom-beanie-obsidian-lime-v11.jpg', caption: 'Obsidian black ribbed beanie with crisp lime & purple embroidered owl crest on center cuff.' },
-      { title: '02 Worn Tournament Lifestyle', src: '/images/products/axiom-beanie-worn-lifestyle.jpg', caption: 'Cold-weather tournament lifestyle presentation showing snug 3-inch foldover fit.' },
-      { title: '03 Royal Purple/Green Edition', src: '/images/products/axiom-beanie-purple-green-v11.jpg', caption: 'Alternate team colorway variant featuring royal purple body with toxic green crest.' },
-      { title: '04 Rib Knit & Stitch Macro', src: '/images/products/axiom-beanie-ribknit-macro.jpg', caption: 'Macro zoom confirming seamless continuous rib knitting beneath the embroidery.' },
-      { title: '05 Colorway Lineup Specifications', src: '/images/products/axiom-beanie-lineup-specs.jpg', caption: 'Specifications for all 3 colorway options: Obsidian/Lime, Purple/Green, and Volcanic Ember.' }
     ]
   },
   {
@@ -141,7 +109,7 @@ const PRODUCT_PACKS: ProductPack[] = [
     supplierRoute: 'Printify Verified Drinkware Provider',
     singleLogoCheck: 'PASS: Single authentic Axiom Owl mascot on smoke Tritan bottle with embossed measurement markings.',
     images: [
-      { title: '01 Studio Hero Front', src: '/images/products/axiom-shaker-lifestyle-desk.jpg', caption: '24 oz smoke Tritan shaker bottle with leak-proof flip cap and single authentic Axiom Owl.' }
+      { title: '01 Studio Hero Front', src: '/images/products/axiom-shaker-signature-tritan-clean.jpg', caption: '24 oz smoke Tritan shaker bottle with leak-proof flip cap and single authentic Axiom Owl.' }
     ]
   },
 
@@ -155,7 +123,7 @@ const PRODUCT_PACKS: ProductPack[] = [
     supplierRoute: 'Printify Blueprint 101483 (SwiftPOD / Monster Digital)',
     singleLogoCheck: 'PASS: Small minimal KrowN Supply crown on left chest, large bold statement graphic on back (Sullen / GBRS aesthetic conventions).',
     images: [
-      { title: '01 Studio Front (Small Chest Crown)', src: '/images/products/krown-supply-comfort-colors-1717-tee.jpg', caption: 'Front view showing minimal left chest metallic antique gold crown emblem.' },
+      { title: '01 Studio Front (Small Chest Crown)', src: '/images/products/krown-supply-comfort-colors-1717-tee.png', caption: 'Front view showing minimal left chest metallic antique gold crown emblem.' },
       { title: '02 Studio Back (Large Statement Print)', src: '/images/deliveries/01_KrowN_Supply_Co/KrowN_Supply_Streetwear_Tee/02_Studio_Back_Large_Statement_Print.jpg', caption: 'Oversized statement back print featuring arched typography and official geometric crown.' },
       { title: '03 Model Worn Lookbook', src: '/images/deliveries/01_KrowN_Supply_Co/KrowN_Supply_Streetwear_Tee/03_Model_Worn_Streetwear_Lookbook.jpg', caption: 'Relaxed streetwear lookbook fit in vintage mineral-washed Pepper Black.' },
       { title: '04 Mineral Wash & Print Macro', src: '/images/deliveries/01_KrowN_Supply_Co/KrowN_Supply_Streetwear_Tee/04_Mineral_Wash_Print_Macro.jpg', caption: 'Macro of 6.1 oz garment-dyed ring-spun cotton texture and soft-hand ink feel.' },
@@ -171,7 +139,7 @@ const PRODUCT_PACKS: ProductPack[] = [
     supplierRoute: 'Printify Verified Drinkware',
     singleLogoCheck: 'PASS: Distinct KrowN Supply Co. geometric crown emblem only. Zero mixed brands.',
     images: [
-      { title: '01 Studio Hero Front', src: '/images/products/krown-shaker-front-clean.jpg', caption: '24 oz smoke Tritan luxury shaker with official KrowN Supply Co. geometric brand crest.' }
+      { title: '01 Studio Hero Front', src: '/images/products/krown-shaker-photoreal-v11.jpg', caption: '24 oz smoke Tritan luxury shaker with official KrowN Supply Co. geometric brand crest.' }
     ]
   },
 
@@ -185,7 +153,7 @@ const PRODUCT_PACKS: ProductPack[] = [
     supplierRoute: 'Printify Verified Drinkware',
     singleLogoCheck: 'PASS: Official KrowN Construction LLC emblem. Zero mixed brand assets.',
     images: [
-      { title: '01 Studio Hero Front', src: '/images/products/kc-shaker-highvis-tritan-v3.jpg', caption: 'Jobsite impact Tritan shaker with official KrowN Construction insignia and measurement lines.' }
+      { title: '01 Studio Hero Front', src: '/images/products/kc-shaker-photoreal-v11.jpg', caption: 'Jobsite impact Tritan shaker with official KrowN Construction insignia and measurement lines.' }
     ]
   }
 ];
@@ -234,9 +202,9 @@ export default function AuditGalleryPage() {
             <p style={{ color: '#64748b', fontSize: '0.8rem', margin: '0.25rem 0 0 0' }}>Single authentic owl per intended placement across all items.</p>
           </div>
           <div>
-            <div style={{ color: '#94a3b8', fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase' }}>Richardson 112 &amp; Dad Hat</div>
+            <div style={{ color: '#94a3b8', fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase' }}>Richardson 112 Leather Patch</div>
             <div style={{ color: '#39ff14', fontSize: '1.1rem', fontWeight: 800, marginTop: '0.25rem' }}>GENUINE LEATHER &amp; CHINO</div>
-            <p style={{ color: '#64748b', fontSize: '0.8rem', margin: '0.25rem 0 0 0' }}>Laser-debossed veg-tan leather + bio-washed twill.</p>
+            <p style={{ color: '#64748b', fontSize: '0.8rem', margin: '0.25rem 0 0 0' }}>Laser-debossed veg-tan leather patch snapback.</p>
           </div>
           <div>
             <div style={{ color: '#94a3b8', fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase' }}>Redesigned Desk Mats</div>

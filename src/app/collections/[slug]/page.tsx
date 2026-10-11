@@ -69,7 +69,7 @@ export default async function CollectionPage({
     },
     construction: { 
       title: 'KROWN CONSTRUCTION LLC', 
-      subtitle: 'BUILT TO REIGN. Authentic jobsite gear: Richardson 112 leather patch snapbacks, 20oz and 32oz vacuum jobsite tumblers, heavy ribbed beanies, work shirts, and weatherproof hardhat decals.',
+      subtitle: 'BUILT TO REIGN. Authentic jobsite gear: Richardson 112 leather patch snapbacks, 20oz and 32oz vacuum jobsite tumblers, heavy-duty shaker bottles, and weatherproof hardhat decals.',
       banner: '/images/branding/construction/KC.jpg',
       badge: '🔨 KROWN CONSTRUCTION LLC • BUILT TO REIGN'
     },

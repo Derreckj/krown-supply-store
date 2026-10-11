@@ -66,7 +66,7 @@ export default function SearchClient({ initialProducts }: SearchClientProps) {
           <input
             type="text"
             className="search-input"
-            placeholder="Search by product name, trade, gaming, blank (e.g. tumbler, sleeve, beanie, 1717)..."
+            placeholder="Search by product name, trade, gaming, blank (e.g. tumbler, sleeve, shaker, 1717)..."
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             autoFocus

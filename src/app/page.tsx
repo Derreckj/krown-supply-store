@@ -209,7 +209,7 @@ export default function Home() {
             <Link href="/products/axiom-shaker-01" className={styles.gamingGearCard}>
               <div className={styles.gamingGearThumb}>
                 <img 
-                  src="/images/products/axiom-shaker-lifestyle-desk.jpg" 
+                  src="/images/products/axiom-shaker-signature-tritan-clean.jpg" 
                   alt="Axiom Allegiance Pro Loadout Shaker Bottle" 
                 />
                 <span className={styles.gearPill}>24 OZ TRITAN</span>

@@ -208,8 +208,8 @@ export default function SizeGuidePage() {
 
       {/* 5. Headwear */}
       <section className="size-guide-section">
-        <h2>🧢 Headwear &amp; Beanies</h2>
-        <p className="size-guide-desc">Richardson 112 snapbacks, vintage dad hats, and cuffed beanies.</p>
+        <h2>🧢 Headwear &amp; Caps</h2>
+        <p className="size-guide-desc">Richardson 112 leather patch snapbacks and vintage washed chino dad hats.</p>
         <div className="size-table-wrapper">
           <table className="size-table">
             <thead>
@@ -232,12 +232,6 @@ export default function SizeGuidePage() {
                 <td>One Size Fits All (OSFA)</td>
                 <td>21.0&quot; – 24.0&quot; (6 7/8 to 7 5/8)</td>
                 <td>Self-fabric tuck-in strap with antique brass buckle</td>
-              </tr>
-              <tr>
-                <td><strong>Jobsite Cuffed Beanie</strong></td>
-                <td>One Size Fits All (OSFA)</td>
-                <td>20.5&quot; – 25.0&quot;</td>
-                <td>100% High-stretch ribbed knit with 3&quot; foldover cuff</td>
               </tr>
             </tbody>
           </table>

@@ -735,15 +735,14 @@ export default function AddToCartForm({ product }: { product: CatalogProduct }) 
               </p>
 
               {/* Headwear Guide */}
-              {(product.id.includes('hat') || product.id.includes('beanie') || product.id.includes('snapback') || product.id.includes('112')) && (
+              {(product.id.includes('hat') || product.id.includes('snapback') || product.id.includes('112')) && (
                 <div>
                   <h3 style={{ marginTop: '0.5rem', marginBottom: '0.5rem', fontSize: '1rem', color: 'var(--accent-gold)' }}>Headwear Specifications</h3>
                   <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '0.88rem' }}>
                     <thead><tr style={{ borderBottom: '1px solid var(--border)' }}><th style={{ padding: '0.5rem' }}>Style</th><th style={{ padding: '0.5rem' }}>Profile</th><th style={{ padding: '0.5rem' }}>Circumference</th><th style={{ padding: '0.5rem' }}>Closure</th></tr></thead>
                     <tbody>
                       <tr style={{ borderBottom: '1px solid var(--border)' }}><td style={{ padding: '0.5rem' }}>Richardson 112 Snapback</td><td style={{ padding: '0.5rem' }}>Mid-Pro Structured</td><td style={{ padding: '0.5rem' }}>7&quot; – 7 3/4&quot; (21.5&quot;–24.5&quot;)</td><td style={{ padding: '0.5rem' }}>7-Hole Snapback</td></tr>
-                      <tr style={{ borderBottom: '1px solid var(--border)' }}><td style={{ padding: '0.5rem' }}>Washed Chino Dad Hat</td><td style={{ padding: '0.5rem' }}>Low-Pro Unstructured</td><td style={{ padding: '0.5rem' }}>6 7/8&quot; – 7 5/8&quot;</td><td style={{ padding: '0.5rem' }}>Brass Slide Buckle</td></tr>
-                      <tr><td style={{ padding: '0.5rem' }}>Tradesman Ribbed Beanie</td><td style={{ padding: '0.5rem' }}>Heavy Cuffed Knit</td><td style={{ padding: '0.5rem' }}>Stretch-Fit (One Size)</td><td style={{ padding: '0.5rem' }}>Cuffed Acrylic</td></tr>
+                      <tr><td style={{ padding: '0.5rem' }}>Washed Chino Dad Hat</td><td style={{ padding: '0.5rem' }}>Low-Pro Unstructured</td><td style={{ padding: '0.5rem' }}>6 7/8&quot; – 7 5/8&quot;</td><td style={{ padding: '0.5rem' }}>Brass Slide Buckle</td></tr>
                     </tbody>
                   </table>
                 </div>
@@ -815,7 +814,7 @@ export default function AddToCartForm({ product }: { product: CatalogProduct }) 
               )}
 
               {/* Hoodies & Tops Fallback */}
-              {!isJersey && !product.id.includes('hat') && !product.id.includes('beanie') && !product.id.includes('shaker') && !product.id.includes('mug') && !product.id.includes('sleeve') && !product.id.includes('short') && !product.id.includes('jogger') && !product.id.includes('sweatpant') && (
+              {!isJersey && !product.id.includes('hat') && !product.id.includes('shaker') && !product.id.includes('mug') && !product.id.includes('sleeve') && !product.id.includes('short') && !product.id.includes('jogger') && !product.id.includes('sweatpant') && (
                 <div>
                   <h3 style={{ marginTop: '0.5rem', marginBottom: '0.5rem', fontSize: '1rem', color: 'var(--accent-gold)' }}>Heavyweight Hoodies &amp; Streetwear Tops</h3>
                   <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '0.88rem' }}>
