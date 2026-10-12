@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { getCatalogPurchaseHold } from '@/config/catalog-holds';
 import './ProductCard.css';
 
 interface ProductCardProps {
@@ -26,6 +27,7 @@ export default function ProductCard({
   isLimited,
   customBadge
 }: ProductCardProps) {
+  const purchaseHold = getCatalogPurchaseHold(id);
   return (
     <Link href={`/products/${id}`} className="product-card group">
       <div className="product-image-container">
@@ -75,6 +77,7 @@ export default function ProductCard({
         <p className="product-collection">{collection}</p>
         <h3 className="product-name">{name}</h3>
         <p className="product-price">${price.toFixed(2)}</p>
+        {purchaseHold && <p className="product-collection">Design preview · Ordering paused</p>}
       </div>
     </Link>
   );

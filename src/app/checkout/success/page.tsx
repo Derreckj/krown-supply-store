@@ -30,7 +30,7 @@ function SuccessContent() {
           />
         </div>
         <span className="brand-badge">KrowN Supply Co.</span>
-        <h1>Order Confirmed</h1>
+        <h1>Checkout Status</h1>
         <p className="status-tagline">WEAR THE KROWN.</p>
 
         {discountCode && (
@@ -46,13 +46,14 @@ function SuccessContent() {
             textAlign: 'center',
             fontWeight: 600
           }}>
-            🎁 Friends & Family Discount Applied: <strong>{discountCode}</strong> ({discountPct}% OFF)
+            Discount reference: <strong>{discountCode}</strong> ({discountPct}%)
           </div>
         )}
 
         <p className="status-description">
-          Thank you for joining the Reign. Your order has been placed into our production queue.
-          You will receive a confirmation email with live tracking as soon as fulfillment commences.
+          Please check your Stripe receipt for payment confirmation. Manufacturing is currently on hold
+          while we verify the product and artwork. A payment receipt does not confirm that printing has started.
+          If you have already paid, <Link href="/contact">contact us about your order</Link>.
         </p>
 
         {sessionId && (
@@ -68,11 +69,11 @@ function SuccessContent() {
         )}
 
         <div className="next-steps-box">
-          <h3>Fulfillment Workflow</h3>
+          <h3>What Happens Next</h3>
           <ul>
-            <li><strong>Automated Production:</strong> Routed to Printify certified print facilities.</li>
-            <li><strong>Quality Inspection:</strong> Garments and embroidery inspected prior to dispatch.</li>
-            <li><strong>Tracking Notification:</strong> Real-time carrier tracking dispatched directly to your inbox.</li>
+            <li><strong>Payment:</strong> Confirmed by your Stripe receipt.</li>
+            <li><strong>Manufacturing:</strong> Requires the correct product, artwork and supplier approval.</li>
+            <li><strong>Shipping:</strong> Tracking is available after the order ships.</li>
           </ul>
         </div>
 

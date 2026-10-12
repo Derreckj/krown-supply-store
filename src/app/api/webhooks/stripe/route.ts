@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { stripe } from '@/lib/stripe';
 import Stripe from 'stripe';
+import { WEBSITE_ORDERING_PAUSED } from '@/config/catalog-holds';
 
 export const dynamic = 'force-dynamic';
 
@@ -10,6 +11,11 @@ export async function POST(req: NextRequest) {
   const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
 
   let event: Stripe.Event;
+
+  if (process.env.NODE_ENV === 'production' && (!webhookSecret || webhookSecret.includes('placeholder'))) {
+    console.error('Stripe webhook unavailable: verified signature secret is not configured.');
+    return NextResponse.json({ error: 'Webhook configuration unavailable.' }, { status: 503 });
+  }
 
   // Verify signature if secret is present and not placeholder
   if (webhookSecret && !webhookSecret.includes('placeholder')) {
@@ -38,6 +44,14 @@ export async function POST(req: NextRequest) {
     } catch {
       return NextResponse.json({ error: 'Invalid JSON payload' }, { status: 400 });
     }
+  }
+
+  // Preserve Stripe retries while manufacturing is on hold. Never acknowledge
+  // a paid checkout as fulfilled or call the supplier with unapproved artwork.
+  if (WEBSITE_ORDERING_PAUSED && ['checkout.session.completed', 'checkout.session.async_payment_succeeded'].includes(event.type)) {
+    const heldSession = event.data.object as Stripe.Checkout.Session;
+    console.warn('Website fulfilment on hold:', { eventId: event.id, sessionId: heldSession.id });
+    return NextResponse.json({ error: 'Manufacturing verification pending.', code: 'FULFILMENT_ON_HOLD' }, { status: 503 });
   }
 
   // Handle specific Stripe events
