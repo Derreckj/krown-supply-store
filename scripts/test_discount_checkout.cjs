@@ -12,18 +12,24 @@ const cache = new Map();
 let capturedSession;
 let sessionCount = 0;
 let heldCheckoutCount = 0;
-function loadSource(relativePath) {
-  if (cache.has(relativePath)) return cache.get(relativePath);
+function loadSource(relativePath, isolation = 'default-source-hold') {
+  const cacheKey = `${isolation}:${relativePath}`;
+  if (cache.has(cacheKey)) return cache.get(cacheKey);
   const sourceModule = { exports: {} };
-  cache.set(relativePath, sourceModule.exports);
+  cache.set(cacheKey, sourceModule.exports);
   const { outputText } = ts.transpileModule(fs.readFileSync(path.join(root, relativePath), 'utf8'), {
     compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2020 },
     fileName: relativePath,
   });
   const requireMock = (name) => {
-    if (name === '@/config/discounts') return loadSource('src/config/discounts.ts');
-    if (name === '@/config/catalog-holds') return loadSource('src/config/catalog-holds.ts');
-    if (name === '@/lib/discounts') return loadSource('src/lib/discounts.ts');
+    if (name === '@/config/discounts') return loadSource('src/config/discounts.ts', isolation);
+    if (name === '@/config/catalog-holds') {
+      // Test-only dependency replacement isolates discount calculations from readiness.
+      // The default route below always loads the real incident gate.
+      if (isolation === 'discount-pricing-only') return { getCatalogPurchaseHold: () => null };
+      return loadSource('src/config/catalog-holds.ts', isolation);
+    }
+    if (name === '@/lib/discounts') return loadSource('src/lib/discounts.ts', isolation);
     if (name === 'next/server') return { NextResponse: { json: (body, options) => ({ body, status: options?.status || 200 }) } };
     if (name === '@/lib/stripe') return {
       isStripeConfigured: () => true,
@@ -40,6 +46,9 @@ function loadSource(relativePath) {
 }
 
 const { POST } = loadSource('src/app/api/checkout/route.ts');
+const { POST: pricingPOST } = loadSource('src/app/api/checkout/route.ts', 'discount-pricing-only');
+const holds = loadSource('src/config/catalog-holds.ts');
+assert.equal(holds.WEBSITE_ORDERING_PAUSED, true);
 const discounts = loadSource('src/lib/discounts.ts');
 const config = loadSource('src/config/discounts.ts');
 const heldHat = { id: 'custom-krown-works-hat-Black-One Size', productId: 'custom-krown-works-hat', name: 'Custom Crew Hat', price: 34.99, quantity: 2, image: '/hat.jpg', variant: { color: 'Black', size: 'One Size' } };
@@ -50,7 +59,7 @@ const hoodie = { id: 'axiom-hoodie-01-Black-L', productId: 'axiom-hoodie-01', na
 
 async function checkout(items, discountCode) {
   capturedSession = undefined;
-  const response = await POST({ json: async () => ({ items, discountCode }), headers: { get: () => 'https://www.krownsupplyco.com' } });
+  const response = await pricingPOST({ json: async () => ({ items, discountCode }), headers: { get: () => 'https://www.krownsupplyco.com' } });
   assert.equal(response.status, 200);
   assert.equal(response.body.url, 'https://example.invalid/mock-checkout');
   assert.ok(capturedSession);
@@ -107,21 +116,47 @@ async function checkout(items, discountCode) {
     '6ac80dc2f4d488e1be0b0902', '6ac8f2e9b0b07f13520b055c',
     'kc-stickers-01', '6ac7ed44fea4d4e68e0a0f80', '6ac700d0e586b62fb50465ad',
   ];
-  for (const productId of heldProductIds) {
-    for (const code of [undefined, 'Krown10', 'kRoWn15']) {
-      for (const items of [[{ ...heldHat, productId }], [tee, { ...heldHat, productId: productId.toUpperCase() }]]) {
+  // Derive the IDs from the current actual catalogue, not a stale hand-maintained copy.
+  const productSource = fs.readFileSync(path.join(root, 'src/services/printify.ts'), 'utf8');
+  const catalogueStart = productSource.indexOf('const INITIAL_MOCK_CATALOG');
+  const catalogueEnd = productSource.indexOf('\n];', catalogueStart);
+  assert.ok(catalogueStart >= 0 && catalogueEnd > catalogueStart);
+  const websiteProductIds = Array.from(productSource.slice(catalogueStart, catalogueEnd).matchAll(/^    id: '([^']+)'/gm), match => match[1]);
+  assert.equal(websiteProductIds.length, 26, 'Review coverage if the actual catalogue changes');
+  assert.equal(new Set(websiteProductIds).size, 26);
+  const allBlockedIds = [...new Set([...websiteProductIds, ...heldProductIds, 'unknown-product-id'])];
+  const genericMessage = 'Ordering is temporarily paused while we verify production details. Please check back soon.';
+  for (const productId of allBlockedIds) {
+    const specificReason = holds.getCatalogPurchaseHold(productId);
+    assert.ok(specificReason);
+    if (heldProductIds.includes(productId)) assert.match(specificReason, /^Ordering paused/);
+    else assert.equal(specificReason, genericMessage);
+    for (const code of [undefined, 'Krown10', 'kRoWn10', 'KrowN15', 'kRoWn15', 'BADCODE']) {
+      // Singles and mixed carts in either order include upper-case ID and discount attempts.
+      const blockedItem = { ...heldHat, productId };
+      const upperCaseItem = { ...blockedItem, productId: productId.toUpperCase() };
+      for (const items of [[blockedItem], [upperCaseItem], [tee, upperCaseItem], [upperCaseItem, tee]]) {
         capturedSession = undefined;
         const previousSessionCount = sessionCount;
         const response = await POST({ json: async () => ({ items, discountCode: code }), headers: { get: () => 'https://www.krownsupplyco.com' } });
         assert.equal(response.status, 409);
-        assert.equal(response.body.productId, items[items.length - 1].productId);
-        assert.match(response.body.error, /Ordering paused/);
+        assert.equal(response.body.productId, items[0].productId);
+        assert.equal(response.body.error, holds.getCatalogPurchaseHold(items[0].productId));
+        assert.equal(response.body.url, undefined);
         assert.equal(capturedSession, undefined);
-        assert.equal(sessionCount, previousSessionCount, 'Held item must be rejected before any Stripe session creation');
+        assert.equal(sessionCount, previousSessionCount, 'Production incident gate must reject before ANY Stripe session creation');
         heldCheckoutCount++;
       }
     }
   }
+  // Each entry in a mixed cart is held individually; the first explains the rejection.
+  capturedSession = undefined;
+  const previousSessionCount = sessionCount;
+  const allProductsResponse = await POST({ json: async () => ({ items: websiteProductIds.map(productId => ({ ...tee, productId })), discountCode: 'KROWN15' }), headers: { get: () => 'https://www.krownsupplyco.com' } });
+  assert.equal(allProductsResponse.status, 409);
+  assert.equal(sessionCount, previousSessionCount);
+  assert.equal(capturedSession, undefined);
+  heldCheckoutCount++;
   assert.equal(config.calculateKrown10Discount('invalid', []).isValid, false);
   for (const item of [
     { productId: 'CUSTOM-KROWN-WORKS-HAT' },
@@ -131,5 +166,5 @@ async function checkout(items, discountCode) {
     { name: 'Hat', variant: { color: 'Leather Patch', size: 'One Size' } },
   ]) assert.equal(discounts.isCustomHatItem(item), true);
   assert.equal(discounts.isExcludedDiscountItem({ productId: 'AXIOM-HOODIE-01' }), true);
-  console.log(`PASS: ${sessionCount} accepted checkout route calls mocked and ${heldCheckoutCount} held checkout calls rejected before Stripe. Both codes, case variants, held legacy/current IDs, mixed/hat-only carts, eligible-only carts, cent rounding, hoodie policy and Stripe bypass checked. No real sessions or charges.`);
+  console.log(`PASS: ${sessionCount} discount-only checkout route calls mocked with an isolated test stub and ${heldCheckoutCount} real-default-source checkout calls rejected before Stripe (all 26 catalogue IDs, seven existing hold IDs/aliases, unknown ID, case variants and mixed carts). Both codes, case variants, held legacy/current IDs, mixed/hat-only carts, eligible-only carts, cent rounding, hoodie policy and Stripe bypass checked. No real sessions or charges.`);
 })().catch(error => { console.error(error); process.exitCode = 1; });

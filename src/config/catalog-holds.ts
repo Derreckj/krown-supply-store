@@ -1,3 +1,7 @@
+// Reversible incident guard: new website orders wait for verified production and fulfilment.
+// This literal cannot be bypassed by an environment variable or checkout request.
+export const WEBSITE_ORDERING_PAUSED = true;
+
 // These offers remain visible for review, but cannot be ordered until fulfilment is verified.
 // Keep product and external listing IDs intact so they can be resumed without duplicates.
 const PURCHASE_HOLDS: Record<string, string> = {
@@ -11,5 +15,9 @@ const PURCHASE_HOLDS: Record<string, string> = {
 };
 
 export function getCatalogPurchaseHold(productId: string): string | null {
-  return PURCHASE_HOLDS[productId.toLowerCase()] ?? null;
+  const specificHold = PURCHASE_HOLDS[productId.toLowerCase()];
+  if (specificHold) return specificHold;
+  return WEBSITE_ORDERING_PAUSED
+    ? 'Ordering is temporarily paused while we verify production details. Please check back soon.'
+    : null;
 }
