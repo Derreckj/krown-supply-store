@@ -142,12 +142,12 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
     const validated = validateDiscountCode(trimmed);
     if (!validated) {
-      const err = 'Invalid discount code. Enter KROWN10.';
+      const err = 'Invalid discount code. Enter KROWN10 or KROWN15.';
       setDiscountError(err);
       return { success: false, error: err };
     }
 
-    // Check cart eligibility for KROWN10
+    // Check cart eligibility while preserving custom-hat exclusions.
     const testBreakdown = calculateCartDiscount(items, validated);
     if (testBreakdown.errorMessage) {
       setDiscountError(testBreakdown.errorMessage);

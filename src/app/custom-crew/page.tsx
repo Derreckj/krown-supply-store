@@ -1,8 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
-import { useCart } from '@/context/CartContext';
+import React, { useState, useEffect, useRef } from 'react';
 import './CustomCrew.css';
 
 interface TierOption {
@@ -17,9 +15,9 @@ interface TierOption {
 
 const TIERS: TierOption[] = [
   { id: 'single', name: 'Sample / Single', qty: 1, priceEach: 29.99, total: 29.99 },
-  { id: 'crew-6', name: 'Crew Pack', qty: 6, priceEach: 27.0, total: 162.0, savings: 'Save 10%' },
-  { id: 'company-12', name: 'Company Pack', qty: 12, priceEach: 25.5, total: 306.0, savings: 'Save 15%', badge: 'MOST POPULAR' },
-  { id: 'fleet-24', name: 'Fleet Pack', qty: 24, priceEach: 24.0, total: 576.0, savings: 'Save 20%', badge: 'BEST VALUE' },
+  { id: 'crew-6', name: 'Crew Pack', qty: 6, priceEach: 27.0, total: 162.0 },
+  { id: 'company-12', name: 'Company Pack', qty: 12, priceEach: 25.5, total: 306.0 },
+  { id: 'fleet-24', name: 'Fleet Pack', qty: 24, priceEach: 24.0, total: 576.0 },
 ];
 
 interface LeatherFinish {
@@ -30,54 +28,44 @@ interface LeatherFinish {
   gradient: string;
   engraveColor: string;
   stitchColor: string;
-  engraveBlend: 'multiply' | 'screen' | 'normal';
-  engraveFilter: string;
 }
 
 const LEATHER_FINISHES: LeatherFinish[] = [
   {
     id: 'caramel-cowhide',
-    name: 'Caramel / Cognac Cowhide',
-    desc: 'Rich warm amber/brown with authentic cowhide pore grain & dark charred laser burn',
+    name: 'Caramel / Cognac look',
+    desc: 'Warm amber/brown concept; material and decoration pending confirmation',
     swatchBg: 'linear-gradient(135deg, #b87333 0%, #c68642 100%)',
     gradient: 'linear-gradient(135deg, #c47c38 0%, #b87333 45%, #9b5a20 100%)',
     engraveColor: '#281406',
     stitchColor: '#2E1B0E',
-    engraveBlend: 'multiply',
-    engraveFilter: 'grayscale(100%) contrast(240%) brightness(0.68) sepia(55%) hue-rotate(330deg)',
   },
   {
     id: 'natural-saddle-tan',
     name: 'Natural Saddle Tan',
-    desc: 'Classic light vegetable-tanned hide with fine-pore grain & deep walnut laser engraving',
+    desc: 'Light tan concept; material and decoration pending confirmation',
     swatchBg: 'linear-gradient(135deg, #d2b55b 0%, #c19a6b 100%)',
     gradient: 'linear-gradient(135deg, #dbbe68 0%, #d2b55b 45%, #b8915e 100%)',
     engraveColor: '#241408',
     stitchColor: '#3a2010',
-    engraveBlend: 'multiply',
-    engraveFilter: 'grayscale(100%) contrast(250%) brightness(0.62) sepia(60%) hue-rotate(335deg)',
   },
   {
     id: 'dark-rustic-walnut',
     name: 'Dark Rustic Walnut',
-    desc: 'Deep espresso hide with high-contrast warm chocolate laser engraving',
+    desc: 'Dark brown concept; material and decoration pending confirmation',
     swatchBg: 'linear-gradient(135deg, #3d2314 0%, #4a2e1b 100%)',
     gradient: 'linear-gradient(135deg, #4f331f 0%, #3d2314 50%, #2a160a 100%)',
     engraveColor: '#120803',
     stitchColor: '#1c0c04',
-    engraveBlend: 'multiply',
-    engraveFilter: 'grayscale(100%) contrast(260%) brightness(0.55) sepia(70%) hue-rotate(320deg)',
   },
   {
     id: 'matte-black-hide',
-    name: 'Matte Black / Charcoal Hide',
-    desc: 'Stealth blackout leatherette with subtle charcoal undertone & laser-etched contrast',
+    name: 'Matte Black / Charcoal look',
+    desc: 'Charcoal concept; material and decoration pending confirmation',
     swatchBg: 'linear-gradient(135deg, #1e1e1e 0%, #2a2a2a 100%)',
     gradient: 'linear-gradient(135deg, #2b2b2b 0%, #1e1e1e 50%, #141414 100%)',
     engraveColor: '#d6b160',
     stitchColor: '#3d3d3d',
-    engraveBlend: 'screen',
-    engraveFilter: 'grayscale(100%) contrast(200%) brightness(1.7) sepia(50%) hue-rotate(5deg)',
   },
 ];
 
@@ -87,7 +75,7 @@ interface PatchShape {
   clipPath?: string;
   borderRadius?: string;
   aspectRatio: string;
-  widthPx: number;
+  widthPercent: number;
 }
 
 const PATCH_SHAPES: PatchShape[] = [
@@ -96,35 +84,35 @@ const PATCH_SHAPES: PatchShape[] = [
     name: 'Hexagon',
     clipPath: 'polygon(50% 0%, 98% 25%, 98% 75%, 50% 100%, 2% 75%, 2% 25%)',
     aspectRatio: '1.05 / 1',
-    widthPx: 124,
+    widthPercent: 17,
   },
   {
     id: 'rounded-rectangle',
     name: 'Rounded Rectangle',
     borderRadius: '10px',
     aspectRatio: '1.45 / 1',
-    widthPx: 134,
+    widthPercent: 18.5,
   },
   {
     id: 'circle',
     name: 'Circle',
     borderRadius: '50%',
     aspectRatio: '1 / 1',
-    widthPx: 118,
+    widthPercent: 16.5,
   },
   {
     id: 'diamond',
     name: 'Diamond',
     clipPath: 'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)',
     aspectRatio: '1 / 1',
-    widthPx: 120,
+    widthPercent: 16.5,
   },
   {
     id: 'oval',
     name: 'Oval',
     borderRadius: '50% / 35%',
     aspectRatio: '1.38 / 1',
-    widthPx: 130,
+    widthPercent: 18,
   },
 ];
 
@@ -133,68 +121,68 @@ interface HatColorway {
   name: string;
   subtitle: string;
   badge?: string;
-  image: string;
+  previewFilter: string;
   swatchFront: string;
   swatchMesh: string;
 }
 
-const PRINTIFY_COLORWAYS: HatColorway[] = [
+const PREVIEW_COLORWAYS: HatColorway[] = [
   {
     id: 'charcoal-black',
     name: 'Charcoal / Black Mesh',
-    subtitle: 'Best Seller / Industrial Neutral',
-    badge: 'Best Seller',
-    image: '/images/custom-crew/r112-blank-charcoal-black.jpg',
+    subtitle: 'Original supplier blank photo',
+
+    previewFilter: 'none',
     swatchFront: '#3a3a3c',
     swatchMesh: '#161616',
   },
   {
     id: 'heather-black',
     name: 'Heather Grey / Black Mesh',
-    subtitle: 'Modern Classic Contrast',
-    badge: 'Popular',
-    image: '/images/custom-crew/r112-blank-heather-black.jpg',
+    subtitle: 'Approximate colour visualization only',
+
+    previewFilter: 'brightness(1.35)',
     swatchFront: '#757579',
     swatchMesh: '#161616',
   },
   {
     id: 'solid-black',
     name: 'Solid Black',
-    subtitle: 'Black buckram / Black mesh / Stealth',
-    badge: 'Stealth',
-    image: '/images/custom-crew/r112-blank-solid-black.jpg',
+    subtitle: 'Approximate colour visualization only',
+
+    previewFilter: 'brightness(0.64)',
     swatchFront: '#1a1a1a',
     swatchMesh: '#141414',
   },
   {
     id: 'khaki-coffee',
     name: 'Khaki / Coffee Mesh',
-    subtitle: 'Heritage Earth Tone / Outdoor',
-    image: '/images/custom-crew/r112-blank-khaki-coffee.jpg',
+    subtitle: 'Approximate colour visualization only',
+    previewFilter: 'sepia(0.75) saturate(1.1) brightness(1.25)',
     swatchFront: '#a89474',
     swatchMesh: '#3a271b',
   },
   {
     id: 'heather-navy',
     name: 'Heather Grey / Navy Mesh',
-    subtitle: 'Collegiate Navy Contrast',
-    image: '/images/custom-crew/r112-blank-heather-navy.jpg',
+    subtitle: 'Approximate colour visualization only',
+    previewFilter: 'sepia(0.3) hue-rotate(165deg)',
     swatchFront: '#757579',
     swatchMesh: '#192841',
   },
   {
     id: 'loden-black',
     name: 'Loden / Black Mesh',
-    subtitle: 'Tactical Olive / Dark Mesh',
-    image: '/images/custom-crew/r112-blank-loden-black.jpg',
+    subtitle: 'Approximate colour visualization only',
+    previewFilter: 'sepia(0.65) hue-rotate(35deg)',
     swatchFront: '#4a5340',
     swatchMesh: '#161616',
   },
   {
     id: 'white-black',
     name: 'White / Black Mesh',
-    subtitle: 'High-Contrast Monochrome',
-    image: '/images/custom-crew/r112-blank-white-black.jpg',
+    subtitle: 'Approximate colour visualization only',
+    previewFilter: 'brightness(1.7)',
     swatchFront: '#3a3a3c',
     swatchMesh: '#f0f0f2',
   },
@@ -203,10 +191,8 @@ const PRINTIFY_COLORWAYS: HatColorway[] = [
 type PatchPlacement = 'center' | 'left';
 
 export default function CustomCrewPage() {
-  const { addItem } = useCart();
-
   const [selectedTier, setSelectedTier] = useState<TierOption>(TIERS[2]); // Company 12-Pack by default
-  const [selectedColorway, setSelectedColorway] = useState<HatColorway>(PRINTIFY_COLORWAYS[0]);
+  const [selectedColorway, setSelectedColorway] = useState<HatColorway>(PREVIEW_COLORWAYS[0]);
   const [selectedFinish, setSelectedFinish] = useState<LeatherFinish>(LEATHER_FINISHES[0]);
   const [selectedShape, setSelectedShape] = useState<PatchShape>(PATCH_SHAPES[0]);
   const [patchPlacement, setPatchPlacement] = useState<PatchPlacement>('center');
@@ -218,70 +204,75 @@ export default function CustomCrewPage() {
   const [subText, setSubText] = useState<string>('EST. 2026');
   const [uploadedLogoUrl, setUploadedLogoUrl] = useState<string | null>(null);
   const [uploadedFileName, setUploadedFileName] = useState<string | null>(null);
-  const [isAdded, setIsAdded] = useState<boolean>(false);
+  const [baseImageReady, setBaseImageReady] = useState(false);
+  const [uploadError, setUploadError] = useState('');
+  const uploadRequest = useRef(0);
+  const activeReader = useRef<FileReader | null>(null);
 
-  // Preload all 7 blanks on mount for instantaneous, zero-flicker switching
+  // Every colour uses one real blank: no baked-in patch or image swaps.
   useEffect(() => {
-    PRINTIFY_COLORWAYS.forEach((colorway) => {
-      const img = new window.Image();
-      img.src = colorway.image;
-    });
+    let cancelled = false;
+    const img = new window.Image();
+    img.src = '/images/custom-crew/r112-provider-blank-charcoal-black.jpg';
+    // Cached images can finish before React attaches onLoad during hydration.
+    img.decode().then(() => {
+      if (!cancelled) setBaseImageReady(true);
+    }).catch(() => { /* Leave the patch hidden if the blank cannot load. */ });
+    return () => {
+      cancelled = true;
+      uploadRequest.current += 1;
+      activeReader.current?.abort();
+    };
   }, []);
 
   const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files[0]) {
-      const file = e.target.files[0];
-      setUploadedFileName(file.name);
-      const reader = new FileReader();
-      reader.onload = (event) => {
-        if (event.target?.result) {
-          setUploadedLogoUrl(event.target.result as string);
-        }
-      };
-      reader.readAsDataURL(file);
+    const file = e.target.files?.[0];
+    if (!file) return;
+    const request = ++uploadRequest.current;
+    activeReader.current?.abort();
+    setUploadError('');
+    if (!['image/png', 'image/jpeg', 'image/svg+xml', 'image/webp'].includes(file.type) || file.size > 10 * 1024 * 1024) {
+      setUploadError('Choose a PNG, JPG, SVG or WebP image up to 10 MB.');
+      return;
     }
+    const reader = new FileReader();
+    activeReader.current = reader;
+    reader.onerror = () => {
+      if (request === uploadRequest.current) setUploadError('Unable to read this image. Please choose another file.');
+    };
+    reader.onload = async () => {
+      if (typeof reader.result !== 'string') return;
+      const url = reader.result;
+      const image = new window.Image();
+      image.src = url;
+      try {
+        await image.decode();
+        if (request !== uploadRequest.current) return;
+        setUploadedLogoUrl(url);
+        setUploadedFileName(file.name);
+      } catch {
+        if (request === uploadRequest.current) setUploadError('This image could not be displayed. Please choose another file.');
+      }
+    };
+    reader.readAsDataURL(file);
   };
 
-  // Base placement calibrated to Richardson 112 crown perspective
-  const baseLeft = patchPlacement === 'left' ? 34.5 : 42.0;
-  const baseTop = patchPlacement === 'left' ? 44.5 : 42.5;
-
-  const currentLeft = `calc(${baseLeft}% + ${xOffset}px)`;
-  const currentTop = `calc(${baseTop}% + ${yOffset}px)`;
-
-  const handleAddToCart = () => {
-    const title = `Custom Richardson 112 Hats (${selectedTier.qty}-Pack) - ${companyName.trim() || 'Custom Crew'}`;
-    addItem({
-      productId: 'custom-krown-works-hat',
-      name: title,
-      price: selectedTier.priceEach,
-      image: selectedColorway.image,
-      variant: {
-        color: `${selectedColorway.name} • ${selectedFinish.name} (${selectedShape.name})`,
-        size: `Printify 1743/99 • Qty: ${selectedTier.qty} • ${patchPlacement.toUpperCase()} Panel`,
-      },
-      quantity: selectedTier.qty,
-      personalization: {
-        edition: `Printify Blueprint 1743 / Provider 99 • ${selectedFinish.name} • ${selectedShape.name}`,
-        notes: `Placement: ${patchPlacement.toUpperCase()} | Company: "${companyName.trim() || 'N/A'}" | Subtext: "${subText.trim() || 'N/A'}" | Logo: ${uploadedFileName || 'Crown Monogram'}`,
-      },
-    });
-
-    setIsAdded(true);
-    setTimeout(() => setIsAdded(false), 3500);
-  };
+  // Coordinates and offsets stay proportional to the original square photo.
+  const baseLeft = patchPlacement === 'left' ? 48 : 55;
+  const baseTop = patchPlacement === 'left' ? 48 : 47;
+  const currentLeft = `${baseLeft + xOffset}%`;
+  const currentTop = `${baseTop + yOffset}%`;
 
   return (
     <div className="custom-crew-page container">
       {/* Hero Section */}
       <section className="custom-crew-hero">
         <div className="custom-crew-badge">
-          <span>★</span> KrowN Works Custom Headwear Studio
+          <span>★</span> KrowN Supply Co. Custom Headwear Studio
         </div>
-        <h1 className="custom-crew-title">Custom Richardson 112 Leather Patch Hats</h1>
+        <h1 className="custom-crew-title">Custom Hat Design Preview</h1>
         <p className="custom-crew-subtitle">
-          Outfit your jobsite crew, trade company, or brand with genuine Richardson 112 trucker snapbacks (Printify Blueprint 1743).
-          Real-time photorealistic configurator with authentic leather finishes, custom laser engraving, and perimeter saddle stitching.
+          Explore a patch design on a genuine Richardson 112 blank photo. Patch materials, shapes, colours and decoration are visual concepts awaiting supplier confirmation.
         </p>
       </section>
 
@@ -291,27 +282,28 @@ export default function CustomCrewPage() {
         <div className="custom-preview-card">
           <div className="custom-preview-img-wrap" style={{ position: 'relative', overflow: 'hidden', background: '#0e0f12' }}>
             <span className="custom-preview-badge-overlay" style={{ zIndex: 20 }}>
-              LIVE PREVIEW: {selectedColorway.name} • {selectedFinish.name}
+              DESIGN CONCEPT: {selectedColorway.name} • {selectedFinish.name}
             </span>
 
             {/* Base Richardson 112 Hat Image */}
             <img
-              src={selectedColorway.image}
-              alt="Custom Richardson 112 Trucker Hat"
+              src="/images/custom-crew/r112-provider-blank-charcoal-black.jpg"
+              alt="Blank Richardson 112 charcoal-front black-mesh hat; alternate colours are approximate"
+              onLoad={() => setBaseImageReady(true)}
               className="custom-preview-img"
-              style={{ width: '100%', height: '100%', objectFit: 'contain', transition: 'opacity 0.2s ease' }}
+              style={{ filter: selectedColorway.previewFilter }}
             />
 
-            {/* Real-Time Interactive Leather Patch Layer with 3D Perspective */}
-            <div
+            {/* One provisional patch overlay; supplier blank has no original patch. */}
+            {baseImageReady && <div
               className="photoreal-patch-container"
               style={{
                 position: 'absolute',
                 top: currentTop,
                 left: currentLeft,
-                transform: `perspective(900px) rotate(-1.5deg) rotateY(4deg) skewY(-1deg) translate(-50%, -50%) scale(${patchScale / 100})`,
+                transform: `translate(-50%, -50%) rotate(-8deg) skewY(-6deg) scaleX(0.9) scale(${patchScale / 100})`,
                 transition: 'top 0.15s ease, left 0.15s ease, transform 0.15s ease',
-                width: `${selectedShape.widthPx}px`,
+                width: `${selectedShape.widthPercent}%`,
                 aspectRatio: selectedShape.aspectRatio,
                 background: selectedFinish.gradient,
                 clipPath: selectedShape.clipPath,
@@ -321,7 +313,9 @@ export default function CustomCrewPage() {
                 flexDirection: 'column',
                 alignItems: 'center',
                 justifyContent: 'center',
-                padding: '0.65rem 0.5rem',
+                padding: '0',
+                boxSizing: 'border-box',
+                containerType: 'inline-size',
                 zIndex: 10,
                 color: selectedFinish.engraveColor,
                 textAlign: 'center',
@@ -341,7 +335,7 @@ export default function CustomCrewPage() {
               />
 
               {/* Perimeter Embossed Saddle Stitching Ring */}
-              <svg
+              <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"
                 style={{
                   position: 'absolute',
                   inset: 0,
@@ -354,8 +348,7 @@ export default function CustomCrewPage() {
                 {selectedShape.id === 'hexagon' && (
                   <polygon
                     points="50 4, 95 27, 95 73, 50 96, 5 73, 5 27"
-                    viewBox="0 0 100 100"
-                    fill="none"
+                                        fill="none"
                     stroke={selectedFinish.stitchColor}
                     strokeWidth="1.5"
                     strokeDasharray="4 3"
@@ -414,36 +407,34 @@ export default function CustomCrewPage() {
                 )}
               </svg>
 
-              {/* Uploaded Artwork or Brand Monogram with Genuine Laser-Burn Blending */}
+              {/* Original uploaded artwork retained with its own aspect ratio and colours. */}
               {uploadedLogoUrl ? (
                 <div
                   style={{
-                    maxWidth: '68%',
-                    maxHeight: '52%',
+                    width: '70%',
+                    height: '50%',
+                    flexShrink: 0,
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    marginBottom: '0.2rem',
+                    marginBottom: '0',
                     zIndex: 3,
-                    mixBlendMode: selectedFinish.engraveBlend,
-                    filter: selectedFinish.engraveFilter,
                   }}
                 >
                   <img
                     src={uploadedLogoUrl}
                     alt="Custom Company Logo"
                     style={{
-                      maxWidth: '100%',
-                      maxHeight: '100%',
+                      width: '100%',
+                      height: '100%',
                       objectFit: 'contain',
-                      filter: 'drop-shadow(0 1px 1px rgba(255, 255, 255, 0.2)) drop-shadow(0 -1px 1px rgba(0, 0, 0, 0.85))',
                     }}
                   />
                 </div>
               ) : (
                 <div
                   style={{
-                    fontSize: '1.35rem',
+                    fontSize: '22cqw',
                     fontWeight: 900,
                     marginBottom: '0.15rem',
                     zIndex: 3,
@@ -451,14 +442,14 @@ export default function CustomCrewPage() {
                     filter: 'drop-shadow(0 1px 1px rgba(255, 255, 255, 0.25)) drop-shadow(0 -1px 1px rgba(0, 0, 0, 0.85))',
                   }}
                 >
-                  👑
+                  +
                 </div>
               )}
 
-              {/* Live Debossed Company / Team Name */}
+              {/* Concept text, not a manufacturing proof. */}
               <div
                 style={{
-                  fontSize: '0.62rem',
+                  fontSize: '9cqw',
                   fontWeight: 900,
                   letterSpacing: '0.04em',
                   textTransform: 'uppercase',
@@ -479,7 +470,7 @@ export default function CustomCrewPage() {
               {subText && (
                 <div
                   style={{
-                    fontSize: '0.45rem',
+                    fontSize: '7cqw',
                     fontWeight: 800,
                     letterSpacing: '0.06em',
                     textTransform: 'uppercase',
@@ -492,8 +483,9 @@ export default function CustomCrewPage() {
                   {subText}
                 </div>
               )}
-            </div>
+            </div>}
           </div>
+          <p className="preview-concept-note">Design visualization only. Alternate hat colours are approximate filters; patch material, shape, placement and decoration need supplier confirmation. Uploaded artwork is shown without stretching or recolouring.</p>
 
           {/* Interactive Patch Positioning Controls */}
           <div
@@ -557,14 +549,15 @@ export default function CustomCrewPage() {
               <div>
                 <label style={{ display: 'flex', justifyContent: 'space-between', color: 'var(--text-muted)', marginBottom: '0.2rem' }}>
                   <span>Horizontal</span>
-                  <span>{xOffset}px</span>
+                  <span>{xOffset}%</span>
                 </label>
                 <input
                   type="range"
-                  min="-25"
-                  max="25"
+                  min="-4"
+                  max="4"
+                  step="0.25"
                   value={xOffset}
-                  onChange={(e) => setXOffset(parseInt(e.target.value))}
+                  onChange={(e) => setXOffset(Number(e.target.value))}
                   style={{ width: '100%', accentColor: 'var(--accent-gold)' }}
                 />
               </div>
@@ -572,14 +565,15 @@ export default function CustomCrewPage() {
               <div>
                 <label style={{ display: 'flex', justifyContent: 'space-between', color: 'var(--text-muted)', marginBottom: '0.2rem' }}>
                   <span>Vertical</span>
-                  <span>{yOffset}px</span>
+                  <span>{yOffset}%</span>
                 </label>
                 <input
                   type="range"
-                  min="-25"
-                  max="25"
+                  min="-4"
+                  max="4"
+                  step="0.25"
                   value={yOffset}
-                  onChange={(e) => setYOffset(parseInt(e.target.value))}
+                  onChange={(e) => setYOffset(Number(e.target.value))}
                   style={{ width: '100%', accentColor: 'var(--accent-gold)' }}
                 />
               </div>
@@ -597,46 +591,29 @@ export default function CustomCrewPage() {
               color: 'var(--text-muted)',
             }}
           >
-            <strong style={{ color: 'var(--accent-gold)' }}>★ Printify Blueprint 1743:</strong> Verified authentic Richardson 112 trucker snapbacks with precision laser-etched genuine leatherette patches &amp; perimeter saddle stitching.
+            <strong style={{ color: 'var(--accent-gold)' }}>Supplier confirmation pending:</strong> This blank photo verifies the hat shape only. The displayed patch is a design concept, and ordering remains paused.
           </div>
 
           <div style={{ marginTop: '1.25rem' }}>
             <h3 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: '0.65rem' }}>
-              Why Companies &amp; Contractors Choose KrowN Custom Hats:
+              Before Your Design Can Be Ordered:
             </h3>
-            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-              <li style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', fontSize: '0.85rem', color: 'var(--text-muted)' }}>
-                <span style={{ color: 'var(--accent-gold)', fontWeight: 'bold' }}>✓</span>
-                <strong>Authentic Richardson 112:</strong> Mid-pro structured crown, pre-curved visor, breathable mesh.
-              </li>
-              <li style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', fontSize: '0.85rem', color: 'var(--text-muted)' }}>
-                <span style={{ color: 'var(--accent-gold)', fontWeight: 'bold' }}>✓</span>
-                <strong>Perimeter Saddle Stitching:</strong> Heavy bonded thread around the perimeter—never glued.
-              </li>
-              <li style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', fontSize: '0.85rem', color: 'var(--text-muted)' }}>
-                <span style={{ color: 'var(--accent-gold)', fontWeight: 'bold' }}>✓</span>
-                <strong>Free Digital Proof:</strong> 3D photorealistic mockups sent to your email prior to production.
-              </li>
-              <li style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', fontSize: '0.85rem', color: 'var(--text-muted)' }}>
-                <span style={{ color: 'var(--accent-gold)', fontWeight: 'bold' }}>✓</span>
-                <strong>Fast 3-5 Day Production:</strong> Direct US fulfillment with tracked ground shipping.
-              </li>
-            </ul>
+            <p>Materials, decoration, production time and final proof will be confirmed before ordering is available.</p>
           </div>
         </div>
 
         {/* Right Column: Interactive Order Builder */}
         <div className="custom-form-card">
-          <h2>Configure Your Custom Hat Order</h2>
+          <h2>Explore Your Custom Hat Design</h2>
           <p className="custom-form-desc">
-            Select your volume tier, choose your Printify-verified colorway, leather patch material, and patch shape.
+            Explore quantity, approximate colours, patch appearance and shape. Orders are paused while a supplier and final specifications are confirmed.
           </p>
 
           {/* Step 1: Volume Tier */}
           <div className="form-step">
             <div className="form-step-title">
               <span className="form-step-num">1</span>
-              <span>Select Volume Tier (Quantity)</span>
+              <span>Explore Quantity (Indicative Prices)</span>
             </div>
             <div className="tier-selector">
               {TIERS.map((tier) => (
@@ -649,7 +626,7 @@ export default function CustomCrewPage() {
                 >
                   <div className="tier-name">{tier.name}</div>
                   <div className="tier-qty">{tier.qty} {tier.qty === 1 ? 'Hat' : 'Hats'}</div>
-                  <div className="tier-price-each">${tier.priceEach.toFixed(2)}/ea</div>
+                  <div className="tier-price-each">${tier.priceEach.toFixed(2)}/ea · unconfirmed</div>
                   {tier.badge && <span className="tier-badge">{tier.badge}</span>}
                   {tier.savings && !tier.badge && (
                     <span style={{ display: 'block', fontSize: '0.65rem', color: '#d4af37', marginTop: '0.25rem' }}>
@@ -661,14 +638,14 @@ export default function CustomCrewPage() {
             </div>
           </div>
 
-          {/* Step 2: Select Printify Richardson 112 Colorway */}
+          {/* Step 2: Approximate preview colours */}
           <div className="form-step">
             <div className="form-step-title">
               <span className="form-step-num">2</span>
-              <span>Select Richardson 112 Colorway (Blueprint 1743)</span>
+              <span>Choose Preview Colour (Approximate)</span>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(1, 1fr)', gap: '0.5rem' }}>
-              {PRINTIFY_COLORWAYS.map((c) => (
+              {PREVIEW_COLORWAYS.map((c) => (
                 <div
                   key={c.id}
                   className={`patch-option ${selectedColorway.id === c.id ? 'active' : ''}`}
@@ -706,11 +683,11 @@ export default function CustomCrewPage() {
             </div>
           </div>
 
-          {/* Step 3: Choose Printify-Supported Leather Finish */}
+          {/* Step 3: Provisional patch appearance */}
           <div className="form-step">
             <div className="form-step-title">
               <span className="form-step-num">3</span>
-              <span>Choose Leather Patch Material</span>
+              <span>Choose Patch Appearance (Concept)</span>
             </div>
             <div className="patch-selector" style={{ gridTemplateColumns: 'repeat(2, 1fr)' }}>
               {LEATHER_FINISHES.map((patch) => (
@@ -740,7 +717,7 @@ export default function CustomCrewPage() {
           <div className="form-step">
             <div className="form-step-title">
               <span className="form-step-num">4</span>
-              <span>Select Patch Shape (Laser-Cut Dies)</span>
+              <span>Choose Patch Shape (Concept)</span>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '0.5rem' }}>
               {PATCH_SHAPES.map((shape) => (
@@ -787,7 +764,7 @@ export default function CustomCrewPage() {
 
             <div className="form-group" style={{ marginBottom: '0.85rem' }}>
               <label htmlFor="company-name" style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
-                Primary Name (Live Patch Engraving):
+                Primary Name (Preview Text):
               </label>
               <input
                 type="text"
@@ -814,6 +791,7 @@ export default function CustomCrewPage() {
             </div>
 
             {/* File Upload */}
+            {uploadError && <p role="alert" className="preview-concept-note">{uploadError}</p>}
             <div className="file-upload-box">
               <input
                 type="file"
@@ -828,7 +806,7 @@ export default function CustomCrewPage() {
                   {uploadedFileName ? `Attached: ${uploadedFileName}` : 'Upload Logo (.PNG, .JPG, .SVG, .WebP)'}
                 </p>
                 <p style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
-                  Laser burn blend will automatically embed your logo into the leather grain.
+                  Original artwork stays proportional and keeps its original colours. Maximum file size: 10 MB.
                 </p>
               </label>
             </div>
@@ -845,34 +823,25 @@ export default function CustomCrewPage() {
               <span className="summary-val">{selectedColorway.name}</span>
             </div>
             <div className="summary-row">
-              <span className="summary-label">Leather Finish:</span>
+              <span className="summary-label">Patch Appearance:</span>
               <span className="summary-val">{selectedFinish.name} • {selectedShape.name}</span>
             </div>
             <div className="summary-row">
-              <span className="summary-label">Price Per Hat:</span>
+              <span className="summary-label">Previous Indicative Price Per Hat:</span>
               <span className="summary-val">${selectedTier.priceEach.toFixed(2)}</span>
             </div>
             <div className="summary-total-row">
-              <span className="summary-total-label">Total Crew Investment:</span>
+              <span className="summary-total-label">Indicative Total (Unconfirmed):</span>
               <span className="summary-total-val">${selectedTier.total.toFixed(2)}</span>
             </div>
 
-            <button
-              type="button"
-              className="btn-primary custom-order-btn"
-              onClick={handleAddToCart}
-              style={{ width: '100%', marginTop: '1rem', padding: '0.95rem', fontSize: '1.05rem', fontWeight: 800 }}
-            >
-              {isAdded ? '✓ Added Custom Pack to Cart!' : `ADD ${selectedTier.qty} ${selectedTier.qty === 1 ? 'HAT' : 'HATS'} TO CART — $${selectedTier.total.toFixed(2)}`}
+            <p id="custom-hat-supplier-note" className="supplier-confirmation-note">
+              Custom hat orders are paused until the patch supplier, options, final pricing and production proof are confirmed.
+            </p>
+            <button type="button" className="btn-primary custom-order-btn" disabled aria-describedby="custom-hat-supplier-note">
+              Add to Cart — Awaiting Supplier Confirmation
             </button>
 
-            {isAdded && (
-              <div style={{ marginTop: '0.75rem', textAlign: 'center' }}>
-                <Link href="/cart" style={{ color: 'var(--accent-gold)', fontSize: '0.875rem', textDecoration: 'underline' }}>
-                  Proceed to Checkout &rarr;
-                </Link>
-              </div>
-            )}
           </div>
         </div>
       </div>

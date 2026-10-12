@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { useCart } from '@/context/CartContext';
 import { CatalogProduct } from '@/services/printify';
+import { getCatalogPurchaseHold } from '@/config/catalog-holds';
 
 export default function AddToCartForm({ product }: { product: CatalogProduct }) {
   const { addItem } = useCart();
@@ -32,7 +33,8 @@ export default function AddToCartForm({ product }: { product: CatalogProduct }) 
     v => v.color === selectedColor && v.size === selectedSize
   ) || product.variants[0];
 
-  const isOutOfStock = currentVariant ? !currentVariant.isAvailable : false;
+  const purchaseHold = getCatalogPurchaseHold(product.id);
+  const isOutOfStock = currentVariant ? !currentVariant.isAvailable : true;
   const isJersey = product.id.startsWith('axiom-jersey');
   const isMat = product.id === 'krown-mat-01' || product.slug.includes('mat') || product.slug.includes('mouse');
   const isPersonalizable = isJersey || isMat;
@@ -70,7 +72,7 @@ export default function AddToCartForm({ product }: { product: CatalogProduct }) 
   const finalUnitPrice = baseUnitPrice + addOnsPrice;
 
   const handleAddToCart = () => {
-    if (isOutOfStock) return;
+    if (isOutOfStock || purchaseHold) return;
 
     const trimmedTag = gamertag.trim().slice(0, 16);
     const sanitizedTag = casingOption === 'uppercase' ? trimmedTag.toUpperCase() : trimmedTag;
@@ -826,11 +828,12 @@ export default function AddToCartForm({ product }: { product: CatalogProduct }) 
         <button 
           type="submit" 
           className="btn-primary add-to-cart-btn"
-          disabled={isOutOfStock}
-          style={{ width: '100%', opacity: isOutOfStock ? 0.5 : 1, cursor: isOutOfStock ? 'not-allowed' : 'pointer' }}
+          disabled={isOutOfStock || !!purchaseHold}
+          style={{ width: '100%', opacity: isOutOfStock || purchaseHold ? 0.5 : 1, cursor: isOutOfStock || purchaseHold ? 'not-allowed' : 'pointer' }}
         >
-          {isOutOfStock ? 'Out of Stock' : addedMessage ? '✓ Added to Cart!' : `Add to Cart / Customize — $${(finalUnitPrice * quantity).toFixed(2)}`}
+          {purchaseHold ? 'Ordering paused' : isOutOfStock ? 'Out of Stock' : addedMessage ? '✓ Added to Cart!' : `Add to Cart / Customize — $${(finalUnitPrice * quantity).toFixed(2)}`}
         </button>
+        {purchaseHold && <p role="status">{purchaseHold}</p>}
       </div>
 
       {addedMessage && (

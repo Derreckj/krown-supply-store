@@ -1,7 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { stripe, isStripeConfigured } from '@/lib/stripe';
 import { CartItem } from '@/context/CartContext';
-import { validateDiscountCode, isCustomHatItem, isExcludedDiscountItem } from '@/lib/discounts';
+import { getCatalogPurchaseHold } from '@/config/catalog-holds';
+import { validateDiscountCode, isCustomHatItem, isExcludedDiscountItem, getDiscountedUnitAmount } from '@/lib/discounts';
 
 export const dynamic = 'force-dynamic';
 
@@ -18,6 +19,13 @@ export async function POST(req: NextRequest) {
         { error: 'Cart is empty or invalid.' },
         { status: 400 }
       );
+    }
+
+    for (const item of items) {
+      const purchaseHold = getCatalogPurchaseHold(item.productId || '');
+      if (purchaseHold) {
+        return NextResponse.json({ error: purchaseHold, productId: item.productId }, { status: 409 });
+      }
     }
 
     const discount = validateDiscountCode(discountCode);
@@ -63,9 +71,7 @@ export async function POST(req: NextRequest) {
       }
 
       // Exclude custom hats and luxury hoodies from promotional discount
-      const effectivePrice = (isEligibleForDiscount && discount)
-        ? item.price * (1 - discount.percentage / 100)
-        : item.price;
+      const unitAmount = getDiscountedUnitAmount(item.price, isEligibleForDiscount ? discount : null);
 
       return {
         price_data: {
@@ -92,7 +98,7 @@ export async function POST(req: NextRequest) {
               is_excluded_product: isExcludedProduct ? 'true' : 'false',
             },
           },
-          unit_amount: Math.round(effectivePrice * 100), // Stripe expects amounts in cents
+          unit_amount: unitAmount, // Stripe expects amounts in cents
         },
         quantity: item.quantity,
       };
@@ -109,7 +115,9 @@ export async function POST(req: NextRequest) {
         allowed_countries: ['US', 'CA'],
       },
       billing_address_collection: 'required',
-      allow_promotion_codes: !discount, // If discount is already applied at cart, don't double discount
+      // Stripe promotion codes apply to the whole session and cannot protect custom hats.
+      // Mixed carts must apply their eligible-item discount through the storefront.
+      allow_promotion_codes: !discount && !items.some(item => isCustomHatItem(item) || isExcludedDiscountItem(item)),
       success_url: `${origin}/checkout/success?session_id={CHECKOUT_SESSION_ID}${discount ? `&discount_code=${encodeURIComponent(discount.code)}&discount_pct=${discount.percentage}` : ''}`,
       cancel_url: `${origin}/checkout/cancel`,
       metadata: {
